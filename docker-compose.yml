@@ -1,0 +1,114 @@
+﻿services:
+  mariadb:
+    image: mariadb:10.11
+    container_name: wikibase-mariadb
+    restart: unless-stopped
+    environment:
+      MYSQL_DATABASE: "my_wiki"
+      MYSQL_USER: "wikibase"
+      MYSQL_PASSWORD: "wikibase"
+      MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+    volumes:
+      - wikibase_data:/var/lib/mysql
+    healthcheck:
+      test: ["CMD", "healthcheck.sh", "--connect", "--innodb_initialized"]
+      start_period: 1m
+      interval: 20s
+      timeout: 5s
+
+  wikibase:
+    image: wikibase/wikibase:mw1.45.0
+    container_name: wikibase
+    restart: unless-stopped
+    depends_on:
+      mariadb:
+        condition: service_healthy
+    environment:
+      METADATA_CALLBACK: "false"
+      DB_SERVER: "mariadb:3306"
+      DB_NAME: "my_wiki"
+      DB_USER: "wikibase"
+      DB_PASS: "wikibase"
+      MW_ADMIN_NAME: "admin"
+      MW_ADMIN_PASS: "adminpass123!"
+      MW_ADMIN_EMAIL: "admin@example.local"
+      MW_WG_SERVER: "http://localhost:8080"
+      WDQS_PUBLIC_ENDPOINT_URL: "http://localhost:9999/bigdata/namespace/wdq/sparql"
+      WDQS_PUBLIC_FRONTEND_URL: "http://localhost:8081"
+    ports:
+      - "8080:80"
+    volumes:
+      - wikibase_config:/config
+    healthcheck:
+      test: ["CMD", "curl", "--silent", "--fail", "localhost/wiki/Main_Page"]
+      interval: 10s
+      start_period: 5m
+
+  wdqs:
+    image: wikibase/wdqs:2
+    container_name: wikibase-wdqs
+    command: /runBlazegraph.sh
+    depends_on:
+      wikibase:
+        condition: service_healthy
+    restart: unless-stopped
+    ulimits:
+      nofile:
+        soft: 32768
+        hard: 32768
+    ports:
+      - "9999:9999"
+    volumes:
+      - wdqs_data:/wdqs/data
+    healthcheck:
+      test: ["CMD", "curl", "--silent", "--fail", "localhost:9999/bigdata/namespace/wdq/sparql"]
+      interval: 10s
+      start_period: 2m
+
+  wdqs-updater:
+    image: wikibase/wdqs:2
+    container_name: wikibase-wdqs-updater
+    command: /runUpdate.sh
+    depends_on:
+      wdqs:
+        condition: service_healthy
+    restart: unless-stopped
+    ulimits:
+      nofile:
+        soft: 32768
+        hard: 32768
+    environment:
+      WIKIBASE_HOST: "wikibase"
+      WIKIBASE_SCHEME: "http"
+      WDQS_HOST: "wdqs"
+      WDQS_PORT: "9999"
+      WIKIBASE_CONCEPT_URI: "http://localhost:8080"
+
+  wdqs-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.wdqs-frontend
+    image: wikibase-wdqs-frontend-custom
+    container_name: wikibase-wdqs-frontend
+    depends_on:
+      wdqs:
+        condition: service_healthy
+    restart: unless-stopped
+    ports:
+      - "8081:80"
+    environment:
+      WDQS_PUBLIC_URL: "http://localhost:9999/bigdata/namespace/wdq/sparql"
+      WIKIBASE_PUBLIC_URL: "http://localhost:8080/w/api.php"
+    healthcheck:
+      test: ["CMD", "curl", "--silent", "--fail", "localhost"]
+      interval: 10s
+      start_period: 2m
+
+volumes:
+  wikibase_data:
+    name: wikibase_data
+  wikibase_config:
+    name: wikibase_config
+  wdqs_data:
+    name: wdqs_data
+

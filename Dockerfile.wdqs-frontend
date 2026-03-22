@@ -1,0 +1,4 @@
+FROM wikibase/wdqs-frontend:2
+
+COPY wdqs-frontend-nginx.conf /templates/nginx-default.conf.template
+COPY wdqs-custom-config.json /usr/share/nginx/html/custom-config.json

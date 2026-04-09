@@ -42,7 +42,7 @@ services:
       WDQS_PUBLIC_URL: "/query/proxy/sparql"
       WIKIBASE_PUBLIC_URL: "https://${WIKIBASE_DOMAIN}/w/api.php"
     volumes:
-      - ./wdqs-custom-config.prod.json:/usr/share/nginx/html/custom-config.json:ro
+      - ./wdqs-custom-config.prod.json:/usr/share/nginx/html/custom-config.json
 
   wikibase-sitelinks-init:
     environment:

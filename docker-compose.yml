@@ -35,8 +35,6 @@
       MW_WG_SERVER: "http://localhost:8080"
       WDQS_PUBLIC_ENDPOINT_URL: "http://localhost:9999/bigdata/namespace/wdq/sparql"
       WDQS_PUBLIC_FRONTEND_URL: "http://localhost:8081"
-    ports:
-      - "8080:80"
     volumes:
       - wikibase_config:/config
       - ./LocalSettings.sitelinks.php:/var/www/html/LocalSettings.d/LocalSettings.sitelinks.php:ro
@@ -58,8 +56,6 @@
       nofile:
         soft: 32768
         hard: 32768
-    ports:
-      - "9999:9999"
     volumes:
       - wdqs_data:/wdqs/data
     healthcheck:
@@ -96,8 +92,6 @@
       wdqs:
         condition: service_healthy
     restart: unless-stopped
-    ports:
-      - "8081:80"
     environment:
       WDQS_PUBLIC_URL: "http://localhost:9999/bigdata/namespace/wdq/sparql"
       WIKIBASE_PUBLIC_URL: "http://localhost:8080/w/api.php"

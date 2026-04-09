@@ -1,0 +1,14 @@
+# Auto-loaded for local development (docker compose up)
+# Skipped in production when using: docker compose -f docker-compose.yml -f docker-compose.prod.yml up
+services:
+  wikibase:
+    ports:
+      - "8080:80"
+
+  wdqs:
+    ports:
+      - "9999:9999"
+
+  wdqs-frontend:
+    ports:
+      - "8081:80"

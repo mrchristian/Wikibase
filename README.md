@@ -52,6 +52,7 @@ Monitor progress in Docker Desktop by clicking the **wikibase** stack and watchi
 | **wdqs** | wikibase/wdqs:2 | localhost:9999 | Blazegraph SPARQL endpoint |
 | **wdqs-updater** | wikibase/wdqs:2 | - | Syncs Wikibase changes to WDQS |
 | **wdqs-frontend** | Custom (see Dockerfile) | localhost:8081 | SPARQL query UI |
+| **wikibase-sitelinks-init** | wikibase/wikibase:mw1.45.0 | - | One-shot: registers sitelinks config |
 
 ## Endpoints
 
@@ -136,11 +137,51 @@ curl -G http://localhost:9999/bigdata/namespace/wdq/sparql \
 
 | File | Purpose |
 |------|---------|
+| LocalSettings.sitelinks.php | PHP settings enabling sitelinks |
+| sites.xml | Site definition imported into the sites table |
+| init-sitelinks.sh | Initialization script for sitelinks setup |
 | docker-compose.yml | Service definitions |
 | Dockerfile.wdqs-frontend | Custom WDQS frontend image build |
 | wdqs-frontend-nginx.conf | Nginx config template with SPARQL proxy and i18n alias |
 | wdqs-custom-config.json | Frontend SPARQL endpoint configuration |
 | query-sparql.ps1 | PowerShell helper for SPARQL queries |
+
+## Sitelinks
+
+Sitelinks allow you to link MediaWiki pages to Wikibase items. The local wiki is registered with site ID `mywiki`.
+
+### First-time setup
+
+Sitelinks are configured automatically on first startup. The `wikibase-sitelinks-init` container:
+
+1. Copies `LocalSettings.sitelinks.php` into the config volume
+2. Adds a `LocalSettings.d` autoloader to `LocalSettings.php`
+3. Imports `sites.xml` into the MediaWiki sites table
+
+After the init container finishes, restart Wikibase to load the new PHP settings:
+
+```powershell
+docker compose restart wikibase
+```
+
+### Adding a sitelink to an item
+
+1. Open an item page (e.g. http://localhost:8080/wiki/Item:Q1)
+2. Scroll to the **Sitelinks** section
+3. Click **add** under the **mywiki** group
+4. Enter `mywiki` as the site and the page name (e.g. `Main Page`)
+5. Save
+
+The linked page will now show a link back to the Wikibase item in its sidebar.
+
+### Re-running the init
+
+The init script is idempotent. To re-run it:
+
+```powershell
+docker compose up wikibase-sitelinks-init
+docker compose restart wikibase
+```
 
 ## Common Operations
 

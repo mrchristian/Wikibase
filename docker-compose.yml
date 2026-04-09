@@ -39,6 +39,8 @@
       - "8080:80"
     volumes:
       - wikibase_config:/config
+      - ./LocalSettings.sitelinks.php:/var/www/html/LocalSettings.d/LocalSettings.sitelinks.php:ro
+      - ./WikibaseSitelinksMessages.php:/var/www/html/LocalSettings.d/WikibaseSitelinksMessages.php:ro
     healthcheck:
       test: ["CMD", "curl", "--silent", "--fail", "localhost/wiki/Main_Page"]
       interval: 10s
@@ -103,6 +105,28 @@
       test: ["CMD", "curl", "--silent", "--fail", "localhost"]
       interval: 10s
       start_period: 2m
+
+  wikibase-sitelinks-init:
+    image: wikibase/wikibase:mw1.45.0
+    container_name: wikibase-sitelinks-init
+    depends_on:
+      wikibase:
+        condition: service_healthy
+    environment:
+      DB_SERVER: "mariadb:3306"
+      DB_NAME: "my_wiki"
+      DB_USER: "wikibase"
+      DB_PASS: "wikibase"
+      MW_ADMIN_NAME: "admin"
+      MW_ADMIN_PASS: "adminpass123!"
+      MW_WG_SERVER: "http://localhost:8080"
+    volumes:
+      - wikibase_config:/config
+      - ./LocalSettings.sitelinks.php:/var/www/html/LocalSettings.d/LocalSettings.sitelinks.php:ro
+      - ./sites.xml:/extra-config/sites.xml:ro
+      - ./init-sitelinks.sh:/init-sitelinks.sh:ro
+    entrypoint: ["bash", "/init-sitelinks.sh"]
+    restart: "no"
 
 volumes:
   wikibase_data:

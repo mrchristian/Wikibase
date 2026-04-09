@@ -1,0 +1,59 @@
+# =============================================================================
+# Production overrides for Wikibase on dev-climatekg.semanticclimate.org
+#
+# Usage:
+#   cp .env.production .env   (edit passwords first!)
+#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+# =============================================================================
+
+services:
+  mariadb:
+    environment:
+      MYSQL_DATABASE: "${DB_NAME:-my_wiki}"
+      MYSQL_USER: "${DB_USER:-wikibase}"
+      MYSQL_PASSWORD: "${DB_PASS}"
+
+  wikibase:
+    environment:
+      DB_NAME: "${DB_NAME:-my_wiki}"
+      DB_USER: "${DB_USER:-wikibase}"
+      DB_PASS: "${DB_PASS}"
+      MW_ADMIN_NAME: "${MW_ADMIN_NAME:-admin}"
+      MW_ADMIN_PASS: "${MW_ADMIN_PASS}"
+      MW_ADMIN_EMAIL: "${MW_ADMIN_EMAIL:-simon.worthington@tib.eu}"
+      MW_WG_SERVER: "https://${WIKIBASE_DOMAIN}"
+      WDQS_PUBLIC_ENDPOINT_URL: "https://${WIKIBASE_DOMAIN}/query/proxy/sparql"
+      WDQS_PUBLIC_FRONTEND_URL: "https://${WIKIBASE_DOMAIN}/query"
+    ports:
+      - "127.0.0.1:8080:80"
+
+  wdqs:
+    ports:
+      - "127.0.0.1:9999:9999"
+
+  wdqs-updater:
+    environment:
+      WIKIBASE_CONCEPT_URI: "https://${WIKIBASE_DOMAIN}"
+
+  wdqs-frontend:
+    ports:
+      - "127.0.0.1:8081:80"
+    environment:
+      WDQS_PUBLIC_URL: "/query/proxy/sparql"
+      WIKIBASE_PUBLIC_URL: "https://${WIKIBASE_DOMAIN}/w/api.php"
+    volumes:
+      - ./wdqs-custom-config.prod.json:/usr/share/nginx/html/custom-config.json:ro
+
+  wikibase-sitelinks-init:
+    environment:
+      DB_NAME: "${DB_NAME:-my_wiki}"
+      DB_USER: "${DB_USER:-wikibase}"
+      DB_PASS: "${DB_PASS}"
+      MW_ADMIN_NAME: "${MW_ADMIN_NAME:-admin}"
+      MW_ADMIN_PASS: "${MW_ADMIN_PASS}"
+      MW_WG_SERVER: "https://${WIKIBASE_DOMAIN}"
+    volumes:
+      - wikibase_config:/config
+      - ./LocalSettings.sitelinks.php:/var/www/html/LocalSettings.d/LocalSettings.sitelinks.php:ro
+      - ./sites.prod.xml:/extra-config/sites.xml:ro
+      - ./init-sitelinks.sh:/init-sitelinks.sh:ro

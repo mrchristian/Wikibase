@@ -7,6 +7,10 @@
  * in the sites table (see sites.xml).
  */
 
+// Allow <html> blocks in wikitext so the Dashboard page can embed SPARQL iframes.
+// Safe for this installation because only admin users have edit access.
+$wgRawHtml = true;
+
 // Define the site link group for the local wiki
 $wgWBRepoSettings['siteLinkGroups'] = [ 'mywiki' ];
 

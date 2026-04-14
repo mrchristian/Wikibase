@@ -1,0 +1,9 @@
+FROM wikibase/wikibase:mw1.45.0
+
+WORKDIR /var/www/html
+
+# Install the ProfessionalWiki SPARQL extension via MediaWiki's Composer support.
+# This bakes the extension into the image so it survives container restarts.
+# See: https://www.mediawiki.org/wiki/Extension:SPARQL
+RUN COMPOSER=composer.local.json composer require --no-update professional-wiki/sparql:~1.0 \
+    && composer update professional-wiki/sparql --no-dev -o

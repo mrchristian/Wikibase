@@ -17,7 +17,10 @@
       timeout: 5s
 
   wikibase:
-    image: wikibase/wikibase:mw1.45.0
+    build:
+      context: .
+      dockerfile: Dockerfile.wikibase
+    image: wikibase-climatekg:latest
     container_name: wikibase
     restart: unless-stopped
     depends_on:
@@ -39,6 +42,7 @@
       - wikibase_config:/config
       - ./LocalSettings.sitelinks.php:/var/www/html/LocalSettings.d/LocalSettings.sitelinks.php:ro
       - ./WikibaseSitelinksMessages.php:/var/www/html/LocalSettings.d/WikibaseSitelinksMessages.php:ro
+      - ./LocalSettings.sparql.php:/var/www/html/LocalSettings.d/LocalSettings.sparql.php:ro
     healthcheck:
       test: ["CMD", "curl", "--silent", "--fail", "localhost/wiki/Main_Page"]
       interval: 10s

@@ -150,7 +150,7 @@ ufw --force enable
 echo ""
 echo "Starting Wikibase stack..."
 cd "$INSTALL_DIR"
-docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
 
 echo ""
 echo "==========================================="

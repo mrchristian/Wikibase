@@ -1,0 +1,1 @@
+﻿SELECT%20%3Fitem%20%3FitemLabel%20%3FitemDescription%20%3Fstmts%20WHERE%20%7B%20%3Fitem%20wikibase%3Astatements%20%3Fstmts%20.%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%20%7D%20ORDER%20BY%20%3Fitem%20LIMIT%20200

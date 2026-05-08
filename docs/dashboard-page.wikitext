@@ -1,0 +1,264 @@
+{{NODEPRECATEDTALK}}
+<!--
+  CLIMATEKG DATA DASHBOARD
+  ========================
+  How to create this page on the wiki:
+  1. Navigate to: https://dev-climatekg.semanticclimate.org/wiki/ClimateKG:Dashboard
+  2. Click "Edit" → switch to source editor
+  3. Paste the entire contents of this file
+  4. Save the page
+
+  Prerequisites:
+  - $wgRawHtml = true; must be set in LocalSettings (already added to LocalSettings.sitelinks.php)
+  - Apply with: git pull on the server (containers do not need restarting — PHP reads the file on each request)
+  - Admin account required to create the page
+-->
+= ClimateKG — Data Dashboard =
+<div id="ckg-intro" style="color:#555;font-size:1.05em;margin-bottom:1.5em;line-height:1.6;">
+Live overview of the <b>ClimateKG</b> knowledge graph. Statistics and tables are populated directly from the <a href="https://dev-climatekg.semanticclimate.org/query/">SPARQL endpoint</a>. Requires JavaScript.
+</div>
+
+<html>
+<style>
+/* ── ClimateKG Dashboard ── */
+.ckg { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+.ckg-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+  margin: 1.2em 0 2em;
+}
+.ckg-stat {
+  background: linear-gradient(140deg, #1e5f8e 0%, #2d8dd4 100%);
+  border-radius: 10px;
+  padding: 22px 18px 16px;
+  color: #fff;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(30,95,142,.25);
+  transition: transform .15s;
+}
+.ckg-stat:hover { transform: translateY(-2px); }
+.ckg-stat .sv { font-size: 2.4em; font-weight: 700; line-height: 1.1; min-height: 1.1em; }
+.ckg-stat .sl { font-size: .8em; opacity: .82; margin-top: 5px; text-transform: uppercase; letter-spacing: .07em; }
+.ckg-stat .sa { display: inline-block; margin-top: 10px; padding: 3px 11px; background: rgba(255,255,255,.2); border-radius: 4px; color: #fff; font-size: .78em; text-decoration: none; transition: background .15s; }
+.ckg-stat .sa:hover { background: rgba(255,255,255,.35); }
+@keyframes ckg-pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+.ckg-stat.ckg-loading .sv { animation: ckg-pulse 1.3s ease-in-out infinite; }
+.ckg-stat.ckg-err { background: linear-gradient(140deg, #922b21 0%, #e74c3c 100%); }
+.ckg-embed {
+  border: 1px solid #dde3e8;
+  border-radius: 8px;
+  overflow: hidden;
+  background: #f8f9fa;
+  margin-bottom: 1.6em;
+}
+.ckg-embed iframe { display: block; width: 100%; border: none; }
+.ckg-ql { font-size: .85em; margin: -.4em 0 1.5em; }
+.ckg-ql a { color: #1e5f8e; }
+</style>
+
+<div class="ckg">
+
+<!-- ── Stat Cards ──────────────────────────────────────────── -->
+<div class="ckg-stat-grid">
+  <div class="ckg-stat ckg-loading" id="ckg-c-items">
+    <div class="sv" id="ckg-v-items">…</div>
+    <div class="sl">Items</div>
+    <a class="sa" target="_blank"
+       href="https://dev-climatekg.semanticclimate.org/query/#SELECT%20%3Fitem%20%3FitemLabel%20%3FitemDescription%20WHERE%20%7B%0A%20%20%3Fitem%20wikibase%3Astatements%20%3Fs%20.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D%20ORDER%20BY%20%3Fitem">Browse →</a>
+  </div>
+  <div class="ckg-stat ckg-loading" id="ckg-c-props">
+    <div class="sv" id="ckg-v-props">…</div>
+    <div class="sl">Properties</div>
+    <a class="sa" target="_blank"
+       href="https://dev-climatekg.semanticclimate.org/query/#SELECT%20%3Fprop%20%3FpropLabel%20%3Fdatatype%20WHERE%20%7B%0A%20%20%3Fprop%20a%20wikibase%3AProperty%20.%0A%20%20%3Fprop%20wikibase%3ApropertyType%20%3Fdatatype%20.%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D%20ORDER%20BY%20%3Fprop">Browse →</a>
+  </div>
+  <div class="ckg-stat ckg-loading" id="ckg-c-stmts">
+    <div class="sv" id="ckg-v-stmts">…</div>
+    <div class="sl">Statements</div>
+    <a class="sa" target="_blank"
+       href="https://dev-climatekg.semanticclimate.org/query/#SELECT%20%3Fitem%20%3FitemLabel%20%3Fstmts%20WHERE%20%7B%0A%20%20%3Fitem%20wikibase%3Astatements%20%3Fstmts%20.%0A%20%20FILTER(%3Fstmts%20%3E%200)%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D%20ORDER%20BY%20DESC(%3Fstmts)">By item →</a>
+  </div>
+  <div class="ckg-stat ckg-loading" id="ckg-c-mod">
+    <div class="sv" id="ckg-v-mod">…</div>
+    <div class="sl">Last Updated</div>
+    <a class="sa" target="_blank"
+       href="https://dev-climatekg.semanticclimate.org/query/#SELECT%20%3Fitem%20%3FitemLabel%20%3Fmodified%20WHERE%20%7B%0A%20%20%3Fitem%20schema%3AdateModified%20%3Fmodified%20.%0A%20%20FILTER(STRSTARTS(STR(%3Fitem)%2C%20%22https%3A%2F%2Fdev-climatekg.semanticclimate.org%2Fentity%2FQ%22))%0A%20%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%0A%7D%20ORDER%20BY%20DESC(%3Fmodified)%20LIMIT%2020">Recent →</a>
+  </div>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var EP = 'https://dev-climatekg.semanticclimate.org/query/proxy/sparql';
+
+  function ready(id) {
+    var el = document.getElementById('ckg-c-' + id);
+    if (el) el.classList.remove('ckg-loading');
+  }
+  function err(id) {
+    var el = document.getElementById('ckg-c-' + id);
+    if (el) { el.classList.remove('ckg-loading'); el.classList.add('ckg-err'); }
+  }
+  function set(id, val) {
+    var el = document.getElementById('ckg-v-' + id);
+    if (el) el.textContent = val;
+  }
+  function sparql(q, cb) {
+    fetch(EP + '?query=' + encodeURIComponent(q) + '&format=json', {
+      headers: { 'Accept': 'application/sparql-results+json' }
+    })
+    .then(function (r) { return r.json(); })
+    .then(function (d) { cb(null, d); })
+    .catch(function (e) { cb(e, null); });
+  }
+
+  // Items + Statements
+  sparql(
+    'SELECT (COUNT(DISTINCT ?item) AS ?items) (SUM(?stmts) AS ?stmts) ' +
+    'WHERE { ?item wikibase:statements ?stmts . }',
+    function (e, d) {
+      if (e || !d) { err('items'); err('stmts'); return; }
+      var b = d.results.bindings[0] || {};
+      set('items', parseInt(b.items && b.items.value || 0, 10).toLocaleString());
+      set('stmts', parseInt(b.stmts && b.stmts.value || 0, 10).toLocaleString());
+      ready('items'); ready('stmts');
+    }
+  );
+
+  // Properties
+  sparql(
+    'SELECT (COUNT(?p) AS ?count) WHERE { ?p a wikibase:Property . }',
+    function (e, d) {
+      if (e || !d) { err('props'); return; }
+      var b = d.results.bindings[0] || {};
+      set('props', parseInt(b.count && b.count.value || 0, 10).toLocaleString());
+      ready('props');
+    }
+  );
+
+  // Last modified
+  sparql(
+    'SELECT ?dt WHERE { ' +
+    '?item schema:dateModified ?dt . ' +
+    'FILTER(STRSTARTS(STR(?item), "https://dev-climatekg.semanticclimate.org/entity/Q")) ' +
+    '} ORDER BY DESC(?dt) LIMIT 1',
+    function (e, d) {
+      if (e || !d || !d.results.bindings.length) { set('mod', '—'); ready('mod'); return; }
+      var v = d.results.bindings[0].dt.value;
+      set('mod', v.substring(0, 10));
+      ready('mod');
+    }
+  );
+}());
+</script>
+
+</div><!-- .ckg -->
+</html>
+
+== Browse All Items ==
+
+All items in the knowledge graph with their labels, descriptions, and statement counts.
+
+<html>
+<div class="ckg-embed">
+<iframe
+  src="https://dev-climatekg.semanticclimate.org/query/embed.html#SELECT%20%3Fitem%20%3FitemLabel%20%3FitemDescription%20%3Fstmts%20WHERE%20%7B%20%3Fitem%20wikibase%3Astatements%20%3Fstmts%20.%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%20%7D%20ORDER%20BY%20%3Fitem%20LIMIT%20200"
+  height="400"></iframe>
+</div>
+<p class="ckg-ql">
+  <a target="_blank" href="https://dev-climatekg.semanticclimate.org/query/#SELECT%20%3Fitem%20%3FitemLabel%20%3FitemDescription%20%3Fstmts%20WHERE%20%7B%20%3Fitem%20wikibase%3Astatements%20%3Fstmts%20.%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%20%7D%20ORDER%20BY%20%3Fitem%20LIMIT%20200">
+    ↗ Open in Query Service
+  </a>
+</p>
+</html>
+
+== Items by Class ==
+
+Items grouped by their <code>instance of</code> type (property P1). Requires the <i>instance of</i> property to be populated.
+
+<html>
+<div class="ckg-embed">
+<iframe
+  src="https://dev-climatekg.semanticclimate.org/query/embed.html#SELECT%20%3FtypeLabel%20(COUNT(%3Fitem)%20AS%20%3Fcount)%20WHERE%20%7B%20%3Fitem%20wikibase%3Astatements%20%3Fs%20.%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP1%20%3Ftype%20.%20%7D%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%20%7D%20GROUP%20BY%20%3FtypeLabel%20ORDER%20BY%20DESC(%3Fcount)%20LIMIT%2020"
+  height="400"></iframe>
+</div>
+<p class="ckg-ql">
+  <a target="_blank" href="https://dev-climatekg.semanticclimate.org/query/#SELECT%20%3FtypeLabel%20(COUNT(%3Fitem)%20AS%20%3Fcount)%20WHERE%20%7B%20%3Fitem%20wikibase%3Astatements%20%3Fs%20.%20OPTIONAL%20%7B%20%3Fitem%20wdt%3AP1%20%3Ftype%20.%20%7D%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%20%7D%20GROUP%20BY%20%3FtypeLabel%20ORDER%20BY%20DESC(%3Fcount)%20LIMIT%2020">
+    ↗ Open in Query Service
+  </a>
+</p>
+</html>
+
+== Properties ==
+
+All properties defined in this knowledge graph, their data types, and usage counts.
+
+<html>
+<div class="ckg-embed">
+<iframe
+  src="https://dev-climatekg.semanticclimate.org/query/embed.html#SELECT%20%3Fprop%20%3FpropLabel%20%3FpropDescription%20%3Fdatatype%20WHERE%20%7B%20%3Fprop%20a%20wikibase%3AProperty%20.%20%3Fprop%20wikibase%3ApropertyType%20%3Fdatatype%20.%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%20%7D%20ORDER%20BY%20%3Fprop"
+  height="400"></iframe>
+</div>
+<p class="ckg-ql">
+  <a target="_blank" href="https://dev-climatekg.semanticclimate.org/query/#SELECT%20%3Fprop%20%3FpropLabel%20%3FpropDescription%20%3Fdatatype%20WHERE%20%7B%20%3Fprop%20a%20wikibase%3AProperty%20.%20%3Fprop%20wikibase%3ApropertyType%20%3Fdatatype%20.%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%20%7D%20ORDER%20BY%20%3Fprop">
+    ↗ Open in Query Service
+  </a>
+</p>
+</html>
+
+== Recently Modified ==
+
+The 20 most recently edited items.
+
+<html>
+<div class="ckg-embed">
+<iframe
+  src="https://dev-climatekg.semanticclimate.org/query/embed.html#SELECT%20%3Fitem%20%3FitemLabel%20%3Fmodified%20WHERE%20%7B%20%3Fitem%20schema%3AdateModified%20%3Fmodified%20.%20FILTER(STRSTARTS(STR(%3Fitem)%2C%20%22https%3A%2F%2Fdev-climatekg.semanticclimate.org%2Fentity%2FQ%22))%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%20%7D%20ORDER%20BY%20DESC(%3Fmodified)%20LIMIT%2020"
+  height="400"></iframe>
+</div>
+<p class="ckg-ql">
+  <a target="_blank" href="https://dev-climatekg.semanticclimate.org/query/#SELECT%20%3Fitem%20%3FitemLabel%20%3Fmodified%20WHERE%20%7B%20%3Fitem%20schema%3AdateModified%20%3Fmodified%20.%20FILTER(STRSTARTS(STR(%3Fitem)%2C%20%22https%3A%2F%2Fdev-climatekg.semanticclimate.org%2Fentity%2FQ%22))%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%20%7D%20ORDER%20BY%20DESC(%3Fmodified)%20LIMIT%2020">
+    ↗ Open in Query Service
+  </a>
+</p>
+</html>
+
+== Explore with SPARQL ==
+
+Use the [https://dev-climatekg.semanticclimate.org/query/ Query Service] to run custom queries against the knowledge graph.
+
+=== Useful example queries ===
+
+{| class="wikitable"
+|-
+! Query !! Description !! Link
+|-
+| <code>SELECT ?item ?itemLabel WHERE { ?item wikibase:statements ?s . SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }</code>
+| All items with English labels
+| [https://dev-climatekg.semanticclimate.org/query/#SELECT%20%3Fitem%20%3FitemLabel%20WHERE%20%7B%20%3Fitem%20wikibase%3Astatements%20%3Fs%20.%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%20%7D Run]
+|-
+| <code>SELECT ?prop ?propLabel WHERE { ?prop a wikibase:Property . SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } }</code>
+| All properties
+| [https://dev-climatekg.semanticclimate.org/query/#SELECT%20%3Fprop%20%3FpropLabel%20WHERE%20%7B%20%3Fprop%20a%20wikibase%3AProperty%20.%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%20%7D Run]
+|-
+| <code>SELECT ?item ?itemLabel ?stmts WHERE { ?item wikibase:statements ?stmts . FILTER(?stmts > 0) SERVICE wikibase:label { bd:serviceParam wikibase:language "en". } } ORDER BY DESC(?stmts)</code>
+| Items with the most statements
+| [https://dev-climatekg.semanticclimate.org/query/#SELECT%20%3Fitem%20%3FitemLabel%20%3Fstmts%20WHERE%20%7B%20%3Fitem%20wikibase%3Astatements%20%3Fstmts%20.%20FILTER(%3Fstmts%20%3E%200)%20SERVICE%20wikibase%3Alabel%20%7B%20bd%3AserviceParam%20wikibase%3Alanguage%20%22en%22.%20%7D%20%7D%20ORDER%20BY%20DESC(%3Fstmts) Run]
+|}
+
+=== SPARQL reference prefixes ===
+
+The following prefixes are pre-configured in the Query Service:
+
+<pre>
+PREFIX wd:  <https://dev-climatekg.semanticclimate.org/entity/>
+PREFIX wdt: <https://dev-climatekg.semanticclimate.org/prop/direct/>
+PREFIX wikibase: <http://wikiba.se/ontology#>
+PREFIX bd:  <http://www.bigdata.com/rdf#>
+PREFIX schema: <http://schema.org/>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+</pre>
+
+----
+<small>Dashboard auto-populates from [https://dev-climatekg.semanticclimate.org/query/proxy/sparql SPARQL endpoint]. Page source: [[ClimateKG:Dashboard]].</small>

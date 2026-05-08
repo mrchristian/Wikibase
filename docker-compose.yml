@@ -40,6 +40,7 @@
       WDQS_PUBLIC_FRONTEND_URL: "http://localhost:8081"
     volumes:
       - wikibase_config:/config
+      - ./php/uploads.ini:/usr/local/etc/php/conf.d/zz-uploads.ini:ro
       - ./LocalSettings.sitelinks.php:/var/www/html/LocalSettings.d/LocalSettings.sitelinks.php:ro
       - ./WikibaseSitelinksMessages.php:/var/www/html/LocalSettings.d/WikibaseSitelinksMessages.php:ro
       - ./LocalSettings.sparql.php:/var/www/html/LocalSettings.d/LocalSettings.sparql.php:ro

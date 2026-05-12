@@ -8,8 +8,7 @@ COPY php/uploads.ini /usr/local/etc/php/conf.d/zz-uploads.ini
 # Install the ProfessionalWiki SPARQL extension via MediaWiki's Composer support.
 # This bakes the extension into the image so it survives container restarts.
 # See: https://www.mediawiki.org/wiki/Extension:SPARQL
-# USER root ensures composer.local.json can be created on Linux hosts where the
-# base image may run as www-data.
 USER root
-RUN COMPOSER=composer.local.json composer require --no-update professional-wiki/sparql:~1.0 \
+RUN echo '{}' > composer.local.json && chmod 666 composer.local.json \
+    && COMPOSER=composer.local.json composer require --no-update professional-wiki/sparql:~1.0 \
     && composer update professional-wiki/sparql --no-dev -o

@@ -2,7 +2,9 @@
 .venv/
 backup.sql
 local-dump.sql
+local.dump.sql
 memory.md
+page-2026-05-12-0945.xml
 wikibase-images.tar.gz
 images/
 pages-backup/

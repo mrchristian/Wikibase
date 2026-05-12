@@ -2,3 +2,5 @@
 .venv/
 backup.sql
 memory.md
+wikibase-images.tar.gz
+images/

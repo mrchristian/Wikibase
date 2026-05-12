@@ -5,12 +5,6 @@ WORKDIR /var/www/html
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 COPY php/uploads.ini /usr/local/etc/php/conf.d/zz-uploads.ini
 
-# Install the ProfessionalWiki SPARQL extension via MediaWiki's Composer support.
-# This bakes the extension into the image so it survives container restarts.
+# Note: SPARQL extension installation temporarily disabled due to build issues
+# Will re-enable after testing basic deployment
 # See: https://www.mediawiki.org/wiki/Extension:SPARQL
-USER root
-RUN chmod 777 /var/www/html \
-    && git config --global --add safe.directory '*' \
-    && echo '{}' > composer.local.json \
-    && COMPOSER=composer.local.json composer require --no-update professional-wiki/sparql:~1.0 \
-    && composer update professional-wiki/sparql --no-dev -o

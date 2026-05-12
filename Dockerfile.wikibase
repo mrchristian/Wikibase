@@ -5,6 +5,10 @@ WORKDIR /var/www/html
 COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 COPY php/uploads.ini /usr/local/etc/php/conf.d/zz-uploads.ini
 
-# Note: SPARQL extension installation temporarily disabled due to build issues
-# Will re-enable after testing basic deployment
+# Install unzip (required for Composer to download zip distributions efficiently)
+RUN apt-get update && apt-get install -y --no-install-recommends unzip && rm -rf /var/lib/apt/lists/*
+
+# Install ProfessionalWiki SPARQL extension (professional-wiki/sparql)
 # See: https://www.mediawiki.org/wiki/Extension:SPARQL
+RUN COMPOSER_ALLOW_SUPERUSER=1 composer require --working-dir /var/www/html \
+    professional-wiki/sparql --no-interaction --no-progress

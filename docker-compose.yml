@@ -103,7 +103,7 @@
     healthcheck:
       test: ["CMD", "curl", "--silent", "--fail", "localhost"]
       interval: 10s
-      start_period: 2m
+      start_period: 4m
 
   wikibase-sitelinks-init:
     image: wikibase/wikibase:mw1.45.0

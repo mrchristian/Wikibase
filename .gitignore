@@ -1,6 +1,8 @@
 .env
 .venv/
 backup.sql
+local-dump.sql
 memory.md
 wikibase-images.tar.gz
 images/
+pages-backup/

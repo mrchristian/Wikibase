@@ -1,0 +1,4 @@
+# Temporarily disable SPARQL extension during initial sync
+# The extension requires complex Composer setup that failed on Linux due to AppArmor
+# This will be re-enabled after the wiki is running and Docker image is optimized
+# wfLoadExtension( 'SPARQL' ); // Commented out during initial sync

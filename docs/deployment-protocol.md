@@ -60,8 +60,8 @@ The script performed:
 3. Nginx + Certbot installation
 4. Repository cloned to `/opt/wikibase`
 5. `.env` created from `.env.production` with auto-generated passwords:
-   - `DB_PASS`: `AOti5qI4vQ55t7RtOggSOhICh20NbO2`
-   - `MW_ADMIN_PASS`: `B7diYv1qlz4VdsqQ6rBNF3bPPS2XEq2R`
+   - `DB_PASS`: *(stored in `/opt/wikibase/.env` on server — not recorded here)*
+   - `MW_ADMIN_PASS`: *(stored in `/opt/wikibase/.env` on server — not recorded here)*
 6. Nginx reverse proxy configured (port 80 → 8080, /query/ → 8081, /query/proxy/sparql → 9999)
 7. UFW firewall enabled (ports 22, 80, 443 only)
 8. Docker stack started
@@ -159,8 +159,8 @@ Browser → Nginx (443/SSL) → 127.0.0.1:8080  (Wikibase/MediaWiki)
 ### Credentials (stored in `/opt/wikibase/.env` on server)
 
 - **Admin user**: `admin`
-- **Admin password**: `B7diYv1qlz4VdsqQ6rBNF3bPPS2XEq2R`
-- **DB password**: `AOti5qI4vQ55t7RtOggSOhICh20NbO2`
+- **Admin password**: *(see `/opt/wikibase/.env` on server)*
+- **DB password**: *(see `/opt/wikibase/.env` on server)*
 
 ### Production compose command
 

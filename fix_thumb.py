@@ -1,9 +1,10 @@
+import os
 import requests
 import re
 
 BASE_URL = "http://localhost:8080/w/api.php"
 USERNAME = "admin"
-PASSWORD = "adminpass123!"
+PASSWORD = os.environ.get("LOCAL_MW_ADMIN_PASS", "adminpass123!")
 
 session = requests.Session()
 

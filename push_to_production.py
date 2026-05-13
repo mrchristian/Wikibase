@@ -11,6 +11,7 @@ Strategy:
 on production yet, create it with wbeditentity new=property/item.
 """
 
+import os
 import requests
 import json
 import time
@@ -19,7 +20,12 @@ import sys
 SOURCE_API  = "http://localhost:8080/w/api.php"
 TARGET_API  = "https://dev-climatekg.semanticclimate.org/w/api.php"
 USERNAME    = "admin"
-PASSWORD    = "B7diYv1qlz4VdsqQ6rBNF3bPPS2XEq2R"
+PASSWORD    = os.environ.get("MW_ADMIN_PASS")
+if not PASSWORD:
+    print("Error: MW_ADMIN_PASS environment variable is not set.")
+    print("  PowerShell: $env:MW_ADMIN_PASS='your-password'")
+    print("  The value is stored in /opt/wikibase/.env on the production server.")
+    sys.exit(1)
 
 PROP_IDS = [f"P{i}" for i in range(1, 13)]   # P1-P12
 ITEM_IDS = [f"Q{i}" for i in range(1, 193)]   # Q1-Q192

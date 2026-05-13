@@ -7,7 +7,10 @@ import sys
 def register_images():
     images_dir = '/var/www/html/images'
     db_user = 'wikibase'
-    db_pass = 'AOti5qI4vQ55t7RtOggSOhICh20NbO2'
+    db_pass = os.environ.get('DB_PASS')
+    if not db_pass:
+        print('Error: DB_PASS environment variable is not set.')
+        sys.exit(1)
     db_name = 'my_wiki'
     
     # Get list of image files from filesystem

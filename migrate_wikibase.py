@@ -8,6 +8,7 @@ Strategy:
   3. Add statements to every item (second pass) so all IDs exist before referencing.
 """
 
+import os
 import requests
 import json
 import time
@@ -16,7 +17,7 @@ import sys
 SOURCE_API = "https://wikibase.runstop.uk/w/api.php"
 TARGET_API = "http://localhost:8080/w/api.php"
 USERNAME   = "admin"
-PASSWORD   = "adminpass123!"
+PASSWORD   = os.environ.get("LOCAL_MW_ADMIN_PASS", "adminpass123!")
 
 PROP_IDS = [f"P{i}" for i in range(1, 13)]       # P1-P12
 ITEM_IDS = [f"Q{i}" for i in range(1, 193)]       # Q1-Q192

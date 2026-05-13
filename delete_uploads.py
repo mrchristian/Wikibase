@@ -2,13 +2,14 @@
 Delete all File: pages from the local MediaWiki instance.
 """
 
+import os
 import sys
 import time
 import requests
 
 BASE_URL = "http://localhost:8080/w/api.php"
 USERNAME = "admin"
-PASSWORD = "adminpass123!"
+PASSWORD = os.environ.get("LOCAL_MW_ADMIN_PASS", "adminpass123!")
 
 session = requests.Session()
 

@@ -7,7 +7,7 @@ import requests
 BASE_URL = "http://localhost:8080/w/api.php"
 IMAGES_DIR = "images"
 USERNAME = "admin"
-PASSWORD = "adminpass123!"
+PASSWORD = os.environ.get("LOCAL_MW_ADMIN_PASS", "adminpass123!")
 
 session = requests.Session()
 

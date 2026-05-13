@@ -9,6 +9,6 @@ page-2026-05-12-0945.xml
 wikibase-images.tar.gz
 images/
 pages-backup/
-push_to_production.sh
+push_to_production.py
 
 

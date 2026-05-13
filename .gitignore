@@ -10,5 +10,10 @@ wikibase-images.tar.gz
 images/
 pages-backup/
 push_to_production.py
+wikibase-config-*.tar.gz
+wikibase-uploads-*.zip
+wikibase-images-*.tar.gz
+*.tar.gz
+*.zip
 
 

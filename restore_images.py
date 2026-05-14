@@ -40,8 +40,10 @@ def get_source_files():
     for entry in sorted(os.listdir(IMAGES_DIR)):
         full_path = os.path.join(IMAGES_DIR, entry)
         if os.path.isfile(full_path):
-            # Local filename uses spaces; MW title uses underscores
+            # MediaWiki normalises: spaces -> underscores, first character uppercase
             mw_name = entry.replace(" ", "_")
+            if mw_name:
+                mw_name = mw_name[0].upper() + mw_name[1:]
             files.append((full_path, mw_name))
     return files
 

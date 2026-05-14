@@ -8,6 +8,7 @@ images_flat.zip
 page-2026-05-12-0945.xml
 wikibase-images.tar.gz
 images/
+backups/
 pages-backup/
 push_to_production.py
 wikibase-config-*.tar.gz

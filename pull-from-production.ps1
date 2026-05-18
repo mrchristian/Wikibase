@@ -36,6 +36,7 @@ $PROD_USER        = "root"
 $PROD_DB_USER     = "wikibase"
 $PROD_DB_NAME     = "my_wiki"
 $PROD_CONTAINER   = "wikibase-mariadb"
+$SSH_KEY          = "C:\Users\$env:USERNAME\.ssh\id_wikibase_sync"
 
 $LOCAL_DB_USER    = "wikibase"
 $LOCAL_DB_PASS    = "wikibase"
@@ -111,48 +112,18 @@ if (-not $?) { Die "scp command not found. Ensure OpenSSH is installed." }
 
 OK "All required commands found"
 
-# Ensure the SSH agent is running so SSH/SCP calls don't block on passphrase.
-$agentStatus = (Get-Service ssh-agent -ErrorAction SilentlyContinue).Status
-if ($agentStatus -ne "Running") {
-    Write-Host ""
-    Write-Host "WARNING: The Windows SSH Agent (ssh-agent) is not running." -ForegroundColor Yellow
-    Write-Host "SSH commands will block waiting for your key passphrase and the" -ForegroundColor Yellow
-    Write-Host "dump may silently produce a 0-byte file." -ForegroundColor Yellow
-    Write-Host ""
-    Write-Host "Fix (run once in an Administrator PowerShell):" -ForegroundColor Yellow
-    Write-Host "  Set-Service -Name ssh-agent -StartupType Automatic" -ForegroundColor White
-    Write-Host "  Start-Service ssh-agent" -ForegroundColor White
-    Write-Host "  ssh-add C:\Users\$env:USERNAME\.ssh\id_rsa" -ForegroundColor White
-    Write-Host ""
-    $confirm = Read-Host "Continue anyway? Your terminal must be interactive for passphrase input. [y/N]"
-    if ($confirm -ne "y" -and $confirm -ne "Y") { exit 1 }
-} else {
-    # Agent is running — make sure the key is loaded
-    $loadedKeys = & ssh-add -l 2>&1
-    if ($LASTEXITCODE -ne 0) {
-        Write-Host "SSH agent is running but no keys are loaded. Loading key..." -ForegroundColor Yellow
-        ssh-add "C:\Users\$env:USERNAME\.ssh\id_rsa"
-    }
-    OK "SSH agent running with key(s) loaded"
+# Verify the passphrase-free sync key exists
+if (-not (Test-Path $SSH_KEY)) {
+    Die "Sync key not found at $SSH_KEY. Re-run the key setup steps in docs/sync-guide.md."
 }
 
-# Verify we can actually reach the production server before doing any work
+# Verify we can reach the production server without a passphrase
 Write-Host "Testing SSH connectivity to $PROD_HOST ..." -ForegroundColor Yellow
-if ($agentStatus -eq "Running") {
-    # Agent running — test non-interactively
-    $sshTest = ssh -o ConnectTimeout=10 -o BatchMode=yes "${PROD_USER}@${PROD_HOST}" "echo OK" 2>&1
-    if ($LASTEXITCODE -ne 0) {
-        Die "Cannot SSH to ${PROD_USER}@${PROD_HOST}. Ensure your SSH key is loaded in the agent (ssh-add) and the server is reachable.`nSSH output: $sshTest"
-    }
-} else {
-    # No agent — do a quick interactive test; user will be prompted for passphrase
-    Write-Host "No SSH agent — you will be prompted for your key passphrase on each SSH/SCP command." -ForegroundColor Yellow
-    ssh -o ConnectTimeout=10 "${PROD_USER}@${PROD_HOST}" "echo 'SSH OK'"
-    if ($LASTEXITCODE -ne 0) {
-        Die "Cannot SSH to ${PROD_USER}@${PROD_HOST}. Check your key and that the server is reachable."
-    }
+ssh -i $SSH_KEY -o BatchMode=yes -o ConnectTimeout=10 "${PROD_USER}@${PROD_HOST}" "echo OK" | Out-Null
+if ($LASTEXITCODE -ne 0) {
+    Die "Cannot SSH to ${PROD_USER}@${PROD_HOST} with key $SSH_KEY. Ensure the public key is in authorized_keys on the server."
 }
-OK "SSH connectivity confirmed"
+OK "SSH connectivity confirmed (passphrase-free)"
 
 # ---------------------------------------------------------------------------
 # Step 1 — Dump production DB inside the container using --result-file
@@ -170,7 +141,7 @@ $dumpCmd = "docker exec $PROD_CONTAINER mysqldump " +
     "--result-file=$CONTAINER_TEMP " +
     "$PROD_DB_NAME"
 
-ssh "${PROD_USER}@${PROD_HOST}" $dumpCmd
+ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" $dumpCmd
 OK "Dump written to $CONTAINER_TEMP inside $PROD_CONTAINER"
 
 # ---------------------------------------------------------------------------
@@ -178,7 +149,7 @@ OK "Dump written to $CONTAINER_TEMP inside $PROD_CONTAINER"
 # ---------------------------------------------------------------------------
 Step "2/7  Copying dump from container to production host"
 
-ssh "${PROD_USER}@${PROD_HOST}" "docker cp ${PROD_CONTAINER}:${CONTAINER_TEMP} ${PROD_HOST_TEMP}"
+ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" "docker cp ${PROD_CONTAINER}:${CONTAINER_TEMP} ${PROD_HOST_TEMP}"
 OK "Dump now at ${PROD_HOST_TEMP} on production host"
 
 # ---------------------------------------------------------------------------
@@ -187,7 +158,7 @@ OK "Dump now at ${PROD_HOST_TEMP} on production host"
 # ---------------------------------------------------------------------------
 Step "3/7  Downloading dump to local machine"
 
-scp "${PROD_USER}@${PROD_HOST}:${PROD_HOST_TEMP}" $LOCAL_FILE
+scp -i $SSH_KEY "${PROD_USER}@${PROD_HOST}:${PROD_HOST_TEMP}" $LOCAL_FILE
 OK "Dump saved as $LOCAL_FILE"
 
 # Verify the downloaded file is not empty
@@ -198,7 +169,8 @@ if ($fileSize -lt 1MB) {
 OK "Dump size: $([math]::Round($fileSize/1MB, 1)) MB — looks valid"
 
 # Tidy up remote files now they are no longer needed
-ssh "${PROD_USER}@${PROD_HOST}" "docker exec $PROD_CONTAINER rm -f $CONTAINER_TEMP ; rm -f $PROD_HOST_TEMP"
+ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" "docker exec ${PROD_CONTAINER} rm -f ${CONTAINER_TEMP}"
+ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" "rm -f ${PROD_HOST_TEMP}"
 OK "Cleaned up temp files on production server"
 
 # ---------------------------------------------------------------------------
@@ -236,7 +208,7 @@ OK "Cleaned up temp file inside local container"
 #           were generated with the production URL. Truncating them forces
 #           MediaWiki to regenerate them with localhost:8080 URLs.
 # ---------------------------------------------------------------------------
-Step "6/7  Clearing stale cache tables"
+Step "6/8  Clearing stale cache tables"
 
 docker exec $LOCAL_CONTAINER mysql `
     -u $LOCAL_DB_USER -p"$LOCAL_DB_PASS" `
@@ -265,7 +237,7 @@ OK "recentchanges rebuilt"
 #           Restarting wikibase-sitelinks-init re-runs init-sitelinks.sh which
 #           imports sites.xml (localhost:8080 paths) and sets site_language.
 # ---------------------------------------------------------------------------
-Step "6b/7  Re-registering localhost sitelinks (mywiki)"
+Step "6b/8  Re-registering localhost sitelinks (mywiki)"
 
 docker compose --project-directory "C:\Wikibase" restart wikibase-sitelinks-init
 
@@ -277,10 +249,22 @@ OK "Sitelinks init restarted"
 # ---------------------------------------------------------------------------
 # Step 7 — Restart wikibase to clear PHP/object caches
 # ---------------------------------------------------------------------------
-Step "7/7  Restarting wikibase container"
+Step "7/8  Restarting wikibase container"
 
 docker compose --project-directory "C:\Wikibase" restart wikibase
 OK "Wikibase container restarted"
+
+# ---------------------------------------------------------------------------
+# Step 8 — Reset local admin password
+#           The imported production DB carries the production admin password.
+#           Reset it back to the standard localhost default so local logins work.
+# ---------------------------------------------------------------------------
+Step "8/8  Resetting local admin password"
+
+docker exec wikibase php /var/www/html/maintenance/run.php changePassword `
+    --conf /config/LocalSettings.php --user admin --password "adminpass123!"
+
+OK "Admin password reset to local default (adminpass123!)"
 
 # ---------------------------------------------------------------------------
 # Summary
@@ -295,10 +279,7 @@ Write-Host "  Timestamp       : $TIMESTAMP"
 Write-Host ""
 Write-Host "Verify at http://localhost:8080" -ForegroundColor Yellow
 Write-Host ""
-Write-Host "Note: Admin password is now the production admin password." -ForegroundColor Yellow
-Write-Host "To reset it to the local default run:" -ForegroundColor Yellow
-Write-Host '  docker exec wikibase php /var/www/html/maintenance/run.php changePassword \'
-Write-Host '    --conf /config/LocalSettings.php --user admin --password "adminpass123!"'
+Write-Host "  Local admin login: admin / adminpass123!" -ForegroundColor Yellow
 Write-Host ""
 Write-Host "Note: Sitelinks should now be registered for mywiki (localhost)."
 Write-Host "Verify at http://localhost:8080/wiki/Special:Sites"

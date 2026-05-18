@@ -1,0 +1,4 @@
+IPCC:Sr15:About:Error-protocol:#errata1
+IPCC:Sr15:About:Error-protocol:#errata2
+IPCC:Sr15:About:Error-protocol:#errata3
+IPCC:Sr15:Chapter:Summary-for-policy-makers:#_ftnref1

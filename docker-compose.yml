@@ -45,6 +45,8 @@
       - ./LocalSettings.sitelinks.php:/var/www/html/LocalSettings.d/LocalSettings.sitelinks.php:ro
       - ./WikibaseSitelinksMessages.php:/var/www/html/LocalSettings.d/WikibaseSitelinksMessages.php:ro
       - ./LocalSettings.sparql.php:/var/www/html/LocalSettings.d/LocalSettings.sparql.php:ro
+      - ./LocalSettings.uploads.php:/var/www/html/LocalSettings.d/LocalSettings.uploads.php:ro
+      - ./LocalSettings.namespaces.php:/var/www/html/LocalSettings.d/LocalSettings.namespaces.php:ro
     healthcheck:
       test: ["CMD", "curl", "--silent", "--fail", "localhost/wiki/Main_Page"]
       interval: 10s

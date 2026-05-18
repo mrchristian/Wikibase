@@ -26,6 +26,9 @@ services:
       WDQS_PUBLIC_FRONTEND_URL: "https://${WIKIBASE_DOMAIN}/query"
     ports:
       - "127.0.0.1:8080:80"
+    volumes:
+      - ./LocalSettings.uploads.php:/var/www/html/LocalSettings.d/LocalSettings.uploads.php:ro
+      - ./LocalSettings.namespaces.php:/var/www/html/LocalSettings.d/LocalSettings.namespaces.php:ro
 
   wdqs:
     ports:

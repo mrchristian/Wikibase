@@ -1,0 +1,16 @@
+{
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  "markdown.preview.breaks": true,
+  "markdown.preview.openMarkdownLinks": "inPreview",
+  "markdown.validate.enabled": true,
+  "files.associations": {
+    "*.md": "markdown"
+  }
+}

@@ -31,23 +31,105 @@ A `mysqldump` from one environment imported into the other. This is a complete r
 
 ### Pull production → local
 
-```bash
-# 1. Export from production
-ssh root@178.104.156.88 "docker exec wikibase-mariadb mysqldump -u wikibase -p'DB_PASSWORD' my_wiki" > backup.sql
+> **Windows/PowerShell note**: Do NOT use `>` redirection to pipe `mysqldump` output into a file. PowerShell 5.1 writes UTF-16LE (BOM), which corrupts the SQL and causes import errors. See `backups/mariadb-backup-powershell-encoding-notes.md` for the full explanation. The steps below avoid this entirely.
 
-# 2. Import into local
-docker exec -i wikibase-mariadb mysql -u wikibase -pwikibase my_wiki < backup.sql
+#### Automated script
 
-# 3. Fix sitelinks (re-register localhost URLs)
+`pull-from-production.ps1` handles the full process. Run it from PowerShell:
+
+```powershell
+.\pull-from-production.ps1
+```
+
+The script requires the Windows **SSH Agent** to be running with your key loaded so SSH/SCP calls are non-interactive. Set this up once (requires an **Administrator** PowerShell):
+
+```powershell
+# One-time setup — run as Administrator
+Set-Service -Name ssh-agent -StartupType Automatic
+Start-Service ssh-agent
+ssh-add C:\Users\worthingtons\.ssh\id_rsa
+```
+
+After that, `pull-from-production.ps1` runs end-to-end without any manual steps.
+
+#### Manual steps (when SSH agent is not available)
+
+If the SSH agent cannot be enabled (e.g. no admin rights), run the two SSH-dependent steps manually in an interactive terminal where you can type your key passphrase, then let the script or the commands below finish the local import.
+
+**Step 1 — Dump on production and stage on host (run interactively, enter passphrase when prompted):**
+
+```powershell
+# Dump inside the production container using --result-file (writes clean UTF-8 directly to disk)
+ssh root@178.104.156.88 "docker exec wikibase-mariadb mysqldump -u wikibase -p'DB_PASSWORD' --default-character-set=utf8mb4 --single-transaction --quick --max_allowed_packet=512M --result-file=/tmp/prod_pull_now.sql my_wiki && docker cp wikibase-mariadb:/tmp/prod_pull_now.sql /tmp/prod_pull_now.sql && rm /tmp/tmp_inside.sql 2>/dev/null; echo DONE"
+```
+
+**Step 2 — Download to local machine (enter passphrase when prompted):**
+
+```powershell
+scp root@178.104.156.88:/tmp/prod_pull_now.sql C:\Wikibase\backups\prod_pull_now.sql
+```
+
+**Step 3 — Verify the file is not empty before importing:**
+
+```powershell
+Get-Item C:\Wikibase\backups\prod_pull_now.sql | Select-Object Name, @{n='SizeMB';e={[math]::Round($_.Length/1MB,1)}}
+# Must be > 100 MB; if 0 bytes the dump failed — do not proceed
+```
+
+**Step 4 — Copy into the local container and import (no PowerShell stream involved):**
+
+```powershell
+# Stage the file inside the container (docker cp = byte-for-byte, no encoding transform)
+docker cp C:\Wikibase\backups\prod_pull_now.sql wikibase-mariadb:/tmp/restore.sql
+
+# Import from inside the container — MySQL reads its own local filesystem
+docker exec wikibase-mariadb mysql -u wikibase -pwikibase --default-character-set=utf8mb4 my_wiki -e "source /tmp/restore.sql"
+
+# Clean up
+docker exec wikibase-mariadb rm /tmp/restore.sql
+```
+
+**Step 5 — Clear stale production cache entries:**
+
+```powershell
+# The imported dump contains objectcache/l10n_cache rows generated with the production URL.
+# Truncating them forces MediaWiki to regenerate them with localhost:8080 URLs.
+docker exec wikibase-mariadb mysql -u wikibase -pwikibase my_wiki -e "TRUNCATE TABLE objectcache; TRUNCATE TABLE l10n_cache;"
+
+# Run MediaWiki's update/purge routine
+docker exec wikibase php /var/www/html/maintenance/run.php update --conf /config/LocalSettings.php --quick
+
+# Rebuild recentchanges
+docker exec wikibase php /var/www/html/maintenance/run.php rebuildrecentchanges --conf /config/LocalSettings.php
+```
+
+**Step 6 — Re-register localhost sitelinks and restart:**
+
+```powershell
+# Re-run init-sitelinks.sh (imports sites.xml with localhost:8080 paths)
 docker compose restart wikibase-sitelinks-init
 
-# 4. Restart wikibase to clear caches
+# Wait ~15 seconds, then restart wikibase to flush PHP/APCu caches
+Start-Sleep -Seconds 15
 docker compose restart wikibase
+```
 
-# 5. (Optional) Reset admin password to local default
-docker exec wikibase php /var/www/html/maintenance/run.php changePassword \
+**Step 7 — (Optional) Reset admin password to local default:**
+
+```powershell
+# The imported DB has the production admin password; reset it for local use
+docker exec wikibase php /var/www/html/maintenance/run.php changePassword `
   --conf /config/LocalSettings.php --user admin --password "adminpass123!"
 ```
+
+**Step 8 — Verify:**
+
+```powershell
+# Check the latest revision timestamp — should show today's date from production
+docker exec wikibase-mariadb mysql -u wikibase -pwikibase my_wiki -e "SELECT MAX(rev_timestamp) AS latest FROM revision; SELECT COUNT(*) AS pages FROM page;"
+```
+
+Then hard-refresh your browser (`Ctrl+Shift+R`) at http://localhost:8080.
 
 ### Push local → production (full replacement)
 

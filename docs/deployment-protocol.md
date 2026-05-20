@@ -168,3 +168,72 @@ Browser → Nginx (443/SSL) → 127.0.0.1:8080  (Wikibase/MediaWiki)
 cd /opt/wikibase
 docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 ```
+
+---
+
+## 10. Updating Production (Routine Update Workflow)
+
+Use this procedure whenever pushing config changes or a new image build to production.
+
+### When a Dockerfile change is involved (new image required)
+
+Run these steps in order from your local machine:
+
+```bash
+# 1. Commit and push changes to GitHub
+git add <changed files>
+git commit -m "describe change"
+git push
+
+# 2. SSH to production server
+ssh root@178.104.156.88
+
+# 3. On the server: sync repo, rebuild image, restart container
+cd /opt/wikibase
+git pull
+docker build --no-cache -t wikibase-climatekg:latest -f Dockerfile.wikibase .
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d wikibase
+
+# 4. Verify
+curl -s -o /dev/null -w '%{http_code}' https://dev-climatekg.semanticclimate.org/wiki/Main_Page
+docker inspect wikibase --format 'Health: {{.State.Health.Status}}'
+```
+
+> **Note**: Use `--no-cache` on `docker build` whenever the Dockerfile itself has changed. Without it, Docker may reuse stale intermediate layers from the previous (upstream) image that was tagged `wikibase-climatekg:latest`, causing the build to silently pick up wrong cached layers.
+
+### When only config files change (no image rebuild needed)
+
+```bash
+# 1. Commit and push locally
+git add <changed files>
+git commit -m "describe change"
+git push
+
+# 2. On server
+ssh root@178.104.156.88
+cd /opt/wikibase
+git pull
+docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d wikibase
+```
+
+### Dealing with "local changes would be overwritten by merge"
+
+If `git pull` fails on the server because files were placed there manually (outside git), force-sync to the repo:
+
+```bash
+cd /opt/wikibase
+git fetch origin
+git reset --hard origin/master
+git clean -fd   # removes untracked files; .env is gitignored and safe
+```
+
+> **Important**: `git clean -fd` deletes untracked files. The `.env` credentials file is listed in `.gitignore` and will NOT be touched.
+
+### Known issues and lessons learned
+
+| Issue | Cause | Fix |
+|-------|-------|-----|
+| `git pull` fails: "local changes would be overwritten" | Files placed on server manually instead of via git | `git reset --hard origin/master && git clean -fd` |
+| Container unhealthy after pull: SPARQL extension not found | `wikibase-climatekg:latest` was the upstream image re-tagged, never rebuilt from `Dockerfile.wikibase` | Run `docker build --no-cache -t wikibase-climatekg:latest -f Dockerfile.wikibase .` on the server |
+| `composer require` fails: "Permission denied" writing `composer.json` | Base image files are owned by `nobody:nogroup`; PHP's `file_put_contents` cannot overwrite them during a Docker build | Use `git clone` to install extensions with no external PHP library deps; for extensions that do need Composer, `cp` files to `/tmp`, modify there, `cp` back |
+| `composer update` blocked by security advisories | Composer audit blocks packages with known CVEs that are locked in the base image | Avoid full `composer update`; use `git clone` for extensions where possible |

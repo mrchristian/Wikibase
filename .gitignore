@@ -1,6 +1,7 @@
 .env
 .venv/
 backup.sql
+pages/
 local-dump.sql
 memory.md
 images.zip

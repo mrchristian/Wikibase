@@ -47,6 +47,10 @@
       - ./LocalSettings.sparql.php:/var/www/html/LocalSettings.d/LocalSettings.sparql.php:ro
       - ./LocalSettings.uploads.php:/var/www/html/LocalSettings.d/LocalSettings.uploads.php:ro
       - ./LocalSettings.namespaces.php:/var/www/html/LocalSettings.d/LocalSettings.namespaces.php:ro
+      - ./LocalSettings.parserfunctions.php:/var/www/html/LocalSettings.d/LocalSettings.parserfunctions.php:ro
+      - ./LocalSettings.general.php:/var/www/html/LocalSettings.d/LocalSettings.general.php:ro
+      - ./climatekg-web-logos/climatekg-logo.png:/var/www/html/images/ckglogo1.png:ro
+      - ./climatekg-web-logos/climatekg-logo.svg:/var/www/html/images/ckglogo1.svg:ro
     healthcheck:
       test: ["CMD", "curl", "--silent", "--fail", "localhost/wiki/Main_Page"]
       interval: 10s

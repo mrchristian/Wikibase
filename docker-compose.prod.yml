@@ -29,6 +29,7 @@ services:
     volumes:
       - ./LocalSettings.uploads.php:/var/www/html/LocalSettings.d/LocalSettings.uploads.php:ro
       - ./LocalSettings.namespaces.php:/var/www/html/LocalSettings.d/LocalSettings.namespaces.php:ro
+      - ./LocalSettings.parserfunctions.php:/var/www/html/LocalSettings.d/LocalSettings.parserfunctions.php:ro
 
   wdqs:
     ports:

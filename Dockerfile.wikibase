@@ -10,5 +10,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends unzip && rm -rf
 
 # Install ProfessionalWiki SPARQL extension (professional-wiki/sparql)
 # See: https://www.mediawiki.org/wiki/Extension:SPARQL
-RUN COMPOSER_ALLOW_SUPERUSER=1 composer require --working-dir /var/www/html \
+RUN chmod -R u+w /var/www/html \
+ && COMPOSER_ALLOW_SUPERUSER=1 composer require --working-dir /var/www/html \
     professional-wiki/sparql --no-interaction --no-progress

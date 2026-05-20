@@ -14,7 +14,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends unzip && rm -rf
 # overwrite them during build, but cp can. We route through /tmp to get root-owned
 # writable copies of composer.json and composer.lock before running composer update.
 RUN cp /var/www/html/composer.json /tmp/c.json \
- && python3 -c 'import json; d=json.load(open("/tmp/c.json")); d.setdefault("require",{})["professional-wiki/sparql"]="^2.0"; json.dump(d,open("/tmp/c.json","w"),indent=4)' \
+ && python3 -c 'import json; d=json.load(open("/tmp/c.json")); d.setdefault("require",{})["professional-wiki/sparql"]="^1.0"; json.dump(d,open("/tmp/c.json","w"),indent=4)' \
  && cp /tmp/c.json /var/www/html/composer.json \
  && cp /var/www/html/composer.lock /tmp/c.lock \
  && cp /tmp/c.lock /var/www/html/composer.lock \

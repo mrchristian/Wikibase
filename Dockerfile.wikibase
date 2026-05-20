@@ -18,4 +18,4 @@ RUN cp /var/www/html/composer.json /tmp/c.json \
  && cp /tmp/c.json /var/www/html/composer.json \
  && rm /var/www/html/composer.lock \
  && COMPOSER_ALLOW_SUPERUSER=1 composer update --working-dir /var/www/html \
-    professional-wiki/sparql --no-interaction --no-progress
+    --no-interaction --no-progress

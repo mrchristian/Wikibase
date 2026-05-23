@@ -35,10 +35,10 @@ A `mysqldump` from one environment imported into the other. This is a complete r
 
 #### Automated script
 
-`pull-from-production.ps1` handles the full process. Run it from PowerShell:
+`scripts/sync/pull-from-production.ps1` handles the full process. Run it from PowerShell:
 
 ```powershell
-.\pull-from-production.ps1
+.\scripts\sync\pull-from-production.ps1
 ```
 
 The script requires the Windows **SSH Agent** to be running with your key loaded so SSH/SCP calls are non-interactive. Set this up once (requires an **Administrator** PowerShell):
@@ -50,7 +50,7 @@ Start-Service ssh-agent
 ssh-add C:\Users\worthingtons\.ssh\id_rsa
 ```
 
-After that, `pull-from-production.ps1` runs end-to-end without any manual steps.
+After that, `scripts/sync/pull-from-production.ps1` runs end-to-end without any manual steps.
 
 #### Manual steps (when SSH agent is not available)
 

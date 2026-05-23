@@ -1,6 +1,6 @@
 # Pull Database from Production to Local
 
-This guide covers using `pull-from-production.ps1` to overwrite the local Wikibase database with a fresh dump from the production server.
+This guide covers using `scripts/sync/pull-from-production.ps1` to overwrite the local Wikibase database with a fresh dump from the production server.
 
 ---
 
@@ -45,7 +45,7 @@ The production DB password is stored in `/opt/wikibase/.env` on the Hetzner serv
 ## Running the script
 
 ```powershell
-.\pull-from-production.ps1
+.\scripts\sync\pull-from-production.ps1
 ```
 
 No arguments required. Expected runtime: **3–5 minutes** (dominated by the ~350 MB SCP download).
@@ -192,7 +192,7 @@ The SQL dump is kept in `C:\Wikibase\backups\` as a local record. It can be dele
 If images are missing (files uploaded to production are not visible locally), run:
 
 ```powershell
-.\pull-images-from-production.ps1
+.\scripts\sync\pull-images-from-production.ps1
 ```
 
 See [pull-images-guide.md](pull-images-guide.md) for details.
@@ -244,12 +244,12 @@ The SSH agent may not have the sync key loaded, or the key's public half is not 
 
 | Script | What it syncs |
 |---|---|
-| `pull-from-production.ps1` | Full MariaDB database (all wiki content, items, properties, user accounts) |
-| `pull-images-from-production.ps1` | MediaWiki image files (the `wikibase_images` Docker volume) |
+| `scripts/sync/pull-from-production.ps1` | Full MariaDB database (all wiki content, items, properties, user accounts) |
+| `scripts/sync/pull-images-from-production.ps1` | MediaWiki image files (the `wikibase_images` Docker volume) |
 
 For a fully up-to-date local environment matching production, run both scripts in order:
 
 ```powershell
-.\pull-from-production.ps1
-.\pull-images-from-production.ps1
+.\scripts\sync\pull-from-production.ps1
+.\scripts\sync\pull-images-from-production.ps1
 ```

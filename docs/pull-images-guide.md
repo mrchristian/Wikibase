@@ -1,13 +1,13 @@
 # Pull Images from Production to Local
 
-This guide covers using `pull-images-from-production.ps1` to sync MediaWiki image files from the production Hetzner server to your local Docker stack.
+This guide covers using `scripts/sync/pull-images-from-production.ps1` to sync MediaWiki image files from the production Hetzner server to your local Docker stack.
 
 ---
 
 ## When to use this
 
 - New images have been uploaded to production and are missing locally
-- You have just run `pull-from-production.ps1` (full DB restore) and want to match the image files too
+- You have just run `scripts/sync/pull-from-production.ps1` (full DB restore) and want to match the image files too
 - Local image display is broken after a DB sync (files referenced in the DB but not present in the volume)
 
 This script is **additive and replacing** — it overwrites the entire local images volume with the production set. It does not delete files that exist locally but not on production; the tar extraction will overwrite matching filenames and add new ones.
@@ -55,7 +55,7 @@ The script follows a 6-step workflow designed to avoid two known Windows Docker 
 ## Running the script
 
 ```powershell
-.\pull-images-from-production.ps1
+.\scripts\sync\pull-images-from-production.ps1
 ```
 
 No arguments required. The script is self-contained and reads the SSH key path from the configuration block at the top.
@@ -123,7 +123,7 @@ A lower count than production may mean:
 
 ### Port 9876 already in use
 
-Edit the `$HTTP_PORT` variable near the top of `pull-images-from-production.ps1` to any free port, e.g. `9877`.
+Edit the `$HTTP_PORT` variable near the top of `scripts/sync/pull-images-from-production.ps1` to any free port, e.g. `9877`.
 
 ### Thumbnails not regenerating
 
@@ -139,7 +139,7 @@ docker exec wikibase php /var/www/html/maintenance/run.php refreshImageMetadata 
 
 | Script | What it syncs |
 |---|---|
-| `pull-from-production.ps1` | Full MariaDB database (all wiki content, items, properties, user accounts) |
-| `pull-images-from-production.ps1` | MediaWiki image files (the `wikibase_images` Docker volume) |
+| `scripts/sync/pull-from-production.ps1` | Full MariaDB database (all wiki content, items, properties, user accounts) |
+| `scripts/sync/pull-images-from-production.ps1` | MediaWiki image files (the `wikibase_images` Docker volume) |
 
-Run `pull-from-production.ps1` first, then `pull-images-from-production.ps1` to get a fully up-to-date local environment matching production.
+Run `scripts/sync/pull-from-production.ps1` first, then `scripts/sync/pull-images-from-production.ps1` to get a fully up-to-date local environment matching production.

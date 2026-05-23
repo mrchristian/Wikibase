@@ -130,7 +130,7 @@
       - wikibase_config:/config
       - ./LocalSettings.sitelinks.php:/var/www/html/LocalSettings.d/LocalSettings.sitelinks.php:ro
       - ./sites.xml:/extra-config/sites.xml:ro
-      - ./init-sitelinks.sh:/init-sitelinks.sh:ro
+      - ./scripts/deploy/init-sitelinks.sh:/init-sitelinks.sh:ro
     entrypoint: ["bash", "/init-sitelinks.sh"]
     restart: "no"
 

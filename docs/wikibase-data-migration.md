@@ -30,7 +30,7 @@ The project uses two Python scripts to manage Wikibase data across three environ
 
 ## Script 1: Migrate from External Source to Localhost
 
-**File**: `migrate_wikibase.py`
+**File**: `scripts/sync/migrate_wikibase.py`
 
 Migrates P1–P12 (Properties) and Q1–Q192 (Items) from `wikibase.runstop.uk` into the local Wikibase.
 
@@ -44,7 +44,7 @@ Migrates P1–P12 (Properties) and Q1–Q192 (Items) from `wikibase.runstop.uk` 
 
 ```powershell
 & .venv\Scripts\Activate.ps1
-python migrate_wikibase.py
+python scripts/sync/migrate_wikibase.py
 ```
 
 ### Notes
@@ -57,7 +57,7 @@ python migrate_wikibase.py
 
 ## Script 2: Push from Localhost to Production
 
-**File**: `push_to_production.py`
+**File**: `scripts/sync/push_to_production.py`
 
 Syncs the current state of localhost (P1–P12, Q1–Q192) up to the production Wikibase. Safe to re-run at any time — it upserts rather than blindly creating, so it handles both first-time pushes and subsequent updates.
 
@@ -73,7 +73,7 @@ Syncs the current state of localhost (P1–P12, Q1–Q192) up to the production 
 
 ```powershell
 & .venv\Scripts\Activate.ps1
-python push_to_production.py
+python scripts/sync/push_to_production.py
 ```
 
 ### Example output

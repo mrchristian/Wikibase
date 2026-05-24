@@ -84,13 +84,13 @@ cyan "4/5  Obtaining SSL certificates"
 
 echo "  → TEST: test-climatekg.semanticclimate.org"
 ssh "root@$TEST_HOST" \
-    "certbot --nginx -d test-climatekg.semanticclimate.org \
+    "/usr/bin/certbot --nginx -d test-climatekg.semanticclimate.org \
      --non-interactive --agree-tos -m $ADMIN_EMAIL"
 green "SSL issued for TEST"
 
 echo "  → PROD: prod-climatekg.semanticclimate.org"
 ssh "root@$PROD_HOST" \
-    "certbot --nginx -d prod-climatekg.semanticclimate.org \
+    "/usr/bin/certbot --nginx -d prod-climatekg.semanticclimate.org \
      --non-interactive --agree-tos -m $ADMIN_EMAIL"
 green "SSL issued for PROD"
 

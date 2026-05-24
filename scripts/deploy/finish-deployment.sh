@@ -15,7 +15,8 @@
 # =============================================================================
 set -euo pipefail
 
-SSH_KEY="/mnt/c/Users/worthingtons/.ssh/id_rsa"
+SSH_KEY_WIN="/mnt/c/Users/worthingtons/.ssh/id_rsa"
+SSH_KEY_WSL="$HOME/.ssh/id_rsa"
 ADMIN_EMAIL="simon.worthington@tib.eu"
 REPO_DIR="/mnt/c/Wikibase"
 
@@ -29,11 +30,17 @@ green() { echo -e "\033[32m[OK] $*\033[0m"; }
 red()   { echo -e "\033[31m[ERROR] $*\033[0m"; exit 1; }
 
 # ---------------------------------------------------------------------------
-# 1. SSH agent — load key once
+# 1. SSH agent — copy key to WSL and load it
 # ---------------------------------------------------------------------------
 cyan "1/5  Setting up SSH agent"
+
+# Copy key to WSL native filesystem (avoids NTFS permission issues)
+mkdir -p "$HOME/.ssh"
+cp "$SSH_KEY_WIN" "$SSH_KEY_WSL"
+chmod 600 "$SSH_KEY_WSL"
+
 eval "$(ssh-agent -s)"
-ssh-add "$SSH_KEY"
+ssh-add "$SSH_KEY_WSL"
 green "SSH key loaded — passphrase will not be required again this session"
 
 ssh_test() {

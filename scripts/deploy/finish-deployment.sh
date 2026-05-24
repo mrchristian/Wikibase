@@ -63,6 +63,16 @@ ssh "root@$PROD_HOST" "
     cd /opt/wikibase
     git pull --ff-only
     bash scripts/deploy/deploy-prod.sh
+    
+    # Ensure .env was generated properly
+    if [ ! -f .env ]; then
+        cp .env.production .env
+        DB_PASS=\$(openssl rand -base64 24 | tr -d '=/' | cut -c1-32)
+        MW_ADMIN_PASS=\$(openssl rand -base64 24 | tr -d '=/' | cut -c1-32)
+        sed -i \"s/^DB_PASS=.*/DB_PASS=\$DB_PASS/\" .env
+        sed -i \"s/^MW_ADMIN_PASS=.*/MW_ADMIN_PASS=\$MW_ADMIN_PASS/\" .env
+        docker compose -f docker-compose.yml -f docker-compose.prod.yml restart
+    fi
 "
 green "PROD bootstrap complete"
 
@@ -73,9 +83,35 @@ cyan "3/5  Redeploying DEV server ($DEV_HOST) with docker-compose.dev.yml"
 ssh "root@$DEV_HOST" "
     cd /opt/wikibase
     git pull --ff-only
+    
+    # Ensure .env exists with generated credentials
+    if [ ! -f .env ]; then
+        cp .env.dev.template .env
+        # Generate random passwords
+        DB_PASS=\$(openssl rand -base64 24 | tr -d '=/' | cut -c1-32)
+        MW_ADMIN_PASS=\$(openssl rand -base64 24 | tr -d '=/' | cut -c1-32)
+        sed -i \"s/^DB_PASS=.*/DB_PASS=\$DB_PASS/\" .env
+        sed -i \"s/^MW_ADMIN_PASS=.*/MW_ADMIN_PASS=\$MW_ADMIN_PASS/\" .env
+    fi
+    
     docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d
 "
 green "DEV redeployed"
+
+# Ensure TEST .env file
+cyan "  Ensuring TEST .env is generated..."
+ssh "root@$TEST_HOST" "
+    cd /opt/wikibase
+    if [ ! -f .env ]; then
+        cp .env.test.template .env
+        DB_PASS=\$(openssl rand -base64 24 | tr -d '=/' | cut -c1-32)
+        MW_ADMIN_PASS=\$(openssl rand -base64 24 | tr -d '=/' | cut -c1-32)
+        sed -i \"s/^DB_PASS=.*/DB_PASS=\$DB_PASS/\" .env
+        sed -i \"s/^MW_ADMIN_PASS=.*/MW_ADMIN_PASS=\$MW_ADMIN_PASS/\" .env
+        docker compose -f docker-compose.yml -f docker-compose.test.yml restart
+    fi
+"
+green "TEST .env ensured"
 
 # ---------------------------------------------------------------------------
 # 4. Obtain SSL certificates
@@ -95,27 +131,42 @@ green "SSL step for PROD complete"
 # ---------------------------------------------------------------------------
 cyan "5/5  Collecting server credentials"
 
+# Helper function to get credentials from a server
+get_server_creds() {
+    local host=$1
+    local label=$2
+    echo "│  $label  ($host)"
+    
+    # Check if .env exists; if not, try to source it from docker compose env
+    if ssh "root@$host" "test -f /opt/wikibase/.env"; then
+        ssh "root@$host" "grep -E '^(DB_PASS|MW_ADMIN_PASS|MW_ADMIN_NAME|WIKIBASE_DOMAIN)' /opt/wikibase/.env" | sed 's/^/│    /'
+    else
+        # Try to extract from docker compose or docker inspect
+        echo "│    [.env not found, extracting from containers...]"
+        ssh "root@$host" "docker inspect wikibase-mariadb | grep -i 'MYSQL_ROOT_PASSWORD\|WIKIBASE_DB_PASSWORD' || echo 'ERROR: Could not extract credentials'"  | sed 's/^/│    /'
+    fi
+}
+
 echo ""
 echo "┌─────────────────────────────────────────────────────────────────┐"
 echo "│  IMPORTANT — save these credentials now (not stored in git)     │"
 echo "├─────────────────────────────────────────────────────────────────┤"
 
-echo "│  DEV  ($DEV_HOST)"
-ssh "root@$DEV_HOST" "grep -E '^(DB_PASS|MW_ADMIN_PASS|MW_ADMIN_NAME|WIKIBASE_DOMAIN)' /opt/wikibase/.env" | sed 's/^/│    /'
+get_server_creds "$DEV_HOST" "DEV"
 echo "│"
-echo "│  TEST  ($TEST_HOST)"
-ssh "root@$TEST_HOST" "grep -E '^(DB_PASS|MW_ADMIN_PASS|MW_ADMIN_NAME|WIKIBASE_DOMAIN)' /opt/wikibase/.env" | sed 's/^/│    /'
+get_server_creds "$TEST_HOST" "TEST"
 echo "│"
-echo "│  PROD  ($PROD_HOST)"
-ssh "root@$PROD_HOST" "grep -E '^(DB_PASS|MW_ADMIN_PASS|MW_ADMIN_NAME|WIKIBASE_DOMAIN)' /opt/wikibase/.env" | sed 's/^/│    /'
+get_server_creds "$PROD_HOST" "PROD"
 echo "└─────────────────────────────────────────────────────────────────┘"
 
 echo ""
 echo "Add the DB_PASS values to C:\\Wikibase\\.env for the sync scripts:"
 echo ""
-DEV_DB=$(ssh "root@$DEV_HOST" "grep '^DB_PASS' /opt/wikibase/.env | cut -d= -f2")
-TEST_DB=$(ssh "root@$TEST_HOST" "grep '^DB_PASS' /opt/wikibase/.env | cut -d= -f2")
-PROD_DB=$(ssh "root@$PROD_HOST" "grep '^DB_PASS' /opt/wikibase/.env | cut -d= -f2")
+
+# Extract DB passwords; use fallback if .env doesn't exist
+DEV_DB=$(ssh "root@$DEV_HOST" "grep '^DB_PASS' /opt/wikibase/.env 2>/dev/null | cut -d= -f2" || ssh "root@$DEV_HOST" "docker inspect wikibase-mariadb | grep 'MYSQL_ROOT_PASSWORD' | head -1 | sed 's/.*\": \"\([^\"]*\).*/\1/'")
+TEST_DB=$(ssh "root@$TEST_HOST" "grep '^DB_PASS' /opt/wikibase/.env 2>/dev/null | cut -d= -f2" || ssh "root@$TEST_HOST" "docker inspect wikibase-mariadb | grep 'MYSQL_ROOT_PASSWORD' | head -1 | sed 's/.*\": \"\([^\"]*\).*/\1/'")
+PROD_DB=$(ssh "root@$PROD_HOST" "grep '^DB_PASS' /opt/wikibase/.env 2>/dev/null | cut -d= -f2" || ssh "root@$PROD_HOST" "docker inspect wikibase-mariadb | grep 'MYSQL_ROOT_PASSWORD' | head -1 | sed 's/.*\": \"\([^\"]*\).*/\1/'")
 
 echo "  DEV_DB_PASS=$DEV_DB"
 echo "  TEST_DB_PASS=$TEST_DB"

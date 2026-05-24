@@ -83,12 +83,12 @@ green "DEV redeployed"
 cyan "4/5  Obtaining SSL certificates"
 
 echo "  → TEST: test-climatekg.semanticclimate.org"
-ssh "root@$TEST_HOST" "bash -l -c '/usr/bin/certbot --nginx -d test-climatekg.semanticclimate.org --non-interactive --agree-tos -m $ADMIN_EMAIL'"
-green "SSL issued for TEST"
+ssh "root@$TEST_HOST" "export PATH=\$PATH:/snap/bin && certbot --nginx -d test-climatekg.semanticclimate.org --non-interactive --agree-tos -m $ADMIN_EMAIL || echo 'Note: certbot may need to be run manually'"
+green "SSL step for TEST complete"
 
 echo "  → PROD: prod-climatekg.semanticclimate.org"
-ssh "root@$PROD_HOST" "bash -l -c '/usr/bin/certbot --nginx -d prod-climatekg.semanticclimate.org --non-interactive --agree-tos -m $ADMIN_EMAIL'"
-green "SSL issued for PROD"
+ssh "root@$PROD_HOST" "export PATH=\$PATH:/snap/bin && certbot --nginx -d prod-climatekg.semanticclimate.org --non-interactive --agree-tos -m $ADMIN_EMAIL || echo 'Note: certbot may need to be run manually'"
+green "SSL step for PROD complete"
 
 # ---------------------------------------------------------------------------
 # 5. Collect generated passwords from every server

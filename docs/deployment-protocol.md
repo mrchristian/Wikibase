@@ -1,9 +1,26 @@
-# Deployment Protocol — dev-climatekg.semanticclimate.org
+# Deployment Protocol — ClimateKG Wikibase
 
-**Date**: 9 April 2026  
-**Server**: Hetzner Cloud VM (CX22, Ubuntu 24.04, Nuremberg)  
+**Date**: 9 April 2026 (updated May 2026 for 4-tier multi-environment workflow)
+
+---
+
+## Server Registry
+
+| Env  | IP               | Domain                                   | Status                              |
+|------|-----------------|------------------------------------------|-------------------------------------|
+| DEV  | 178.104.156.88  | dev-climatekg.semanticclimate.org        | Existing server — reassigned from PROD |
+| TEST | 178.105.195.111 | test-climatekg.semanticclimate.org       | New server (Hetzner, Ubuntu 24.04)  |
+| PROD | 178.105.222.174 | prod-climatekg.semanticclimate.org       | New server (Hetzner, Ubuntu 24.04)  |
+
+> See [docs/multi-env-workflow.md](multi-env-workflow.md) for the full 4-tier workflow, compose commands, and sync procedures.
+
+---
+
+## Original Deployment Notes (April 2026) — Server now assigned to DEV
+
+**Original server**: Hetzner Cloud CX22, Ubuntu 24.04, Nuremberg  
 **IP**: 178.104.156.88  
-**Domain**: dev-climatekg.semanticclimate.org
+**Original domain**: dev-climatekg.semanticclimate.org
 
 ---
 

@@ -1,23 +1,36 @@
 #!/bin/bash
 # =============================================================================
-# Wikibase Deployment Script for Hetzner VM
-# Domain: dev-climatekg.semanticclimate.org
+# Wikibase Generic Deployment Script for Hetzner VM
 #
-# Run this script on a fresh Ubuntu 24.04 Hetzner VM as root:
-#   ssh root@<server-ip> 'bash -s' < deploy.sh
+# This script is not called directly. Use one of the environment wrappers:
+#   scripts/deploy/deploy-dev.sh
+#   scripts/deploy/deploy-test.sh
+#   scripts/deploy/deploy-prod.sh
 #
-# Or copy the repo first and run from the server:
-#   cd /opt/wikibase && bash deploy.sh
+# Each wrapper sets the required variables and then sources this script.
+#
+# Direct invocation (from a wrapper piped over SSH):
+#   ssh root@<server-ip> 'bash -s' < scripts/deploy/deploy-dev.sh
+#
+# Required variables (set by wrapper before sourcing):
+#   WIKIBASE_DOMAIN   — public hostname (e.g. test-climatekg.semanticclimate.org)
+#   WIKIBASE_ENV      — environment label: dev | test | prod
+#   COMPOSE_FILE      — compose override filename (e.g. docker-compose.test.yml)
+#   ENV_TEMPLATE      — .env template filename   (e.g. .env.test.template)
 # =============================================================================
 set -euo pipefail
 
-DOMAIN="dev-climatekg.semanticclimate.org"
+: "${WIKIBASE_DOMAIN:?Variable WIKIBASE_DOMAIN must be set by the calling wrapper.}"
+: "${WIKIBASE_ENV:?Variable WIKIBASE_ENV must be set by the calling wrapper.}"
+: "${COMPOSE_FILE:?Variable COMPOSE_FILE must be set by the calling wrapper.}"
+: "${ENV_TEMPLATE:?Variable ENV_TEMPLATE must be set by the calling wrapper.}"
+
 ADMIN_EMAIL="simon.worthington@tib.eu"
 REPO_URL="https://github.com/mrchristian/Wikibase.git"
 INSTALL_DIR="/opt/wikibase"
 
 echo "==========================================="
-echo "  Wikibase Deployment — $DOMAIN"
+echo "  Wikibase Deployment [$WIKIBASE_ENV] — $WIKIBASE_DOMAIN"
 echo "==========================================="
 
 # ------------------------------------------------------------------
@@ -63,8 +76,8 @@ fi
 # 5. Create .env from template (if not already present)
 # ------------------------------------------------------------------
 if [ ! -f "$INSTALL_DIR/.env" ]; then
-    echo "[5/7] Creating .env from .env.production template..."
-    cp "$INSTALL_DIR/.env.production" "$INSTALL_DIR/.env"
+    echo "[5/7] Creating .env from $ENV_TEMPLATE template..."
+    cp "$INSTALL_DIR/$ENV_TEMPLATE" "$INSTALL_DIR/.env"
     chmod 600 "$INSTALL_DIR/.env"
 
     # Generate random passwords
@@ -92,39 +105,39 @@ fi
 # ------------------------------------------------------------------
 echo "[6/7] Configuring Nginx reverse proxy..."
 
-cat > /etc/nginx/sites-available/wikibase << 'NGINX'
+cat > /etc/nginx/sites-available/wikibase << NGINX
 server {
     listen 80;
-    server_name dev-climatekg.semanticclimate.org;
+    server_name ${WIKIBASE_DOMAIN};
 
     client_max_body_size 64m;
 
     # Main wiki
     location / {
         proxy_pass http://127.0.0.1:8080;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
         proxy_read_timeout 120s;
     }
 
     # SPARQL query UI
     location /query/ {
         proxy_pass http://127.0.0.1:8081/;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
     }
 
     # SPARQL proxy endpoint (used by the query UI)
     location /query/proxy/sparql {
         proxy_pass http://127.0.0.1:9999/bigdata/namespace/wdq/sparql;
-        proxy_set_header Host $host;
-        proxy_set_header X-Real-IP $remote_addr;
-        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_set_header Host \$host;
+        proxy_set_header X-Real-IP \$remote_addr;
+        proxy_set_header X-Forwarded-For \$proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto \$scheme;
     }
 }
 NGINX
@@ -148,21 +161,21 @@ ufw --force enable
 # Start the stack
 # ------------------------------------------------------------------
 echo ""
-echo "Starting Wikibase stack..."
+echo "Starting Wikibase stack [$WIKIBASE_ENV]..."
 cd "$INSTALL_DIR"
-docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d --build
+docker compose -f docker-compose.yml -f "$COMPOSE_FILE" up -d --build
 
 echo ""
 echo "==========================================="
-echo "  Deployment started!"
+echo "  Deployment started! [$WIKIBASE_ENV]"
 echo "==========================================="
 echo ""
 echo "Containers are initializing (this takes 3–5 minutes)."
 echo "Monitor with:  docker compose logs -f"
 echo ""
-echo "Once the wiki responds at http://$DOMAIN, run:"
-echo "  certbot --nginx -d $DOMAIN --non-interactive --agree-tos -m $ADMIN_EMAIL"
+echo "Once the wiki responds at http://$WIKIBASE_DOMAIN, run:"
+echo "  certbot --nginx -d $WIKIBASE_DOMAIN --non-interactive --agree-tos -m $ADMIN_EMAIL"
 echo ""
-echo "Then verify at: https://$DOMAIN/wiki/Main_Page"
-echo "Query service:  https://$DOMAIN/query/"
+echo "Then verify at: https://$WIKIBASE_DOMAIN/wiki/Main_Page"
+echo "Query service:  https://$WIKIBASE_DOMAIN/query/"
 echo ""

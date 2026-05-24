@@ -1,10 +1,10 @@
 # =============================================================================
-# PRODUCTION overrides for Wikibase on prod-climatekg.semanticclimate.org
-# Server: 178.105.222.174
+# TEST overrides for Wikibase on test-climatekg.semanticclimate.org
+# Server: 178.105.195.111
 #
 # Usage:
-#   cp .env.production .env   (edit passwords first!)
-#   docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
+#   cp .env.test.template .env   (edit passwords first!)
+#   docker compose -f docker-compose.yml -f docker-compose.test.yml up -d
 # =============================================================================
 
 services:
@@ -50,8 +50,7 @@ services:
       WDQS_PUBLIC_URL: "/query/proxy/sparql"
       WIKIBASE_PUBLIC_URL: "https://${WIKIBASE_DOMAIN}/w/api.php"
     volumes:
-      - ./wdqs-custom-config.prod.json:/usr/share/nginx/html/custom-config.json
-
+      - ./wdqs-custom-config.test.json:/usr/share/nginx/html/custom-config.json
 
   wikibase-sitelinks-init:
     environment:
@@ -64,5 +63,5 @@ services:
     volumes:
       - wikibase_config:/config
       - ./LocalSettings.sitelinks.php:/var/www/html/LocalSettings.d/LocalSettings.sitelinks.php:ro
-      - ./sites.prod.xml:/extra-config/sites.xml:ro
+      - ./sites.test.xml:/extra-config/sites.xml:ro
       - ./scripts/deploy/init-sitelinks.sh:/init-sitelinks.sh:ro

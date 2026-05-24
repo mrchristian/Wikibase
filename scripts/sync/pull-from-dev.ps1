@@ -1,14 +1,14 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-    Pull the production MariaDB database and overwrite the local Wikibase instance,
+    Pull the DEV MariaDB database and overwrite the local Wikibase instance,
     then re-register localhost sitelinks.
 
 .DESCRIPTION
-    1. Dumps the production database inside the production MariaDB container using
+    1. Dumps the DEV database inside the DEV MariaDB container using
        --result-file (bypasses SSH/PowerShell stream encoding — see
        backups/mariadb-backup-powershell-encoding-notes.md).
-    2. Copies the dump from the container to the production host, then SCP's it
+    2. Copies the dump from the container to the DEV host, then SCP's it
        to this Windows machine.
     3. Copies the SQL file into the local MariaDB container and imports it from
        inside (no PowerShell stream involved — avoids UTF-16LE corruption).
@@ -16,7 +16,7 @@
     5. Restarts the wikibase container to clear PHP/object caches.
 
 .NOTES
-    Production DB password is read from PROD_DB_PASS in a local .env file
+    DEV DB password is read from PROD_DB_PASS in a local .env file
     (C:\Wikibase\.env), which is gitignored.  Add the following line to that
     file before running:
 
@@ -130,7 +130,7 @@ OK "SSH connectivity confirmed (passphrase-free)"
 #           This writes UTF-8 directly to disk inside the container; it never
 #           passes through any shell redirection that could corrupt encoding.
 # ---------------------------------------------------------------------------
-Step "1/7  Dumping production database (inside container)"
+Step "1/7  Dumping DEV database (inside container)"
 
 $dumpCmd = "docker exec $PROD_CONTAINER mysqldump " +
     "-u $PROD_DB_USER -p'$PROD_DB_PASS' " +
@@ -150,7 +150,7 @@ OK "Dump written to $CONTAINER_TEMP inside $PROD_CONTAINER"
 Step "2/7  Copying dump from container to production host"
 
 ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" "docker cp ${PROD_CONTAINER}:${CONTAINER_TEMP} ${PROD_HOST_TEMP}"
-OK "Dump now at ${PROD_HOST_TEMP} on production host"
+OK "Dump now at ${PROD_HOST_TEMP} on DEV host"
 
 # ---------------------------------------------------------------------------
 # Step 3 — SCP dump to local Windows machine
@@ -271,7 +271,7 @@ OK "Admin password reset to local default (adminpass123!)"
 # ---------------------------------------------------------------------------
 Write-Host ""
 Write-Host "============================================================" -ForegroundColor Green
-Write-Host " Pull from production complete!" -ForegroundColor Green
+Write-Host " Pull from DEV complete!" -ForegroundColor Green
 Write-Host "============================================================" -ForegroundColor Green
 Write-Host ""
 Write-Host "  Local dump file : $LOCAL_FILE"

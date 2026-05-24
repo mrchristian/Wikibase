@@ -4,7 +4,7 @@
 			"uri": "/query/proxy/sparql"
 		},
 		"wikibase": {
-			"uri": "https://prod-climatekg.semanticclimate.org/w/api.php"
+			"uri": "https://dev-climatekg.semanticclimate.org/w/api.php"
 		},
 		"examples": {
 			"server": "https://www.wikidata.org/",

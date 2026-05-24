@@ -45,7 +45,7 @@ Write-Host "Production: prod-climatekg.semanticclimate.org (178.105.222.174)" -F
 Write-Host ""
 $confirm = Read-Host "Type PROMOTE to confirm"
 if ($confirm -ne "PROMOTE") {
-    Write-Host "Aborted — no changes made." -ForegroundColor Yellow
+    Write-Host "Aborted - no changes made." -ForegroundColor Yellow
     exit 0
 }
 
@@ -158,8 +158,8 @@ Step "3/8  Downloading dump to LOCAL machine"
 
 scp -i $SSH_KEY "${DEV_USER}@${DEV_HOST}:${DEV_HOST_TEMP}" $LOCAL_FILE
 $fileSize = (Get-Item $LOCAL_FILE).Length
-if ($fileSize -lt 1MB) { Die "Dump is too small ($fileSize bytes) — mysqldump likely failed." }
-OK "Dump: $([math]::Round($fileSize/1MB, 1)) MB — $LOCAL_FILE"
+if ($fileSize -lt 1MB) { Die "Dump is too small ($fileSize bytes) - mysqldump likely failed." }
+OK "Dump: $([math]::Round($fileSize/1MB, 1)) MB - $LOCAL_FILE"
 
 # Clean up DEV temp files
 ssh -i $SSH_KEY "${DEV_USER}@${DEV_HOST}" "docker exec ${DEV_CONTAINER} rm -f ${CONTAINER_TEMP}; rm -f ${DEV_HOST_TEMP}"

@@ -108,6 +108,7 @@ echo "[6/7] Configuring Nginx reverse proxy..."
 cat > /etc/nginx/sites-available/wikibase << NGINX
 server {
     listen 80;
+    listen [::]:80;
     server_name ${WIKIBASE_DOMAIN};
 
     client_max_body_size 64m;

@@ -55,26 +55,36 @@ if [ "$(ssh_test $PROD_HOST)" = "UNREACHABLE" ]; then
     red "Cannot reach PROD server at $PROD_HOST — check DNS/firewall"
 fi
 
-# Clone repo first, then run scripts from there (avoids stdin piping issues)
-ssh "root@$PROD_HOST" "
+# ---------------------------------------------------------------------------
+# 2.5 Bootstrap/Verify TEST server
+# ---------------------------------------------------------------------------
+cyan "2.5/5  Bootstrapping TEST server ($TEST_HOST)"
+if [ "$(ssh_test $TEST_HOST)" = "UNREACHABLE" ]; then
+    red "Cannot reach TEST server at $TEST_HOST — check DNS/firewall"
+fi
+
+# Clone repo first, ensure deploy is complete
+ssh "root@$TEST_HOST" "
     if [ ! -d /opt/wikibase/.git ]; then
         git clone https://github.com/mrchristian/Wikibase.git /opt/wikibase
+        cd /opt/wikibase
+        bash scripts/deploy/deploy-test.sh
+    else
+        cd /opt/wikibase
+        git pull --ff-only
     fi
-    cd /opt/wikibase
-    git pull --ff-only
-    bash scripts/deploy/deploy-prod.sh
     
     # Ensure .env was generated properly
     if [ ! -f .env ]; then
-        cp .env.production .env
+        cp .env.test.template .env
         DB_PASS=\$(openssl rand -base64 24 | tr -d '=/' | cut -c1-32)
         MW_ADMIN_PASS=\$(openssl rand -base64 24 | tr -d '=/' | cut -c1-32)
         sed -i \"s/^DB_PASS=.*/DB_PASS=\$DB_PASS/\" .env
         sed -i \"s/^MW_ADMIN_PASS=.*/MW_ADMIN_PASS=\$MW_ADMIN_PASS/\" .env
-        docker compose -f docker-compose.yml -f docker-compose.prod.yml restart
+        docker compose -f docker-compose.yml -f docker-compose.test.yml up -d
     fi
 "
-green "PROD bootstrap complete"
+green "TEST bootstrap complete"
 
 # ---------------------------------------------------------------------------
 # 3. Redeploy DEV with docker-compose.dev.yml
@@ -97,21 +107,6 @@ ssh "root@$DEV_HOST" "
     docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d
 "
 green "DEV redeployed"
-
-# Ensure TEST .env file
-cyan "  Ensuring TEST .env is generated..."
-ssh "root@$TEST_HOST" "
-    cd /opt/wikibase
-    if [ ! -f .env ]; then
-        cp .env.test.template .env
-        DB_PASS=\$(openssl rand -base64 24 | tr -d '=/' | cut -c1-32)
-        MW_ADMIN_PASS=\$(openssl rand -base64 24 | tr -d '=/' | cut -c1-32)
-        sed -i \"s/^DB_PASS=.*/DB_PASS=\$DB_PASS/\" .env
-        sed -i \"s/^MW_ADMIN_PASS=.*/MW_ADMIN_PASS=\$MW_ADMIN_PASS/\" .env
-        docker compose -f docker-compose.yml -f docker-compose.test.yml restart
-    fi
-"
-green "TEST .env ensured"
 
 # ---------------------------------------------------------------------------
 # 4. Obtain SSL certificates

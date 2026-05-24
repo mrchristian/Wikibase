@@ -83,15 +83,11 @@ green "DEV redeployed"
 cyan "4/5  Obtaining SSL certificates"
 
 echo "  → TEST: test-climatekg.semanticclimate.org"
-ssh "root@$TEST_HOST" \
-    "/usr/bin/certbot --nginx -d test-climatekg.semanticclimate.org \
-     --non-interactive --agree-tos -m $ADMIN_EMAIL"
+ssh "root@$TEST_HOST" "bash -l -c '/usr/bin/certbot --nginx -d test-climatekg.semanticclimate.org --non-interactive --agree-tos -m $ADMIN_EMAIL'"
 green "SSL issued for TEST"
 
 echo "  → PROD: prod-climatekg.semanticclimate.org"
-ssh "root@$PROD_HOST" \
-    "/usr/bin/certbot --nginx -d prod-climatekg.semanticclimate.org \
-     --non-interactive --agree-tos -m $ADMIN_EMAIL"
+ssh "root@$PROD_HOST" "bash -l -c '/usr/bin/certbot --nginx -d prod-climatekg.semanticclimate.org --non-interactive --agree-tos -m $ADMIN_EMAIL'"
 green "SSL issued for PROD"
 
 # ---------------------------------------------------------------------------

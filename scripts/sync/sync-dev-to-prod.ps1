@@ -64,7 +64,7 @@ $PROD_DB_USER    = "wikibase"
 $PROD_DB_NAME    = "my_wiki"
 $PROD_CONTAINER  = "wikibase-mariadb"
 
-$SSH_KEY         = "C:\Users\$env:USERNAME\.ssh\id_wikibase_sync"
+$SSH_KEY         = "C:\Users\$env:USERNAME\.ssh\id_rsa"
 $BACKUP_DIR      = "C:\Wikibase\backups"
 $TIMESTAMP       = Get-Date -Format "yyyyMMdd_HHmmss"
 $DUMP_FILENAME   = "dev_to_prod_$TIMESTAMP.sql"

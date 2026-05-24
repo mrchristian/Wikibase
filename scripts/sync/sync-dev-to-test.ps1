@@ -48,7 +48,7 @@ $TEST_DB_USER    = "wikibase"
 $TEST_DB_NAME    = "my_wiki"
 $TEST_CONTAINER  = "wikibase-mariadb"
 
-$SSH_KEY         = "C:\Users\$env:USERNAME\.ssh\id_wikibase_sync"
+$SSH_KEY         = "C:\Users\$env:USERNAME\.ssh\id_rsa"
 $BACKUP_DIR      = "C:\Wikibase\backups"
 $TIMESTAMP       = Get-Date -Format "yyyyMMdd_HHmmss"
 $DUMP_FILENAME   = "dev_to_test_$TIMESTAMP.sql"

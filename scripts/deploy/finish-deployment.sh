@@ -55,7 +55,15 @@ if [ "$(ssh_test $PROD_HOST)" = "UNREACHABLE" ]; then
     red "Cannot reach PROD server at $PROD_HOST — check DNS/firewall"
 fi
 
-ssh "root@$PROD_HOST" 'bash -s' < "$REPO_DIR/scripts/deploy/deploy-prod.sh"
+# Clone repo first, then run scripts from there (avoids stdin piping issues)
+ssh "root@$PROD_HOST" "
+    if [ ! -d /opt/wikibase/.git ]; then
+        git clone https://github.com/mrchristian/Wikibase.git /opt/wikibase
+    fi
+    cd /opt/wikibase
+    git pull --ff-only
+    bash scripts/deploy/deploy-prod.sh
+"
 green "PROD bootstrap complete"
 
 # ---------------------------------------------------------------------------

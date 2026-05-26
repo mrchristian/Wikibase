@@ -12,13 +12,13 @@
 $wgRawHtml = true;
 
 // Define the site link group for the local wiki
-$wgWBRepoSettings['siteLinkGroups'] = [ 'mywiki' ];
+$wgWBRepoSettings['siteLinkGroups'] = [ 'climatekg-wiki' ];
 
 // Label for the sitelink group heading (avoids raw ⧼message-key⧽ display)
 $wgExtensionMessagesFiles['WikibaseSitelinks'] = __DIR__ . '/WikibaseSitelinksMessages.php';
 
 // Set the local wiki's global site ID (must match sites table entry)
-$wgWBClientSettings['siteGlobalID'] = 'mywiki';
+$wgWBClientSettings['siteGlobalID'] = 'climatekg-wiki';
 
 // Client-repo connection (same wiki serves as both)
 $wgWBClientSettings['repoUrl'] = $wgServer;

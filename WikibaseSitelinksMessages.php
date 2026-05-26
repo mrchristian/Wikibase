@@ -1,10 +1,10 @@
 <?php
 /**
- * i18n messages for the mywiki sitelink group.
+ * i18n messages for the climatekg-wiki sitelink group.
  */
 $messages = [];
 
 $messages['en'] = [
-    'wikibase-sitelinks-mywiki' => 'Local wiki',
-    'wikibase-group-mywiki' => 'mywiki',
+    'wikibase-sitelinks-climatekg-wiki' => 'Climate KG Wiki',
+    'wikibase-group-climatekg-wiki' => 'climatekg-wiki',
 ];

@@ -1,5 +1,16 @@
 # Deploying Wikibase to a Hetzner Cloud VM
 
+> **Documentation hierarchy**
+> | Doc | Role |
+> |---|---|
+> | [`docs/multi-env-workflow.md`](multi-env-workflow.md) | **Master reference** — how to operate all environments, run scripts, promote content |
+> | `devops-plan.md` | Planning log — itemised task list, design decisions, build rationale |
+> | `docs/deployment-protocol.md` | Historical deployment log; server registry |
+> | **`docs/hetzner-deploy-guide.md`** (this file) | One-time server provisioning on Hetzner |
+> | `docs/sync-guide.md` | Background reference — sync strategy options (context only) |
+> | Sync scripts | [`sync-local-to-test.ps1`](../scripts/sync/sync-local-to-test.ps1) · [`sync-dev-to-test.ps1`](../scripts/sync/sync-dev-to-test.ps1) · [`sync-dev-to-prod.ps1`](../scripts/sync/sync-dev-to-prod.ps1) · [`pull-from-dev.ps1`](../scripts/sync/pull-from-dev.ps1) |
+> | Deploy scripts | [`deploy.sh`](../scripts/deploy/deploy.sh) · [`deploy-dev.sh`](../scripts/deploy/deploy-dev.sh) · [`deploy-test.sh`](../scripts/deploy/deploy-test.sh) · [`deploy-prod.sh`](../scripts/deploy/deploy-prod.sh) |
+
 This guide walks through deploying the Wikibase Docker stack to a Hetzner Cloud VM at **`dev-climatekg.semanticclimate.org`** with HTTPS.
 
 ## Prerequisites

@@ -1,5 +1,16 @@
 # Multi-Environment Workflow — ClimateKG Wikibase
 
+> **Documentation hierarchy**
+> | Doc | Role |
+> |---|---|
+> | **`docs/multi-env-workflow.md`** (this file) | **Master reference** — how to operate all environments, run scripts, promote content |
+> | `devops-plan.md` | Planning log — itemised task list, design decisions, build rationale |
+> | `docs/deployment-protocol.md` | Historical deployment log; server registry |
+> | `docs/hetzner-deploy-guide.md` | One-time server provisioning on Hetzner |
+> | `docs/sync-guide.md` | Background reference — sync strategy options (context only) |
+> | Sync scripts — see §4 | [`sync-local-to-test.ps1`](../scripts/sync/sync-local-to-test.ps1) · [`sync-dev-to-test.ps1`](../scripts/sync/sync-dev-to-test.ps1) · [`sync-dev-to-prod.ps1`](../scripts/sync/sync-dev-to-prod.ps1) · [`pull-from-dev.ps1`](../scripts/sync/pull-from-dev.ps1) |
+> | Deploy scripts — see §6 | [`deploy.sh`](../scripts/deploy/deploy.sh) · [`deploy-dev.sh`](../scripts/deploy/deploy-dev.sh) · [`deploy-test.sh`](../scripts/deploy/deploy-test.sh) · [`deploy-prod.sh`](../scripts/deploy/deploy-prod.sh) |
+
 This document is the master reference for the 4-tier Docker DevOps workflow.
 
 ---
@@ -44,10 +55,26 @@ LOCAL fork  →  PR to master  →  manual git pull on each server  →  redeplo
 
 ## 4. DB Promotion Flow (Content Changes)
 
-Content is edited on DEV and flows upward:
+Content is edited on DEV and flows upward, or LOCAL can push directly to TEST for staging:
 
 ```
-DEV  →  (validate)  →  TEST  →  (approve)  →  PROD
+LOCAL  →  TEST  (immediate staging from local)
+DEV    →  TEST  →  PROD  (standard promotion path)
+```
+
+### LOCAL → TEST  (push local DB + files + LocalSettings to TEST)
+
+```powershell
+.\scripts\sync\sync-local-to-test.ps1
+```
+> Script: [scripts/sync/sync-local-to-test.ps1](../scripts/sync/sync-local-to-test.ps1)
+
+Covers: database dump (395 MB, `--result-file` pattern), uploads/images, `git pull` of LocalSettings on TEST, Admin password reset to `TEST_MW_ADMIN_PASS`, cache flush, `run.php update`, container restart.
+
+Required entries in `C:\Wikibase\.env`:
+```
+TEST_DB_PASS=<test-mariadb-password>
+TEST_MW_ADMIN_PASS=<test-mediawiki-admin-password>
 ```
 
 ### DEV → TEST
@@ -55,20 +82,30 @@ DEV  →  (validate)  →  TEST  →  (approve)  →  PROD
 ```powershell
 .\scripts\sync\sync-dev-to-test.ps1
 ```
+> Script: [scripts/sync/sync-dev-to-test.ps1](../scripts/sync/sync-dev-to-test.ps1)
 
-### DEV → PROD
+### DEV → PROD  (DB)
 
 ```powershell
 .\scripts\sync\sync-dev-to-prod.ps1
 ```
+> Script: [scripts/sync/sync-dev-to-prod.ps1](../scripts/sync/sync-dev-to-prod.ps1)
+> **Note**: requires typing `PROMOTE` at the confirmation prompt to prevent accidental overwrites.
 
-> **Note**: `sync-dev-to-prod.ps1` requires typing `PROMOTE` at the confirmation prompt to prevent accidental overwrites.
+### DEV → PROD  (uploads/images only)
+
+```powershell
+.\scripts\sync\sync-dev-to-prod-files.ps1
+```
+> Script: [scripts/sync/sync-dev-to-prod-files.ps1](../scripts/sync/sync-dev-to-prod-files.ps1)
+> **Note**: also requires `PROMOTE` confirmation.
 
 ### LOCAL ← DEV  (pull DEV content to LOCAL for testing)
 
 ```powershell
 .\scripts\sync\pull-from-dev.ps1
 ```
+> Script: [scripts/sync/pull-from-dev.ps1](../scripts/sync/pull-from-dev.ps1)
 
 ---
 
@@ -115,6 +152,8 @@ cat scripts/deploy/deploy-test.sh scripts/deploy/deploy.sh | ssh root@46.224.66.
 # PROD (new server)
 cat scripts/deploy/deploy-prod.sh scripts/deploy/deploy.sh | ssh root@178.105.222.174 'bash -s'
 ```
+
+Scripts: [deploy.sh](../scripts/deploy/deploy.sh) · [deploy-dev.sh](../scripts/deploy/deploy-dev.sh) · [deploy-test.sh](../scripts/deploy/deploy-test.sh) · [deploy-prod.sh](../scripts/deploy/deploy-prod.sh)
 
 > **Why `cat ... | ssh 'bash -s'` and not `ssh 'bash -s' < wrapper.sh`?**
 > When a single script is piped to `bash -s`, `BASH_SOURCE[0]` is empty so the wrapper cannot locate `deploy.sh` on the remote server (it hasn't been cloned yet). Concatenating both files into the pipe means `deploy.sh` content flows inline immediately after the wrapper sets its variables.

@@ -1,4 +1,5 @@
 .env
+.env.clean
 .venv/
 backup.sql
 pages/

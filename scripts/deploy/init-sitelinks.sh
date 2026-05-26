@@ -11,7 +11,13 @@ cd /var/www/html
     "DELETE si FROM site_identifiers si INNER JOIN sites s ON si.si_site = s.site_id WHERE s.site_global_key = 'mywiki';" 2>&1 || true
 /usr/local/bin/php maintenance/run.php sql --conf /config/LocalSettings.php --query \
     "DELETE FROM sites WHERE site_global_key = 'mywiki';" 2>&1 || true
-echo "[OK] Legacy mywiki entries removed"
+echo "[OK] Legacy mywiki site entries removed"
+
+# Migrate existing sitelink data from mywiki to climatekg-wiki
+echo "Migrating existing sitelinks from 'mywiki' to 'climatekg-wiki'..."
+/usr/local/bin/php maintenance/run.php sql --conf /config/LocalSettings.php --query \
+    "UPDATE wb_items_per_site SET ips_site_id = 'climatekg-wiki' WHERE ips_site_id = 'mywiki';" 2>&1 || true
+echo "[OK] Existing sitelinks migrated"
 
 # Import sites into the database
 echo "Importing sites from sites.xml..."

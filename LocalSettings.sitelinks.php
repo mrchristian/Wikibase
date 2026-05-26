@@ -14,6 +14,10 @@ $wgRawHtml = true;
 // Define the site link group for the local wiki
 $wgWBRepoSettings['siteLinkGroups'] = [ 'climatekg-wiki' ];
 
+// Register this database as a local client that can receive sitelinks
+// This allows the repo to create sitelinks to pages in this same wiki
+$wgWBRepoSettings['localClientDatabases'] = [ $wgDBname ];
+
 // Label for the sitelink group heading (avoids raw ⧼message-key⧽ display)
 // Load custom sitelink messages directly via hook
 $wgHooks['LocalisationCacheRecache'][] = function ( $cache, $code, &$cachedData ) {

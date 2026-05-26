@@ -21,7 +21,7 @@ ADMIN_EMAIL="simon.worthington@tib.eu"
 REPO_DIR="/mnt/c/Wikibase"
 
 DEV_HOST="178.104.156.88"
-TEST_HOST="178.105.195.111"
+TEST_HOST="46.224.66.24"
 PROD_HOST="178.105.222.174"
 
 # Coloured output helpers

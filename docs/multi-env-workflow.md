@@ -10,7 +10,7 @@ This document is the master reference for the 4-tier Docker DevOps workflow.
 |-------|-----------------|------------------------------------------|----------------------------------------------|
 | LOCAL | workstation     | localhost:8080                           | Configuration development using GitHub forks |
 | DEV   | 178.104.156.88  | dev-climatekg.semanticclimate.org        | Live content editing; source of truth for DB |
-| TEST  | 178.105.195.111 | test-climatekg.semanticclimate.org       | Staging; validating DB + code before PROD    |
+| TEST  | 46.224.66.24    | test-climatekg.semanticclimate.org       | Staging; validating DB + code before PROD    |
 | PROD  | 178.105.222.174 | prod-climatekg.semanticclimate.org       | Public production instance                   |
 
 ---
@@ -87,7 +87,7 @@ docker compose up -d
 docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d
 ```
 
-### TEST  (on 178.105.195.111)
+### TEST  (on 46.224.66.24)
 
 ```sh
 docker compose -f docker-compose.yml -f docker-compose.test.yml up -d
@@ -105,16 +105,19 @@ docker compose -f docker-compose.yml -f docker-compose.prod.yml up -d
 
 Run once from LOCAL to bootstrap a brand-new server:
 
-```powershell
+```sh
 # DEV (already built — use only to rebuild)
-ssh root@178.104.156.88 'bash -s' < scripts/deploy/deploy-dev.sh
+cat scripts/deploy/deploy-dev.sh scripts/deploy/deploy.sh | ssh root@178.104.156.88 'bash -s'
 
 # TEST (new server)
-ssh root@178.105.195.111 'bash -s' < scripts/deploy/deploy-test.sh
+cat scripts/deploy/deploy-test.sh scripts/deploy/deploy.sh | ssh root@46.224.66.24 'bash -s'
 
 # PROD (new server)
-ssh root@178.105.222.174 'bash -s' < scripts/deploy/deploy-prod.sh
+cat scripts/deploy/deploy-prod.sh scripts/deploy/deploy.sh | ssh root@178.105.222.174 'bash -s'
 ```
+
+> **Why `cat ... | ssh 'bash -s'` and not `ssh 'bash -s' < wrapper.sh`?**
+> When a single script is piped to `bash -s`, `BASH_SOURCE[0]` is empty so the wrapper cannot locate `deploy.sh` on the remote server (it hasn't been cloned yet). Concatenating both files into the pipe means `deploy.sh` content flows inline immediately after the wrapper sets its variables.
 
 Each deploy script:
 1. Updates the OS and installs Docker, Nginx, Certbot
@@ -166,7 +169,7 @@ ssh-keygen -t ed25519 -f C:\Users\<user>\.ssh\id_wikibase_sync -N ""
 
 # Copy public key to each server
 type C:\Users\<user>\.ssh\id_wikibase_sync.pub | ssh root@178.104.156.88 "cat >> ~/.ssh/authorized_keys"
-type C:\Users\<user>\.ssh\id_wikibase_sync.pub | ssh root@178.105.195.111 "cat >> ~/.ssh/authorized_keys"
+type C:\Users\<user>\.ssh\id_wikibase_sync.pub | ssh root@46.224.66.24 "cat >> ~/.ssh/authorized_keys"
 type C:\Users\<user>\.ssh\id_wikibase_sync.pub | ssh root@178.105.222.174 "cat >> ~/.ssh/authorized_keys"
 
 # Enable SSH agent (Administrator PowerShell — one-time)

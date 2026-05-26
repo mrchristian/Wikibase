@@ -1,6 +1,6 @@
 # =============================================================================
 # TEST overrides for Wikibase on test-climatekg.semanticclimate.org
-# Server: 178.105.195.111
+# Server: 46.224.66.24
 #
 # Usage:
 #   cp .env.test.template .env   (edit passwords first!)

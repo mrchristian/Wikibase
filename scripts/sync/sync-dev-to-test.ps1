@@ -42,7 +42,7 @@ $DEV_DB_USER     = "wikibase"
 $DEV_DB_NAME     = "my_wiki"
 $DEV_CONTAINER   = "wikibase-mariadb"
 
-$TEST_HOST       = "178.105.195.111"
+$TEST_HOST       = "46.224.66.24"
 $TEST_USER       = "root"
 $TEST_DB_USER    = "wikibase"
 $TEST_DB_NAME    = "my_wiki"

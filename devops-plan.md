@@ -6,7 +6,7 @@
 |-------|-----------------|------------------------------------------|-------------------------------|-----------------------------------------|
 | LOCAL | workstation     | localhost:8080                           | docker-compose.override.yml   | Unchanged                               |
 | DEV   | 178.104.156.88  | dev-climatekg.semanticclimate.org        | docker-compose.dev.yml (new)  | Existing server — reassigned from PROD  |
-| TEST  | 178.105.195.111 | test-climatekg.semanticclimate.org       | docker-compose.test.yml (new) | New server, full build from scratch     |
+| TEST  | 46.224.66.24    | test-climatekg.semanticclimate.org       | docker-compose.test.yml (new) | Re-provisioned fresh Ubuntu OS — full build from scratch |
 | PROD  | 178.105.222.174 | prod-climatekg.semanticclimate.org       | docker-compose.prod.yml (upd) | New server, full build from scratch     |
 
 ---
@@ -51,10 +51,22 @@ ssh root@<ip> 'bash -s' < scripts/deploy/deploy-test.sh
 
 All run from LOCAL Windows workstation. Follow the proven `mysqldump --result-file` + `docker cp` + `mysql source` pattern (avoids PowerShell UTF-16LE corruption).
 
-17. **Create** `scripts/sync/sync-dev-to-test.ps1`
+17. **Create** `scripts/sync/sync-dev-to-test.ps1` ✅ (DB promotion from DEV)
     - SSH → DEV: `mysqldump --result-file` inside container, `docker cp` to host
     - `scp` to LOCAL `backups/`, size-verify (>100 MB)
     - `scp` to TEST host, SSH → TEST: `docker cp`, `mysql source`, `TRUNCATE objectcache; TRUNCATE l10n_cache;`, `run.php update --quick`, restart containers
+
+17a. **Create** `scripts/sync/sync-local-to-test.ps1` ✅ (DB + files + LocalSettings from LOCAL)
+    - Dumps LOCAL MariaDB using `docker exec ... mysqldump --result-file` inside container (avoids PowerShell UTF-16LE character-map corruption)
+    - `docker cp` to LOCAL Windows host, size-verify, `scp` to TEST host
+    - Import on TEST via `docker cp` + `mysql source` inside container (no PS stream)
+    - `TRUNCATE objectcache; TRUNCATE l10n_cache;` (clears LOCAL domain URLs)
+    - Resets MediaWiki Admin password to `TEST_MW_ADMIN_PASS` from `C:\Wikibase\.env` using `run.php changePassword`
+    - `run.php update --quick` + `rebuildrecentchanges`
+    - Syncs uploads/images: `tar --exclude=thumb` inside LOCAL container → `docker cp` → `scp` → extract inside TEST container via `--strip-components=3`
+    - `git pull origin master` on TEST to update LocalSettings bind-mount files
+    - Restarts `wikibase-sitelinks-init` (15 s) then `wikibase`
+    - Required `.env` keys: `TEST_DB_PASS`, `TEST_MW_ADMIN_PASS`
 18. **Create** `scripts/sync/sync-dev-to-prod.ps1` — same pattern targeting PROD server
 19. **Rename** `scripts/sync/pull-from-production.ps1` → `pull-from-dev.ps1` — update header comments; no logic changes (server IP is unchanged at 178.104.156.88)
 
@@ -74,8 +86,8 @@ All run from LOCAL Windows workstation. Follow the proven `mysqldump --result-fi
 ## Verification Plan
 
 1. **DEV** — push Phase 1 changes → SSH to 178.104.156.88: `git pull` then `docker compose -f docker-compose.yml -f docker-compose.dev.yml up -d` → confirm wiki at `https://dev-climatekg.semanticclimate.org`
-2. **TEST** — `ssh root@178.105.195.111 'bash -s' < scripts/deploy/deploy-test.sh` → all 5 containers healthy; SSL via Certbot; wiki at `https://test-climatekg.semanticclimate.org`
-3. **PROD** — `ssh root@178.105.222.174 'bash -s' < scripts/deploy/deploy-prod.sh` → same verification at `https://prod-climatekg.semanticclimate.org`
+2. **TEST** — `cat scripts/deploy/deploy-test.sh scripts/deploy/deploy.sh | ssh root@46.224.66.24 'bash -s'` → all 5 containers healthy; SSL via Certbot; wiki at `https://test-climatekg.semanticclimate.org`
+3. **PROD** — `cat scripts/deploy/deploy-prod.sh scripts/deploy/deploy.sh | ssh root@178.105.222.174 'bash -s'` → same verification at `https://prod-climatekg.semanticclimate.org`
 4. **Sync** — run `scripts/sync/sync-dev-to-test.ps1` → confirm TEST wiki shows DEV content
 5. **Git workflow** — create LOCAL fork PR → merge to master → `git pull` on DEV → redeploy → confirms code promotion path
 

@@ -9,7 +9,7 @@
 | Env  | IP               | Domain                                   | Status                              |
 |------|-----------------|------------------------------------------|-------------------------------------|
 | DEV  | 178.104.156.88  | dev-climatekg.semanticclimate.org        | Existing server — reassigned from PROD |
-| TEST | 178.105.195.111 | test-climatekg.semanticclimate.org       | New server (Hetzner, Ubuntu 24.04)  |
+| TEST | 46.224.66.24    | test-climatekg.semanticclimate.org       | Re-provisioned fresh Ubuntu OS (May 2026)  |
 | PROD | 178.105.222.174 | prod-climatekg.semanticclimate.org       | New server (Hetzner, Ubuntu 24.04)  |
 
 > See [docs/multi-env-workflow.md](multi-env-workflow.md) for the full 4-tier workflow, compose commands, and sync procedures.

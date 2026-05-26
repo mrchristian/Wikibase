@@ -15,7 +15,13 @@ $wgRawHtml = true;
 $wgWBRepoSettings['siteLinkGroups'] = [ 'climatekg-wiki' ];
 
 // Label for the sitelink group heading (avoids raw ⧼message-key⧽ display)
-$wgExtensionMessagesFiles['WikibaseSitelinks'] = __DIR__ . '/WikibaseSitelinksMessages.php';
+// Load custom sitelink messages directly via hook
+$wgHooks['LocalisationCacheRecache'][] = function ( $cache, $code, &$cachedData ) {
+    if ( $code === 'en' ) {
+        $cachedData['messages']['wikibase-sitelinks-climatekg-wiki'] = 'Climate KG Wiki';
+        $cachedData['messages']['wikibase-group-climatekg-wiki'] = 'climatekg-wiki';
+    }
+};
 
 // Set the local wiki's global site ID (must match sites table entry)
 $wgWBClientSettings['siteGlobalID'] = 'climatekg-wiki';

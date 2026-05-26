@@ -62,6 +62,15 @@ WHERE site_global_key = 'climatekg-wiki';
 /usr/local/bin/php maintenance/run.php sql --conf /config/LocalSettings.php --query "$SITE_FIX_SQL" 2>&1 || true
 echo "[OK] Site domain and protocol configured"
 
+# Add interwiki entry for climatekg-wiki (needed for sitelink validation)
+echo "Adding interwiki entry for climatekg-wiki..."
+INTERWIKI_SQL="
+INSERT IGNORE INTO interwiki (iw_prefix, iw_url, iw_api, iw_wikiid, iw_local)
+VALUES ('climatekg-wiki', 'http://localhost/wiki/\$1', 'http://localhost/w/api.php', '', 1);
+"
+/usr/local/bin/php maintenance/run.php sql --conf /config/LocalSettings.php --query "$INTERWIKI_SQL" 2>&1 || true
+echo "[OK] Interwiki entry added"
+
 echo ""
 echo "=== Sitelinks initialization complete ==="
 echo "Now restart the wikibase container to load the new PHP settings:"

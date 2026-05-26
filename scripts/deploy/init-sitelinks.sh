@@ -31,6 +31,29 @@ echo "Setting site language for climatekg-wiki..."
     "UPDATE sites SET site_language = 'en' WHERE site_global_key = 'climatekg-wiki' AND (site_language IS NULL OR site_language = '');" 2>&1
 echo "[OK] Site language set to 'en'"
 
+# Fix site_domain and site_protocol (importSites can corrupt these fields).
+# Extract correct values from the site_data paths which are imported correctly.
+echo "Fixing site_domain and site_protocol..."
+SITE_FIX_SQL="
+UPDATE sites
+SET
+    site_protocol = CASE
+        WHEN site_data LIKE '%https://%' THEN 'https'
+        WHEN site_data LIKE '%http://%' THEN 'http'
+        ELSE site_protocol
+    END,
+    site_domain = CASE
+        WHEN site_data LIKE '%localhost:8080%' THEN 'localhost:8080'
+        WHEN site_data LIKE '%dev-climatekg.semanticclimate.org%' THEN 'dev-climatekg.semanticclimate.org'
+        WHEN site_data LIKE '%test-climatekg.semanticclimate.org%' THEN 'test-climatekg.semanticclimate.org'
+        WHEN site_data LIKE '%prod-climatekg.semanticclimate.org%' THEN 'prod-climatekg.semanticclimate.org'
+        ELSE site_domain
+    END
+WHERE site_global_key = 'climatekg-wiki';
+"
+/usr/local/bin/php maintenance/run.php sql --conf /config/LocalSettings.php --query "$SITE_FIX_SQL" 2>&1 || true
+echo "[OK] Site domain and protocol configured"
+
 echo ""
 echo "=== Sitelinks initialization complete ==="
 echo "Now restart the wikibase container to load the new PHP settings:"

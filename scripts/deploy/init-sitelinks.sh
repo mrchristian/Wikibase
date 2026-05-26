@@ -39,6 +39,8 @@ echo "[OK] Site language set to 'en'"
 
 # Fix site_domain and site_protocol (importSites can corrupt these fields).
 # Extract correct values from the site_data paths which are imported correctly.
+# Note: site_domain must be reachable from inside the container for API validation.
+# For LOCAL, use 'localhost' (not 'localhost:8080') since port 8080 is only on host.
 echo "Fixing site_domain and site_protocol..."
 SITE_FIX_SQL="
 UPDATE sites
@@ -49,7 +51,7 @@ SET
         ELSE site_protocol
     END,
     site_domain = CASE
-        WHEN site_data LIKE '%localhost:8080%' THEN 'localhost:8080'
+        WHEN site_data LIKE '%localhost:8080%' THEN 'localhost'
         WHEN site_data LIKE '%dev-climatekg.semanticclimate.org%' THEN 'dev-climatekg.semanticclimate.org'
         WHEN site_data LIKE '%test-climatekg.semanticclimate.org%' THEN 'test-climatekg.semanticclimate.org'
         WHEN site_data LIKE '%prod-climatekg.semanticclimate.org%' THEN 'prod-climatekg.semanticclimate.org'

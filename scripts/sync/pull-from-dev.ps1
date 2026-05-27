@@ -16,11 +16,11 @@
     5. Restarts the wikibase container to clear PHP/object caches.
 
 .NOTES
-    DEV DB password is read from PROD_DB_PASS in a local .env file
+    DEV DB password is read from DEV_DB_PASS in a local .env file
     (C:\Wikibase\.env), which is gitignored.  Add the following line to that
     file before running:
 
-        PROD_DB_PASS=<actual-password>
+        DEV_DB_PASS=<actual-password>
 
     If the variable is absent the script will prompt securely.
 #>
@@ -31,12 +31,12 @@ $ErrorActionPreference = "Stop"
 # ---------------------------------------------------------------------------
 # Configuration
 # ---------------------------------------------------------------------------
-$PROD_HOST        = "178.104.156.88"
-$PROD_USER        = "root"
-$PROD_DB_USER     = "wikibase"
-$PROD_DB_NAME     = "my_wiki"
-$PROD_CONTAINER   = "wikibase-mariadb"
-$SSH_KEY          = "C:\Users\$env:USERNAME\.ssh\id_wikibase_sync"
+$DEV_HOST        = "178.104.156.88"
+$DEV_USER        = "root"
+$DEV_DB_USER     = "wikibase"
+$DEV_DB_NAME     = "my_wiki"
+$DEV_CONTAINER   = "wikibase-mariadb"
+$SSH_KEY         = "C:\Users\$env:USERNAME\.ssh\id_wikibase_sync"
 
 $LOCAL_DB_USER    = "wikibase"
 $LOCAL_DB_PASS    = "wikibase"
@@ -47,29 +47,29 @@ $BACKUP_DIR       = "C:\Wikibase\backups"
 $TIMESTAMP        = Get-Date -Format "yyyyMMdd_HHmmss"
 $DUMP_FILENAME    = "prod_pull_$TIMESTAMP.sql"
 
-$CONTAINER_TEMP   = "/tmp/$DUMP_FILENAME"      # path inside production container
-$PROD_HOST_TEMP   = "/tmp/$DUMP_FILENAME"      # path on production host after docker cp
+$CONTAINER_TEMP   = "/tmp/$DUMP_FILENAME"      # path inside DEV container
+$DEV_HOST_TEMP    = "/tmp/$DUMP_FILENAME"      # path on DEV host after docker cp
 $LOCAL_FILE       = Join-Path $BACKUP_DIR $DUMP_FILENAME
 $LOCAL_CONTAINER_TEMP = "/tmp/restore.sql"      # path inside local container
 
 # ---------------------------------------------------------------------------
-# Resolve production DB password
+# Resolve DEV DB password
 # ---------------------------------------------------------------------------
 $envFile = "C:\Wikibase\.env"
-$PROD_DB_PASS = $null
+$DEV_DB_PASS = $null
 
 if (Test-Path $envFile) {
-    Get-Content $envFile | Where-Object { $_ -match "^PROD_DB_PASS\s*=" } | ForEach-Object {
-        $PROD_DB_PASS = ($_ -split "=", 2)[1].Trim()
+    Get-Content $envFile | Where-Object { $_ -match "^DEV_DB_PASS\s*=" } | ForEach-Object {
+        $DEV_DB_PASS = ($_ -split "=", 2)[1].Trim()
     }
 }
 
-if ([string]::IsNullOrEmpty($PROD_DB_PASS)) {
+if ([string]::IsNullOrEmpty($DEV_DB_PASS)) {
     Write-Host ""
-    Write-Host "PROD_DB_PASS not found in $envFile."
-    Write-Host "Add  PROD_DB_PASS=<password>  to that file (it is gitignored), or enter it now."
-    $securePwd = Read-Host "Production DB password" -AsSecureString
-    $PROD_DB_PASS = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto(
+    Write-Host "DEV_DB_PASS not found in $envFile."
+    Write-Host "Add  DEV_DB_PASS=<password>  to that file (it is gitignored), or enter it now."
+    $securePwd = Read-Host "DEV DB password" -AsSecureString
+    $DEV_DB_PASS = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto(
         [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePwd)
     )
 }
@@ -117,11 +117,11 @@ if (-not (Test-Path $SSH_KEY)) {
     Die "Sync key not found at $SSH_KEY. Re-run the key setup steps in docs/sync-guide.md."
 }
 
-# Verify we can reach the production server without a passphrase
-Write-Host "Testing SSH connectivity to $PROD_HOST ..." -ForegroundColor Yellow
-ssh -i $SSH_KEY -o BatchMode=yes -o ConnectTimeout=10 "${PROD_USER}@${PROD_HOST}" "echo OK" | Out-Null
+# Verify we can reach the DEV server without a passphrase
+Write-Host "Testing SSH connectivity to $DEV_HOST ..." -ForegroundColor Yellow
+ssh -i $SSH_KEY -o BatchMode=yes -o ConnectTimeout=10 "${DEV_USER}@${DEV_HOST}" "echo OK" | Out-Null
 if ($LASTEXITCODE -ne 0) {
-    Die "Cannot SSH to ${PROD_USER}@${PROD_HOST} with key $SSH_KEY. Ensure the public key is in authorized_keys on the server."
+    Die "Cannot SSH to ${DEV_USER}@${DEV_HOST} with key $SSH_KEY. Ensure the public key is in authorized_keys on the server."
 }
 OK "SSH connectivity confirmed (passphrase-free)"
 
@@ -132,25 +132,25 @@ OK "SSH connectivity confirmed (passphrase-free)"
 # ---------------------------------------------------------------------------
 Step "1/7  Dumping DEV database (inside container)"
 
-$dumpCmd = "docker exec $PROD_CONTAINER mysqldump " +
-    "-u $PROD_DB_USER -p'$PROD_DB_PASS' " +
+$dumpCmd = "docker exec $DEV_CONTAINER mysqldump " +
+    "-u $DEV_DB_USER -p'$DEV_DB_PASS' " +
     "--default-character-set=utf8mb4 " +
     "--single-transaction " +
     "--quick " +
     "--max_allowed_packet=512M " +
     "--result-file=$CONTAINER_TEMP " +
-    "$PROD_DB_NAME"
+    "$DEV_DB_NAME"
 
-ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" $dumpCmd
-OK "Dump written to $CONTAINER_TEMP inside $PROD_CONTAINER"
+ssh -i $SSH_KEY "${DEV_USER}@${DEV_HOST}" $dumpCmd
+OK "Dump written to $CONTAINER_TEMP inside $DEV_CONTAINER"
 
 # ---------------------------------------------------------------------------
-# Step 2 — Copy dump from container to production host filesystem
+# Step 2 — Copy dump from container to DEV host filesystem
 # ---------------------------------------------------------------------------
-Step "2/7  Copying dump from container to production host"
+Step "2/7  Copying dump from container to DEV host"
 
-ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" "docker cp ${PROD_CONTAINER}:${CONTAINER_TEMP} ${PROD_HOST_TEMP}"
-OK "Dump now at ${PROD_HOST_TEMP} on DEV host"
+ssh -i $SSH_KEY "${DEV_USER}@${DEV_HOST}" "docker cp ${DEV_CONTAINER}:${CONTAINER_TEMP} ${DEV_HOST_TEMP}"
+OK "Dump now at ${DEV_HOST_TEMP} on DEV host"
 
 # ---------------------------------------------------------------------------
 # Step 3 — SCP dump to local Windows machine
@@ -158,20 +158,20 @@ OK "Dump now at ${PROD_HOST_TEMP} on DEV host"
 # ---------------------------------------------------------------------------
 Step "3/7  Downloading dump to local machine"
 
-scp -i $SSH_KEY "${PROD_USER}@${PROD_HOST}:${PROD_HOST_TEMP}" $LOCAL_FILE
+scp -i $SSH_KEY "${DEV_USER}@${DEV_HOST}:${DEV_HOST_TEMP}" $LOCAL_FILE
 OK "Dump saved as $LOCAL_FILE"
 
 # Verify the downloaded file is not empty
 $fileSize = (Get-Item $LOCAL_FILE).Length
 if ($fileSize -lt 1MB) {
-    Die "Downloaded dump is suspiciously small ($fileSize bytes). The production mysqldump likely failed. Check SSH connectivity and DB credentials."
+    Die "Downloaded dump is suspiciously small ($fileSize bytes). The DEV mysqldump likely failed. Check SSH connectivity and DB credentials."
 }
 OK "Dump size: $([math]::Round($fileSize/1MB, 1)) MB — looks valid"
 
 # Tidy up remote files now they are no longer needed
-ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" "docker exec ${PROD_CONTAINER} rm -f ${CONTAINER_TEMP}"
-ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" "rm -f ${PROD_HOST_TEMP}"
-OK "Cleaned up temp files on production server"
+ssh -i $SSH_KEY "${DEV_USER}@${DEV_HOST}" "docker exec ${DEV_CONTAINER} rm -f ${CONTAINER_TEMP}"
+ssh -i $SSH_KEY "${DEV_USER}@${DEV_HOST}" "rm -f ${DEV_HOST_TEMP}"
+OK "Cleaned up temp files on DEV server"
 
 # ---------------------------------------------------------------------------
 # Step 4 — Copy dump into the local MariaDB container
@@ -203,9 +203,9 @@ docker exec $LOCAL_CONTAINER rm -f $LOCAL_CONTAINER_TEMP
 OK "Cleaned up temp file inside local container"
 
 # ---------------------------------------------------------------------------
-# Step 6 — Clear stale production cache entries from the imported database
-#           The production dump contains objectcache and l10n_cache rows that
-#           were generated with the production URL. Truncating them forces
+# Step 6 — Clear stale DEV cache entries from the imported database
+#           The DEV dump contains objectcache and l10n_cache rows that
+#           were generated with the DEV URL. Truncating them forces
 #           MediaWiki to regenerate them with localhost:8080 URLs.
 # ---------------------------------------------------------------------------
 Step "6/8  Clearing stale cache tables"
@@ -233,7 +233,7 @@ OK "recentchanges rebuilt"
 
 # ---------------------------------------------------------------------------
 # Step 6b — Re-register localhost sitelinks
-#           The imported production DB will contain production URL sitelinks.
+#           The imported DEV DB will contain DEV URL sitelinks.
 #           Restarting wikibase-sitelinks-init re-runs init-sitelinks.sh which
 #           imports sites.xml (localhost:8080 paths) and sets site_language.
 # ---------------------------------------------------------------------------
@@ -256,7 +256,7 @@ OK "Wikibase container restarted"
 
 # ---------------------------------------------------------------------------
 # Step 8 — Reset local admin password
-#           The imported production DB carries the production admin password.
+#           The imported DEV DB carries the DEV admin password.
 #           Reset it back to the standard localhost default so local logins work.
 # ---------------------------------------------------------------------------
 Step "8/8  Resetting local admin password"

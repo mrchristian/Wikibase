@@ -9,9 +9,83 @@
 > | `docs/hetzner-deploy-guide.md` | One-time server provisioning on Hetzner |
 > | `docs/sync-guide.md` | Background reference — sync strategy options (context only) |
 > | Sync scripts — see §4 | [`sync-local-to-test.ps1`](../scripts/sync/sync-local-to-test.ps1) · [`sync-dev-to-test.ps1`](../scripts/sync/sync-dev-to-test.ps1) · [`sync-dev-to-prod.ps1`](../scripts/sync/sync-dev-to-prod.ps1) · [`pull-from-dev.ps1`](../scripts/sync/pull-from-dev.ps1) |
+> | Experimental workflow — see §11 | [`experimental-import-workflow.ps1`](../scripts/experimental-import-workflow.ps1) |
 > | Deploy scripts — see §6 | [`deploy.sh`](../scripts/deploy/deploy.sh) · [`deploy-dev.sh`](../scripts/deploy/deploy-dev.sh) · [`deploy-test.sh`](../scripts/deploy/deploy-test.sh) · [`deploy-prod.sh`](../scripts/deploy/deploy-prod.sh) |
 
 This document is the master reference for the 4-tier Docker DevOps workflow.
+
+---
+
+## Workflow Diagram
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                          CLIMATEKG DEVOPS WORKFLOW                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+CODE/CONFIG FLOW (via GitHub):
+┌──────────────┐
+│   LOCAL      │  1. Fork repo, make changes
+│ (workstation)│  2. Create PR to master
+└──────┬───────┘
+       │ PR
+       ↓
+┌──────────────┐
+│   GitHub     │  Master branch = source of truth
+│   master     │
+└──┬───┬───┬───┘
+   │   │   │ git pull (manual on each server)
+   ↓   ↓   ↓
+┌──────┐ ┌──────┐ ┌──────┐
+│ DEV  │ │ TEST │ │ PROD │  Redeploy with docker compose up -d --build
+└──────┘ └──────┘ └──────┘
+
+DATABASE/CONTENT FLOW (via sync scripts):
+┌──────────────┐                    ┌──────────────┐
+│   LOCAL      │◄───pull-from-dev───│     DEV      │  DEV = DB source of truth
+│ (workstation)│                    │ (178...88)   │  Content edited here
+└──────┬───────┘                    └──────┬───────┘
+       │                                   │
+       │ sync-local-to-test                │ sync-dev-to-test
+       │ (staging from local)              │ (standard promotion)
+       │                                   │
+       ↓                                   ↓
+   ┌──────────────┐                  ┌──────────────┐
+   │    TEST      │──────────────────│    TEST      │
+   │ (46...24)    │  (same target)   │ (46...24)    │
+   └──────────────┘                  └──────┬───────┘
+                                            │
+                                            │ sync-dev-to-prod
+                                            │
+                                            ↓
+                                       ┌──────────────┐
+                                       │    PROD      │  Public instance
+                                       │ (178...174)  │
+                                       └──────────────┘
+
+EXPERIMENTAL WORKFLOW (LOCAL only):
+┌─────────────────────────────────────────────────────┐
+│  LOCAL DATABASE STATES                              │
+│                                                     │
+│  ┌─────────────┐          start (snapshot)         │
+│  │   CLEAN     │─────────────────────────┐         │
+│  │ (DEV sync)  │                         │         │
+│  └─────┬───────┘                         ↓         │
+│        ↑                          ┌──────────────┐ │
+│        │                          │EXPERIMENTAL  │ │
+│        │                          │ (+ imports)  │ │
+│        │                          └──────┬───────┘ │
+│        │                                 │         │
+│        │ rollback                        │ approve │
+│        └─────────────────────────────────┘         │
+│                                                     │
+│  sync (pull-from-dev) only allowed when CLEAN      │
+└─────────────────────────────────────────────────────┘
+
+SERVICES & PORTS:
+LOCAL:     8080 (wiki) | 8081 (query UI) | 9999 (SPARQL)
+REMOTE:    443/HTTPS for all services (wiki at /, query at /query/)
+```
 
 ---
 
@@ -19,10 +93,28 @@ This document is the master reference for the 4-tier Docker DevOps workflow.
 
 | Env   | Server IP        | Domain                                   | Purpose                                      |
 |-------|-----------------|------------------------------------------|----------------------------------------------|
-| LOCAL | workstation     | localhost:8080                           | Configuration development using GitHub forks |
+| LOCAL | workstation     | localhost:8080                           | Config development; experimental data imports (with snapshot/rollback) |
 | DEV   | 178.104.156.88  | dev-climatekg.semanticclimate.org        | Live content editing; source of truth for DB |
 | TEST  | 46.224.66.24    | test-climatekg.semanticclimate.org       | Staging; validating DB + code before PROD    |
 | PROD  | 178.105.222.174 | prod-climatekg.semanticclimate.org       | Public production instance                   |
+
+### Port Configuration
+
+| Service       | LOCAL Port | Remote (DEV/TEST/PROD) |
+|---------------|------------|------------------------|
+| Wiki          | 8080       | 443 (HTTPS)            |
+| Query UI      | 8081       | 443 (HTTPS at /query/) |
+| WDQS/SPARQL   | 9999       | 443 (HTTPS at /query/proxy/sparql) |
+
+**LOCAL URLs:**
+- Wiki: http://localhost:8080
+- Query UI: http://localhost:8081
+- SPARQL: http://localhost:9999
+
+**Remote URLs (example for DEV):**
+- Wiki: https://dev-climatekg.semanticclimate.org
+- Query UI: https://dev-climatekg.semanticclimate.org/query/
+- SPARQL: https://dev-climatekg.semanticclimate.org/query/proxy/sparql
 
 ---
 
@@ -114,7 +206,8 @@ TEST_MW_ADMIN_PASS=<test-mediawiki-admin-password>
 ### LOCAL
 
 ```powershell
-# Auto-loads docker-compose.override.yml — exposes ports 8080, 9999, 8081
+# Auto-loads docker-compose.override.yml
+# Exposes: 8080 (wiki), 9999 (SPARQL), 8081 (query UI)
 docker compose up -d
 ```
 
@@ -237,9 +330,131 @@ The actual passwords are stored in `/opt/wikibase/.env` on each server (printed 
 
 After deploying or syncing an environment, verify:
 
+**For LOCAL (localhost):**
+- [ ] Wiki responds at http://localhost:8080/wiki/Main_Page (200 OK)
+- [ ] Query UI responds at http://localhost:8081 (200 OK)
+- [ ] SPARQL endpoint responds at http://localhost:9999/bigdata/namespace/wdq/sparql (200 OK)
+- [ ] All 5 containers healthy: `docker compose ps` → all `healthy` or `running`
+- [ ] Sitelinks: visit http://localhost:8080/wiki/Special:Sites — `mywiki` registered
+
+**For remote environments (DEV/TEST/PROD):**
 - [ ] Wiki responds at `https://<domain>/wiki/Main_Page` (200 OK)
 - [ ] Query UI responds at `https://<domain>/query/` (200 OK)
 - [ ] SPARQL endpoint responds at `https://<domain>/query/proxy/sparql` (200 OK)
 - [ ] All 5 containers healthy: `docker compose ps` → all `healthy` or `running`
 - [ ] Sitelinks: visit `Special:Sites` — `mywiki` registered with correct domain URLs
 - [ ] SSL certificate valid (green padlock in browser)
+
+---
+
+## 11. Experimental Import Workflow (LOCAL)
+
+When testing new data imports or reviewing Wikibase items before committing to production, use the experimental workflow to safely test changes without affecting your clean LOCAL database.
+
+### Workflow States
+
+Your LOCAL database can be in one of two states:
+
+| State | Description | Actions Available |
+|-------|-------------|-------------------|
+| **CLEAN** | Pure DEV data or approved experiments | Start new experiment, sync from DEV |
+| **EXPERIMENTAL** | Has unapproved experimental changes | Review → approve or rollback |
+
+### Basic Workflow
+
+**1. Check current state:**
+```powershell
+.\scripts\experimental-import-workflow.ps1 status
+```
+
+**2. Start an experiment:**
+```powershell
+# Creates snapshot of current CLEAN state
+.\scripts\experimental-import-workflow.ps1 start
+```
+
+**3. Run your experimental imports:**
+```powershell
+# Your import scripts here
+.\scripts\import\your-import-script.ps1
+```
+
+**4. Review at http://localhost:8080**
+
+**5. Decide:**
+
+**If approved:**
+```powershell
+.\scripts\experimental-import-workflow.ps1 approve
+# Experimental changes become the new clean base
+```
+
+**If rejected:**
+```powershell
+.\scripts\experimental-import-workflow.ps1 rollback
+# Discards all experimental changes, restores clean base
+```
+
+### Syncing from DEV
+
+**Pull fresh DEV data (only when CLEAN):**
+```powershell
+.\scripts\experimental-import-workflow.ps1 sync
+# Wrapper around pull-from-dev.ps1 with state tracking
+```
+
+> **Important**: Cannot sync from DEV while in EXPERIMENTAL state. Must approve or rollback first.
+
+### Common Scenarios
+
+**Scenario 1: Simple experiment**
+```powershell
+.\scripts\experimental-import-workflow.ps1 start
+.\scripts\import\my-import.ps1
+# Review in browser
+.\scripts\experimental-import-workflow.ps1 approve
+```
+
+**Scenario 2: Failed experiment, try again**
+```powershell
+.\scripts\experimental-import-workflow.ps1 start
+.\scripts\import\my-import.ps1
+# Data looks wrong
+.\scripts\experimental-import-workflow.ps1 rollback
+# Fix your import script
+.\scripts\experimental-import-workflow.ps1 start
+.\scripts\import\my-import.ps1
+# Now it looks good
+.\scripts\experimental-import-workflow.ps1 approve
+```
+
+**Scenario 3: Need fresh DEV data mid-experiment**
+```powershell
+.\scripts\experimental-import-workflow.ps1 start
+.\scripts\import\my-import.ps1
+# Wait, DEV was updated with new content I need
+.\scripts\experimental-import-workflow.ps1 rollback
+.\scripts\experimental-import-workflow.ps1 sync
+# Now re-run experiment on fresh DEV base
+.\scripts\experimental-import-workflow.ps1 start
+.\scripts\import\my-import.ps1
+.\scripts\experimental-import-workflow.ps1 approve
+```
+
+### Key Rules
+
+1. **Only sync from DEV when CLEAN** — Never pull DEV updates while mid-experiment
+2. **Always snapshot before experiments** — Use `start` to create a rollback point
+3. **Approve or rollback before syncing** — Finish one experiment before starting another
+4. **Track your state** — Use `status` to see where you are
+
+### State Management
+
+State is tracked in `C:\Wikibase\backups\.workflow_state.json`:
+- Current workflow state (CLEAN or EXPERIMENTAL)
+- Last DEV sync timestamp
+- Last state change timestamp
+
+Snapshots are stored in `C:\Wikibase\backups\`:
+- `experimental_snapshot.sql` — Active rollback point
+- `approved_experiment_YYYYMMDD_HHMMSS.sql` — Archived approved snapshots

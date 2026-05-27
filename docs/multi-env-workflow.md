@@ -8,7 +8,7 @@
 > | `docs/deployment-protocol.md` | Historical deployment log; server registry |
 > | `docs/hetzner-deploy-guide.md` | One-time server provisioning on Hetzner |
 > | `docs/sync-guide.md` | Background reference — sync strategy options (context only) |
-> | Sync scripts — see §4 | [`sync-local-to-test.ps1`](../scripts/sync/sync-local-to-test.ps1) · [`sync-dev-to-test.ps1`](../scripts/sync/sync-dev-to-test.ps1) · [`sync-dev-to-prod.ps1`](../scripts/sync/sync-dev-to-prod.ps1) · [`pull-from-dev.ps1`](../scripts/sync/pull-from-dev.ps1) |
+> | Sync scripts — see §4 | [`sync-local-to-dev.ps1`](../scripts/sync/sync-local-to-dev.ps1) · [`sync-local-to-test.ps1`](../scripts/sync/sync-local-to-test.ps1) · [`sync-dev-to-test.ps1`](../scripts/sync/sync-dev-to-test.ps1) · [`sync-dev-to-prod.ps1`](../scripts/sync/sync-dev-to-prod.ps1) · [`pull-from-dev.ps1`](../scripts/sync/pull-from-dev.ps1) |
 > | Experimental workflow — see §11 | [`experimental-import-workflow.ps1`](../scripts/experimental-import-workflow.ps1) |
 > | Deploy scripts — see §6 | [`deploy.sh`](../scripts/deploy/deploy.sh) · [`deploy-dev.sh`](../scripts/deploy/deploy-dev.sh) · [`deploy-test.sh`](../scripts/deploy/deploy-test.sh) · [`deploy-prod.sh`](../scripts/deploy/deploy-prod.sh) |
 
@@ -139,7 +139,8 @@ LOCAL fork  →  PR to master  →  manual git pull on each server  →  redeplo
    ```sh
    ssh root@<server-ip>
    cd /opt/wikibase
-   git pull --ff-only
+   git pull 
+   --ff-only
    docker compose -f docker-compose.yml -f docker-compose.<env>.yml up -d --build
    ```
 
@@ -154,14 +155,38 @@ LOCAL  →  TEST  (immediate staging from local)
 DEV    →  TEST  →  PROD  (standard promotion path)
 ```
 
+### LOCAL → DEV  (push local DB + files + LocalSettings to DEV)
+
+> **Use case**: promoting content created or bulk-imported locally (e.g. a data import tested via the experimental workflow) back to DEV as the new source of truth.
+
+```powershell
+# Full sync (DB + images + git pull + container restart):
+.\scripts\sync\sync-local-to-dev.ps1
+
+# DB + git pull + restart only (skip images — faster when only data changed):
+.\scripts\sync\sync-local-to-dev.ps1 -DbOnly
+```
+> Script: [scripts/sync/sync-local-to-dev.ps1](../scripts/sync/sync-local-to-dev.ps1)
+> **Note**: requires typing `PROMOTE` at the confirmation prompt — DEV is the DB source of truth.
+
+Required entries in `C:\Wikibase\.env`:
+```
+DEV_DB_PASS=<dev-mariadb-password>
+DEV_MW_ADMIN_PASS=<dev-mediawiki-admin-password>
+```
+
 ### LOCAL → TEST  (push local DB + files + LocalSettings to TEST)
 
 ```powershell
+# Full sync (DB + images + git pull + container restart):
 .\scripts\sync\sync-local-to-test.ps1
+
+# DB + git pull + restart only (skip images):
+.\scripts\sync\sync-local-to-test.ps1 -DbOnly
 ```
 > Script: [scripts/sync/sync-local-to-test.ps1](../scripts/sync/sync-local-to-test.ps1)
 
-Covers: database dump (395 MB, `--result-file` pattern), uploads/images, `git pull` of LocalSettings on TEST, Admin password reset to `TEST_MW_ADMIN_PASS`, cache flush, `run.php update`, container restart.
+Covers: database dump (395 MB, `--result-file` pattern), uploads/images (unless `-DbOnly`), `git pull` of LocalSettings on TEST, Admin password reset to `TEST_MW_ADMIN_PASS`, cache flush, `run.php update`, container restart.
 
 Required entries in `C:\Wikibase\.env`:
 ```

@@ -1,7 +1,11 @@
 ﻿#Requires -Version 5.1
 <#
 .SYNOPSIS
-    Push the LOCAL Wikibase database, uploads/files, and LocalSettings to TEST.
+    Push the LOCAL Wikibase database (and optionally uploads/files) and LocalSettings to TEST.
+
+.PARAMETER DbOnly
+    Skip the uploads/images sync (step 8). Useful when only the database has changed.
+    Usage:  .\scripts\sync\sync-local-to-test.ps1 -DbOnly
 
 .DESCRIPTION
     1. Dumps the LOCAL MariaDB database inside the LOCAL container using --result-file
@@ -40,6 +44,10 @@
       * ALWAYS import via  mysql -e 'source /tmp/file.sql'  inside the container.
       * NEVER use  docker exec ... mysql < file  from PowerShell.
 #>
+
+param(
+    [switch]$DbOnly
+)
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
@@ -226,33 +234,38 @@ OK "MediaWiki update and recentchanges rebuild complete"
 # ---------------------------------------------------------------------------
 # Step 8 -- Sync uploads/images: tar inside LOCAL container → SCP → extract on TEST
 # ---------------------------------------------------------------------------
-Step "8/10  Syncing uploads/images from LOCAL to TEST"
+if ($DbOnly) {
+    Step "8/10  Skipping uploads/images sync (-DbOnly)"
+    OK "Images sync skipped"
+} else {
+    Step "8/10  Syncing uploads/images from LOCAL to TEST"
 
-Write-Host "  Creating images archive inside LOCAL container (excluding thumbnails)..." -ForegroundColor Yellow
-docker exec $LOCAL_WB_CONTAINER tar --exclude=thumb -czf $LOCAL_IMAGES_ARCHIVE /var/www/html/images
-if ($LASTEXITCODE -ne 0) { Die "tar archive of LOCAL images failed." }
+    Write-Host "  Creating images archive inside LOCAL container (excluding thumbnails)..." -ForegroundColor Yellow
+    docker exec $LOCAL_WB_CONTAINER tar --exclude=thumb -czf $LOCAL_IMAGES_ARCHIVE /var/www/html/images
+    if ($LASTEXITCODE -ne 0) { Die "tar archive of LOCAL images failed." }
 
-docker cp "${LOCAL_WB_CONTAINER}:${LOCAL_IMAGES_ARCHIVE}" $LOCAL_IMAGES_FILE
-docker exec $LOCAL_WB_CONTAINER rm -f $LOCAL_IMAGES_ARCHIVE
+    docker cp "${LOCAL_WB_CONTAINER}:${LOCAL_IMAGES_ARCHIVE}" $LOCAL_IMAGES_FILE
+    docker exec $LOCAL_WB_CONTAINER rm -f $LOCAL_IMAGES_ARCHIVE
 
-$archiveSize = (Get-Item $LOCAL_IMAGES_FILE).Length
-OK "Images archive: $([math]::Round($archiveSize/1MB, 1)) MB -- $LOCAL_IMAGES_FILE"
+    $archiveSize = (Get-Item $LOCAL_IMAGES_FILE).Length
+    OK "Images archive: $([math]::Round($archiveSize/1MB, 1)) MB -- $LOCAL_IMAGES_FILE"
 
-Write-Host "  Uploading archive to TEST host..." -ForegroundColor Yellow
-scp -i $SSH_KEY $LOCAL_IMAGES_FILE "${TEST_USER}@${TEST_HOST}:${TEST_IMAGES_TEMP}"
-if ($LASTEXITCODE -ne 0) { Die "SCP of images archive to TEST failed." }
+    Write-Host "  Uploading archive to TEST host..." -ForegroundColor Yellow
+    scp -i $SSH_KEY $LOCAL_IMAGES_FILE "${TEST_USER}@${TEST_HOST}:${TEST_IMAGES_TEMP}"
+    if ($LASTEXITCODE -ne 0) { Die "SCP of images archive to TEST failed." }
 
-Write-Host "  Extracting archive into TEST container (wikibase_images volume)..." -ForegroundColor Yellow
+    Write-Host "  Extracting archive into TEST container (wikibase_images volume)..." -ForegroundColor Yellow
 
-ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker cp ${TEST_IMAGES_TEMP} ${TEST_WB_CONTAINER}:/tmp/images_restore.tar.gz"
-if ($LASTEXITCODE -ne 0) { Die "docker cp of images archive to TEST container failed." }
+    ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker cp ${TEST_IMAGES_TEMP} ${TEST_WB_CONTAINER}:/tmp/images_restore.tar.gz"
+    if ($LASTEXITCODE -ne 0) { Die "docker cp of images archive to TEST container failed." }
 
-# sh -c inline: clear images (skipping bind-mounted logos), extract tar (exclude logos too), remove archive
-ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker exec ${TEST_WB_CONTAINER} sh -c 'find /var/www/html/images -mindepth 1 -not -name ckglogo1.png -not -name ckglogo1.svg -delete 2>/dev/null; tar -xzf /tmp/images_restore.tar.gz --strip-components=3 -C /var/www/html --exclude=var/www/html/images/ckglogo1.png --exclude=var/www/html/images/ckglogo1.svg && rm /tmp/images_restore.tar.gz'"
-if ($LASTEXITCODE -ne 0) { Die "Images extraction on TEST failed." }
+    # sh -c inline: clear images (skipping bind-mounted logos), extract tar (exclude logos too), remove archive
+    ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker exec ${TEST_WB_CONTAINER} sh -c 'find /var/www/html/images -mindepth 1 -not -name ckglogo1.png -not -name ckglogo1.svg -delete 2>/dev/null; tar -xzf /tmp/images_restore.tar.gz --strip-components=3 -C /var/www/html --exclude=var/www/html/images/ckglogo1.png --exclude=var/www/html/images/ckglogo1.svg && rm /tmp/images_restore.tar.gz'"
+    if ($LASTEXITCODE -ne 0) { Die "Images extraction on TEST failed." }
 
-ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "rm -f ${TEST_IMAGES_TEMP}"
-OK "Images synced to TEST"
+    ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "rm -f ${TEST_IMAGES_TEMP}"
+    OK "Images synced to TEST"
+}
 
 # ---------------------------------------------------------------------------
 # Step 9 -- Update LocalSettings files on TEST via git pull
@@ -287,7 +300,11 @@ Write-Host " LOCAL -> TEST sync complete!" -ForegroundColor Green
 Write-Host "============================================================" -ForegroundColor Green
 Write-Host ""
 Write-Host "  DB dump file    : $LOCAL_FILE"
-Write-Host "  Images archive  : $LOCAL_IMAGES_FILE"
+if ($DbOnly) {
+    Write-Host "  Images archive  : (skipped, -DbOnly)"
+} else {
+    Write-Host "  Images archive  : $LOCAL_IMAGES_FILE"
+}
 Write-Host "  Timestamp       : $TIMESTAMP"
 Write-Host ""
 Write-Host "Verify at https://test-climatekg.semanticclimate.org" -ForegroundColor Yellow

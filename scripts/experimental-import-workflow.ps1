@@ -165,18 +165,24 @@ switch ($Action) {
         Write-Host "=== Starting Experiment ===" -ForegroundColor Cyan
         Write-Host "Creating snapshot of current CLEAN state..." -ForegroundColor Yellow
         
-        # Create the snapshot
-        docker exec $LOCAL_CONTAINER mysqldump `
-            -u $LOCAL_DB_USER -p$LOCAL_DB_PASS `
+        # Create the snapshot using --result-file inside the container, then docker cp
+        # to extract it — this avoids PowerShell stream redirect encoding issues.
+        $CONTAINER_SNAP = "/tmp/experimental_snapshot.sql"
+        docker exec $LOCAL_CONTAINER mysqldump "-u" $LOCAL_DB_USER "-p$LOCAL_DB_PASS" `
             --default-character-set=utf8mb4 `
             --single-transaction `
             --quick `
             --max_allowed_packet=512M `
-            $LOCAL_DB_NAME > $SNAPSHOT_FILE
-        
+            "--result-file=$CONTAINER_SNAP" `
+            $LOCAL_DB_NAME
         if ($LASTEXITCODE -ne 0) {
             Die "Failed to create database snapshot"
         }
+        docker cp "${LOCAL_CONTAINER}:${CONTAINER_SNAP}" $SNAPSHOT_FILE
+        if ($LASTEXITCODE -ne 0) {
+            Die "Failed to copy snapshot from container"
+        }
+        docker exec $LOCAL_CONTAINER rm -f $CONTAINER_SNAP
         
         $snapshotSize = (Get-Item $SNAPSHOT_FILE).Length
         if ($snapshotSize -lt 1MB) {
@@ -251,15 +257,18 @@ switch ($Action) {
         Write-Host "=== Rolling Back Experiment ===" -ForegroundColor Yellow
         Write-Host "Restoring to clean base state..." -ForegroundColor Yellow
         
-        # Import the snapshot
-        Get-Content $SNAPSHOT_FILE | docker exec -i $LOCAL_CONTAINER mysql `
-            -u $LOCAL_DB_USER -p$LOCAL_DB_PASS `
+        # Import the snapshot by copying it into the container and running mysql
+        # from inside — avoids PowerShell Get-Content | stream encoding issues.
+        $CONTAINER_SNAP = "/tmp/experimental_snapshot.sql"
+        docker cp $SNAPSHOT_FILE "${LOCAL_CONTAINER}:${CONTAINER_SNAP}"
+        docker exec $LOCAL_CONTAINER mysql "-u" $LOCAL_DB_USER "-p$LOCAL_DB_PASS" `
             --default-character-set=utf8mb4 `
-            $LOCAL_DB_NAME
-        
+            $LOCAL_DB_NAME `
+            "-e" "source $CONTAINER_SNAP"
         if ($LASTEXITCODE -ne 0) {
             Die "Failed to restore database snapshot"
         }
+        docker exec $LOCAL_CONTAINER rm -f $CONTAINER_SNAP
         
         # Restart wikibase to clear caches
         Write-Host "Restarting wikibase container..." -ForegroundColor Yellow

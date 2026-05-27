@@ -1,0 +1,28 @@
+<!ELEMENT glossary (metadata, terms)>
+<!ATTLIST glossary
+  id ID #REQUIRED
+>
+
+<!ELEMENT metadata (title, version, source, date, description?)>
+<!ELEMENT title (#PCDATA)>
+<!ELEMENT version (#PCDATA)>
+<!ELEMENT source (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT description (#PCDATA)>
+
+<!ELEMENT terms (term+)>
+
+<!ELEMENT term (name, also_known_as?, definition, series)>
+<!ATTLIST term
+  id ID #REQUIRED
+>
+
+<!ELEMENT name (#PCDATA)>
+<!ELEMENT also_known_as (#PCDATA)>
+<!ELEMENT definition (#PCDATA)>
+
+<!ELEMENT series (series_ref+)>
+<!ELEMENT series_ref (#PCDATA)>
+<!ATTLIST series_ref
+  qid CDATA #IMPLIED
+>

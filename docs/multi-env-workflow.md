@@ -67,19 +67,19 @@ EXPERIMENTAL WORKFLOW (LOCAL only):
 ┌─────────────────────────────────────────────────────┐
 │  LOCAL DATABASE STATES                              │
 │                                                     │
-│  ┌─────────────┐          start (snapshot)         │
-│  │   CLEAN     │─────────────────────────┐         │
-│  │ (DEV sync)  │                         │         │
-│  └─────┬───────┘                         ↓         │
-│        ↑                          ┌──────────────┐ │
-│        │                          │EXPERIMENTAL  │ │
-│        │                          │ (+ imports)  │ │
-│        │                          └──────┬───────┘ │
-│        │                                 │         │
-│        │ rollback                        │ approve │
-│        └─────────────────────────────────┘         │
+│  ┌─────────────┐          start (snapshot)          │
+│  │   CLEAN     │─────────────────────────┐          │
+│  │ (DEV sync)  │                         │          │
+│  └─────┬───────┘                         ↓          │
+│        ↑                          ┌──────────────┐  │
+│        │                          │EXPERIMENTAL  │  │
+│        │                          │ (+ imports)  │  │
+│        │                          └──────┬───────┘  │
+│        │                                 │          │
+│        │ rollback                        │ approve  │
+│        └─────────────────────────────────┘          │
 │                                                     │
-│  sync (pull-from-dev) only allowed when CLEAN      │
+│  sync (pull-from-dev) only allowed when CLEAN       │
 └─────────────────────────────────────────────────────┘
 
 SERVICES & PORTS:
@@ -270,24 +270,24 @@ certbot --nginx -d <domain> --non-interactive --agree-tos -m simon.worthington@t
 
 ## 7. Compose & Config Files per Environment
 
-| File                           | Used by      |
-|-------------------------------|--------------|
+| File                           | Used by         |
+|--------------------------------|-----------------|
 | `docker-compose.yml`           | All envs (base) |
-| `docker-compose.override.yml`  | LOCAL (auto) |
-| `docker-compose.dev.yml`       | DEV          |
-| `docker-compose.test.yml`      | TEST         |
-| `docker-compose.prod.yml`      | PROD         |
+| `docker-compose.override.yml`  | LOCAL (auto)    |
+| `docker-compose.dev.yml`       | DEV             |
+| `docker-compose.test.yml`      | TEST            |
+| `docker-compose.prod.yml`      | PROD            |
 | `sites.xml`                    | LOCAL sitelinks |
-| `sites.dev.xml`                | DEV sitelinks |
-| `sites.test.xml`               | TEST sitelinks |
-| `sites.prod.xml`               | PROD sitelinks |
-| `wdqs-custom-config.json`      | LOCAL query UI |
-| `wdqs-custom-config.dev.json`  | DEV query UI |
-| `wdqs-custom-config.test.json` | TEST query UI |
-| `wdqs-custom-config.prod.json` | PROD query UI |
-| `.env.dev.template`            | DEV .env seed |
-| `.env.test.template`           | TEST .env seed |
-| `.env.production`              | PROD .env seed |
+| `sites.dev.xml`                | DEV sitelinks   |
+| `sites.test.xml`               | TEST sitelinks  |
+| `sites.prod.xml`               | PROD sitelinks  |
+| `wdqs-custom-config.json`      | LOCAL query UI  |
+| `wdqs-custom-config.dev.json`  | DEV query UI    |
+| `wdqs-custom-config.test.json` | TEST query UI   |
+| `wdqs-custom-config.prod.json` | PROD query UI   |
+| `.env.dev.template`            | DEV .env seed   |
+| `.env.test.template`           | TEST .env seed  |
+| `.env.production`              | PROD .env seed  |
 
 ---
 

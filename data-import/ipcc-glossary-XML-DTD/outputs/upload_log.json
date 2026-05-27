@@ -1,0 +1,5533 @@
+{
+  "uploaded": [
+    {
+      "term": "1.5°C pathway",
+      "qid": "Q1115",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "1.5°C warmer worlds",
+      "qid": "Q1116",
+      "series": [
+        "Q10"
+      ]
+    },
+    {
+      "term": "13C",
+      "qid": "Q1117",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "14C",
+      "qid": "Q1118",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Ablation",
+      "qid": "Q1120",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Acceptability of policy or system change",
+      "qid": "Q1123",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Acclimatisation",
+      "qid": "Q1126",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Accumulation",
+      "qid": "Q1127",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Acute food insecurity",
+      "qid": "Q1129",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Adaptation",
+      "qid": "Q1130",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Adaptation Fund",
+      "qid": "Q1131",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Adaptation limits",
+      "qid": "Q1135",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Adaptation opportunity",
+      "qid": "Q1137",
+      "series": [
+        null
+      ]
+    },
+    {
+      "term": "Adaptation pathways",
+      "qid": "Q1139",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Adaptive management",
+      "qid": "Q1142",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Additionality",
+      "qid": "Q1144",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Adjustments",
+      "qid": "Q1145",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Advection",
+      "qid": "Q1146",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Aerosol",
+      "qid": "Q1148",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Aerosol–cloud interaction",
+      "qid": "Q1149",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Afforestation",
+      "qid": "Q1153",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Agreement",
+      "qid": "Q1154",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Agriculture, Forestry and Other Land Use",
+      "qid": "Q1156",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Agroecology",
+      "qid": "Q1157",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Agroforestry",
+      "qid": "Q1158",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Air mass",
+      "qid": "Q1159",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Air pollution",
+      "qid": "Q1160",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Albedo",
+      "qid": "Q1162",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Annular modes",
+      "qid": "Q1165",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Antarctic Ice Sheet",
+      "qid": "Q1167",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Anthropocene",
+      "qid": "Q1168",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Anthropogenic emissions",
+      "qid": "Q1170",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Anthropogenic removals",
+      "qid": "Q1171",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Anthropogenic subsidence",
+      "qid": "Q1172",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Arid zone",
+      "qid": "Q1175",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Aridity",
+      "qid": "Q1176",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Atlantic Meridional Mode",
+      "qid": "Q1179",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Atlantic Meridional Overturning Circulation",
+      "qid": "Q1180",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Atlantic Multi-decadal Oscillation",
+      "qid": "Q1181",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Atlantic Multi-decadal Variability",
+      "qid": "Q1182",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Atlantic Zonal Mode",
+      "qid": "Q1183",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Atmosphere",
+      "qid": "Q1184",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Atmospheric boundary layer",
+      "qid": "Q1185",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Atmospheric rivers",
+      "qid": "Q1186",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Australian and Maritime Continent monsoon",
+      "qid": "Q1188",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Avoid, Shift, Improve",
+      "qid": "Q1192",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Basal lubrication",
+      "qid": "Q1193",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Baseline/reference",
+      "qid": "Q1195",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Benthos",
+      "qid": "Q1199",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Biochar",
+      "qid": "Q1201",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Biochemical oxygen demand",
+      "qid": "Q1202",
+      "series": [
+        null
+      ]
+    },
+    {
+      "term": "Biodiversity",
+      "qid": "Q1203",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Bioethanol",
+      "qid": "Q1207",
+      "series": [
+        null
+      ]
+    },
+    {
+      "term": "Biogenic volatile organic compounds",
+      "qid": "Q1210",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Biological pump",
+      "qid": "Q1212",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Biosphere",
+      "qid": "Q1215",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Bipolar seesaw",
+      "qid": "Q1216",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Black carbon",
+      "qid": "Q1217",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Blocking",
+      "qid": "Q1218",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Blue carbon",
+      "qid": "Q1219",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Brewer–Dobson circulation",
+      "qid": "Q1221",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Business as usual",
+      "qid": "Q1223",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "CMIP3, CMIP5 and CMIP6",
+      "qid": "Q1224",
+      "series": [
+        null
+      ]
+    },
+    {
+      "term": "CO2 equivalent emission",
+      "qid": "Q1225",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Calcification",
+      "qid": "Q1226",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Carbon–climate feedback",
+      "qid": "Q1230",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Carbon cycle",
+      "qid": "Q1231",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Carbon dioxide",
+      "qid": "Q1232",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Carbon dioxide fertilisation",
+      "qid": "Q1233",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Carbon dioxide capture and storage",
+      "qid": "Q1234",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Carbon dioxide capture and utilisation",
+      "qid": "Q1235",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Carbon dioxide removal",
+      "qid": "Q1236",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Carbon feedback",
+      "qid": "Q1237",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Carbon neutrality",
+      "qid": "Q1240",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Carbon price",
+      "qid": "Q1241",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Carbonate pump",
+      "qid": "Q1245",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Cascading impacts",
+      "qid": "Q1246",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Chaotic",
+      "qid": "Q1250",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Chlorofluorocarbons",
+      "qid": "Q1252",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Circular economy",
+      "qid": "Q1255",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Cirrus cloud thinning",
+      "qid": "Q1256",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Cities",
+      "qid": "Q1257",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "City region",
+      "qid": "Q1259",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Clausius–Clapeyron equation/relationship",
+      "qid": "Q1261",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Climate",
+      "qid": "Q1262",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Climate–carbon cycle feedback",
+      "qid": "Q1263",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Climate change",
+      "qid": "Q1264",
+      "series": [
+        null
+      ]
+    },
+    {
+      "term": "Climate change commitment",
+      "qid": "Q1265",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Climate extreme",
+      "qid": "Q1266",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Climate feedback",
+      "qid": "Q1267",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Climate feedback parameter",
+      "qid": "Q1268",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Climate finance",
+      "qid": "Q1269",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Climate forecast",
+      "qid": "Q1270",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Climate index",
+      "qid": "Q1272",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Climate justice",
+      "qid": "Q1275",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Climate metrics",
+      "qid": "Q1277",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Climate model",
+      "qid": "Q1278",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Climate pattern",
+      "qid": "Q1279",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Climate prediction",
+      "qid": "Q1280",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Climate projection",
+      "qid": "Q1281",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Climate resilient development pathways",
+      "qid": "Q1284",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Climate services",
+      "qid": "Q1288",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Climate simulation ensemble",
+      "qid": "Q1289",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Climate-smart agriculture",
+      "qid": "Q1290",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Climate system",
+      "qid": "Q1291",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Climate variability",
+      "qid": "Q1293",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Climate velocity",
+      "qid": "Q1294",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Climatic impact-driver",
+      "qid": "Q1296",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Cloud condensation nuclei",
+      "qid": "Q1297",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Cloud feedback",
+      "qid": "Q1298",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Coast",
+      "qid": "Q1302",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Cold days/cold nights",
+      "qid": "Q1304",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Common era",
+      "qid": "Q1305",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Communicable disease",
+      "qid": "Q1306",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Community-based adaptation",
+      "qid": "Q1307",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Compatible emissions",
+      "qid": "Q1308",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Compound weather/climate events",
+      "qid": "Q1310",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Concentrations scenario",
+      "qid": "Q1311",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Confidence",
+      "qid": "Q1313",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Conservation agriculture",
+      "qid": "Q1314",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Constant composition commitment",
+      "qid": "Q1315",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Convection",
+      "qid": "Q1318",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Coping",
+      "qid": "Q1319",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Coral reef",
+      "qid": "Q1322",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Cosmogenic radioisotopes",
+      "qid": "Q1323",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Cost–benefit analysis",
+      "qid": "Q1324",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Cost-effectiveness analysis",
+      "qid": "Q1325",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Coupled Model Intercomparison Project",
+      "qid": "Q1326",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Cultural impacts",
+      "qid": "Q1328",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Dansgaard-Oeschger events",
+      "qid": "Q1330",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Data assimilation",
+      "qid": "Q1331",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Decoupling",
+      "qid": "Q1338",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Deep uncertainty",
+      "qid": "Q1339",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Deforestation",
+      "qid": "Q1340",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Deglacial or deglaciation or glacial termination",
+      "qid": "Q1341",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Deliberative governance",
+      "qid": "Q1343",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Demand",
+      "qid": "Q1344",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Demand- and supply-side measures",
+      "qid": "Q1345",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Desertification",
+      "qid": "Q1347",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Detection",
+      "qid": "Q1348",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Developed/developing countries",
+      "qid": "Q1350",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Development pathways",
+      "qid": "Q1351",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Diatoms",
+      "qid": "Q1352",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Dimensions of integration",
+      "qid": "Q1354",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Direct air capture",
+      "qid": "Q1355",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Disaster",
+      "qid": "Q1359",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Disaster risk",
+      "qid": "Q1361",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Disaster risk management",
+      "qid": "Q1362",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Disaster risk reduction",
+      "qid": "Q1363",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Discharge",
+      "qid": "Q1364",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Discounting",
+      "qid": "Q1365",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Dissolved inorganic carbon",
+      "qid": "Q1367",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Distributive equity",
+      "qid": "Q1368",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Dobson unit",
+      "qid": "Q1370",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Downscaling",
+      "qid": "Q1371",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Drought",
+      "qid": "Q1374",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Dynamic global vegetation model",
+      "qid": "Q1375",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Early Eocene Climatic Optimum",
+      "qid": "Q1377",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Early warning systems",
+      "qid": "Q1378",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Earth’s energy budget",
+      "qid": "Q1379",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Earth system model",
+      "qid": "Q1384",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Earth system sensitivity",
+      "qid": "Q1386",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "East Asian monsoon",
+      "qid": "Q1387",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Eastern boundary upwelling systems",
+      "qid": "Q1389",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Ecosystem",
+      "qid": "Q1391",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Ecosystem-based adaptation",
+      "qid": "Q1392",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Ecosystem health",
+      "qid": "Q1393",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Ecosystem services",
+      "qid": "Q1394",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Effective equilibrium climate sensitivity",
+      "qid": "Q1395",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Effective radiative forcing due to aerosol–cloud interactions",
+      "qid": "Q1396",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Effective radiative forcing due to aerosol–radiation interactions",
+      "qid": "Q1397",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Ekman transport",
+      "qid": "Q1398",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "El Niño–Southern Oscillation",
+      "qid": "Q1399",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Electromagnetic spectrum",
+      "qid": "Q1400",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Embodied [emissions, water, land]",
+      "qid": "Q1402",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Emergence",
+      "qid": "Q1403",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Emergent constraint",
+      "qid": "Q1404",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Emission and Socio-economic Scenario Ensemble",
+      "qid": "Q1405",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Emission factor/Emissions intensity",
+      "qid": "Q1406",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Emissions scenario",
+      "qid": "Q1409",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Emulation",
+      "qid": "Q1410",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Emulators",
+      "qid": "Q1411",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Enabling conditions",
+      "qid": "Q1412",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Energy balance",
+      "qid": "Q1415",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Energy balance model",
+      "qid": "Q1416",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Energy budget",
+      "qid": "Q1417",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Energy efficiency",
+      "qid": "Q1418",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Energy security",
+      "qid": "Q1420",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Enhanced weathering",
+      "qid": "Q1423",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Ensemble",
+      "qid": "Q1424",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Enteric fermentation",
+      "qid": "Q1425",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Equilibrium and transient climate experiment",
+      "qid": "Q1427",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Equilibrium line",
+      "qid": "Q1429",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Equity",
+      "qid": "Q1430",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Equivalent carbon dioxide emission",
+      "qid": "Q1431",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Evolutionary adaptation",
+      "qid": "Q1438",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Exergy",
+      "qid": "Q1439",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "External forcing",
+      "qid": "Q1442",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Externality/external cost/external benefit",
+      "qid": "Q1443",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Extinction",
+      "qid": "Q1444",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Extreme climate event",
+      "qid": "Q1448",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Extreme/heavy precipitation event",
+      "qid": "Q1449",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Extreme sea level",
+      "qid": "Q1450",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Extreme weather event",
+      "qid": "Q1451",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Feasibility",
+      "qid": "Q1454",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Fingerprint",
+      "qid": "Q1457",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Fire weather",
+      "qid": "Q1458",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Fitness-for-purpose",
+      "qid": "Q1460",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Flood",
+      "qid": "Q1464",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Food loss and waste",
+      "qid": "Q1467",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Food security",
+      "qid": "Q1468",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Food system",
+      "qid": "Q1469",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Foraminifera",
+      "qid": "Q1470",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Forcing",
+      "qid": "Q1471",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Forest",
+      "qid": "Q1472",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Fugitive emissions",
+      "qid": "Q1480",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Gender equity",
+      "qid": "Q1481",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "General circulation model",
+      "qid": "Q1483",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Geoid",
+      "qid": "Q1485",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Geostrophic winds or currents",
+      "qid": "Q1486",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Geothermal energy",
+      "qid": "Q1487",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Gini coefficient",
+      "qid": "Q1488",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Glacial isostatic adjustment",
+      "qid": "Q1490",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Glacial or glaciation",
+      "qid": "Q1492",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Glacier",
+      "qid": "Q1494",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Global Environment Facility",
+      "qid": "Q1496",
+      "series": [
+        null
+      ]
+    },
+    {
+      "term": "Global dimming",
+      "qid": "Q1499",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Global mean sea level change",
+      "qid": "Q1502",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Global monsoon",
+      "qid": "Q1505",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Global warming",
+      "qid": "Q1506",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Global warming potential",
+      "qid": "Q1507",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Governance",
+      "qid": "Q1508",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Governance capacity",
+      "qid": "Q1509",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Gravitational, rotational and deformational effects",
+      "qid": "Q1510",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Grazing land",
+      "qid": "Q1512",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Green Climate Fund",
+      "qid": "Q1513",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Green infrastructure",
+      "qid": "Q1514",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Greenhouse effect",
+      "qid": "Q1515",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Greenhouse gas emission metric",
+      "qid": "Q1516",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Greenhouse gas neutrality",
+      "qid": "Q1517",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Greenhouse gases",
+      "qid": "Q1518",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Greenland Ice Sheet",
+      "qid": "Q1519",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Gross domestic product",
+      "qid": "Q1521",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Ground-level ozone",
+      "qid": "Q1523",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Gyre",
+      "qid": "Q1526",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Hadley circulation",
+      "qid": "Q1528",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Halocarbons",
+      "qid": "Q1529",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Halocline",
+      "qid": "Q1530",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Halosteric sea level change",
+      "qid": "Q1532",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Hazard",
+      "qid": "Q1533",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Heat index",
+      "qid": "Q1535",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Heat stress",
+      "qid": "Q1536",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Heavy precipitation event",
+      "qid": "Q1538",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Heinrich event",
+      "qid": "Q1540",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Hindcast or retrospective forecast",
+      "qid": "Q1542",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Holocene",
+      "qid": "Q1543",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Household carbon footprint",
+      "qid": "Q1544",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Human influence on the climate system",
+      "qid": "Q1546",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Human rights",
+      "qid": "Q1548",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Human security",
+      "qid": "Q1549",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Human system",
+      "qid": "Q1550",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Hydrofluorocarbons",
+      "qid": "Q1552",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Hydrological cycle",
+      "qid": "Q1553",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Hydrological sensitivity",
+      "qid": "Q1555",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Hypoxic",
+      "qid": "Q1559",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Ice age",
+      "qid": "Q1562",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Ice–albedo feedback",
+      "qid": "Q1563",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Ice sheet",
+      "qid": "Q1565",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Ice shelf",
+      "qid": "Q1566",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Iceberg",
+      "qid": "Q1568",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Impacts",
+      "qid": "Q1569",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Income",
+      "qid": "Q1570",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Incremental adaptation",
+      "qid": "Q1571",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Indian Ocean Dipole",
+      "qid": "Q1572",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Indian Ocean basin mode",
+      "qid": "Q1573",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Indigenous Peoples",
+      "qid": "Q1574",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Indigenous knowledge",
+      "qid": "Q1575",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Indirect emissions",
+      "qid": "Q1576",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Indirect land-use change",
+      "qid": "Q1577",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Industrial revolution",
+      "qid": "Q1578",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Inequality",
+      "qid": "Q1579",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Informal settlement",
+      "qid": "Q1580",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Infrastructure",
+      "qid": "Q1581",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Insolation",
+      "qid": "Q1582",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Instantaneous radiative forcing due to aerosol–cloud interactions",
+      "qid": "Q1583",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Instantaneous radiative forcing due to aerosol–radiation interactions",
+      "qid": "Q1584",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Institutional capacity",
+      "qid": "Q1585",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Institutions",
+      "qid": "Q1586",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Integrated assessment",
+      "qid": "Q1588",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Integrated assessment model",
+      "qid": "Q1589",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Inter-decadal Pacific Oscillation",
+      "qid": "Q1591",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Interglacial or interglaciation",
+      "qid": "Q1593",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Internal climate variability",
+      "qid": "Q1594",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Interstadial or interstade",
+      "qid": "Q1598",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Isostatic or Isostasy",
+      "qid": "Q1601",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Isotopes",
+      "qid": "Q1602",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Just transitions",
+      "qid": "Q1603",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Key climate indicators",
+      "qid": "Q1606",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Land",
+      "qid": "Q1609",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Land cover",
+      "qid": "Q1610",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Land degradation",
+      "qid": "Q1612",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Land use",
+      "qid": "Q1620",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Land use, land-use change and forestry",
+      "qid": "Q1621",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Land water storage",
+      "qid": "Q1623",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Large-scale",
+      "qid": "Q1625",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Last millennium",
+      "qid": "Q1626",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Least Developed Countries",
+      "qid": "Q1630",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Light-absorbing particles",
+      "qid": "Q1633",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Lithosphere",
+      "qid": "Q1635",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Local knowledge",
+      "qid": "Q1638",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Long-lived climate forcers",
+      "qid": "Q1641",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Long-lived greenhouse gases",
+      "qid": "Q1642",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Loss and Damage, and losses and damages",
+      "qid": "Q1643",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Low-likelihood, high impact outcomes",
+      "qid": "Q1645",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Madden–Julian Oscillation",
+      "qid": "Q1646",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Maladaptive actions",
+      "qid": "Q1647",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Malnutrition",
+      "qid": "Q1648",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Managed forest",
+      "qid": "Q1649",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Managed land",
+      "qid": "Q1651",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Marine cloud brightening",
+      "qid": "Q1653",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Marine heatwave",
+      "qid": "Q1654",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Marine ice cliff instability",
+      "qid": "Q1655",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Marine isotope stage",
+      "qid": "Q1657",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Market failure",
+      "qid": "Q1658",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Mass balance/budget",
+      "qid": "Q1659",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Measurement",
+      "qid": "Q1662",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Measurement, Reporting and Verification",
+      "qid": "Q1663",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Meltwater Pulse 1A",
+      "qid": "Q1666",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Meridional overturning circulation",
+      "qid": "Q1668",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Methane",
+      "qid": "Q1670",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Metric",
+      "qid": "Q1671",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Microwave sounding unit",
+      "qid": "Q1673",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Migrant",
+      "qid": "Q1674",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Migration",
+      "qid": "Q1675",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Mineralization/Remineralization",
+      "qid": "Q1676",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Model initialization",
+      "qid": "Q1683",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Model spread",
+      "qid": "Q1684",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Models",
+      "qid": "Q1685",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Modes of climate variability",
+      "qid": "Q1686",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Mole fraction or mixing ratio",
+      "qid": "Q1687",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Montreal Protocol",
+      "qid": "Q1689",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Mountains",
+      "qid": "Q1690",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Natural variability",
+      "qid": "Q1695",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Nature's contributions to people",
+      "qid": "Q1697",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Near-surface permafrost",
+      "qid": "Q1698",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Net negative greenhouse gas emissions",
+      "qid": "Q1700",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Net zero CO2 emissions",
+      "qid": "Q1702",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Net zero greenhouse gas emissions",
+      "qid": "Q1703",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "New Urban Agenda",
+      "qid": "Q1704",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Nitrous oxide",
+      "qid": "Q1706",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Non-CO2 emissions and radiative forcing",
+      "qid": "Q1707",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Non-communicable diseases",
+      "qid": "Q1709",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Non-linearity",
+      "qid": "Q1710",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "North American monsoon",
+      "qid": "Q1713",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "North Atlantic Oscillation",
+      "qid": "Q1714",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Northern Annular Mode",
+      "qid": "Q1715",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Ocean",
+      "qid": "Q1716",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Ocean acidification",
+      "qid": "Q1717",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Ocean alkalinization/Ocean alkalinity enhancement",
+      "qid": "Q1718",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Ocean deoxygenation",
+      "qid": "Q1720",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Ocean dynamic sea level change",
+      "qid": "Q1721",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Ocean fertilisation",
+      "qid": "Q1722",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Ocean heat uptake efficiency",
+      "qid": "Q1723",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Ocean stratification",
+      "qid": "Q1724",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Offset",
+      "qid": "Q1725",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Orbital forcing",
+      "qid": "Q1726",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Organic farming",
+      "qid": "Q1728",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Overshoot pathways",
+      "qid": "Q1732",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Oxygen minimum zone",
+      "qid": "Q1733",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Ozone",
+      "qid": "Q1734",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Ozone-depleting substances",
+      "qid": "Q1735",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Ozone layer",
+      "qid": "Q1736",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Pacific Decadal Oscillation",
+      "qid": "Q1738",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Pacific Decadal Variability",
+      "qid": "Q1739",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Palaeocene–Eocene Thermal Maximum",
+      "qid": "Q1741",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Participatory governance",
+      "qid": "Q1745",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Particulate matter",
+      "qid": "Q1746",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Pathways",
+      "qid": "Q1749",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Pelagic",
+      "qid": "Q1753",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Percentile",
+      "qid": "Q1755",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Permafrost",
+      "qid": "Q1757",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Permafrost thaw",
+      "qid": "Q1759",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Physical climate storyline",
+      "qid": "Q1763",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Plankton",
+      "qid": "Q1765",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Planned relocation",
+      "qid": "Q1766",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Plant evaporative stress",
+      "qid": "Q1767",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Pliocene",
+      "qid": "Q1770",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Polar amplification",
+      "qid": "Q1771",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Policies",
+      "qid": "Q1772",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Polycentric governance",
+      "qid": "Q1775",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Poverty",
+      "qid": "Q1778",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Poverty trap",
+      "qid": "Q1780",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Predictability",
+      "qid": "Q1785",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Prediction quality/skill",
+      "qid": "Q1786",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Primary energy",
+      "qid": "Q1787",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Primary production",
+      "qid": "Q1788",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Private costs",
+      "qid": "Q1789",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Probability density function",
+      "qid": "Q1790",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Process-based model",
+      "qid": "Q1792",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Projection",
+      "qid": "Q1794",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Proxy",
+      "qid": "Q1796",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Quasi-Biennial Oscillation",
+      "qid": "Q1797",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Radiative forcing",
+      "qid": "Q1799",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Rapid dynamical change",
+      "qid": "Q1800",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Reanalysis",
+      "qid": "Q1801",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Reasons for Concern",
+      "qid": "Q1802",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Rebound effect",
+      "qid": "Q1803",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Reconstruction",
+      "qid": "Q1804",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Reference scenario",
+      "qid": "Q1807",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Reforestation",
+      "qid": "Q1808",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Regenerative agriculture",
+      "qid": "Q1810",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Regional climate messages",
+      "qid": "Q1812",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Regulation",
+      "qid": "Q1815",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Relative sea level change",
+      "qid": "Q1817",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Reporting",
+      "qid": "Q1820",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Representative Concentration Pathways",
+      "qid": "Q1821",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Residual risk",
+      "qid": "Q1824",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Resilience",
+      "qid": "Q1825",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Response time or adjustment time",
+      "qid": "Q1829",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Risk",
+      "qid": "Q1833",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Risk transfer",
+      "qid": "Q1839",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Rock glacier",
+      "qid": "Q1841",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Salt-water intrusion/encroachment",
+      "qid": "Q1843",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Scenario",
+      "qid": "Q1845",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Sea ice",
+      "qid": "Q1847",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Sea level change",
+      "qid": "Q1851",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Sea level equivalent",
+      "qid": "Q1852",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Sea level rise",
+      "qid": "Q1853",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Sea surface temperature",
+      "qid": "Q1854",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Semi-arid zone",
+      "qid": "Q1855",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Semi-empirical model",
+      "qid": "Q1856",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Sendai Framework for Disaster Risk Reduction",
+      "qid": "Q1857",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Sensitivity",
+      "qid": "Q1859",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Service provisioning",
+      "qid": "Q1862",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Services",
+      "qid": "Q1863",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Shared socio-economic pathways",
+      "qid": "Q1865",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Shelf seas",
+      "qid": "Q1867",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Shifting development pathways",
+      "qid": "Q1868",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Shifting development pathways to sustainability",
+      "qid": "Q1869",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Short-lived climate forcers",
+      "qid": "Q1870",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Simple climate model",
+      "qid": "Q1873",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Small Island Developing States",
+      "qid": "Q1875",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Smart grids",
+      "qid": "Q1876",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Social-ecological system",
+      "qid": "Q1883",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Social infrastructure",
+      "qid": "Q1887",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Social protection",
+      "qid": "Q1890",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Solar activity",
+      "qid": "Q1900",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Solar energy",
+      "qid": "Q1902",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Solar radiation modification",
+      "qid": "Q1904",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Solubility pump",
+      "qid": "Q1905",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Solution space",
+      "qid": "Q1906",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "South American monsoon",
+      "qid": "Q1908",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "South Pacific Convergence Zone",
+      "qid": "Q1909",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "South and South East Asian monsoon",
+      "qid": "Q1910",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Southern Annular Mode",
+      "qid": "Q1911",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Southern Ocean",
+      "qid": "Q1912",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Spatial and temporal scales",
+      "qid": "Q1913",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Spill-over effect",
+      "qid": "Q1915",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Stadial or stade",
+      "qid": "Q1916",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Standard",
+      "qid": "Q1917",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Storm surge",
+      "qid": "Q1919",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Storm tracks",
+      "qid": "Q1920",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Storyline",
+      "qid": "Q1921",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Stranded assets",
+      "qid": "Q1922",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Stratification",
+      "qid": "Q1923",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Stratosphere–troposphere exchange",
+      "qid": "Q1925",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Stratospheric aerosol injection",
+      "qid": "Q1926",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Stratospheric polar vortex",
+      "qid": "Q1928",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Subduction",
+      "qid": "Q1932",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Sunspots",
+      "qid": "Q1937",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Sustainable Development Goals",
+      "qid": "Q1943",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Sustainable development pathways",
+      "qid": "Q1945",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Sustainable forest management",
+      "qid": "Q1946",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Sustainable intensification",
+      "qid": "Q1947",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Systems of Innovation",
+      "qid": "Q1951",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Technical potential",
+      "qid": "Q1953",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Technology transfer",
+      "qid": "Q1956",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Teleconnection",
+      "qid": "Q1957",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Teleconnection pattern",
+      "qid": "Q1958",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Temperature overshoot",
+      "qid": "Q1959",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Terrestrial radiation",
+      "qid": "Q1960",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Thermocline",
+      "qid": "Q1961",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Tier",
+      "qid": "Q1965",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Total alkalinity",
+      "qid": "Q1970",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Total carbon budget",
+      "qid": "Q1971",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Total solar irradiance",
+      "qid": "Q1972",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Trace gas",
+      "qid": "Q1974",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Trade-off",
+      "qid": "Q1975",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Transformation pathways",
+      "qid": "Q1978",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Transient climate response to cumulative CO2 emissions",
+      "qid": "Q1982",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Tree rings",
+      "qid": "Q1985",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Tropical Atlantic Variability",
+      "qid": "Q1987",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Tropical cyclone",
+      "qid": "Q1988",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Turnover time",
+      "qid": "Q1994",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Typological regions",
+      "qid": "Q1995",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Uncertainty",
+      "qid": "Q1996",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "United Nations Convention to Combat Desertification",
+      "qid": "Q1997",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "United Nations Framework Convention on Climate Change",
+      "qid": "Q1998",
+      "series": [
+        "Q77",
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Urban Systems",
+      "qid": "Q2001",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Urban",
+      "qid": "Q2002",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Urban heat island",
+      "qid": "Q2004",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Urbanisation",
+      "qid": "Q2005",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Values and beliefs",
+      "qid": "Q2007",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Variable renewable energy",
+      "qid": "Q2008",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Vertical land motion",
+      "qid": "Q2012",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Very short-lived halogenated substances",
+      "qid": "Q2013",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Volatile organic compounds",
+      "qid": "Q2014",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Water cycle",
+      "qid": "Q2019",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Water mass",
+      "qid": "Q2020",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Water security",
+      "qid": "Q2021",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    },
+    {
+      "term": "Water-use efficiency",
+      "qid": "Q2022",
+      "series": [
+        "Q106"
+      ]
+    },
+    {
+      "term": "Well-being",
+      "qid": "Q2025",
+      "series": [
+        "Q106",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Well-mixed greenhouse gas",
+      "qid": "Q2026",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "West African monsoon",
+      "qid": "Q2027",
+      "series": [
+        "Q77"
+      ]
+    },
+    {
+      "term": "Wind energy",
+      "qid": "Q2029",
+      "series": [
+        "Q150"
+      ]
+    },
+    {
+      "term": "Zero emissions commitment",
+      "qid": "Q2031",
+      "series": [
+        "Q77",
+        "Q150"
+      ]
+    },
+    {
+      "term": "Impact assessment",
+      "qid": "Q2033",
+      "series": [
+        null
+      ]
+    },
+    {
+      "term": "pH",
+      "qid": "Q2034",
+      "series": [
+        "Q77",
+        "Q106"
+      ]
+    }
+  ],
+  "failed": [
+    {
+      "term": "2030 Agenda for Sustainable Development",
+      "error": "'Item [[Item:Q197|Q197]] already has label \"2030 Agenda for Sustainable Development\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Abrupt change",
+      "error": "'Item [[Item:Q199|Q199]] already has label \"Abrupt change\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Abrupt climate change",
+      "error": "'Item [[Item:Q200|Q200]] already has label \"Abrupt climate change\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Access",
+      "error": "'Item [[Item:Q211|Q211]] already has label \"Access\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Access to modern energy services",
+      "error": "'Item [[Item:Q212|Q212]] already has label \"Access to modern energy services\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Active layer",
+      "error": "'Item [[Item:Q215|Q215]] already has label \"Active layer\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Adaptation behaviour",
+      "error": "'Item [[Item:Q219|Q219]] already has label \"Adaptation behaviour\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Adaptation deficit",
+      "error": "'Item [[Item:Q220|Q220]] already has label \"Adaptation deficit\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Adaptation gap",
+      "error": "'Item [[Item:Q221|Q221]] already has label \"Adaptation gap\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Adaptation needs",
+      "error": "'Item [[Item:Q223|Q223]] already has label \"Adaptation needs\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Adaptation options",
+      "error": "'Item [[Item:Q224|Q224]] already has label \"Adaptation options\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Adaptive capacity",
+      "error": "'Item [[Item:Q226|Q226]] already has label \"Adaptive capacity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Adaptive governance",
+      "error": "'Item [[Item:Q227|Q227]] already has label \"Adaptive governance\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Added value",
+      "error": "'Item [[Item:Q229|Q229]] already has label \"Added value\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Adverse side-effect",
+      "error": "'Item [[Item:Q233|Q233]] already has label \"Adverse side-effect\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Aerosol effective radiative forcing",
+      "error": "'Item [[Item:Q236|Q236]] already has label \"Aerosol effective radiative forcing\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Aerosol optical depth",
+      "error": "'Item [[Item:Q237|Q237]] already has label \"Aerosol optical depth\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Aerosol–radiation interaction",
+      "error": "'Item [[Item:Q238|Q238]] already has label \"Aerosol–radiation interaction\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Agricultural and ecological drought",
+      "error": "'Item [[Item:Q241|Q241]] already has label \"Agricultural and ecological drought\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Airborne fraction",
+      "error": "'Item [[Item:Q247|Q247]] already has label \"Airborne fraction\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Alkalinity",
+      "error": "'Item [[Item:Q249|Q249]] already has label \"Alkalinity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Altimetry",
+      "error": "'Item [[Item:Q250|Q250]] already has label \"Altimetry\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Anomaly",
+      "error": "'Item [[Item:Q252|Q252]] already has label \"Anomaly\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Anthropogenic",
+      "error": "'Item [[Item:Q255|Q255]] already has label \"Anthropogenic\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Apparent hydrological sensitivity",
+      "error": "'Item [[Item:Q259|Q259]] already has label \"Apparent hydrological sensitivity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Arctic oscillation",
+      "error": "'Item [[Item:Q260|Q260]] already has label \"Arctic oscillation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Artificial ocean upwelling",
+      "error": "'Item [[Item:Q263|Q263]] already has label \"Artificial ocean upwelling\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Assets",
+      "error": "'Item [[Item:Q264|Q264]] already has label \"Assets\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Attribution",
+      "error": "'Item [[Item:Q273|Q273]] already has label \"Attribution\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Autonomous adaptation",
+      "error": "'Item [[Item:Q275|Q275]] already has label \"Autonomous adaptation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Autotrophic respiration",
+      "error": "'Item [[Item:Q276|Q276]] already has label \"Autotrophic respiration\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Avalanche",
+      "error": "'Item [[Item:Q277|Q277]] already has label \"Avalanche\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Baseline period",
+      "error": "'Item [[Item:Q280|Q280]] already has label \"Baseline period\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Baseline scenario",
+      "error": "'Item [[Item:Q282|Q282]] already has label \"Baseline scenario\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Behavioural change",
+      "error": "'Item [[Item:Q283|Q283]] already has label \"Behavioural change\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Benthic",
+      "error": "'Item [[Item:Q284|Q284]] already has label \"Benthic\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Beta diversity",
+      "error": "'Item [[Item:Q286|Q286]] already has label \"Beta diversity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Biodiversity hotspots",
+      "error": "'Item [[Item:Q289|Q289]] already has label \"Biodiversity hotspots\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Bioenergy",
+      "error": "'Item [[Item:Q290|Q290]] already has label \"Bioenergy\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Bioenergy with carbon dioxide capture and storage",
+      "error": "'Item [[Item:Q291|Q291]] already has label \"Bioenergy with carbon dioxide capture and storage\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Biofuel",
+      "error": "'Item [[Item:Q292|Q292]] already has label \"Biofuel\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Biogenic carbon emissions",
+      "error": "'Item [[Item:Q293|Q293]] already has label \"Biogenic carbon emissions\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Biogeophysical potential",
+      "error": "'Item [[Item:Q295|Q295]] already has label \"Biogeophysical potential\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Biomass",
+      "error": "'Item [[Item:Q297|Q297]] already has label \"Biomass\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Biomes",
+      "error": "'Item [[Item:Q298|Q298]] already has label \"Biomes\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Blue infrastructure",
+      "error": "'Item [[Item:Q304|Q304]] already has label \"Blue infrastructure\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Burden",
+      "error": "'Item [[Item:Q306|Q306]] already has label \"Burden\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Calving",
+      "error": "'Item [[Item:Q310|Q310]] already has label \"Calving\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Canopy temperature",
+      "error": "'Item [[Item:Q311|Q311]] already has label \"Canopy temperature\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Capacity building",
+      "error": "'Item [[Item:Q312|Q312]] already has label \"Capacity building\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Carbon footprint",
+      "error": "'Item [[Item:Q321|Q321]] already has label \"Carbon footprint\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Carbon intensity",
+      "error": "'Item [[Item:Q322|Q322]] already has label \"Carbon intensity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Carbon sequestration",
+      "error": "'Item [[Item:Q325|Q325]] already has label \"Carbon sequestration\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Carbon stock",
+      "error": "'Item [[Item:Q326|Q326]] already has label \"Carbon stock\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Carbonaceous aerosol",
+      "error": "'Item [[Item:Q327|Q327]] already has label \"Carbonaceous aerosol\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Catchment",
+      "error": "'Item [[Item:Q330|Q330]] already has label \"Catchment\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Cenozoic Era",
+      "error": "'Item [[Item:Q331|Q331]] already has label \"Cenozoic Era\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Central Pacific El Niño",
+      "error": "'Item [[Item:Q332|Q332]] already has label \"Central Pacific El Niño\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Charcoal",
+      "error": "'Item [[Item:Q334|Q334]] already has label \"Charcoal\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Choice architecture",
+      "error": "'Item [[Item:Q336|Q336]] already has label \"Choice architecture\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Chronology",
+      "error": "'Item [[Item:Q337|Q337]] already has label \"Chronology\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Citizen science",
+      "error": "'Item [[Item:Q341|Q341]] already has label \"Citizen science\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Clathrate",
+      "error": "'Item [[Item:Q343|Q343]] already has label \"Clathrate\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Climate governance",
+      "error": "'Item [[Item:Q353|Q353]] already has label \"Climate governance\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Climate indicator",
+      "error": "'Item [[Item:Q355|Q355]] already has label \"Climate indicator\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Climate information",
+      "error": "'Item [[Item:Q356|Q356]] already has label \"Climate information\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Climate literacy",
+      "error": "'Item [[Item:Q358|Q358]] already has label \"Climate literacy\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Climate refugium",
+      "error": "'Item [[Item:Q364|Q364]] already has label \"Climate refugium\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Climate resilient development",
+      "error": "'Item [[Item:Q365|Q365]] already has label \"Climate resilient development\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Climate-resilient pathways",
+      "error": "'Item [[Item:Q367|Q367]] already has label \"Climate-resilient pathways\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Climate response",
+      "error": "'Item [[Item:Q368|Q368]] already has label \"Climate response\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Climate sensitivity",
+      "error": "'Item [[Item:Q369|Q369]] already has label \"Climate sensitivity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Climate threshold",
+      "error": "'Item [[Item:Q374|Q374]] already has label \"Climate threshold\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Climatic driver",
+      "error": "'Item [[Item:Q377|Q377]] already has label \"Climatic driver\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Cloud radiative effect",
+      "error": "'Item [[Item:Q381|Q381]] already has label \"Cloud radiative effect\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Cloud-resolving models",
+      "error": "'Item [[Item:Q382|Q382]] already has label \"Cloud-resolving models\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Co-benefits",
+      "error": "'Item [[Item:Q383|Q383]] already has label \"Co-benefits\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Coastal erosion",
+      "error": "'Item [[Item:Q385|Q385]] already has label \"Coastal erosion\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Compound risks",
+      "error": "'Item [[Item:Q391|Q391]] already has label \"Compound risks\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Conference of the Parties",
+      "error": "'Item [[Item:Q394|Q394]] already has label \"Conference of the Parties\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Constant emissions commitment",
+      "error": "'Item [[Item:Q398|Q398]] already has label \"Constant emissions commitment\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Consumption-based emissions",
+      "error": "'Item [[Item:Q399|Q399]] already has label \"Consumption-based emissions\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Coping capacity",
+      "error": "'Item [[Item:Q402|Q402]] already has label \"Coping capacity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Coral bleaching",
+      "error": "'Item [[Item:Q403|Q403]] already has label \"Coral bleaching\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Cryosphere",
+      "error": "'Item [[Item:Q409|Q409]] already has label \"Cryosphere\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Cumulative emissions",
+      "error": "'Item [[Item:Q411|Q411]] already has label \"Cumulative emissions\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Dead zones",
+      "error": "'Item [[Item:Q414|Q414]] already has label \"Dead zones\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Decadal predictability",
+      "error": "'Item [[Item:Q415|Q415]] already has label \"Decadal predictability\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Decadal prediction",
+      "error": "'Item [[Item:Q416|Q416]] already has label \"Decadal prediction\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Decadal variability",
+      "error": "'Item [[Item:Q417|Q417]] already has label \"Decadal variability\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Decarbonisation",
+      "error": "'Item [[Item:Q418|Q418]] already has label \"Decarbonisation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Decent Living Standard",
+      "error": "'Item [[Item:Q419|Q419]] already has label \"Decent Living Standard\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Deliberate transformations",
+      "error": "'Item [[Item:Q424|Q424]] already has label \"Deliberate transformations\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Demand-side measures",
+      "error": "'Item [[Item:Q428|Q428]] already has label \"Demand-side measures\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Detection and attribution",
+      "error": "'Item [[Item:Q431|Q431]] already has label \"Detection and attribution\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Diet",
+      "error": "'Item [[Item:Q435|Q435]] already has label \"Diet\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Direct air carbon dioxide capture and storage",
+      "error": "'Item [[Item:Q438|Q438]] already has label \"Direct air carbon dioxide capture and storage\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Direct and indirect services",
+      "error": "'Item [[Item:Q439|Q439]] already has label \"Direct and indirect services\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Direct emissions",
+      "error": "'Item [[Item:Q440|Q440]] already has label \"Direct emissions\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Disaster management",
+      "error": "'Item [[Item:Q442|Q442]] already has label \"Disaster management\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Disruptive innovation",
+      "error": "'Item [[Item:Q448|Q448]] already has label \"Disruptive innovation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Diurnal temperature range",
+      "error": "'Item [[Item:Q451|Q451]] already has label \"Diurnal temperature range\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Drainage",
+      "error": "'Item [[Item:Q454|Q454]] already has label \"Drainage\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Driver",
+      "error": "'Item [[Item:Q455|Q455]] already has label \"Driver\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Dynamical system",
+      "error": "'Item [[Item:Q458|Q458]] already has label \"Dynamical system\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Earth's energy flows",
+      "error": "'Item [[Item:Q462|Q462]] already has label \"Earth\\'s energy flows\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Earth's energy imbalance",
+      "error": "'Item [[Item:Q463|Q463]] already has label \"Earth\\'s energy imbalance\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Earth's radiative response",
+      "error": "'Item [[Item:Q464|Q464]] already has label \"Earth\\'s radiative response\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Earth system feedbacks",
+      "error": "'Item [[Item:Q465|Q465]] already has label \"Earth system feedbacks\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Earth system model of intermediate complexity",
+      "error": "'Item [[Item:Q467|Q467]] already has label \"Earth system model of intermediate complexity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Eastern Pacific El Niño",
+      "error": "'Item [[Item:Q470|Q470]] already has label \"Eastern Pacific El Niño\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Economic potential",
+      "error": "'Item [[Item:Q472|Q472]] already has label \"Economic potential\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Elevation-dependent warming",
+      "error": "'Item [[Item:Q483|Q483]] already has label \"Elevation-dependent warming\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Emission pathways",
+      "error": "'Item [[Item:Q489|Q489]] already has label \"Emission pathways\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Emission trajectories",
+      "error": "'Item [[Item:Q490|Q490]] already has label \"Emission trajectories\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Endemic species",
+      "error": "'Item [[Item:Q495|Q495]] already has label \"Endemic species\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Energy access",
+      "error": "'Item [[Item:Q496|Q496]] already has label \"Energy access\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Energy poverty",
+      "error": "'Item [[Item:Q501|Q501]] already has label \"Energy poverty\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Energy services",
+      "error": "'Item [[Item:Q503|Q503]] already has label \"Energy services\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Energy system",
+      "error": "'Item [[Item:Q504|Q504]] already has label \"Energy system\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Equality",
+      "error": "'Item [[Item:Q508|Q508]] already has label \"Equality\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Equilibrium climate sensitivity",
+      "error": "'Item [[Item:Q510|Q510]] already has label \"Equilibrium climate sensitivity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Ethics",
+      "error": "'Item [[Item:Q514|Q514]] already has label \"Ethics\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Eudaimonic",
+      "error": "'Item [[Item:Q515|Q515]] already has label \"Eudaimonic\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Eutrophication",
+      "error": "'Item [[Item:Q516|Q516]] already has label \"Eutrophication\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Evaporation",
+      "error": "'Item [[Item:Q517|Q517]] already has label \"Evaporation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Evapotranspiration",
+      "error": "'Item [[Item:Q518|Q518]] already has label \"Evapotranspiration\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Evidence",
+      "error": "'Item [[Item:Q519|Q519]] already has label \"Evidence\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Exposure",
+      "error": "'Item [[Item:Q522|Q522]] already has label \"Exposure\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Extended concentration pathways",
+      "error": "'Item [[Item:Q523|Q523]] already has label \"Extended concentration pathways\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Extirpation",
+      "error": "'Item [[Item:Q527|Q527]] already has label \"Extirpation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Extratropical cyclone",
+      "error": "'Item [[Item:Q528|Q528]] already has label \"Extratropical cyclone\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Extratropical jets",
+      "error": "'Item [[Item:Q529|Q529]] already has label \"Extratropical jets\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Faculae",
+      "error": "'Item [[Item:Q534|Q534]] already has label \"Faculae\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Fairness",
+      "error": "'Item [[Item:Q535|Q535]] already has label \"Fairness\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Final energy",
+      "error": "'Item [[Item:Q537|Q537]] already has label \"Final energy\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Fine-mode aerosol optical depth",
+      "error": "'Item [[Item:Q538|Q538]] already has label \"Fine-mode aerosol optical depth\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Firn",
+      "error": "'Item [[Item:Q541|Q541]] already has label \"Firn\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Flaring",
+      "error": "'Item [[Item:Q543|Q543]] already has label \"Flaring\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Flexibility",
+      "error": "'Item [[Item:Q544|Q544]] already has label \"Flexibility\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Flexible governance",
+      "error": "'Item [[Item:Q545|Q545]] already has label \"Flexible governance\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Flux",
+      "error": "'Item [[Item:Q547|Q547]] already has label \"Flux\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Food-borne diseases",
+      "error": "'Item [[Item:Q548|Q548]] already has label \"Food-borne diseases\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Forest degradation",
+      "error": "'Item [[Item:Q555|Q555]] already has label \"Forest degradation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Forest line",
+      "error": "'Item [[Item:Q556|Q556]] already has label \"Forest line\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Fossil fuel emissions",
+      "error": "'Item [[Item:Q557|Q557]] already has label \"Fossil fuel emissions\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Fossil fuels",
+      "error": "'Item [[Item:Q558|Q558]] already has label \"Fossil fuels\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Free atmosphere",
+      "error": "'Item [[Item:Q559|Q559]] already has label \"Free atmosphere\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Frozen ground",
+      "error": "'Item [[Item:Q560|Q560]] already has label \"Frozen ground\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Fuel poverty",
+      "error": "'Item [[Item:Q561|Q561]] already has label \"Fuel poverty\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "General circulation",
+      "error": "'Item [[Item:Q564|Q564]] already has label \"General circulation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Geocentric sea level change",
+      "error": "'Item [[Item:Q566|Q566]] already has label \"Geocentric sea level change\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Glacial-interglacial cycles",
+      "error": "'Item [[Item:Q571|Q571]] already has label \"Glacial-interglacial cycles\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Glacial lake outburst flood /Glacier lake outburst",
+      "error": "'Item [[Item:Q573|Q573]] already has label \"Glacial lake outburst flood /Glacier lake outburst\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Glaciated",
+      "error": "'Item [[Item:Q575|Q575]] already has label \"Glaciated\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Glacierized",
+      "error": "'Item [[Item:Q577|Q577]] already has label \"Glacierized\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Global carbon budget",
+      "error": "'Item [[Item:Q578|Q578]] already has label \"Global carbon budget\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Global change",
+      "error": "'Item [[Item:Q579|Q579]] already has label \"Global change\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Global energy budget",
+      "error": "'Item [[Item:Q581|Q581]] already has label \"Global energy budget\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Global energy inventory",
+      "error": "'Item [[Item:Q582|Q582]] already has label \"Global energy inventory\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Global mean surface air temperature",
+      "error": "'Item [[Item:Q584|Q584]] already has label \"Global mean surface air temperature\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Global mean surface temperature",
+      "error": "'Item [[Item:Q585|Q585]] already has label \"Global mean surface temperature\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Gravity Recovery and Climate Experiment",
+      "error": "'Item [[Item:Q592|Q592]] already has label \"Gravity Recovery and Climate Experiment\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Grey infrastructure",
+      "error": "'Item [[Item:Q601|Q601]] already has label \"Grey infrastructure\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Gross primary production",
+      "error": "'Item [[Item:Q603|Q603]] already has label \"Gross primary production\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Grounding line",
+      "error": "'Item [[Item:Q605|Q605]] already has label \"Grounding line\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Groundwater recharge",
+      "error": "'Item [[Item:Q606|Q606]] already has label \"Groundwater recharge\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Habitability",
+      "error": "'Item [[Item:Q608|Q608]] already has label \"Habitability\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Halosteric",
+      "error": "'Item [[Item:Q612|Q612]] already has label \"Halosteric\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Health",
+      "error": "'Item [[Item:Q615|Q615]] already has label \"Health\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Heatwave",
+      "error": "'Item [[Item:Q618|Q618]] already has label \"Heatwave\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Hedonic",
+      "error": "'Item [[Item:Q620|Q620]] already has label \"Hedonic\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Heterotrophic respiration",
+      "error": "'Item [[Item:Q622|Q622]] already has label \"Heterotrophic respiration\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Human behaviour",
+      "error": "'Item [[Item:Q626|Q626]] already has label \"Human behaviour\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Human mobility",
+      "error": "'Item [[Item:Q628|Q628]] already has label \"Human mobility\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Hydroclimate",
+      "error": "'Item [[Item:Q632|Q632]] already has label \"Hydroclimate\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Hydrological drought",
+      "error": "'Item [[Item:Q635|Q635]] already has label \"Hydrological drought\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Hydropower",
+      "error": "'Item [[Item:Q637|Q637]] already has label \"Hydropower\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Hydrosphere",
+      "error": "'Item [[Item:Q638|Q638]] already has label \"Hydrosphere\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Hyperthermal events",
+      "error": "'Item [[Item:Q639|Q639]] already has label \"Hyperthermal events\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Hypoxic events",
+      "error": "'Item [[Item:Q641|Q641]] already has label \"Hypoxic events\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Hypsometry",
+      "error": "'Item [[Item:Q642|Q642]] already has label \"Hypsometry\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Ice core",
+      "error": "'Item [[Item:Q645|Q645]] already has label \"Ice core\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Ice stream",
+      "error": "'Item [[Item:Q648|Q648]] already has label \"Ice stream\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Insurance/reinsurance",
+      "error": "'Item [[Item:Q668|Q668]] already has label \"Insurance/reinsurance\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Integrated assessment scenario ensemble",
+      "error": "'Item [[Item:Q671|Q671]] already has label \"Integrated assessment scenario ensemble\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Inter-tropical Convergence Zone",
+      "error": "'Item [[Item:Q673|Q673]] already has label \"Inter-tropical Convergence Zone\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Internal variability",
+      "error": "'Item [[Item:Q676|Q676]] already has label \"Internal variability\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Internet of Things",
+      "error": "'Item [[Item:Q677|Q677]] already has label \"Internet of Things\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Interpolation uncertainty",
+      "error": "'Item [[Item:Q678|Q678]] already has label \"Interpolation uncertainty\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Invasive species",
+      "error": "'Item [[Item:Q680|Q680]] already has label \"Invasive species\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Irreversibility",
+      "error": "'Item [[Item:Q681|Q681]] already has label \"Irreversibility\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Justice",
+      "error": "'Item [[Item:Q685|Q685]] already has label \"Justice\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Kaya identity",
+      "error": "'Item [[Item:Q686|Q686]] already has label \"Kaya identity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Key risk",
+      "error": "'Item [[Item:Q688|Q688]] already has label \"Key risk\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Kriging",
+      "error": "'Item [[Item:Q689|Q689]] already has label \"Kriging\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Land-cover change",
+      "error": "'Item [[Item:Q692|Q692]] already has label \"Land-cover change\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Land degradation neutrality",
+      "error": "'Item [[Item:Q694|Q694]] already has label \"Land degradation neutrality\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Land management",
+      "error": "'Item [[Item:Q695|Q695]] already has label \"Land management\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Land management change",
+      "error": "'Item [[Item:Q696|Q696]] already has label \"Land management change\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Land potential",
+      "error": "'Item [[Item:Q697|Q697]] already has label \"Land potential\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Land rehabilitation",
+      "error": "'Item [[Item:Q698|Q698]] already has label \"Land rehabilitation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Land restoration",
+      "error": "'Item [[Item:Q699|Q699]] already has label \"Land restoration\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Land surface air temperature",
+      "error": "'Item [[Item:Q700|Q700]] already has label \"Land surface air temperature\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Land-use change",
+      "error": "'Item [[Item:Q703|Q703]] already has label \"Land-use change\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Lapse rate",
+      "error": "'Item [[Item:Q705|Q705]] already has label \"Lapse rate\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Latent heat flux",
+      "error": "'Item [[Item:Q708|Q708]] already has label \"Latent heat flux\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Leakage",
+      "error": "'Item [[Item:Q709|Q709]] already has label \"Leakage\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Leapfrogging",
+      "error": "'Item [[Item:Q710|Q710]] already has label \"Leapfrogging\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Lifecycle assessment",
+      "error": "'Item [[Item:Q712|Q712]] already has label \"Lifecycle assessment\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Lifetime",
+      "error": "'Item [[Item:Q713|Q713]] already has label \"Lifetime\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Likelihood",
+      "error": "'Item [[Item:Q715|Q715]] already has label \"Likelihood\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Livelihood",
+      "error": "'Item [[Item:Q717|Q717]] already has label \"Livelihood\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Local extinction",
+      "error": "'Item [[Item:Q718|Q718]] already has label \"Local extinction\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Local sea level change",
+      "error": "'Item [[Item:Q720|Q720]] already has label \"Local sea level change\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Lock-in",
+      "error": "'Item [[Item:Q721|Q721]] already has label \"Lock-in\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Low Elevation Coastal Zones",
+      "error": "'Item [[Item:Q725|Q725]] already has label \"Low Elevation Coastal Zones\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Managed grassland",
+      "error": "'Item [[Item:Q731|Q731]] already has label \"Managed grassland\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Marine-based ice sheet",
+      "error": "'Item [[Item:Q733|Q733]] already has label \"Marine-based ice sheet\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Marine ice sheet instability",
+      "error": "'Item [[Item:Q737|Q737]] already has label \"Marine ice sheet instability\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Material substitution",
+      "error": "'Item [[Item:Q741|Q741]] already has label \"Material substitution\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Mean sea level",
+      "error": "'Item [[Item:Q742|Q742]] already has label \"Mean sea level\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Megacity",
+      "error": "'Item [[Item:Q745|Q745]] already has label \"Megacity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Megadrought",
+      "error": "'Item [[Item:Q746|Q746]] already has label \"Megadrought\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Mental health",
+      "error": "'Item [[Item:Q748|Q748]] already has label \"Mental health\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Meteorological drought",
+      "error": "'Item [[Item:Q750|Q750]] already has label \"Meteorological drought\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Microclimate",
+      "error": "'Item [[Item:Q753|Q753]] already has label \"Microclimate\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Mitigation",
+      "error": "'Item [[Item:Q758|Q758]] already has label \"Mitigation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Mitigation measures",
+      "error": "'Item [[Item:Q759|Q759]] already has label \"Mitigation measures\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Mitigation option",
+      "error": "'Item [[Item:Q760|Q760]] already has label \"Mitigation option\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Mitigation pathways",
+      "error": "'Item [[Item:Q761|Q761]] already has label \"Mitigation pathways\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Mitigation potential",
+      "error": "'Item [[Item:Q762|Q762]] already has label \"Mitigation potential\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Mitigation scenario",
+      "error": "'Item [[Item:Q763|Q763]] already has label \"Mitigation scenario\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Monitoring and evaluation",
+      "error": "'Item [[Item:Q769|Q769]] already has label \"Monitoring and evaluation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Multi-level governance",
+      "error": "'Item [[Item:Q772|Q772]] already has label \"Multi-level governance\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Narrative",
+      "error": "'Item [[Item:Q773|Q773]] already has label \"Narrative\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Native species",
+      "error": "'Item [[Item:Q774|Q774]] already has label \"Native species\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Natural systems",
+      "error": "'Item [[Item:Q775|Q775]] already has label \"Natural systems\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Nature-based solutions",
+      "error": "'Item [[Item:Q777|Q777]] already has label \"Nature-based solutions\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Negative greenhouse gas emissions",
+      "error": "'Item [[Item:Q780|Q780]] already has label \"Negative greenhouse gas emissions\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Net primary production",
+      "error": "'Item [[Item:Q782|Q782]] already has label \"Net primary production\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Nitrogen deposition",
+      "error": "'Item [[Item:Q786|Q786]] already has label \"Nitrogen deposition\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Non-climatic driver",
+      "error": "'Item [[Item:Q789|Q789]] already has label \"Non-climatic driver\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Non-methane volatile organic compounds",
+      "error": "'Item [[Item:Q792|Q792]] already has label \"Non-methane volatile organic compounds\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Non-overshoot pathways",
+      "error": "'Item [[Item:Q793|Q793]] already has label \"Non-overshoot pathways\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Ocean carbon cycle",
+      "error": "'Item [[Item:Q800|Q800]] already has label \"Ocean carbon cycle\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Organic aerosol",
+      "error": "'Item [[Item:Q808|Q808]] already has label \"Organic aerosol\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Outbreak",
+      "error": "'Item [[Item:Q810|Q810]] already has label \"Outbreak\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Outgoing longwave radiation",
+      "error": "'Item [[Item:Q811|Q811]] already has label \"Outgoing longwave radiation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Outlet glacier",
+      "error": "'Item [[Item:Q812|Q812]] already has label \"Outlet glacier\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Ozonesonde",
+      "error": "'Item [[Item:Q818|Q818]] already has label \"Ozonesonde\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Pacific-North American pattern",
+      "error": "'Item [[Item:Q821|Q821]] already has label \"Pacific-North American pattern\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Paleoclimate",
+      "error": "'Item [[Item:Q823|Q823]] already has label \"Paleoclimate\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Pandemic",
+      "error": "'Item [[Item:Q824|Q824]] already has label \"Pandemic\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Pareto optimum",
+      "error": "'Item [[Item:Q825|Q825]] already has label \"Pareto optimum\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Pasture",
+      "error": "'Item [[Item:Q828|Q828]] already has label \"Pasture\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Path dependence",
+      "error": "'Item [[Item:Q829|Q829]] already has label \"Path dependence\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Pattern scaling",
+      "error": "'Item [[Item:Q831|Q831]] already has label \"Pattern scaling\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Peat",
+      "error": "'Item [[Item:Q832|Q832]] already has label \"Peat\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Peatlands",
+      "error": "'Item [[Item:Q833|Q833]] already has label \"Peatlands\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Pelagos",
+      "error": "'Item [[Item:Q835|Q835]] already has label \"Pelagos\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Peri-urban areas",
+      "error": "'Item [[Item:Q837|Q837]] already has label \"Peri-urban areas\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Permafrost degradation",
+      "error": "'Item [[Item:Q839|Q839]] already has label \"Permafrost degradation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Perturbed parameter ensemble",
+      "error": "'Item [[Item:Q841|Q841]] already has label \"Perturbed parameter ensemble\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Phenology",
+      "error": "'Item [[Item:Q842|Q842]] already has label \"Phenology\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Photosynthesis",
+      "error": "'Item [[Item:Q843|Q843]] already has label \"Photosynthesis\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Planetary health",
+      "error": "'Item [[Item:Q845|Q845]] already has label \"Planetary health\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Plasticity",
+      "error": "'Item [[Item:Q849|Q849]] already has label \"Plasticity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Pleistocene",
+      "error": "'Item [[Item:Q850|Q850]] already has label \"Pleistocene\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Political economy",
+      "error": "'Item [[Item:Q854|Q854]] already has label \"Political economy\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Pollen analysis",
+      "error": "'Item [[Item:Q855|Q855]] already has label \"Pollen analysis\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Pool, carbon and nitrogen",
+      "error": "'Item [[Item:Q857|Q857]] already has label \"Pool, carbon and nitrogen\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Potential evapotranspiration",
+      "error": "'Item [[Item:Q858|Q858]] already has label \"Potential evapotranspiration\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Poverty eradication",
+      "error": "'Item [[Item:Q860|Q860]] already has label \"Poverty eradication\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Pre-industrial",
+      "error": "'Item [[Item:Q862|Q862]] already has label \"Pre-industrial\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Precipitable water",
+      "error": "'Item [[Item:Q863|Q863]] already has label \"Precipitable water\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Precipitation deficit",
+      "error": "'Item [[Item:Q864|Q864]] already has label \"Precipitation deficit\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Precursors",
+      "error": "'Item [[Item:Q865|Q865]] already has label \"Precursors\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Procedural justice",
+      "error": "'Item [[Item:Q872|Q872]] already has label \"Procedural justice\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Production-based emissions",
+      "error": "'Item [[Item:Q874|Q874]] already has label \"Production-based emissions\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Prosumers",
+      "error": "'Item [[Item:Q876|Q876]] already has label \"Prosumers\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Quaternary",
+      "error": "'Item [[Item:Q879|Q879]] already has label \"Quaternary\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Reducing Emissions from Deforestation and Forest Degradation",
+      "error": "'Item [[Item:Q886|Q886]] already has label \"Reducing Emissions from Deforestation and Forest Degradation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Reference period",
+      "error": "'Item [[Item:Q887|Q887]] already has label \"Reference period\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Refugium",
+      "error": "'Item [[Item:Q890|Q890]] already has label \"Refugium\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Region",
+      "error": "'Item [[Item:Q892|Q892]] already has label \"Region\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Regional climate model",
+      "error": "'Item [[Item:Q894|Q894]] already has label \"Regional climate model\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Regional sea level change",
+      "error": "'Item [[Item:Q895|Q895]] already has label \"Regional sea level change\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Relative humidity",
+      "error": "'Item [[Item:Q897|Q897]] already has label \"Relative humidity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Remaining carbon budget",
+      "error": "'Item [[Item:Q899|Q899]] already has label \"Remaining carbon budget\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Renewable energy",
+      "error": "'Item [[Item:Q900|Q900]] already has label \"Renewable energy\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Representative Key Risks",
+      "error": "'Item [[Item:Q903|Q903]] already has label \"Representative Key Risks\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Reservoir",
+      "error": "'Item [[Item:Q904|Q904]] already has label \"Reservoir\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Resolution",
+      "error": "'Item [[Item:Q907|Q907]] already has label \"Resolution\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Resource cascade",
+      "error": "'Item [[Item:Q908|Q908]] already has label \"Resource cascade\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Respiration",
+      "error": "'Item [[Item:Q909|Q909]] already has label \"Respiration\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Restoration",
+      "error": "'Item [[Item:Q911|Q911]] already has label \"Restoration\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Return period",
+      "error": "'Item [[Item:Q912|Q912]] already has label \"Return period\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Return value",
+      "error": "'Item [[Item:Q913|Q913]] already has label \"Return value\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Risk assessment",
+      "error": "'Item [[Item:Q915|Q915]] already has label \"Risk assessment\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Risk framework",
+      "error": "'Item [[Item:Q916|Q916]] already has label \"Risk framework\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Risk management",
+      "error": "'Item [[Item:Q917|Q917]] already has label \"Risk management\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Risk perception",
+      "error": "'Item [[Item:Q918|Q918]] already has label \"Risk perception\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Risk trade-off",
+      "error": "'Item [[Item:Q919|Q919]] already has label \"Risk trade-off\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "River discharge",
+      "error": "'Item [[Item:Q921|Q921]] already has label \"River discharge\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Runoff",
+      "error": "'Item [[Item:Q923|Q923]] already has label \"Runoff\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sampling uncertainty",
+      "error": "'Item [[Item:Q925|Q925]] already has label \"Sampling uncertainty\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Scenario storyline",
+      "error": "'Item [[Item:Q927|Q927]] already has label \"Scenario storyline\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sea ice area",
+      "error": "'Item [[Item:Q929|Q929]] already has label \"Sea ice area\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sea ice concentration",
+      "error": "'Item [[Item:Q930|Q930]] already has label \"Sea ice concentration\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sea ice extent",
+      "error": "'Item [[Item:Q931|Q931]] already has label \"Sea ice extent\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sensible heat flux",
+      "error": "'Item [[Item:Q939|Q939]] already has label \"Sensible heat flux\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sequestration",
+      "error": "'Item [[Item:Q941|Q941]] already has label \"Sequestration\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sequestration potential",
+      "error": "'Item [[Item:Q942|Q942]] already has label \"Sequestration potential\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Settlements",
+      "error": "'Item [[Item:Q945|Q945]] already has label \"Settlements\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sharing economy.",
+      "error": "'Item [[Item:Q947|Q947]] already has label \"Sharing economy.\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Short-lived climate pollutants",
+      "error": "'Item [[Item:Q952|Q952]] already has label \"Short-lived climate pollutants\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Significant wave height",
+      "error": "'Item [[Item:Q953|Q953]] already has label \"Significant wave height\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sink",
+      "error": "'Item [[Item:Q955|Q955]] already has label \"Sink\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Snow cover",
+      "error": "'Item [[Item:Q958|Q958]] already has label \"Snow cover\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Snow cover duration",
+      "error": "'Item [[Item:Q959|Q959]] already has label \"Snow cover duration\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Snow cover extent",
+      "error": "'Item [[Item:Q960|Q960]] already has label \"Snow cover extent\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Snow water equivalent",
+      "error": "'Item [[Item:Q961|Q961]] already has label \"Snow water equivalent\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Social cost of carbon",
+      "error": "'Item [[Item:Q962|Q962]] already has label \"Social cost of carbon\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Social costs",
+      "error": "'Item [[Item:Q963|Q963]] already has label \"Social costs\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Social group",
+      "error": "'Item [[Item:Q965|Q965]] already has label \"Social group\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Social identity",
+      "error": "'Item [[Item:Q966|Q966]] already has label \"Social identity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Social inclusion",
+      "error": "'Item [[Item:Q967|Q967]] already has label \"Social inclusion\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Social justice",
+      "error": "'Item [[Item:Q969|Q969]] already has label \"Social justice\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Social learning",
+      "error": "'Item [[Item:Q970|Q970]] already has label \"Social learning\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Societal transformations",
+      "error": "'Item [[Item:Q972|Q972]] already has label \"Societal transformations\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Socio-economic scenario",
+      "error": "'Item [[Item:Q973|Q973]] already has label \"Socio-economic scenario\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Socio-technical transitions",
+      "error": "'Item [[Item:Q974|Q974]] already has label \"Socio-technical transitions\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Soil carbon sequestration",
+      "error": "'Item [[Item:Q975|Q975]] already has label \"Soil carbon sequestration\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Soil erosion",
+      "error": "'Item [[Item:Q976|Q976]] already has label \"Soil erosion\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Soil moisture",
+      "error": "'Item [[Item:Q977|Q977]] already has label \"Soil moisture\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Soil organic carbon",
+      "error": "'Item [[Item:Q978|Q978]] already has label \"Soil organic carbon\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Soil organic matter",
+      "error": "'Item [[Item:Q979|Q979]] already has label \"Soil organic matter\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Soil temperature",
+      "error": "'Item [[Item:Q980|Q980]] already has label \"Soil temperature\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Solar cycle",
+      "error": "'Item [[Item:Q982|Q982]] already has label \"Solar cycle\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Solar radiation",
+      "error": "'Item [[Item:Q984|Q984]] already has label \"Solar radiation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Source",
+      "error": "'Item [[Item:Q988|Q988]] already has label \"Source\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Specific humidity",
+      "error": "'Item [[Item:Q995|Q995]] already has label \"Specific humidity\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Steric sea level change",
+      "error": "'Item [[Item:Q999|Q999]] already has label \"Steric sea level change\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Stratosphere",
+      "error": "'Item [[Item:Q1005|Q1005]] already has label \"Stratosphere\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Stratospheric ozone",
+      "error": "'Item [[Item:Q1008|Q1008]] already has label \"Stratospheric ozone\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Stratospheric sounding unit",
+      "error": "'Item [[Item:Q1010|Q1010]] already has label \"Stratospheric sounding unit\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Streamflow",
+      "error": "'Item [[Item:Q1011|Q1011]] already has label \"Streamflow\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Stressors",
+      "error": "'Item [[Item:Q1012|Q1012]] already has label \"Stressors\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Subnational actors",
+      "error": "'Item [[Item:Q1014|Q1014]] already has label \"Subnational actors\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sudden stratospheric warming",
+      "error": "'Item [[Item:Q1015|Q1015]] already has label \"Sudden stratospheric warming\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sufficiency",
+      "error": "'Item [[Item:Q1016|Q1016]] already has label \"Sufficiency\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sulphur hexafluoride",
+      "error": "'Item [[Item:Q1017|Q1017]] already has label \"Sulphur hexafluoride\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Supply-side measures",
+      "error": "'Item [[Item:Q1019|Q1019]] already has label \"Supply-side measures\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Surface energy budget",
+      "error": "'Item [[Item:Q1020|Q1020]] already has label \"Surface energy budget\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Surface mass balance",
+      "error": "'Item [[Item:Q1021|Q1021]] already has label \"Surface mass balance\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Surprises",
+      "error": "'Item [[Item:Q1022|Q1022]] already has label \"Surprises\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sustainability",
+      "error": "'Item [[Item:Q1023|Q1023]] already has label \"Sustainability\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sustainable development",
+      "error": "'Item [[Item:Q1025|Q1025]] already has label \"Sustainable development\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sustainable land management",
+      "error": "'Item [[Item:Q1029|Q1029]] already has label \"Sustainable land management\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Swash",
+      "error": "'Item [[Item:Q1030|Q1030]] already has label \"Swash\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Sympagic",
+      "error": "'Item [[Item:Q1031|Q1031]] already has label \"Sympagic\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Talik",
+      "error": "'Item [[Item:Q1033|Q1033]] already has label \"Talik\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Technology deployment",
+      "error": "'Item [[Item:Q1035|Q1035]] already has label \"Technology deployment\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Technology diffusion",
+      "error": "'Item [[Item:Q1036|Q1036]] already has label \"Technology diffusion\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Thermokarst",
+      "error": "'Item [[Item:Q1043|Q1043]] already has label \"Thermokarst\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Thermosteric sea level change",
+      "error": "'Item [[Item:Q1044|Q1044]] already has label \"Thermosteric sea level change\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Tide gauge",
+      "error": "'Item [[Item:Q1045|Q1045]] already has label \"Tide gauge\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Time of emergence",
+      "error": "'Item [[Item:Q1047|Q1047]] already has label \"Time of emergence\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Tipping element",
+      "error": "'Item [[Item:Q1048|Q1048]] already has label \"Tipping element\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Tipping point",
+      "error": "'Item [[Item:Q1049|Q1049]] already has label \"Tipping point\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Top-of-atmosphere energy budget",
+      "error": "'Item [[Item:Q1050|Q1050]] already has label \"Top-of-atmosphere energy budget\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Total water level",
+      "error": "'Item [[Item:Q1054|Q1054]] already has label \"Total water level\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Traditional biomass",
+      "error": "'Item [[Item:Q1057|Q1057]] already has label \"Traditional biomass\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Transformation",
+      "error": "'Item [[Item:Q1058|Q1058]] already has label \"Transformation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Transformational adaptation",
+      "error": "'Item [[Item:Q1060|Q1060]] already has label \"Transformational adaptation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Transformative change",
+      "error": "'Item [[Item:Q1061|Q1061]] already has label \"Transformative change\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Transient climate response",
+      "error": "'Item [[Item:Q1062|Q1062]] already has label \"Transient climate response\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Transition",
+      "error": "'Item [[Item:Q1064|Q1064]] already has label \"Transition\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Tree line",
+      "error": "'Item [[Item:Q1065|Q1065]] already has label \"Tree line\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Trend estimates uncertainty",
+      "error": "'Item [[Item:Q1067|Q1067]] already has label \"Trend estimates uncertainty\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Tropopause",
+      "error": "'Item [[Item:Q1070|Q1070]] already has label \"Tropopause\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Troposphere",
+      "error": "'Item [[Item:Q1071|Q1071]] already has label \"Troposphere\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Tropospheric ozone",
+      "error": "'Item [[Item:Q1072|Q1072]] already has label \"Tropospheric ozone\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Tsunami",
+      "error": "'Item [[Item:Q1073|Q1073]] already has label \"Tsunami\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Tundra",
+      "error": "'Item [[Item:Q1074|Q1074]] already has label \"Tundra\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Uptake",
+      "error": "'Item [[Item:Q1080|Q1080]] already has label \"Uptake\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Upwelling region",
+      "error": "'Item [[Item:Q1081|Q1081]] already has label \"Upwelling region\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Urban and peri-urban agriculture",
+      "error": "'Item [[Item:Q1084|Q1084]] already has label \"Urban and peri-urban agriculture\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Urbanization",
+      "error": "'Item [[Item:Q1087|Q1087]] already has label \"Urbanization\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Vector-borne disease",
+      "error": "'Item [[Item:Q1090|Q1090]] already has label \"Vector-borne disease\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Ventilation",
+      "error": "'Item [[Item:Q1091|Q1091]] already has label \"Ventilation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Verification",
+      "error": "'Item [[Item:Q1092|Q1092]] already has label \"Verification\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Vulnerability",
+      "error": "'Item [[Item:Q1096|Q1096]] already has label \"Vulnerability\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Vulnerability index",
+      "error": "'Item [[Item:Q1097|Q1097]] already has label \"Vulnerability index\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Walker circulation",
+      "error": "'Item [[Item:Q1098|Q1098]] already has label \"Walker circulation\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Water-borne diseases",
+      "error": "'Item [[Item:Q1099|Q1099]] already has label \"Water-borne diseases\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Wave setup",
+      "error": "'Item [[Item:Q1104|Q1104]] already has label \"Wave setup\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Weathering",
+      "error": "'Item [[Item:Q1105|Q1105]] already has label \"Weathering\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Wetland",
+      "error": "'Item [[Item:Q1109|Q1109]] already has label \"Wetland\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Younger Dryas",
+      "error": "'Item [[Item:Q1111|Q1111]] already has label \"Younger Dryas\" associated with language code en, using the same description text.'"
+    },
+    {
+      "term": "Displacement",
+      "error": "'Item [[Item:Q1113|Q1113]] already has label \"Displacement\" associated with language code en, using the same description text.'"
+    }
+  ],
+  "series_updated": [
+    {
+      "series_qid": "Q77",
+      "tags_added": 346
+    },
+    {
+      "series_qid": "Q150",
+      "tags_added": 209
+    },
+    {
+      "series_qid": "Q10",
+      "tags_added": 1
+    },
+    {
+      "series_qid": "Q106",
+      "tags_added": 229
+    }
+  ],
+  "series_failed": []
+}

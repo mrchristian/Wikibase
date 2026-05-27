@@ -1,5 +1,6 @@
 .env
 .env.clean
+.ssh-setup.md
 .venv/
 backup.sql
 pages/

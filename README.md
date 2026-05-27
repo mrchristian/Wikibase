@@ -2,6 +2,49 @@
 
 A complete Wikibase environment running on Docker Desktop, including the SPARQL query service.
 
+This is the **LOCAL** development environment. For the complete multi-environment workflow (LOCAL → DEV → TEST → PROD), see [docs/multi-env-workflow.md](docs/multi-env-workflow.md).
+
+## LOCAL Environment in Context
+
+```
+┌─────────────────────────────────────────────────┐
+│         CLIMATEKG WIKIBASE ENVIRONMENTS         │
+└─────────────────────────────────────────────────┘
+
+┌─────────────┐
+│   LOCAL     │  ← You are here
+│ (this repo) │  • Config development
+│  port 8080  │  • Experimental imports (with rollback)
+└──────┬──────┘  • Pull from DEV for testing
+       │
+       │ Sync scripts connect to:
+       ↓
+┌─────────────┐
+│     DEV     │  Database source of truth
+│  (178...88) │  Live content editing
+└──────┬──────┘
+       ↓
+┌─────────────┐
+│    TEST     │  Staging environment
+│  (46...24)  │
+└──────┬──────┘
+       ↓
+┌─────────────┐
+│    PROD     │  Public instance
+│ (178...174) │
+└─────────────┘
+```
+
+**For experimental imports**, use the snapshot/rollback workflow:
+```powershell
+.\scripts\experimental-import-workflow.ps1 status   # Check state
+.\scripts\experimental-import-workflow.ps1 start    # Snapshot before import
+# ... run your import scripts ...
+.\scripts\experimental-import-workflow.ps1 approve  # Keep changes
+# OR
+.\scripts\experimental-import-workflow.ps1 rollback # Discard changes
+```
+
 ## Prerequisites
 
 - [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running on Windows
@@ -78,12 +121,10 @@ Quick check:
 ASK { <http://localhost:8080/entity/Q1> ?p ?o }    # True
 ASK { <http://localhost:8080/wiki/Item:Q1> ?p ?o } # False
 ```
-## Credentials
 
-| Field | Value |
-|-------|-------|
-| Admin username | admin |
-| Admin password | adminpass123! |
+## Admin Access
+
+Default credentials are configured in your environment. For multi-environment workflow and password management, see [docs/multi-env-workflow.md](docs/multi-env-workflow.md).
 
 ## SPARQL Queries
 
@@ -148,38 +189,49 @@ curl -G http://localhost:9999/bigdata/namespace/wdq/sparql \
 
 ## Sitelinks
 
-Sitelinks allow you to link MediaWiki pages to Wikibase items. The local wiki is registered with site ID `mywiki`.
+Sitelinks connect MediaWiki pages to Wikibase items. The LOCAL wiki is registered with site ID `climatekg-wiki` at `http://localhost:8080`.
 
-### First-time setup
+### Automatic Setup
 
-Sitelinks are configured automatically on first startup. The `wikibase-sitelinks-init` container:
+Sitelinks are configured automatically on first startup via the `wikibase-sitelinks-init` container:
+1. Imports `sites.xml` into the MediaWiki sites table
+2. Loads `LocalSettings.sitelinks.php` configuration
+3. Registers the local site with proper URLs
 
-1. Copies `LocalSettings.sitelinks.php` into the config volume
-2. Adds a `LocalSettings.d` autoloader to `LocalSettings.php`
-3. Imports `sites.xml` into the MediaWiki sites table
+### Verify Registration
 
-After the init container finishes, restart Wikibase to load the new PHP settings:
+Visit http://localhost:8080/wiki/Special:Sites to see registered sites. You should see `climatekg-wiki` with:
+- Site ID: `climatekg-wiki`
+- URL pattern: `http://localhost:8080/wiki/$1`
 
-```powershell
-docker compose restart wikibase
-```
+### Adding Sitelinks to Items
 
-### Adding a sitelink to an item
-
-1. Open an item page (e.g. http://localhost:8080/wiki/Item:Q1)
-2. Scroll to the **Sitelinks** section
-3. Click **add** under the **mywiki** group
-4. Enter `mywiki` as the site and the page name (e.g. `Main Page`)
+1. Open an item (e.g. http://localhost:8080/wiki/Item:Q1)
+2. Scroll to **Sitelinks** section
+3. Click **add** under the **climatekg-wiki** group
+4. Enter:
+   - Site: `climatekg-wiki`
+   - Page name: `Main_Page` (or any existing page)
 5. Save
 
-The linked page will now show a link back to the Wikibase item in its sidebar.
+The linked page will display a link back to the item in its sidebar.
 
-### Re-running the init
+### Environment-Specific Sites
 
-The init script is idempotent. To re-run it:
+| File | Environment | Domain |
+|------|-------------|--------|
+| `sites.xml` | LOCAL | localhost:8080 |
+| `sites.dev.xml` | DEV | dev-climatekg.semanticclimate.org |
+| `sites.test.xml` | TEST | test-climatekg.semanticclimate.org |
+| `sites.prod.xml` | PROD | prod-climatekg.semanticclimate.org |
 
+When syncing databases between environments, sitelinks are automatically re-registered for the target environment's domain.
+
+### Re-running Initialization
+
+If sitelinks are not working:
 ```powershell
-docker compose up wikibase-sitelinks-init
+docker compose restart wikibase-sitelinks-init
 docker compose restart wikibase
 ```
 

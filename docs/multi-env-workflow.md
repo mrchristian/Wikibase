@@ -293,22 +293,14 @@ certbot --nginx -d <domain> --non-interactive --agree-tos -m simon.worthington@t
 
 ## 8. SSH Key Setup (Windows — one-time)
 
-All sync and deploy scripts use a dedicated passphrase-free key `id_wikibase_sync`. Set it up once:
+SSH key setup instructions are stored in `.ssh-setup.md` (gitignored for security).
 
-```powershell
-# Generate key (if not already done)
-ssh-keygen -t ed25519 -f C:\Users\<user>\.ssh\id_wikibase_sync -N ""
+Quick summary:
+1. Generate key: `ssh-keygen -t ed25519 -f C:\Users\<user>\.ssh\id_wikibase_sync -N ""`
+2. Copy public key to all servers
+3. Enable SSH agent and add key
 
-# Copy public key to each server
-type C:\Users\<user>\.ssh\id_wikibase_sync.pub | ssh root@178.104.156.88 "cat >> ~/.ssh/authorized_keys"
-type C:\Users\<user>\.ssh\id_wikibase_sync.pub | ssh root@46.224.66.24 "cat >> ~/.ssh/authorized_keys"
-type C:\Users\<user>\.ssh\id_wikibase_sync.pub | ssh root@178.105.222.174 "cat >> ~/.ssh/authorized_keys"
-
-# Enable SSH agent (Administrator PowerShell — one-time)
-Set-Service -Name ssh-agent -StartupType Automatic
-Start-Service ssh-agent
-ssh-add C:\Users\<user>\.ssh\id_wikibase_sync
-```
+See `.ssh-setup.md` in the repository root for complete instructions.
 
 ---
 
@@ -335,14 +327,14 @@ After deploying or syncing an environment, verify:
 - [ ] Query UI responds at http://localhost:8081 (200 OK)
 - [ ] SPARQL endpoint responds at http://localhost:9999/bigdata/namespace/wdq/sparql (200 OK)
 - [ ] All 5 containers healthy: `docker compose ps` → all `healthy` or `running`
-- [ ] Sitelinks: visit http://localhost:8080/wiki/Special:Sites — `mywiki` registered
+- [ ] Sitelinks: visit http://localhost:8080/wiki/Special:Sites — `climatekg-wiki` registered
 
 **For remote environments (DEV/TEST/PROD):**
 - [ ] Wiki responds at `https://<domain>/wiki/Main_Page` (200 OK)
 - [ ] Query UI responds at `https://<domain>/query/` (200 OK)
 - [ ] SPARQL endpoint responds at `https://<domain>/query/proxy/sparql` (200 OK)
 - [ ] All 5 containers healthy: `docker compose ps` → all `healthy` or `running`
-- [ ] Sitelinks: visit `Special:Sites` — `mywiki` registered with correct domain URLs
+- [ ] Sitelinks: visit `Special:Sites` — `climatekg-wiki` registered with correct domain URLs
 - [ ] SSL certificate valid (green padlock in browser)
 
 ---

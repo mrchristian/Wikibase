@@ -119,7 +119,7 @@ if (-not (Test-Path $SSH_KEY)) {
 
 # Verify we can reach the DEV server without a passphrase
 Write-Host "Testing SSH connectivity to $DEV_HOST ..." -ForegroundColor Yellow
-ssh -i $SSH_KEY -o BatchMode=yes -o ConnectTimeout=10 "${DEV_USER}@${DEV_HOST}" "echo OK" | Out-Null
+$sshTest = ssh -i $SSH_KEY -o BatchMode=yes -o ConnectTimeout=10 "${DEV_USER}@${DEV_HOST}" "echo OK" 2>&1
 if ($LASTEXITCODE -ne 0) {
     Die "Cannot SSH to ${DEV_USER}@${DEV_HOST} with key $SSH_KEY. Ensure the public key is in authorized_keys on the server."
 }

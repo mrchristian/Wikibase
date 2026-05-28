@@ -66,6 +66,7 @@ PROP_PART_OF        = os.getenv("PROP_PART_OF",        "")
 PROP_SOURCE_VERSION = os.getenv("PROP_SOURCE_VERSION", "")
 PROP_REFERENCE_URL  = os.getenv("PROP_REFERENCE_URL",  "")
 PROP_DATE_ACCESSED  = os.getenv("PROP_DATE_ACCESSED",  "")
+PROP_DEFINITION     = os.getenv("PROP_DEFINITION",     "")
 PROP_HAS_TAG        = os.getenv("PROP_HAS_TAG",        "P12")
 
 # QID for the 'Category' item — target of every 'instance of' statement.
@@ -92,11 +93,12 @@ def connect() -> WikibaseIntegrator:
 def setup_properties(wbi: WikibaseIntegrator, existing: dict) -> dict:
     """Create any missing properties and return {name: pid} for newly created ones."""
     prop_defs = [
-        ("instance of",    "wikibase-item", "Class or type this item is an instance of"),
-        ("part of series", "wikibase-item", "IPCC report series this term appears in"),
-        ("source version", "string",        "Title and version of the source dataset"),
-        ("reference URL",  "url",           "URL of the source reference"),
-        ("date accessed",  "time",          "Date the source was accessed"),
+        ("instance of",              "wikibase-item",  "Class or type this item is an instance of"),
+        ("part of series",           "wikibase-item",  "IPCC report series this term appears in"),
+        ("source version",           "string",         "Title and version of the source dataset"),
+        ("reference URL",            "url",            "URL of the source reference"),
+        ("date accessed",            "time",           "Date the source was accessed"),
+        ("Definition", "monolingualtext", "Full IPCC glossary definition text"),
     ]
     created = {}
     for label, datatype, description in prop_defs:
@@ -161,13 +163,13 @@ def upload_term(
     prop_source_version: str,
     prop_reference_url: str,
     prop_date_accessed: str,
+    prop_definition: str = "",
 ) -> str | None:
     """Create a new Wikibase item for a glossary term. Returns QID or None."""
     item = wbi.item.new()
 
     item.labels.set(language="en", value=term["name"])
-    if term["definition"]:
-        item.descriptions.set(language="en", value=term["definition"])
+    item.descriptions.set(language="en", value=f"Subject, term, tag: {term['name']}")
 
     # Alias — only if it differs from the label
     if term["also_known_as"] and term["also_known_as"] != term["name"]:
@@ -226,6 +228,47 @@ def upload_term(
                     wbi_datatypes.Item(prop_nr=prop_part_of, value=qid)
                 )
 
+    # IPCC definition
+    if prop_definition and term["definition"]:
+        qualifiers = Qualifiers()
+        if prop_source_version and metadata["source_version"]:
+            qualifiers.add(
+                wbi_datatypes.String(
+                    prop_nr=prop_source_version,
+                    value=metadata["source_version"],
+                )
+            )
+
+        references = References()
+        ref = Reference()
+        if prop_reference_url and metadata["source_url"]:
+            ref.add(wbi_datatypes.URL(
+                prop_nr=prop_reference_url,
+                value=metadata["source_url"],
+            ))
+        if prop_date_accessed and metadata["date_accessed"]:
+            ref.add(wbi_datatypes.Time(
+                prop_nr=prop_date_accessed,
+                time=metadata["date_accessed"],
+                precision=11,
+                timezone=0,
+                before=0,
+                after=0,
+                calendarmodel="http://www.wikidata.org/entity/Q1985727",
+            ))
+        if ref.snaks:
+            references.add(ref)
+
+        claims.append(
+            wbi_datatypes.MonolingualText(
+                prop_nr=prop_definition,
+                text=term["definition"],
+                language="en",
+                qualifiers=qualifiers,
+                references=references,
+            )
+        )
+
     if claims:
         item.claims.add(claims)
 
@@ -246,18 +289,20 @@ def main():
 
     # ── Step 1: property setup ─────────────────────────────────────────────────
     existing_props = {
-        "instance of":    PROP_INSTANCE_OF,
-        "part of series": PROP_PART_OF,
-        "source version": PROP_SOURCE_VERSION,
-        "reference URL":  PROP_REFERENCE_URL,
-        "date accessed":  PROP_DATE_ACCESSED,
+        "instance of":                 PROP_INSTANCE_OF,
+        "part of series":              PROP_PART_OF,
+        "source version":              PROP_SOURCE_VERSION,
+        "reference URL":               PROP_REFERENCE_URL,
+        "date accessed":               PROP_DATE_ACCESSED,
+        "Definition": PROP_DEFINITION,
     }
     env_map = {
-        "instance of":    "PROP_INSTANCE_OF",
-        "part of series": "PROP_PART_OF",
-        "source version": "PROP_SOURCE_VERSION",
-        "reference URL":  "PROP_REFERENCE_URL",
-        "date accessed":  "PROP_DATE_ACCESSED",
+        "instance of":                 "PROP_INSTANCE_OF",
+        "part of series":              "PROP_PART_OF",
+        "source version":              "PROP_SOURCE_VERSION",
+        "reference URL":               "PROP_REFERENCE_URL",
+        "date accessed":               "PROP_DATE_ACCESSED",
+        "Definition": "PROP_DEFINITION",
     }
     if not all(existing_props.values()):
         print("Some property IDs not configured — creating missing properties now …\n")
@@ -277,7 +322,7 @@ def main():
     prop_source_version = PROP_SOURCE_VERSION
     prop_reference_url  = PROP_REFERENCE_URL
     prop_date_accessed  = PROP_DATE_ACCESSED
-    prop_has_tag        = PROP_HAS_TAG
+    prop_definition     = PROP_DEFINITION
 
     # ── Step 2: parse XML ──────────────────────────────────────────────────────
     print(f"Parsing {XML_PATH} …")
@@ -296,8 +341,6 @@ def main():
     uploaded: list[dict] = []
     failed:   list[dict] = []
     total = len(terms)
-    # series_qid → list of new term QIDs
-    series_tag_map: dict[str, list[str]] = {}
 
     for i, term in enumerate(terms, 1):
         try:
@@ -305,69 +348,30 @@ def main():
                 wbi, term, metadata,
                 prop_instance_of, prop_part_of,
                 prop_source_version, prop_reference_url, prop_date_accessed,
+                prop_definition,
             )
             label = "[DRY RUN]" if DRY_RUN else qid
             uploaded.append({"term": term["name"], "qid": qid, "series": [s["qid"] for s in term["series"]]})
-            # Track which series this term belongs to
-            if qid:
-                for s in term["series"]:
-                    sqid = (s.get("qid") or "").strip()
-                    if sqid:
-                        series_tag_map.setdefault(sqid, []).append(qid)
             print(f"[{i:>4}/{total}] ✓  {term['name']}  →  {label}")
         except Exception as exc:
             failed.append({"term": term["name"], "error": str(exc)})
             print(f"[{i:>4}/{total}] ✗  {term['name']}  ERROR: {exc}")
 
-    # ── Step 4: add has tag statements to series items ────────────────────────
-    print(f"\n── Updating series items with 'has tag' statements …")
-    series_updated: list[dict] = []
-    series_failed:  list[dict] = []
-
-    for series_qid, term_qids in series_tag_map.items():
-        try:
-            series_item = wbi.item.get(entity_id=series_qid)
-            # Clear sitelinks from the in-memory object so they are not re-submitted
-            # in the write payload — avoids sitelink validation errors on LOCAL/DEV
-            # where linked pages may not be reachable.
-            series_item.sitelinks.sitelinks.clear()
-            new_claims = [
-                wbi_datatypes.Item(prop_nr=prop_has_tag, value=tqid)
-                for tqid in term_qids
-            ]
-            if not DRY_RUN:
-                series_item.claims.add(new_claims, action_if_exists=ActionIfExists.FORCE_APPEND)
-                series_item.write()
-            series_updated.append({"series_qid": series_qid, "tags_added": len(term_qids)})
-            label = "[DRY RUN] " if DRY_RUN else ""
-            print(f"  {label}{series_qid}  +{len(term_qids)} has tag statements")
-        except Exception as exc:
-            series_failed.append({"series_qid": series_qid, "error": str(exc)})
-            print(f"  ✗  {series_qid}  ERROR: {exc}")
-
     # ── Summary ────────────────────────────────────────────────────────────────
     print(f"\n── Summary {'(DRY RUN) ' if DRY_RUN else ''}────────────────────────")
-    print(f"  Terms uploaded      : {len(uploaded)}")
-    print(f"  Terms failed        : {len(failed)}")
-    print(f"  Series items updated: {len(series_updated)}")
-    print(f"  Series items failed : {len(series_failed)}")
+    print(f"  Terms uploaded : {len(uploaded)}")
+    print(f"  Terms failed   : {len(failed)}")
 
     if failed:
         print("\nFailed terms:")
         for f in failed:
             print(f"  • {f['term']}: {f['error']}")
 
-    if series_failed:
-        print("\nFailed series updates:")
-        for f in series_failed:
-            print(f"  • {f['series_qid']}: {f['error']}")
-
     # Save results log
     log_path = Path(__file__).parent / "outputs" / "upload_log.json"
     with open(log_path, "w", encoding="utf-8") as fh:
         json.dump(
-            {"uploaded": uploaded, "failed": failed,
-             "series_updated": series_updated, "series_failed": series_failed},
+            {"uploaded": uploaded, "failed": failed},
             fh, indent=2, ensure_ascii=False,
         )
     print(f"\nResults saved to {log_path}")

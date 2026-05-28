@@ -1,0 +1,1002 @@
+qid,term,series
+Q8,Social Sciences,
+Q9,No poverty,
+Q11,Confidence,
+Q12,Global warming,
+Q13,Pathways,
+Q15,Technical potential,
+Q16,Global warming potential,
+Q19,Climate response,
+Q20,Impacts,
+Q22,Mitigation pathways,
+Q23,Mitigation,
+Q25,Climate model,
+Q27,Adaptation,
+Q28,Climate governance,
+Q29,Climate system,
+Q31,Sustainable development,
+Q32,Climate justice,
+Q34,Physical Sciences,
+Q36,Land,
+Q37,Land management,
+Q39,Land-use change,
+Q40,Land-cover change,
+Q43,Land use,
+Q46,Desertification,
+Q47,Land degradation,
+Q49,Forest degradation,
+Q51,Food security,
+Q52,Food system,
+Q56,Climate action,
+Q58,Ocean,
+Q59,Sea level rise,
+Q63,Cryosphere,
+Q65,Glacier,
+Q66,Permafrost,
+Q68,Sea ice,
+Q70,Sea level change,
+Q73,Climate extreme,
+Q78,Anthropogenic emissions,
+Q82,Climate information,
+Q84,Climate variability,
+Q86,Models,
+Q89,Ocean carbon cycle,
+Q91,Ozone,
+Q92,Aerosol,
+Q94,Climate feedback,
+Q97,Ice sheet,
+Q99,Regional climate model,
+Q102,Climate services,
+Q105,Life Sciences,
+Q108,Risk,
+Q113,Ocean acidification,
+Q115,Water security,
+Q118,Urban,
+Q119,Cities,
+Q121,Health,
+Q122,Mental health,
+Q124,Vulnerability,
+Q134,Climate finance,
+Q138,Biodiversity,
+Q139,Biodiversity hotspots,
+Q144,Mountains,
+Q147,Forest,
+Q148,Sustainable forest management,
+Q155,Consumption-based emissions,
+Q156,Cumulative emissions,
+Q159,Development pathways,
+Q161,Energy services,
+Q162,Energy efficiency,
+Q163,Demand,
+Q165,Wind energy,
+Q166,Energy system,
+Q167,Solar energy,
+Q169,Mitigation potential,
+Q171,Urban Systems,
+Q173,Renewable energy,
+Q175,Emissions scenario,
+Q177,Direct emissions,
+Q180,Policies,
+Q182,Agreement,
+Q185,Systems of Innovation,
+Q187,Transition,
+Q256,Access,Q106
+Q257,Access to modern energy services,Q150
+Q258,Acclimatisation,Q106
+Q259,Accumulation,Q77; Q106
+Q260,Active layer,Q77
+Q261,Acute food insecurity,Q106
+Q262,Adaptation,Q77; Q106; Q150
+Q263,Adaptation Fund,Q106
+Q264,Adaptation behaviour,Q106
+Q265,Adaptation deficit,Q106
+Q266,Adaptation gap,Q106
+Q267,Adaptation limits,Q106; Q150
+Q268,Adaptation needs,Q106
+Q269,Adaptation opportunity,
+Q270,Adaptation options,Q77; Q106; Q150
+Q271,Adaptation pathways,Q106; Q150
+Q272,Adaptive capacity,Q77; Q106; Q150
+Q273,Adaptive governance,Q106; Q150
+Q274,Adaptive management,Q106
+Q275,Added value,Q77
+Q276,Additionality,Q150
+Q277,Adjustments,Q77
+Q278,Advection,Q77
+Q279,Adverse side-effect,Q106; Q150
+Q280,Aerosol,Q77; Q106; Q150
+Q281,Aerosol–cloud interaction,Q77
+Q282,Aerosol effective radiative forcing,Q77
+Q283,Aerosol optical depth,Q77
+Q284,Aerosol–radiation interaction,Q77
+Q285,Afforestation,Q77; Q106; Q150
+Q286,Agreement,Q77; Q106; Q150
+Q287,Agricultural and ecological drought,Q77; Q106
+Q288,"Agriculture, Forestry and Other Land Use",Q150
+Q289,Agroecology,Q106; Q150
+Q290,Agroforestry,Q106
+Q291,Air mass,Q77
+Q292,Air pollution,Q77; Q106; Q150
+Q293,Airborne fraction,Q77
+Q294,Albedo,Q77; Q106; Q150
+Q295,Alkalinity,Q77
+Q296,Altimetry,Q77
+Q297,Annular modes,Q77
+Q298,Anomaly,Q77; Q106; Q150
+Q299,Antarctic Ice Sheet,Q77
+Q300,Anthropocene,Q77; Q106
+Q301,Anthropogenic,Q77; Q106; Q150
+Q302,Anthropogenic emissions,Q77; Q106; Q150
+Q303,Anthropogenic removals,Q77; Q150
+Q304,Anthropogenic subsidence,Q77; Q106
+Q305,Apparent hydrological sensitivity,Q77
+Q306,Arctic oscillation,Q77
+Q307,Arid zone,Q77; Q106
+Q308,Aridity,Q77; Q106
+Q309,Artificial ocean upwelling,Q77
+Q310,Assets,Q77
+Q311,Atlantic Meridional Mode,Q77
+Q312,Atlantic Meridional Overturning Circulation,Q77
+Q313,Atlantic Multi-decadal Oscillation,Q77
+Q314,Atlantic Multi-decadal Variability,Q77
+Q315,Atlantic Zonal Mode,Q77
+Q316,Atmosphere,Q77; Q106; Q150
+Q317,Atmospheric boundary layer,Q77
+Q318,Atmospheric rivers,Q77
+Q319,Attribution,Q77; Q106
+Q320,Australian and Maritime Continent monsoon,Q77
+Q321,Autonomous adaptation,Q106
+Q322,Autotrophic respiration,Q77
+Q323,Avalanche,Q77; Q106
+Q324,"Avoid, Shift, Improve",Q150
+Q325,Basal lubrication,Q77
+Q326,Baseline period,Q77; Q150
+Q327,Baseline/reference,Q77; Q106; Q150
+Q328,Baseline scenario,Q77; Q106; Q150
+Q329,Behavioural change,Q106
+Q330,Benthic,Q77; Q106
+Q331,Benthos,Q106
+Q332,Beta diversity,Q106
+Q333,Biochar,Q150
+Q334,Biochemical oxygen demand,
+Q335,Biodiversity,Q77; Q106; Q150
+Q336,Biodiversity hotspots,Q106
+Q337,Bioenergy,Q106; Q150
+Q338,Bioenergy with carbon dioxide capture and storage,Q77; Q150
+Q339,Bioethanol,
+Q340,Biofuel,Q106; Q150
+Q341,Biogenic carbon emissions,Q150
+Q342,Biogenic volatile organic compounds,Q77
+Q343,Biogeophysical potential,Q77; Q150
+Q344,Biological pump,Q77
+Q345,Biomass,Q77; Q106; Q150
+Q346,Biomes,Q106
+Q347,Biosphere,Q77; Q106
+Q348,Bipolar seesaw,Q77
+Q349,Black carbon,Q77; Q150
+Q350,Blocking,Q77
+Q351,Blue carbon,Q77; Q106; Q150
+Q352,Blue infrastructure,Q106; Q150
+Q353,Brewer–Dobson circulation,Q77
+Q354,Burden,Q77; Q106
+Q355,Business as usual,Q77; Q106; Q150
+Q356,"CMIP3, CMIP5 and CMIP6",
+Q357,CO2 equivalent emission,Q77; Q150
+Q358,Calcification,Q77; Q106
+Q359,Calving,Q77
+Q360,Canopy temperature,Q77
+Q361,Capacity building,Q106
+Q362,Carbon–climate feedback,Q77
+Q363,Carbon cycle,Q77; Q150
+Q364,Carbon dioxide,Q77; Q106; Q150
+Q365,Carbon dioxide fertilisation,Q77; Q106
+Q366,Carbon dioxide capture and storage,Q77; Q150
+Q367,Carbon dioxide capture and utilisation,Q150
+Q368,Carbon dioxide removal,Q77; Q106; Q150
+Q369,Carbon feedback,Q77
+Q370,Carbon footprint,Q106; Q150
+Q371,Carbon intensity,Q150
+Q372,Carbon neutrality,Q77; Q150
+Q373,Carbon price,Q150
+Q374,Carbon sequestration,Q77
+Q375,Carbon stock,Q106; Q150
+Q376,Carbonaceous aerosol,Q77
+Q377,Carbonate pump,Q77
+Q378,Cascading impacts,Q106
+Q379,Catchment,Q77; Q106
+Q380,Cenozoic Era,Q77
+Q381,Central Pacific El Niño,Q77
+Q382,Chaotic,Q77
+Q383,Charcoal,Q77
+Q384,Chlorofluorocarbons,Q77
+Q385,Choice architecture,Q150
+Q386,Chronology,Q77
+Q387,Circular economy,Q150
+Q388,Cirrus cloud thinning,Q77
+Q389,Cities,Q106; Q150
+Q390,Citizen science,Q150
+Q391,City region,Q106; Q150
+Q392,Clathrate,Q77
+Q393,Clausius–Clapeyron equation/relationship,Q77
+Q394,Climate,Q77; Q106; Q150
+Q395,Climate–carbon cycle feedback,Q77
+Q396,Climate change,
+Q397,Climate change commitment,Q77; Q150
+Q398,Climate extreme,Q77; Q106; Q150
+Q399,Climate feedback,Q77; Q106
+Q400,Climate feedback parameter,Q77
+Q401,Climate finance,Q106; Q150
+Q402,Climate forecast,Q77
+Q403,Climate governance,Q106; Q150
+Q404,Climate index,Q77
+Q405,Climate indicator,Q77
+Q406,Climate information,Q77; Q106
+Q407,Climate justice,Q106; Q150
+Q408,Climate literacy,Q106
+Q409,Climate metrics,Q77
+Q410,Climate model,Q77; Q106; Q150
+Q411,Climate pattern,Q77
+Q412,Climate prediction,Q77; Q106
+Q413,Climate projection,Q77; Q106; Q150
+Q414,Climate refugium,Q106
+Q415,Climate resilient development,Q106
+Q416,Climate resilient development pathways,Q106
+Q417,Climate-resilient pathways,Q106; Q150
+Q418,Climate response,Q77
+Q419,Climate sensitivity,Q77; Q150
+Q420,Climate services,Q77; Q106; Q150
+Q421,Climate simulation ensemble,Q77; Q106
+Q422,Climate-smart agriculture,Q106
+Q423,Climate system,Q77; Q106; Q150
+Q424,Climate threshold,Q77
+Q425,Climate variability,Q77; Q106; Q150
+Q426,Climate velocity,Q77; Q106
+Q427,Climatic driver,Q106
+Q428,Climatic impact-driver,Q77
+Q429,Cloud condensation nuclei,Q77
+Q430,Cloud feedback,Q77
+Q431,Cloud radiative effect,Q77
+Q432,Cloud-resolving models,Q77
+Q433,Co-benefits,Q106; Q150
+Q434,Coast,Q77; Q106
+Q435,Coastal erosion,Q106
+Q436,Cold days/cold nights,Q77
+Q437,Common era,Q77
+Q438,Communicable disease,Q106
+Q439,Community-based adaptation,Q106
+Q440,Compatible emissions,Q77
+Q441,Compound risks,Q106
+Q442,Compound weather/climate events,Q77; Q106
+Q443,Concentrations scenario,Q77; Q106; Q150
+Q444,Conference of the Parties,Q150
+Q445,Confidence,Q77; Q106; Q150
+Q446,Conservation agriculture,Q106; Q150
+Q447,Constant composition commitment,Q77
+Q448,Constant emissions commitment,Q77
+Q449,Consumption-based emissions,Q150
+Q450,Convection,Q77
+Q451,Coping,Q106
+Q452,Coping capacity,Q106; Q150
+Q453,Coral bleaching,Q77; Q106
+Q454,Coral reef,Q77; Q106
+Q455,Cosmogenic radioisotopes,Q77
+Q456,Cost–benefit analysis,Q106; Q150
+Q457,Cost-effectiveness analysis,Q150
+Q458,Coupled Model Intercomparison Project,Q77; Q106
+Q459,Cryosphere,Q77; Q106
+Q460,Cultural impacts,Q106
+Q461,Cumulative emissions,Q77; Q150
+Q462,Dansgaard-Oeschger events,Q77
+Q463,Data assimilation,Q77
+Q464,Dead zones,Q77
+Q465,Decadal predictability,Q77
+Q466,Decadal prediction,Q77
+Q467,Decadal variability,Q77
+Q468,Decarbonisation,Q106; Q150
+Q469,Decent Living Standard,Q150
+Q470,Decoupling,Q150
+Q471,Deep uncertainty,Q77; Q106
+Q472,Deforestation,Q77; Q106; Q150
+Q473,Deglacial or deglaciation or glacial termination,Q77
+Q474,Deliberate transformations,Q106
+Q475,Deliberative governance,Q150
+Q476,Demand,Q150
+Q477,Demand- and supply-side measures,Q150
+Q478,Demand-side measures,Q150
+Q479,Desertification,Q106; Q150
+Q480,Detection,Q77; Q106
+Q481,Detection and attribution,Q77; Q106
+Q482,Developed/developing countries,Q106; Q150
+Q483,Development pathways,Q106; Q150
+Q484,Diatoms,Q77; Q106
+Q485,Diet,Q106; Q150
+Q486,Dimensions of integration,Q77
+Q487,Direct air capture,Q77; Q150
+Q488,Direct air carbon dioxide capture and storage,Q150
+Q489,Direct and indirect services,Q150
+Q490,Direct emissions,Q77; Q150
+Q491,Disaster,Q77; Q106; Q150
+Q492,Disaster management,Q106
+Q493,Disaster risk,Q106
+Q494,Disaster risk management,Q106; Q150
+Q495,Disaster risk reduction,Q106
+Q496,Discharge,Q77
+Q497,Discounting,Q106; Q150
+Q498,Disruptive innovation,Q150
+Q499,Dissolved inorganic carbon,Q77
+Q500,Distributive equity,Q150
+Q501,Diurnal temperature range,Q77
+Q502,Dobson unit,Q77
+Q503,Downscaling,Q77; Q106
+Q504,Drainage,Q106
+Q505,Driver,Q106
+Q506,Drought,Q77; Q106; Q150
+Q507,Dynamic global vegetation model,Q77
+Q508,Dynamical system,Q77
+Q509,Early Eocene Climatic Optimum,Q77
+Q510,Early warning systems,Q106
+Q511,Earth’s energy budget,Q77
+Q512,Earth's energy flows,Q77
+Q513,Earth's energy imbalance,Q77
+Q514,Earth's radiative response,Q77
+Q515,Earth system feedbacks,Q77
+Q516,Earth system model,Q77; Q106
+Q517,Earth system model of intermediate complexity,Q77
+Q518,Earth system sensitivity,Q77
+Q519,East Asian monsoon,Q77
+Q520,Eastern Pacific El Niño,Q77
+Q521,Eastern boundary upwelling systems,Q77; Q106
+Q522,Economic potential,Q77; Q150
+Q523,Ecosystem,Q77; Q106; Q150
+Q524,Ecosystem-based adaptation,Q106; Q150
+Q525,Ecosystem health,Q106
+Q526,Ecosystem services,Q106; Q150
+Q527,Effective equilibrium climate sensitivity,Q77
+Q528,Effective radiative forcing due to aerosol–cloud interactions,Q77
+Q529,Effective radiative forcing due to aerosol–radiation interactions,Q77
+Q530,Ekman transport,Q77
+Q531,El Niño–Southern Oscillation,Q77; Q106
+Q532,Electromagnetic spectrum,Q77
+Q533,Elevation-dependent warming,Q77
+Q534,"Embodied [emissions, water, land]",Q150
+Q535,Emergence,Q77; Q106
+Q536,Emergent constraint,Q77
+Q537,Emission and Socio-economic Scenario Ensemble,Q150
+Q538,Emission factor/Emissions intensity,Q77; Q150
+Q539,Emission pathways,Q77; Q106; Q150
+Q540,Emission trajectories,Q150
+Q541,Emissions scenario,Q77; Q106; Q150
+Q542,Emulation,Q77; Q150
+Q543,Emulators,Q77; Q150
+Q544,Enabling conditions,Q106; Q150
+Q545,Endemic species,Q106
+Q546,Energy access,Q106; Q150
+Q547,Energy balance,Q77
+Q548,Energy balance model,Q77
+Q549,Energy budget,Q77
+Q550,Energy efficiency,Q106; Q150
+Q551,Energy poverty,Q150
+Q552,Energy security,Q106; Q150
+Q553,Energy services,Q150
+Q554,Energy system,Q106
+Q555,Enhanced weathering,Q77; Q150
+Q556,Ensemble,Q77; Q150
+Q557,Enteric fermentation,Q150
+Q558,Equality,Q106; Q150
+Q559,Equilibrium and transient climate experiment,Q77
+Q560,Equilibrium climate sensitivity,Q77
+Q561,Equilibrium line,Q77
+Q562,Equity,Q106; Q150
+Q563,Equivalent carbon dioxide emission,Q77
+Q564,Ethics,Q106
+Q565,Eudaimonic,Q150
+Q566,Eutrophication,Q77; Q106
+Q567,Evaporation,Q77; Q106
+Q568,Evapotranspiration,Q77; Q106
+Q569,Evidence,Q77; Q106; Q150
+Q570,Evolutionary adaptation,Q106
+Q571,Exergy,Q150
+Q572,Exposure,Q77; Q106; Q150
+Q573,Extended concentration pathways,Q77
+Q574,External forcing,Q77
+Q575,Externality/external cost/external benefit,Q106
+Q576,Extinction,Q106
+Q577,Extirpation,Q106
+Q578,Extratropical cyclone,Q77
+Q579,Extratropical jets,Q77
+Q580,Extreme climate event,Q77
+Q581,Extreme/heavy precipitation event,Q77; Q106
+Q582,Extreme sea level,Q77; Q106
+Q583,Extreme weather event,Q77; Q106; Q150
+Q584,Faculae,Q77
+Q585,Fairness,Q106; Q150
+Q586,Feasibility,Q106; Q150
+Q587,Final energy,Q150
+Q588,Fine-mode aerosol optical depth,Q77
+Q589,Fingerprint,Q77
+Q590,Fire weather,Q77; Q106
+Q591,Firn,Q77
+Q592,Fitness-for-purpose,Q77
+Q593,Flaring,Q77
+Q594,Flexibility,Q150
+Q595,Flexible governance,Q150
+Q596,Flood,Q77; Q106; Q150
+Q597,Flux,Q77; Q106
+Q598,Food-borne diseases,Q106
+Q599,Food loss and waste,Q150
+Q600,Food security,Q106; Q150
+Q601,Food system,Q106; Q150
+Q602,Foraminifera,Q77
+Q603,Forcing,Q77
+Q604,Forest,Q77; Q106; Q150
+Q605,Forest degradation,Q106
+Q606,Forest line,Q106
+Q607,Fossil fuel emissions,Q77
+Q608,Fossil fuels,Q77; Q106; Q150
+Q609,Free atmosphere,Q77
+Q610,Frozen ground,Q77
+Q611,Fuel poverty,Q150
+Q612,Fugitive emissions,Q150
+Q613,Gender equity,Q150
+Q614,General circulation,Q77
+Q615,General circulation model,Q77
+Q616,Geocentric sea level change,Q77
+Q617,Geoid,Q77
+Q618,Geostrophic winds or currents,Q77
+Q619,Geothermal energy,Q150
+Q620,Gini coefficient,Q150
+Q621,Glacial-interglacial cycles,Q77
+Q622,Glacial isostatic adjustment,Q77
+Q623,Glacial lake outburst flood /Glacier lake outburst,Q77; Q106
+Q624,Glacial or glaciation,Q77
+Q625,Glaciated,Q77
+Q626,Glacier,Q77; Q106
+Q627,Glacierized,Q77
+Q628,Global Environment Facility,
+Q629,Global carbon budget,Q77; Q150
+Q630,Global change,Q106
+Q631,Global dimming,Q77
+Q632,Global energy budget,Q77
+Q633,Global energy inventory,Q77
+Q634,Global mean sea level change,Q77; Q106
+Q635,Global mean surface air temperature,Q77; Q106; Q150
+Q636,Global mean surface temperature,Q77; Q106; Q150
+Q637,Global monsoon,Q77; Q106
+Q638,Global warming,Q77; Q106; Q150
+Q639,Global warming potential,Q77; Q150
+Q640,Governance,Q106; Q150
+Q641,Governance capacity,Q106; Q150
+Q642,"Gravitational, rotational and deformational effects",Q77
+Q643,Gravity Recovery and Climate Experiment,Q77
+Q644,Grazing land,Q150
+Q645,Green Climate Fund,Q106; Q150
+Q646,Green infrastructure,Q106; Q150
+Q647,Greenhouse effect,Q77
+Q648,Greenhouse gas emission metric,Q77; Q150
+Q649,Greenhouse gas neutrality,Q77; Q150
+Q650,Greenhouse gases,Q77; Q106; Q150
+Q651,Greenland Ice Sheet,Q77
+Q652,Grey infrastructure,Q106; Q150
+Q653,Gross domestic product,Q106; Q150
+Q654,Gross primary production,Q77
+Q655,Ground-level ozone,Q77
+Q656,Grounding line,Q77
+Q657,Groundwater recharge,Q106
+Q658,Gyre,Q77
+Q659,Habitability,Q106
+Q660,Hadley circulation,Q77
+Q661,Halocarbons,Q77; Q150
+Q662,Halocline,Q77
+Q663,Halosteric,Q77
+Q664,Halosteric sea level change,Q77
+Q665,Hazard,Q77; Q106
+Q666,Health,Q106
+Q667,Heat index,Q77; Q106
+Q668,Heat stress,Q77; Q106
+Q669,Heatwave,Q77; Q106
+Q670,Heavy precipitation event,Q77; Q106
+Q671,Hedonic,Q150
+Q672,Heinrich event,Q77
+Q673,Heterotrophic respiration,Q77
+Q674,Hindcast or retrospective forecast,Q77
+Q675,Holocene,Q77
+Q676,Household carbon footprint,Q150
+Q677,Human behaviour,Q106; Q150
+Q678,Human influence on the climate system,Q77
+Q679,Human mobility,Q106
+Q680,Human rights,Q106; Q150
+Q681,Human security,Q106; Q150
+Q682,Human system,Q77; Q106; Q150
+Q683,Hydroclimate,Q77
+Q684,Hydrofluorocarbons,Q77
+Q685,Hydrological cycle,Q77; Q106
+Q686,Hydrological drought,Q77; Q106
+Q687,Hydrological sensitivity,Q77
+Q688,Hydropower,Q106; Q150
+Q689,Hydrosphere,Q77
+Q690,Hyperthermal events,Q106
+Q691,Hypoxic,Q77; Q106
+Q692,Hypoxic events,Q106
+Q693,Hypsometry,Q77
+Q694,Ice age,Q77
+Q695,Ice–albedo feedback,Q77
+Q696,Ice core,Q77
+Q697,Ice sheet,Q77; Q106
+Q698,Ice shelf,Q77
+Q699,Ice stream,Q77
+Q700,Iceberg,Q77
+Q701,Impacts,Q106; Q150
+Q702,Income,Q106
+Q703,Incremental adaptation,Q106; Q150
+Q704,Indian Ocean Dipole,Q77
+Q705,Indian Ocean basin mode,Q77
+Q706,Indigenous Peoples,Q106
+Q707,Indigenous knowledge,Q106; Q150
+Q708,Indirect emissions,Q150
+Q709,Indirect land-use change,Q77; Q150
+Q710,Industrial revolution,Q77; Q150
+Q711,Inequality,Q106; Q150
+Q712,Informal settlement,Q106
+Q713,Infrastructure,Q106; Q150
+Q714,Insolation,Q77
+Q715,Instantaneous radiative forcing due to aerosol–cloud interactions,Q77
+Q716,Instantaneous radiative forcing due to aerosol–radiation interactions,Q77
+Q717,Institutional capacity,Q106; Q150
+Q718,Institutions,Q106; Q150
+Q719,Insurance/reinsurance,Q106
+Q720,Integrated assessment,Q106; Q150
+Q721,Integrated assessment model,Q77; Q106; Q150
+Q722,Integrated assessment scenario ensemble,Q150
+Q723,Inter-decadal Pacific Oscillation,Q77
+Q724,Inter-tropical Convergence Zone,Q77
+Q725,Interglacial or interglaciation,Q77
+Q726,Internal climate variability,Q77
+Q727,Internal variability,Q77
+Q728,Internet of Things,Q150
+Q729,Interpolation uncertainty,Q77
+Q730,Interstadial or interstade,Q77
+Q731,Invasive species,Q106
+Q732,Irreversibility,Q77; Q150
+Q733,Isostatic or Isostasy,Q77
+Q734,Isotopes,Q77
+Q735,Just transitions,Q106; Q150
+Q736,Justice,Q106; Q150
+Q737,Kaya identity,Q150
+Q738,Key climate indicators,Q77
+Q739,Key risk,Q106
+Q740,Kriging,Q77
+Q741,Land,Q77; Q106; Q150
+Q742,Land cover,Q77; Q106; Q150
+Q743,Land-cover change,Q77; Q106; Q150
+Q744,Land degradation,Q106; Q150
+Q745,Land degradation neutrality,Q150
+Q746,Land management,Q106; Q150
+Q747,Land management change,Q150
+Q748,Land potential,Q150
+Q749,Land rehabilitation,Q150
+Q750,Land restoration,Q150
+Q751,Land surface air temperature,Q77
+Q752,Land use,Q77; Q106; Q150
+Q753,"Land use, land-use change and forestry",Q150
+Q754,Land-use change,Q77; Q106; Q150
+Q755,Land water storage,Q77
+Q756,Lapse rate,Q77
+Q757,Large-scale,Q77
+Q758,Last millennium,Q77
+Q759,Latent heat flux,Q77; Q150
+Q760,Leakage,Q150
+Q761,Leapfrogging,Q150
+Q762,Least Developed Countries,Q106
+Q763,Lifecycle assessment,Q150
+Q764,Lifetime,Q77
+Q765,Light-absorbing particles,Q77
+Q766,Likelihood,Q77; Q106; Q150
+Q767,Lithosphere,Q77
+Q768,Livelihood,Q77; Q106; Q150
+Q769,Local extinction,Q106
+Q770,Local knowledge,Q106; Q150
+Q771,Local sea level change,Q77
+Q772,Lock-in,Q106; Q150
+Q773,Long-lived climate forcers,Q150
+Q774,Long-lived greenhouse gases,Q77
+Q775,"Loss and Damage, and losses and damages",Q106; Q150
+Q776,Low Elevation Coastal Zones,Q106
+Q777,"Low-likelihood, high impact outcomes",Q77; Q106
+Q778,Madden–Julian Oscillation,Q77
+Q779,Maladaptive actions,Q77; Q106; Q150
+Q780,Malnutrition,Q106; Q150
+Q781,Managed forest,Q150
+Q782,Managed grassland,Q150
+Q783,Managed land,Q150
+Q784,Marine-based ice sheet,Q77
+Q785,Marine cloud brightening,Q77
+Q786,Marine heatwave,Q77; Q106
+Q787,Marine ice cliff instability,Q77
+Q788,Marine ice sheet instability,Q77
+Q789,Marine isotope stage,Q77
+Q790,Market failure,Q150
+Q791,Mass balance/budget,Q77
+Q792,Material substitution,Q150
+Q793,Mean sea level,Q77; Q106
+Q794,Measurement,Q106; Q150
+Q795,"Measurement, Reporting and Verification",Q150
+Q796,Megacity,Q77; Q106; Q150
+Q797,Megadrought,Q106
+Q798,Meltwater Pulse 1A,Q77
+Q799,Mental health,Q106
+Q800,Meridional overturning circulation,Q77
+Q801,Meteorological drought,Q77; Q106
+Q802,Methane,Q77; Q106; Q150
+Q803,Metric,Q106
+Q804,Microclimate,Q77; Q106
+Q805,Microwave sounding unit,Q77
+Q806,Migrant,Q106; Q150
+Q807,Migration,Q106; Q150
+Q808,Mineralization/Remineralization,Q77
+Q809,Mitigation,Q77; Q106; Q150
+Q810,Mitigation measures,Q106; Q150
+Q811,Mitigation option,Q106; Q150
+Q812,Mitigation pathways,Q77; Q150
+Q813,Mitigation potential,Q77; Q150
+Q814,Mitigation scenario,Q77; Q106; Q150
+Q815,Model initialization,Q77
+Q816,Model spread,Q77
+Q817,Models,Q106
+Q818,Modes of climate variability,Q77
+Q819,Mole fraction or mixing ratio,Q77
+Q820,Monitoring and evaluation,Q106
+Q821,Montreal Protocol,Q77
+Q822,Mountains,Q106
+Q823,Multi-level governance,Q106; Q150
+Q824,Narrative,Q77; Q106; Q150
+Q825,Native species,Q106
+Q826,Natural systems,Q77; Q106
+Q827,Natural variability,Q77
+Q828,Nature-based solutions,Q106; Q150
+Q829,Nature's contributions to people,Q150
+Q830,Near-surface permafrost,Q77
+Q831,Negative greenhouse gas emissions,Q77
+Q832,Net negative greenhouse gas emissions,Q77; Q150
+Q833,Net primary production,Q77; Q106
+Q834,Net zero CO2 emissions,Q77; Q106; Q150
+Q835,Net zero greenhouse gas emissions,Q77; Q150
+Q836,New Urban Agenda,Q106
+Q837,Nitrogen deposition,Q77
+Q838,Nitrous oxide,Q77; Q150
+Q839,Non-CO2 emissions and radiative forcing,Q77
+Q840,Non-climatic driver,Q106
+Q841,Non-communicable diseases,Q106
+Q842,Non-linearity,Q77
+Q843,Non-methane volatile organic compounds,Q77
+Q844,Non-overshoot pathways,Q77; Q150
+Q845,North American monsoon,Q77
+Q846,North Atlantic Oscillation,Q77
+Q847,Northern Annular Mode,Q77
+Q848,Ocean,Q77; Q106
+Q849,Ocean acidification,Q77; Q106
+Q850,Ocean alkalinization/Ocean alkalinity enhancement,Q77; Q150
+Q851,Ocean carbon cycle,Q77
+Q852,Ocean deoxygenation,Q77; Q106
+Q853,Ocean dynamic sea level change,Q77
+Q854,Ocean fertilisation,Q77; Q150
+Q855,Ocean heat uptake efficiency,Q77
+Q856,Ocean stratification,Q77; Q106
+Q857,Offset,Q150
+Q858,Orbital forcing,Q77
+Q859,Organic aerosol,Q77
+Q860,Organic farming,Q150
+Q861,Outbreak,Q106
+Q862,Outgoing longwave radiation,Q77
+Q863,Outlet glacier,Q77
+Q864,Overshoot pathways,Q77; Q150
+Q865,Oxygen minimum zone,Q77; Q106
+Q866,Ozone,Q77; Q106; Q150
+Q867,Ozone-depleting substances,Q77
+Q868,Ozone layer,Q77
+Q869,Ozonesonde,Q77
+Q870,Pacific Decadal Oscillation,Q77
+Q871,Pacific Decadal Variability,Q77
+Q872,Pacific-North American pattern,Q77
+Q873,Palaeocene–Eocene Thermal Maximum,Q77
+Q874,Paleoclimate,Q77
+Q875,Pandemic,Q106
+Q876,Pareto optimum,Q150
+Q877,Participatory governance,Q150
+Q878,Particulate matter,Q106; Q150
+Q879,Pasture,Q106
+Q880,Path dependence,Q106; Q150
+Q881,Pathways,Q77; Q106; Q150
+Q882,Pattern scaling,Q77
+Q883,Peat,Q77; Q106
+Q884,Peatlands,Q77; Q106
+Q885,Pelagic,Q106
+Q886,Pelagos,Q106
+Q887,Percentile,Q77
+Q888,Peri-urban areas,Q106; Q150
+Q889,Permafrost,Q77; Q106
+Q890,Permafrost degradation,Q77; Q106
+Q891,Permafrost thaw,Q77; Q106
+Q892,Perturbed parameter ensemble,Q77
+Q893,Phenology,Q77; Q106
+Q894,Photosynthesis,Q77; Q106
+Q895,Physical climate storyline,Q77
+Q896,Planetary health,Q106
+Q897,Plankton,Q77; Q106
+Q898,Planned relocation,Q106
+Q899,Plant evaporative stress,Q77
+Q900,Plasticity,Q106
+Q901,Pleistocene,Q77
+Q902,Pliocene,Q77
+Q903,Polar amplification,Q77
+Q904,Policies,Q106; Q150
+Q905,Political economy,Q106; Q150
+Q906,Pollen analysis,Q77
+Q907,Polycentric governance,Q106
+Q908,"Pool, carbon and nitrogen",Q150
+Q909,Potential evapotranspiration,Q77; Q106
+Q910,Poverty,Q106; Q150
+Q911,Poverty eradication,Q150
+Q912,Poverty trap,Q106
+Q913,Pre-industrial,Q77; Q106; Q150
+Q914,Precipitable water,Q77
+Q915,Precipitation deficit,Q106
+Q916,Precursors,Q77; Q106; Q150
+Q917,Predictability,Q77; Q106
+Q918,Prediction quality/skill,Q77
+Q919,Primary energy,Q150
+Q920,Primary production,Q77; Q106; Q150
+Q921,Private costs,Q150
+Q922,Probability density function,Q77
+Q923,Procedural justice,Q106
+Q924,Process-based model,Q77
+Q925,Production-based emissions,Q150
+Q926,Projection,Q77; Q106; Q150
+Q927,Prosumers,Q150
+Q928,Proxy,Q77; Q106
+Q929,Quasi-Biennial Oscillation,Q77
+Q930,Quaternary,Q77
+Q931,Radiative forcing,Q77; Q106; Q150
+Q932,Rapid dynamical change,Q77
+Q933,Reanalysis,Q77
+Q934,Reasons for Concern,Q77; Q106
+Q935,Rebound effect,Q150
+Q936,Reconstruction,Q77
+Q937,Reducing Emissions from Deforestation and Forest Degradation,Q150
+Q938,Reference period,Q77; Q106; Q150
+Q939,Reference scenario,Q77; Q106; Q150
+Q940,Reforestation,Q77; Q106; Q150
+Q941,Refugium,Q106
+Q942,Regenerative agriculture,Q150
+Q943,Region,Q77; Q106; Q150
+Q944,Regional climate messages,Q77
+Q945,Regional climate model,Q77
+Q946,Regional sea level change,Q77
+Q947,Regulation,Q106
+Q948,Relative humidity,Q77; Q106
+Q949,Relative sea level change,Q77
+Q950,Remaining carbon budget,Q77; Q150
+Q951,Renewable energy,Q150
+Q952,Reporting,Q106; Q150
+Q953,Representative Concentration Pathways,Q77; Q106; Q150
+Q954,Representative Key Risks,Q106
+Q955,Reservoir,Q77; Q106
+Q956,Residual risk,Q106
+Q957,Resilience,Q77; Q106; Q150
+Q958,Resolution,Q77; Q106
+Q959,Resource cascade,Q150
+Q960,Respiration,Q77; Q106
+Q961,Response time or adjustment time,Q77
+Q962,Restoration,Q106
+Q963,Return period,Q77; Q106
+Q964,Return value,Q77
+Q965,Risk,Q77; Q106; Q150
+Q966,Risk assessment,Q77; Q106; Q150
+Q967,Risk framework,Q77
+Q968,Risk management,Q77; Q106; Q150
+Q969,Risk perception,Q77; Q106; Q150
+Q970,Risk trade-off,Q77; Q150
+Q971,Risk transfer,Q106
+Q972,River discharge,Q77
+Q973,Rock glacier,Q77
+Q974,Runoff,Q77; Q106
+Q975,Salt-water intrusion/encroachment,Q106
+Q976,Sampling uncertainty,Q77
+Q977,Scenario,Q77; Q106; Q150
+Q978,Scenario storyline,Q77; Q150
+Q979,Sea ice,Q77; Q106
+Q980,Sea ice area,Q77
+Q981,Sea ice concentration,Q77
+Q982,Sea ice extent,Q77
+Q983,Sea level change,Q77; Q106
+Q984,Sea level equivalent,Q77
+Q985,Sea level rise,Q77
+Q986,Sea surface temperature,Q77; Q106; Q150
+Q987,Semi-arid zone,Q106
+Q988,Semi-empirical model,Q77
+Q989,Sendai Framework for Disaster Risk Reduction,Q106
+Q990,Sensible heat flux,Q77
+Q991,Sensitivity,Q106
+Q992,Sequestration,Q77; Q106; Q150
+Q993,Sequestration potential,Q77; Q150
+Q994,Service provisioning,Q150
+Q995,Services,Q150
+Q996,Settlements,Q106; Q150
+Q997,Shared socio-economic pathways,Q77; Q106; Q150
+Q998,Sharing economy.,Q150
+Q999,Shelf seas,Q106
+Q1000,Shifting development pathways,Q150
+Q1001,Shifting development pathways to sustainability,Q150
+Q1002,Short-lived climate forcers,Q77; Q150
+Q1003,Short-lived climate pollutants,Q77; Q150
+Q1004,Significant wave height,Q77
+Q1005,Simple climate model,Q77; Q150
+Q1006,Sink,Q77; Q106; Q150
+Q1007,Small Island Developing States,Q77; Q106; Q150
+Q1008,Smart grids,Q150
+Q1009,Snow cover,Q77; Q106
+Q1010,Snow cover duration,Q77
+Q1011,Snow cover extent,Q77
+Q1012,Snow water equivalent,Q77; Q106
+Q1013,Social cost of carbon,Q150
+Q1014,Social costs,Q150
+Q1015,Social-ecological system,Q106; Q150
+Q1016,Social group,Q150
+Q1017,Social identity,Q150
+Q1018,Social inclusion,Q106; Q150
+Q1019,Social infrastructure,Q106; Q150
+Q1020,Social justice,Q106
+Q1021,Social learning,Q106; Q150
+Q1022,Social protection,Q106
+Q1023,Societal transformations,Q106
+Q1024,Socio-economic scenario,Q77; Q106; Q150
+Q1025,Socio-technical transitions,Q106; Q150
+Q1026,Soil carbon sequestration,Q150
+Q1027,Soil erosion,Q106
+Q1028,Soil moisture,Q77; Q106
+Q1029,Soil organic carbon,Q106; Q150
+Q1030,Soil organic matter,Q106; Q150
+Q1031,Soil temperature,Q77
+Q1032,Solar activity,Q77
+Q1033,Solar cycle,Q77
+Q1034,Solar energy,Q150
+Q1035,Solar radiation,Q77
+Q1036,Solar radiation modification,Q77; Q106; Q150
+Q1037,Solubility pump,Q77
+Q1038,Solution space,Q106
+Q1039,Source,Q77; Q106; Q150
+Q1040,South American monsoon,Q77
+Q1041,South Pacific Convergence Zone,Q77
+Q1042,South and South East Asian monsoon,Q77
+Q1043,Southern Annular Mode,Q77; Q106; Q150
+Q1044,Southern Ocean,Q106
+Q1045,Spatial and temporal scales,Q106
+Q1046,Specific humidity,Q77
+Q1047,Spill-over effect,Q150
+Q1048,Stadial or stade,Q77
+Q1049,Standard,Q106
+Q1050,Steric sea level change,Q77
+Q1051,Storm surge,Q77; Q106
+Q1052,Storm tracks,Q77
+Q1053,Storyline,Q77; Q106; Q150
+Q1054,Stranded assets,Q106; Q150
+Q1055,Stratification,Q77; Q106
+Q1056,Stratosphere,Q77
+Q1057,Stratosphere–troposphere exchange,Q77
+Q1058,Stratospheric aerosol injection,Q77
+Q1059,Stratospheric ozone,Q77
+Q1060,Stratospheric polar vortex,Q77
+Q1061,Stratospheric sounding unit,Q77
+Q1062,Streamflow,Q77; Q106
+Q1063,Stressors,Q106
+Q1064,Subduction,Q77
+Q1065,Subnational actors,Q150
+Q1066,Sudden stratospheric warming,Q77
+Q1067,Sufficiency,Q150
+Q1068,Sulphur hexafluoride,Q77
+Q1069,Sunspots,Q77
+Q1070,Supply-side measures,Q150
+Q1071,Surface energy budget,Q77
+Q1072,Surface mass balance,Q77
+Q1073,Surprises,Q77
+Q1074,Sustainability,Q106; Q150
+Q1075,Sustainable Development Goals,Q106; Q150
+Q1076,Sustainable development,Q106; Q150
+Q1077,Sustainable development pathways,Q106
+Q1078,Sustainable forest management,Q106; Q150
+Q1079,Sustainable intensification,Q150
+Q1080,Sustainable land management,Q106; Q150
+Q1081,Swash,Q77
+Q1082,Sympagic,Q106
+Q1083,Systems of Innovation,Q150
+Q1084,Talik,Q77
+Q1085,Technical potential,Q77; Q150
+Q1086,Technology deployment,Q150
+Q1087,Technology diffusion,Q150
+Q1088,Technology transfer,Q150
+Q1089,Teleconnection,Q77; Q106; Q150
+Q1090,Teleconnection pattern,Q77
+Q1091,Temperature overshoot,Q77; Q106; Q150
+Q1092,Terrestrial radiation,Q77
+Q1093,Thermocline,Q77
+Q1094,Thermokarst,Q77
+Q1095,Thermosteric sea level change,Q77
+Q1096,Tide gauge,Q77
+Q1097,Tier,Q106
+Q1098,Time of emergence,Q77
+Q1099,Tipping element,Q77; Q106
+Q1100,Tipping point,Q77; Q106; Q150
+Q1101,Top-of-atmosphere energy budget,Q77
+Q1102,Total alkalinity,Q77
+Q1103,Total carbon budget,Q77; Q150
+Q1104,Total solar irradiance,Q77
+Q1105,Total water level,Q77
+Q1106,Trace gas,Q77
+Q1107,Trade-off,Q106; Q150
+Q1108,Traditional biomass,Q150
+Q1109,Transformation,Q106; Q150
+Q1110,Transformation pathways,Q150
+Q1111,Transformational adaptation,Q106; Q150
+Q1112,Transformative change,Q106
+Q1113,Transient climate response,Q77; Q150
+Q1114,Transient climate response to cumulative CO2 emissions,Q77; Q150
+Q1115,Transition,Q106; Q150
+Q1116,Tree line,Q106
+Q1117,Tree rings,Q77
+Q1118,Trend estimates uncertainty,Q77
+Q1119,Tropical Atlantic Variability,Q77
+Q1120,Tropical cyclone,Q77; Q106
+Q1121,Tropopause,Q77
+Q1122,Troposphere,Q77
+Q1123,Tropospheric ozone,Q77
+Q1124,Tsunami,Q106
+Q1125,Tundra,Q77; Q106
+Q1126,Turnover time,Q77
+Q1127,Typological regions,Q77
+Q1128,Uncertainty,Q77; Q106; Q150
+Q1129,United Nations Convention to Combat Desertification,Q150
+Q1130,United Nations Framework Convention on Climate Change,Q77; Q106; Q150
+Q1131,Uptake,Q77; Q106; Q150
+Q1132,Upwelling region,Q77; Q106
+Q1133,Urban Systems,Q106; Q150
+Q1134,Urban,Q106; Q150
+Q1135,Urban and peri-urban agriculture,Q106
+Q1136,Urban heat island,Q77; Q150
+Q1137,Urbanisation,Q106; Q150
+Q1138,Urbanization,Q77
+Q1139,Values and beliefs,Q106
+Q1140,Variable renewable energy,Q150
+Q1141,Vector-borne disease,Q106
+Q1142,Ventilation,Q77; Q106
+Q1143,Verification,Q150
+Q1144,Vertical land motion,Q77
+Q1145,Very short-lived halogenated substances,Q77
+Q1146,Volatile organic compounds,Q77
+Q1147,Vulnerability,Q77; Q106; Q150
+Q1148,Vulnerability index,Q106
+Q1149,Walker circulation,Q77
+Q1150,Water-borne diseases,Q106
+Q1151,Water cycle,Q77
+Q1152,Water mass,Q77
+Q1153,Water security,Q77; Q106
+Q1154,Water-use efficiency,Q106
+Q1155,Wave setup,Q77
+Q1156,Weathering,Q77; Q106
+Q1157,Well-being,Q106; Q150
+Q1158,Well-mixed greenhouse gas,Q77
+Q1159,West African monsoon,Q77
+Q1160,Wetland,Q77; Q106
+Q1161,Wind energy,Q150
+Q1162,Younger Dryas,Q77
+Q1163,Zero emissions commitment,Q77; Q150
+Q1164,Displacement,Q106
+Q1165,Impact assessment,
+Q1166,pH,Q77; Q106
+Q1167,1.5°C pathway,Q77; Q150
+Q1168,1.5°C warmer worlds,Q10
+Q1169,13C,Q77
+Q1170,14C,Q77
+Q1171,2030 Agenda for Sustainable Development,Q106
+Q1172,Ablation,Q77
+Q1173,Abrupt change,Q77; Q106
+Q1174,Abrupt climate change,Q77; Q106
+Q1175,Acceptability of policy or system change,Q150

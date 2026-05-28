@@ -1,0 +1,5007 @@
+[
+  {
+    "qid": "Q8",
+    "term": "Social Sciences",
+    "series": ""
+  },
+  {
+    "qid": "Q9",
+    "term": "No poverty",
+    "series": ""
+  },
+  {
+    "qid": "Q11",
+    "term": "Confidence",
+    "series": ""
+  },
+  {
+    "qid": "Q12",
+    "term": "Global warming",
+    "series": ""
+  },
+  {
+    "qid": "Q13",
+    "term": "Pathways",
+    "series": ""
+  },
+  {
+    "qid": "Q15",
+    "term": "Technical potential",
+    "series": ""
+  },
+  {
+    "qid": "Q16",
+    "term": "Global warming potential",
+    "series": ""
+  },
+  {
+    "qid": "Q19",
+    "term": "Climate response",
+    "series": ""
+  },
+  {
+    "qid": "Q20",
+    "term": "Impacts",
+    "series": ""
+  },
+  {
+    "qid": "Q22",
+    "term": "Mitigation pathways",
+    "series": ""
+  },
+  {
+    "qid": "Q23",
+    "term": "Mitigation",
+    "series": ""
+  },
+  {
+    "qid": "Q25",
+    "term": "Climate model",
+    "series": ""
+  },
+  {
+    "qid": "Q27",
+    "term": "Adaptation",
+    "series": ""
+  },
+  {
+    "qid": "Q28",
+    "term": "Climate governance",
+    "series": ""
+  },
+  {
+    "qid": "Q29",
+    "term": "Climate system",
+    "series": ""
+  },
+  {
+    "qid": "Q31",
+    "term": "Sustainable development",
+    "series": ""
+  },
+  {
+    "qid": "Q32",
+    "term": "Climate justice",
+    "series": ""
+  },
+  {
+    "qid": "Q34",
+    "term": "Physical Sciences",
+    "series": ""
+  },
+  {
+    "qid": "Q36",
+    "term": "Land",
+    "series": ""
+  },
+  {
+    "qid": "Q37",
+    "term": "Land management",
+    "series": ""
+  },
+  {
+    "qid": "Q39",
+    "term": "Land-use change",
+    "series": ""
+  },
+  {
+    "qid": "Q40",
+    "term": "Land-cover change",
+    "series": ""
+  },
+  {
+    "qid": "Q43",
+    "term": "Land use",
+    "series": ""
+  },
+  {
+    "qid": "Q46",
+    "term": "Desertification",
+    "series": ""
+  },
+  {
+    "qid": "Q47",
+    "term": "Land degradation",
+    "series": ""
+  },
+  {
+    "qid": "Q49",
+    "term": "Forest degradation",
+    "series": ""
+  },
+  {
+    "qid": "Q51",
+    "term": "Food security",
+    "series": ""
+  },
+  {
+    "qid": "Q52",
+    "term": "Food system",
+    "series": ""
+  },
+  {
+    "qid": "Q56",
+    "term": "Climate action",
+    "series": ""
+  },
+  {
+    "qid": "Q58",
+    "term": "Ocean",
+    "series": ""
+  },
+  {
+    "qid": "Q59",
+    "term": "Sea level rise",
+    "series": ""
+  },
+  {
+    "qid": "Q63",
+    "term": "Cryosphere",
+    "series": ""
+  },
+  {
+    "qid": "Q65",
+    "term": "Glacier",
+    "series": ""
+  },
+  {
+    "qid": "Q66",
+    "term": "Permafrost",
+    "series": ""
+  },
+  {
+    "qid": "Q68",
+    "term": "Sea ice",
+    "series": ""
+  },
+  {
+    "qid": "Q70",
+    "term": "Sea level change",
+    "series": ""
+  },
+  {
+    "qid": "Q73",
+    "term": "Climate extreme",
+    "series": ""
+  },
+  {
+    "qid": "Q78",
+    "term": "Anthropogenic emissions",
+    "series": ""
+  },
+  {
+    "qid": "Q82",
+    "term": "Climate information",
+    "series": ""
+  },
+  {
+    "qid": "Q84",
+    "term": "Climate variability",
+    "series": ""
+  },
+  {
+    "qid": "Q86",
+    "term": "Models",
+    "series": ""
+  },
+  {
+    "qid": "Q89",
+    "term": "Ocean carbon cycle",
+    "series": ""
+  },
+  {
+    "qid": "Q91",
+    "term": "Ozone",
+    "series": ""
+  },
+  {
+    "qid": "Q92",
+    "term": "Aerosol",
+    "series": ""
+  },
+  {
+    "qid": "Q94",
+    "term": "Climate feedback",
+    "series": ""
+  },
+  {
+    "qid": "Q97",
+    "term": "Ice sheet",
+    "series": ""
+  },
+  {
+    "qid": "Q99",
+    "term": "Regional climate model",
+    "series": ""
+  },
+  {
+    "qid": "Q102",
+    "term": "Climate services",
+    "series": ""
+  },
+  {
+    "qid": "Q105",
+    "term": "Life Sciences",
+    "series": ""
+  },
+  {
+    "qid": "Q108",
+    "term": "Risk",
+    "series": ""
+  },
+  {
+    "qid": "Q113",
+    "term": "Ocean acidification",
+    "series": ""
+  },
+  {
+    "qid": "Q115",
+    "term": "Water security",
+    "series": ""
+  },
+  {
+    "qid": "Q118",
+    "term": "Urban",
+    "series": ""
+  },
+  {
+    "qid": "Q119",
+    "term": "Cities",
+    "series": ""
+  },
+  {
+    "qid": "Q121",
+    "term": "Health",
+    "series": ""
+  },
+  {
+    "qid": "Q122",
+    "term": "Mental health",
+    "series": ""
+  },
+  {
+    "qid": "Q124",
+    "term": "Vulnerability",
+    "series": ""
+  },
+  {
+    "qid": "Q134",
+    "term": "Climate finance",
+    "series": ""
+  },
+  {
+    "qid": "Q138",
+    "term": "Biodiversity",
+    "series": ""
+  },
+  {
+    "qid": "Q139",
+    "term": "Biodiversity hotspots",
+    "series": ""
+  },
+  {
+    "qid": "Q144",
+    "term": "Mountains",
+    "series": ""
+  },
+  {
+    "qid": "Q147",
+    "term": "Forest",
+    "series": ""
+  },
+  {
+    "qid": "Q148",
+    "term": "Sustainable forest management",
+    "series": ""
+  },
+  {
+    "qid": "Q155",
+    "term": "Consumption-based emissions",
+    "series": ""
+  },
+  {
+    "qid": "Q156",
+    "term": "Cumulative emissions",
+    "series": ""
+  },
+  {
+    "qid": "Q159",
+    "term": "Development pathways",
+    "series": ""
+  },
+  {
+    "qid": "Q161",
+    "term": "Energy services",
+    "series": ""
+  },
+  {
+    "qid": "Q162",
+    "term": "Energy efficiency",
+    "series": ""
+  },
+  {
+    "qid": "Q163",
+    "term": "Demand",
+    "series": ""
+  },
+  {
+    "qid": "Q165",
+    "term": "Wind energy",
+    "series": ""
+  },
+  {
+    "qid": "Q166",
+    "term": "Energy system",
+    "series": ""
+  },
+  {
+    "qid": "Q167",
+    "term": "Solar energy",
+    "series": ""
+  },
+  {
+    "qid": "Q169",
+    "term": "Mitigation potential",
+    "series": ""
+  },
+  {
+    "qid": "Q171",
+    "term": "Urban Systems",
+    "series": ""
+  },
+  {
+    "qid": "Q173",
+    "term": "Renewable energy",
+    "series": ""
+  },
+  {
+    "qid": "Q175",
+    "term": "Emissions scenario",
+    "series": ""
+  },
+  {
+    "qid": "Q177",
+    "term": "Direct emissions",
+    "series": ""
+  },
+  {
+    "qid": "Q180",
+    "term": "Policies",
+    "series": ""
+  },
+  {
+    "qid": "Q182",
+    "term": "Agreement",
+    "series": ""
+  },
+  {
+    "qid": "Q185",
+    "term": "Systems of Innovation",
+    "series": ""
+  },
+  {
+    "qid": "Q187",
+    "term": "Transition",
+    "series": ""
+  },
+  {
+    "qid": "Q256",
+    "term": "Access",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q257",
+    "term": "Access to modern energy services",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q258",
+    "term": "Acclimatisation",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q259",
+    "term": "Accumulation",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q260",
+    "term": "Active layer",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q261",
+    "term": "Acute food insecurity",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q262",
+    "term": "Adaptation",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q263",
+    "term": "Adaptation Fund",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q264",
+    "term": "Adaptation behaviour",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q265",
+    "term": "Adaptation deficit",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q266",
+    "term": "Adaptation gap",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q267",
+    "term": "Adaptation limits",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q268",
+    "term": "Adaptation needs",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q269",
+    "term": "Adaptation opportunity",
+    "series": ""
+  },
+  {
+    "qid": "Q270",
+    "term": "Adaptation options",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q271",
+    "term": "Adaptation pathways",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q272",
+    "term": "Adaptive capacity",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q273",
+    "term": "Adaptive governance",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q274",
+    "term": "Adaptive management",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q275",
+    "term": "Added value",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q276",
+    "term": "Additionality",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q277",
+    "term": "Adjustments",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q278",
+    "term": "Advection",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q279",
+    "term": "Adverse side-effect",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q280",
+    "term": "Aerosol",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q281",
+    "term": "Aerosol–cloud interaction",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q282",
+    "term": "Aerosol effective radiative forcing",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q283",
+    "term": "Aerosol optical depth",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q284",
+    "term": "Aerosol–radiation interaction",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q285",
+    "term": "Afforestation",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q286",
+    "term": "Agreement",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q287",
+    "term": "Agricultural and ecological drought",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q288",
+    "term": "Agriculture, Forestry and Other Land Use",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q289",
+    "term": "Agroecology",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q290",
+    "term": "Agroforestry",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q291",
+    "term": "Air mass",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q292",
+    "term": "Air pollution",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q293",
+    "term": "Airborne fraction",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q294",
+    "term": "Albedo",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q295",
+    "term": "Alkalinity",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q296",
+    "term": "Altimetry",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q297",
+    "term": "Annular modes",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q298",
+    "term": "Anomaly",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q299",
+    "term": "Antarctic Ice Sheet",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q300",
+    "term": "Anthropocene",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q301",
+    "term": "Anthropogenic",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q302",
+    "term": "Anthropogenic emissions",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q303",
+    "term": "Anthropogenic removals",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q304",
+    "term": "Anthropogenic subsidence",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q305",
+    "term": "Apparent hydrological sensitivity",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q306",
+    "term": "Arctic oscillation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q307",
+    "term": "Arid zone",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q308",
+    "term": "Aridity",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q309",
+    "term": "Artificial ocean upwelling",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q310",
+    "term": "Assets",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q311",
+    "term": "Atlantic Meridional Mode",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q312",
+    "term": "Atlantic Meridional Overturning Circulation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q313",
+    "term": "Atlantic Multi-decadal Oscillation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q314",
+    "term": "Atlantic Multi-decadal Variability",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q315",
+    "term": "Atlantic Zonal Mode",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q316",
+    "term": "Atmosphere",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q317",
+    "term": "Atmospheric boundary layer",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q318",
+    "term": "Atmospheric rivers",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q319",
+    "term": "Attribution",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q320",
+    "term": "Australian and Maritime Continent monsoon",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q321",
+    "term": "Autonomous adaptation",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q322",
+    "term": "Autotrophic respiration",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q323",
+    "term": "Avalanche",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q324",
+    "term": "Avoid, Shift, Improve",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q325",
+    "term": "Basal lubrication",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q326",
+    "term": "Baseline period",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q327",
+    "term": "Baseline/reference",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q328",
+    "term": "Baseline scenario",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q329",
+    "term": "Behavioural change",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q330",
+    "term": "Benthic",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q331",
+    "term": "Benthos",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q332",
+    "term": "Beta diversity",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q333",
+    "term": "Biochar",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q334",
+    "term": "Biochemical oxygen demand",
+    "series": ""
+  },
+  {
+    "qid": "Q335",
+    "term": "Biodiversity",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q336",
+    "term": "Biodiversity hotspots",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q337",
+    "term": "Bioenergy",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q338",
+    "term": "Bioenergy with carbon dioxide capture and storage",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q339",
+    "term": "Bioethanol",
+    "series": ""
+  },
+  {
+    "qid": "Q340",
+    "term": "Biofuel",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q341",
+    "term": "Biogenic carbon emissions",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q342",
+    "term": "Biogenic volatile organic compounds",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q343",
+    "term": "Biogeophysical potential",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q344",
+    "term": "Biological pump",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q345",
+    "term": "Biomass",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q346",
+    "term": "Biomes",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q347",
+    "term": "Biosphere",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q348",
+    "term": "Bipolar seesaw",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q349",
+    "term": "Black carbon",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q350",
+    "term": "Blocking",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q351",
+    "term": "Blue carbon",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q352",
+    "term": "Blue infrastructure",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q353",
+    "term": "Brewer–Dobson circulation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q354",
+    "term": "Burden",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q355",
+    "term": "Business as usual",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q356",
+    "term": "CMIP3, CMIP5 and CMIP6",
+    "series": ""
+  },
+  {
+    "qid": "Q357",
+    "term": "CO2 equivalent emission",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q358",
+    "term": "Calcification",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q359",
+    "term": "Calving",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q360",
+    "term": "Canopy temperature",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q361",
+    "term": "Capacity building",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q362",
+    "term": "Carbon–climate feedback",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q363",
+    "term": "Carbon cycle",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q364",
+    "term": "Carbon dioxide",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q365",
+    "term": "Carbon dioxide fertilisation",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q366",
+    "term": "Carbon dioxide capture and storage",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q367",
+    "term": "Carbon dioxide capture and utilisation",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q368",
+    "term": "Carbon dioxide removal",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q369",
+    "term": "Carbon feedback",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q370",
+    "term": "Carbon footprint",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q371",
+    "term": "Carbon intensity",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q372",
+    "term": "Carbon neutrality",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q373",
+    "term": "Carbon price",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q374",
+    "term": "Carbon sequestration",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q375",
+    "term": "Carbon stock",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q376",
+    "term": "Carbonaceous aerosol",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q377",
+    "term": "Carbonate pump",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q378",
+    "term": "Cascading impacts",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q379",
+    "term": "Catchment",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q380",
+    "term": "Cenozoic Era",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q381",
+    "term": "Central Pacific El Niño",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q382",
+    "term": "Chaotic",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q383",
+    "term": "Charcoal",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q384",
+    "term": "Chlorofluorocarbons",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q385",
+    "term": "Choice architecture",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q386",
+    "term": "Chronology",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q387",
+    "term": "Circular economy",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q388",
+    "term": "Cirrus cloud thinning",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q389",
+    "term": "Cities",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q390",
+    "term": "Citizen science",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q391",
+    "term": "City region",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q392",
+    "term": "Clathrate",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q393",
+    "term": "Clausius–Clapeyron equation/relationship",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q394",
+    "term": "Climate",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q395",
+    "term": "Climate–carbon cycle feedback",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q396",
+    "term": "Climate change",
+    "series": ""
+  },
+  {
+    "qid": "Q397",
+    "term": "Climate change commitment",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q398",
+    "term": "Climate extreme",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q399",
+    "term": "Climate feedback",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q400",
+    "term": "Climate feedback parameter",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q401",
+    "term": "Climate finance",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q402",
+    "term": "Climate forecast",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q403",
+    "term": "Climate governance",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q404",
+    "term": "Climate index",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q405",
+    "term": "Climate indicator",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q406",
+    "term": "Climate information",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q407",
+    "term": "Climate justice",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q408",
+    "term": "Climate literacy",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q409",
+    "term": "Climate metrics",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q410",
+    "term": "Climate model",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q411",
+    "term": "Climate pattern",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q412",
+    "term": "Climate prediction",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q413",
+    "term": "Climate projection",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q414",
+    "term": "Climate refugium",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q415",
+    "term": "Climate resilient development",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q416",
+    "term": "Climate resilient development pathways",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q417",
+    "term": "Climate-resilient pathways",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q418",
+    "term": "Climate response",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q419",
+    "term": "Climate sensitivity",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q420",
+    "term": "Climate services",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q421",
+    "term": "Climate simulation ensemble",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q422",
+    "term": "Climate-smart agriculture",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q423",
+    "term": "Climate system",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q424",
+    "term": "Climate threshold",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q425",
+    "term": "Climate variability",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q426",
+    "term": "Climate velocity",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q427",
+    "term": "Climatic driver",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q428",
+    "term": "Climatic impact-driver",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q429",
+    "term": "Cloud condensation nuclei",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q430",
+    "term": "Cloud feedback",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q431",
+    "term": "Cloud radiative effect",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q432",
+    "term": "Cloud-resolving models",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q433",
+    "term": "Co-benefits",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q434",
+    "term": "Coast",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q435",
+    "term": "Coastal erosion",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q436",
+    "term": "Cold days/cold nights",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q437",
+    "term": "Common era",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q438",
+    "term": "Communicable disease",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q439",
+    "term": "Community-based adaptation",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q440",
+    "term": "Compatible emissions",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q441",
+    "term": "Compound risks",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q442",
+    "term": "Compound weather/climate events",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q443",
+    "term": "Concentrations scenario",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q444",
+    "term": "Conference of the Parties",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q445",
+    "term": "Confidence",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q446",
+    "term": "Conservation agriculture",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q447",
+    "term": "Constant composition commitment",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q448",
+    "term": "Constant emissions commitment",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q449",
+    "term": "Consumption-based emissions",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q450",
+    "term": "Convection",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q451",
+    "term": "Coping",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q452",
+    "term": "Coping capacity",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q453",
+    "term": "Coral bleaching",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q454",
+    "term": "Coral reef",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q455",
+    "term": "Cosmogenic radioisotopes",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q456",
+    "term": "Cost–benefit analysis",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q457",
+    "term": "Cost-effectiveness analysis",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q458",
+    "term": "Coupled Model Intercomparison Project",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q459",
+    "term": "Cryosphere",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q460",
+    "term": "Cultural impacts",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q461",
+    "term": "Cumulative emissions",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q462",
+    "term": "Dansgaard-Oeschger events",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q463",
+    "term": "Data assimilation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q464",
+    "term": "Dead zones",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q465",
+    "term": "Decadal predictability",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q466",
+    "term": "Decadal prediction",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q467",
+    "term": "Decadal variability",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q468",
+    "term": "Decarbonisation",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q469",
+    "term": "Decent Living Standard",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q470",
+    "term": "Decoupling",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q471",
+    "term": "Deep uncertainty",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q472",
+    "term": "Deforestation",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q473",
+    "term": "Deglacial or deglaciation or glacial termination",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q474",
+    "term": "Deliberate transformations",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q475",
+    "term": "Deliberative governance",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q476",
+    "term": "Demand",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q477",
+    "term": "Demand- and supply-side measures",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q478",
+    "term": "Demand-side measures",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q479",
+    "term": "Desertification",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q480",
+    "term": "Detection",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q481",
+    "term": "Detection and attribution",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q482",
+    "term": "Developed/developing countries",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q483",
+    "term": "Development pathways",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q484",
+    "term": "Diatoms",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q485",
+    "term": "Diet",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q486",
+    "term": "Dimensions of integration",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q487",
+    "term": "Direct air capture",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q488",
+    "term": "Direct air carbon dioxide capture and storage",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q489",
+    "term": "Direct and indirect services",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q490",
+    "term": "Direct emissions",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q491",
+    "term": "Disaster",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q492",
+    "term": "Disaster management",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q493",
+    "term": "Disaster risk",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q494",
+    "term": "Disaster risk management",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q495",
+    "term": "Disaster risk reduction",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q496",
+    "term": "Discharge",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q497",
+    "term": "Discounting",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q498",
+    "term": "Disruptive innovation",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q499",
+    "term": "Dissolved inorganic carbon",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q500",
+    "term": "Distributive equity",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q501",
+    "term": "Diurnal temperature range",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q502",
+    "term": "Dobson unit",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q503",
+    "term": "Downscaling",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q504",
+    "term": "Drainage",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q505",
+    "term": "Driver",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q506",
+    "term": "Drought",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q507",
+    "term": "Dynamic global vegetation model",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q508",
+    "term": "Dynamical system",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q509",
+    "term": "Early Eocene Climatic Optimum",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q510",
+    "term": "Early warning systems",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q511",
+    "term": "Earth’s energy budget",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q512",
+    "term": "Earth's energy flows",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q513",
+    "term": "Earth's energy imbalance",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q514",
+    "term": "Earth's radiative response",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q515",
+    "term": "Earth system feedbacks",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q516",
+    "term": "Earth system model",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q517",
+    "term": "Earth system model of intermediate complexity",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q518",
+    "term": "Earth system sensitivity",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q519",
+    "term": "East Asian monsoon",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q520",
+    "term": "Eastern Pacific El Niño",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q521",
+    "term": "Eastern boundary upwelling systems",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q522",
+    "term": "Economic potential",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q523",
+    "term": "Ecosystem",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q524",
+    "term": "Ecosystem-based adaptation",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q525",
+    "term": "Ecosystem health",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q526",
+    "term": "Ecosystem services",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q527",
+    "term": "Effective equilibrium climate sensitivity",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q528",
+    "term": "Effective radiative forcing due to aerosol–cloud interactions",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q529",
+    "term": "Effective radiative forcing due to aerosol–radiation interactions",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q530",
+    "term": "Ekman transport",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q531",
+    "term": "El Niño–Southern Oscillation",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q532",
+    "term": "Electromagnetic spectrum",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q533",
+    "term": "Elevation-dependent warming",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q534",
+    "term": "Embodied [emissions, water, land]",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q535",
+    "term": "Emergence",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q536",
+    "term": "Emergent constraint",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q537",
+    "term": "Emission and Socio-economic Scenario Ensemble",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q538",
+    "term": "Emission factor/Emissions intensity",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q539",
+    "term": "Emission pathways",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q540",
+    "term": "Emission trajectories",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q541",
+    "term": "Emissions scenario",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q542",
+    "term": "Emulation",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q543",
+    "term": "Emulators",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q544",
+    "term": "Enabling conditions",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q545",
+    "term": "Endemic species",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q546",
+    "term": "Energy access",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q547",
+    "term": "Energy balance",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q548",
+    "term": "Energy balance model",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q549",
+    "term": "Energy budget",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q550",
+    "term": "Energy efficiency",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q551",
+    "term": "Energy poverty",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q552",
+    "term": "Energy security",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q553",
+    "term": "Energy services",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q554",
+    "term": "Energy system",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q555",
+    "term": "Enhanced weathering",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q556",
+    "term": "Ensemble",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q557",
+    "term": "Enteric fermentation",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q558",
+    "term": "Equality",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q559",
+    "term": "Equilibrium and transient climate experiment",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q560",
+    "term": "Equilibrium climate sensitivity",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q561",
+    "term": "Equilibrium line",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q562",
+    "term": "Equity",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q563",
+    "term": "Equivalent carbon dioxide emission",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q564",
+    "term": "Ethics",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q565",
+    "term": "Eudaimonic",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q566",
+    "term": "Eutrophication",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q567",
+    "term": "Evaporation",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q568",
+    "term": "Evapotranspiration",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q569",
+    "term": "Evidence",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q570",
+    "term": "Evolutionary adaptation",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q571",
+    "term": "Exergy",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q572",
+    "term": "Exposure",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q573",
+    "term": "Extended concentration pathways",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q574",
+    "term": "External forcing",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q575",
+    "term": "Externality/external cost/external benefit",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q576",
+    "term": "Extinction",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q577",
+    "term": "Extirpation",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q578",
+    "term": "Extratropical cyclone",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q579",
+    "term": "Extratropical jets",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q580",
+    "term": "Extreme climate event",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q581",
+    "term": "Extreme/heavy precipitation event",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q582",
+    "term": "Extreme sea level",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q583",
+    "term": "Extreme weather event",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q584",
+    "term": "Faculae",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q585",
+    "term": "Fairness",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q586",
+    "term": "Feasibility",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q587",
+    "term": "Final energy",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q588",
+    "term": "Fine-mode aerosol optical depth",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q589",
+    "term": "Fingerprint",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q590",
+    "term": "Fire weather",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q591",
+    "term": "Firn",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q592",
+    "term": "Fitness-for-purpose",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q593",
+    "term": "Flaring",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q594",
+    "term": "Flexibility",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q595",
+    "term": "Flexible governance",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q596",
+    "term": "Flood",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q597",
+    "term": "Flux",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q598",
+    "term": "Food-borne diseases",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q599",
+    "term": "Food loss and waste",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q600",
+    "term": "Food security",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q601",
+    "term": "Food system",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q602",
+    "term": "Foraminifera",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q603",
+    "term": "Forcing",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q604",
+    "term": "Forest",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q605",
+    "term": "Forest degradation",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q606",
+    "term": "Forest line",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q607",
+    "term": "Fossil fuel emissions",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q608",
+    "term": "Fossil fuels",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q609",
+    "term": "Free atmosphere",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q610",
+    "term": "Frozen ground",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q611",
+    "term": "Fuel poverty",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q612",
+    "term": "Fugitive emissions",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q613",
+    "term": "Gender equity",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q614",
+    "term": "General circulation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q615",
+    "term": "General circulation model",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q616",
+    "term": "Geocentric sea level change",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q617",
+    "term": "Geoid",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q618",
+    "term": "Geostrophic winds or currents",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q619",
+    "term": "Geothermal energy",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q620",
+    "term": "Gini coefficient",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q621",
+    "term": "Glacial-interglacial cycles",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q622",
+    "term": "Glacial isostatic adjustment",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q623",
+    "term": "Glacial lake outburst flood /Glacier lake outburst",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q624",
+    "term": "Glacial or glaciation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q625",
+    "term": "Glaciated",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q626",
+    "term": "Glacier",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q627",
+    "term": "Glacierized",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q628",
+    "term": "Global Environment Facility",
+    "series": ""
+  },
+  {
+    "qid": "Q629",
+    "term": "Global carbon budget",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q630",
+    "term": "Global change",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q631",
+    "term": "Global dimming",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q632",
+    "term": "Global energy budget",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q633",
+    "term": "Global energy inventory",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q634",
+    "term": "Global mean sea level change",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q635",
+    "term": "Global mean surface air temperature",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q636",
+    "term": "Global mean surface temperature",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q637",
+    "term": "Global monsoon",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q638",
+    "term": "Global warming",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q639",
+    "term": "Global warming potential",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q640",
+    "term": "Governance",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q641",
+    "term": "Governance capacity",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q642",
+    "term": "Gravitational, rotational and deformational effects",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q643",
+    "term": "Gravity Recovery and Climate Experiment",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q644",
+    "term": "Grazing land",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q645",
+    "term": "Green Climate Fund",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q646",
+    "term": "Green infrastructure",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q647",
+    "term": "Greenhouse effect",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q648",
+    "term": "Greenhouse gas emission metric",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q649",
+    "term": "Greenhouse gas neutrality",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q650",
+    "term": "Greenhouse gases",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q651",
+    "term": "Greenland Ice Sheet",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q652",
+    "term": "Grey infrastructure",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q653",
+    "term": "Gross domestic product",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q654",
+    "term": "Gross primary production",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q655",
+    "term": "Ground-level ozone",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q656",
+    "term": "Grounding line",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q657",
+    "term": "Groundwater recharge",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q658",
+    "term": "Gyre",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q659",
+    "term": "Habitability",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q660",
+    "term": "Hadley circulation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q661",
+    "term": "Halocarbons",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q662",
+    "term": "Halocline",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q663",
+    "term": "Halosteric",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q664",
+    "term": "Halosteric sea level change",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q665",
+    "term": "Hazard",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q666",
+    "term": "Health",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q667",
+    "term": "Heat index",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q668",
+    "term": "Heat stress",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q669",
+    "term": "Heatwave",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q670",
+    "term": "Heavy precipitation event",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q671",
+    "term": "Hedonic",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q672",
+    "term": "Heinrich event",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q673",
+    "term": "Heterotrophic respiration",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q674",
+    "term": "Hindcast or retrospective forecast",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q675",
+    "term": "Holocene",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q676",
+    "term": "Household carbon footprint",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q677",
+    "term": "Human behaviour",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q678",
+    "term": "Human influence on the climate system",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q679",
+    "term": "Human mobility",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q680",
+    "term": "Human rights",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q681",
+    "term": "Human security",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q682",
+    "term": "Human system",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q683",
+    "term": "Hydroclimate",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q684",
+    "term": "Hydrofluorocarbons",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q685",
+    "term": "Hydrological cycle",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q686",
+    "term": "Hydrological drought",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q687",
+    "term": "Hydrological sensitivity",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q688",
+    "term": "Hydropower",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q689",
+    "term": "Hydrosphere",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q690",
+    "term": "Hyperthermal events",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q691",
+    "term": "Hypoxic",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q692",
+    "term": "Hypoxic events",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q693",
+    "term": "Hypsometry",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q694",
+    "term": "Ice age",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q695",
+    "term": "Ice–albedo feedback",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q696",
+    "term": "Ice core",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q697",
+    "term": "Ice sheet",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q698",
+    "term": "Ice shelf",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q699",
+    "term": "Ice stream",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q700",
+    "term": "Iceberg",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q701",
+    "term": "Impacts",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q702",
+    "term": "Income",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q703",
+    "term": "Incremental adaptation",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q704",
+    "term": "Indian Ocean Dipole",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q705",
+    "term": "Indian Ocean basin mode",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q706",
+    "term": "Indigenous Peoples",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q707",
+    "term": "Indigenous knowledge",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q708",
+    "term": "Indirect emissions",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q709",
+    "term": "Indirect land-use change",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q710",
+    "term": "Industrial revolution",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q711",
+    "term": "Inequality",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q712",
+    "term": "Informal settlement",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q713",
+    "term": "Infrastructure",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q714",
+    "term": "Insolation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q715",
+    "term": "Instantaneous radiative forcing due to aerosol–cloud interactions",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q716",
+    "term": "Instantaneous radiative forcing due to aerosol–radiation interactions",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q717",
+    "term": "Institutional capacity",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q718",
+    "term": "Institutions",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q719",
+    "term": "Insurance/reinsurance",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q720",
+    "term": "Integrated assessment",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q721",
+    "term": "Integrated assessment model",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q722",
+    "term": "Integrated assessment scenario ensemble",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q723",
+    "term": "Inter-decadal Pacific Oscillation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q724",
+    "term": "Inter-tropical Convergence Zone",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q725",
+    "term": "Interglacial or interglaciation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q726",
+    "term": "Internal climate variability",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q727",
+    "term": "Internal variability",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q728",
+    "term": "Internet of Things",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q729",
+    "term": "Interpolation uncertainty",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q730",
+    "term": "Interstadial or interstade",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q731",
+    "term": "Invasive species",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q732",
+    "term": "Irreversibility",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q733",
+    "term": "Isostatic or Isostasy",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q734",
+    "term": "Isotopes",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q735",
+    "term": "Just transitions",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q736",
+    "term": "Justice",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q737",
+    "term": "Kaya identity",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q738",
+    "term": "Key climate indicators",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q739",
+    "term": "Key risk",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q740",
+    "term": "Kriging",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q741",
+    "term": "Land",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q742",
+    "term": "Land cover",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q743",
+    "term": "Land-cover change",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q744",
+    "term": "Land degradation",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q745",
+    "term": "Land degradation neutrality",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q746",
+    "term": "Land management",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q747",
+    "term": "Land management change",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q748",
+    "term": "Land potential",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q749",
+    "term": "Land rehabilitation",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q750",
+    "term": "Land restoration",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q751",
+    "term": "Land surface air temperature",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q752",
+    "term": "Land use",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q753",
+    "term": "Land use, land-use change and forestry",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q754",
+    "term": "Land-use change",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q755",
+    "term": "Land water storage",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q756",
+    "term": "Lapse rate",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q757",
+    "term": "Large-scale",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q758",
+    "term": "Last millennium",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q759",
+    "term": "Latent heat flux",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q760",
+    "term": "Leakage",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q761",
+    "term": "Leapfrogging",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q762",
+    "term": "Least Developed Countries",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q763",
+    "term": "Lifecycle assessment",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q764",
+    "term": "Lifetime",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q765",
+    "term": "Light-absorbing particles",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q766",
+    "term": "Likelihood",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q767",
+    "term": "Lithosphere",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q768",
+    "term": "Livelihood",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q769",
+    "term": "Local extinction",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q770",
+    "term": "Local knowledge",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q771",
+    "term": "Local sea level change",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q772",
+    "term": "Lock-in",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q773",
+    "term": "Long-lived climate forcers",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q774",
+    "term": "Long-lived greenhouse gases",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q775",
+    "term": "Loss and Damage, and losses and damages",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q776",
+    "term": "Low Elevation Coastal Zones",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q777",
+    "term": "Low-likelihood, high impact outcomes",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q778",
+    "term": "Madden–Julian Oscillation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q779",
+    "term": "Maladaptive actions",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q780",
+    "term": "Malnutrition",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q781",
+    "term": "Managed forest",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q782",
+    "term": "Managed grassland",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q783",
+    "term": "Managed land",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q784",
+    "term": "Marine-based ice sheet",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q785",
+    "term": "Marine cloud brightening",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q786",
+    "term": "Marine heatwave",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q787",
+    "term": "Marine ice cliff instability",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q788",
+    "term": "Marine ice sheet instability",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q789",
+    "term": "Marine isotope stage",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q790",
+    "term": "Market failure",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q791",
+    "term": "Mass balance/budget",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q792",
+    "term": "Material substitution",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q793",
+    "term": "Mean sea level",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q794",
+    "term": "Measurement",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q795",
+    "term": "Measurement, Reporting and Verification",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q796",
+    "term": "Megacity",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q797",
+    "term": "Megadrought",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q798",
+    "term": "Meltwater Pulse 1A",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q799",
+    "term": "Mental health",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q800",
+    "term": "Meridional overturning circulation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q801",
+    "term": "Meteorological drought",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q802",
+    "term": "Methane",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q803",
+    "term": "Metric",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q804",
+    "term": "Microclimate",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q805",
+    "term": "Microwave sounding unit",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q806",
+    "term": "Migrant",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q807",
+    "term": "Migration",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q808",
+    "term": "Mineralization/Remineralization",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q809",
+    "term": "Mitigation",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q810",
+    "term": "Mitigation measures",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q811",
+    "term": "Mitigation option",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q812",
+    "term": "Mitigation pathways",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q813",
+    "term": "Mitigation potential",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q814",
+    "term": "Mitigation scenario",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q815",
+    "term": "Model initialization",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q816",
+    "term": "Model spread",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q817",
+    "term": "Models",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q818",
+    "term": "Modes of climate variability",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q819",
+    "term": "Mole fraction or mixing ratio",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q820",
+    "term": "Monitoring and evaluation",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q821",
+    "term": "Montreal Protocol",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q822",
+    "term": "Mountains",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q823",
+    "term": "Multi-level governance",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q824",
+    "term": "Narrative",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q825",
+    "term": "Native species",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q826",
+    "term": "Natural systems",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q827",
+    "term": "Natural variability",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q828",
+    "term": "Nature-based solutions",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q829",
+    "term": "Nature's contributions to people",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q830",
+    "term": "Near-surface permafrost",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q831",
+    "term": "Negative greenhouse gas emissions",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q832",
+    "term": "Net negative greenhouse gas emissions",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q833",
+    "term": "Net primary production",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q834",
+    "term": "Net zero CO2 emissions",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q835",
+    "term": "Net zero greenhouse gas emissions",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q836",
+    "term": "New Urban Agenda",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q837",
+    "term": "Nitrogen deposition",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q838",
+    "term": "Nitrous oxide",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q839",
+    "term": "Non-CO2 emissions and radiative forcing",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q840",
+    "term": "Non-climatic driver",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q841",
+    "term": "Non-communicable diseases",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q842",
+    "term": "Non-linearity",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q843",
+    "term": "Non-methane volatile organic compounds",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q844",
+    "term": "Non-overshoot pathways",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q845",
+    "term": "North American monsoon",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q846",
+    "term": "North Atlantic Oscillation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q847",
+    "term": "Northern Annular Mode",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q848",
+    "term": "Ocean",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q849",
+    "term": "Ocean acidification",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q850",
+    "term": "Ocean alkalinization/Ocean alkalinity enhancement",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q851",
+    "term": "Ocean carbon cycle",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q852",
+    "term": "Ocean deoxygenation",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q853",
+    "term": "Ocean dynamic sea level change",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q854",
+    "term": "Ocean fertilisation",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q855",
+    "term": "Ocean heat uptake efficiency",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q856",
+    "term": "Ocean stratification",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q857",
+    "term": "Offset",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q858",
+    "term": "Orbital forcing",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q859",
+    "term": "Organic aerosol",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q860",
+    "term": "Organic farming",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q861",
+    "term": "Outbreak",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q862",
+    "term": "Outgoing longwave radiation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q863",
+    "term": "Outlet glacier",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q864",
+    "term": "Overshoot pathways",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q865",
+    "term": "Oxygen minimum zone",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q866",
+    "term": "Ozone",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q867",
+    "term": "Ozone-depleting substances",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q868",
+    "term": "Ozone layer",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q869",
+    "term": "Ozonesonde",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q870",
+    "term": "Pacific Decadal Oscillation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q871",
+    "term": "Pacific Decadal Variability",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q872",
+    "term": "Pacific-North American pattern",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q873",
+    "term": "Palaeocene–Eocene Thermal Maximum",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q874",
+    "term": "Paleoclimate",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q875",
+    "term": "Pandemic",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q876",
+    "term": "Pareto optimum",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q877",
+    "term": "Participatory governance",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q878",
+    "term": "Particulate matter",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q879",
+    "term": "Pasture",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q880",
+    "term": "Path dependence",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q881",
+    "term": "Pathways",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q882",
+    "term": "Pattern scaling",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q883",
+    "term": "Peat",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q884",
+    "term": "Peatlands",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q885",
+    "term": "Pelagic",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q886",
+    "term": "Pelagos",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q887",
+    "term": "Percentile",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q888",
+    "term": "Peri-urban areas",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q889",
+    "term": "Permafrost",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q890",
+    "term": "Permafrost degradation",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q891",
+    "term": "Permafrost thaw",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q892",
+    "term": "Perturbed parameter ensemble",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q893",
+    "term": "Phenology",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q894",
+    "term": "Photosynthesis",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q895",
+    "term": "Physical climate storyline",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q896",
+    "term": "Planetary health",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q897",
+    "term": "Plankton",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q898",
+    "term": "Planned relocation",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q899",
+    "term": "Plant evaporative stress",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q900",
+    "term": "Plasticity",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q901",
+    "term": "Pleistocene",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q902",
+    "term": "Pliocene",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q903",
+    "term": "Polar amplification",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q904",
+    "term": "Policies",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q905",
+    "term": "Political economy",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q906",
+    "term": "Pollen analysis",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q907",
+    "term": "Polycentric governance",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q908",
+    "term": "Pool, carbon and nitrogen",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q909",
+    "term": "Potential evapotranspiration",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q910",
+    "term": "Poverty",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q911",
+    "term": "Poverty eradication",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q912",
+    "term": "Poverty trap",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q913",
+    "term": "Pre-industrial",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q914",
+    "term": "Precipitable water",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q915",
+    "term": "Precipitation deficit",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q916",
+    "term": "Precursors",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q917",
+    "term": "Predictability",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q918",
+    "term": "Prediction quality/skill",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q919",
+    "term": "Primary energy",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q920",
+    "term": "Primary production",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q921",
+    "term": "Private costs",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q922",
+    "term": "Probability density function",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q923",
+    "term": "Procedural justice",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q924",
+    "term": "Process-based model",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q925",
+    "term": "Production-based emissions",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q926",
+    "term": "Projection",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q927",
+    "term": "Prosumers",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q928",
+    "term": "Proxy",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q929",
+    "term": "Quasi-Biennial Oscillation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q930",
+    "term": "Quaternary",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q931",
+    "term": "Radiative forcing",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q932",
+    "term": "Rapid dynamical change",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q933",
+    "term": "Reanalysis",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q934",
+    "term": "Reasons for Concern",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q935",
+    "term": "Rebound effect",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q936",
+    "term": "Reconstruction",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q937",
+    "term": "Reducing Emissions from Deforestation and Forest Degradation",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q938",
+    "term": "Reference period",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q939",
+    "term": "Reference scenario",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q940",
+    "term": "Reforestation",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q941",
+    "term": "Refugium",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q942",
+    "term": "Regenerative agriculture",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q943",
+    "term": "Region",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q944",
+    "term": "Regional climate messages",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q945",
+    "term": "Regional climate model",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q946",
+    "term": "Regional sea level change",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q947",
+    "term": "Regulation",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q948",
+    "term": "Relative humidity",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q949",
+    "term": "Relative sea level change",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q950",
+    "term": "Remaining carbon budget",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q951",
+    "term": "Renewable energy",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q952",
+    "term": "Reporting",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q953",
+    "term": "Representative Concentration Pathways",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q954",
+    "term": "Representative Key Risks",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q955",
+    "term": "Reservoir",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q956",
+    "term": "Residual risk",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q957",
+    "term": "Resilience",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q958",
+    "term": "Resolution",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q959",
+    "term": "Resource cascade",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q960",
+    "term": "Respiration",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q961",
+    "term": "Response time or adjustment time",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q962",
+    "term": "Restoration",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q963",
+    "term": "Return period",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q964",
+    "term": "Return value",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q965",
+    "term": "Risk",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q966",
+    "term": "Risk assessment",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q967",
+    "term": "Risk framework",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q968",
+    "term": "Risk management",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q969",
+    "term": "Risk perception",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q970",
+    "term": "Risk trade-off",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q971",
+    "term": "Risk transfer",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q972",
+    "term": "River discharge",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q973",
+    "term": "Rock glacier",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q974",
+    "term": "Runoff",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q975",
+    "term": "Salt-water intrusion/encroachment",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q976",
+    "term": "Sampling uncertainty",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q977",
+    "term": "Scenario",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q978",
+    "term": "Scenario storyline",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q979",
+    "term": "Sea ice",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q980",
+    "term": "Sea ice area",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q981",
+    "term": "Sea ice concentration",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q982",
+    "term": "Sea ice extent",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q983",
+    "term": "Sea level change",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q984",
+    "term": "Sea level equivalent",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q985",
+    "term": "Sea level rise",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q986",
+    "term": "Sea surface temperature",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q987",
+    "term": "Semi-arid zone",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q988",
+    "term": "Semi-empirical model",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q989",
+    "term": "Sendai Framework for Disaster Risk Reduction",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q990",
+    "term": "Sensible heat flux",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q991",
+    "term": "Sensitivity",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q992",
+    "term": "Sequestration",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q993",
+    "term": "Sequestration potential",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q994",
+    "term": "Service provisioning",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q995",
+    "term": "Services",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q996",
+    "term": "Settlements",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q997",
+    "term": "Shared socio-economic pathways",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q998",
+    "term": "Sharing economy.",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q999",
+    "term": "Shelf seas",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1000",
+    "term": "Shifting development pathways",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1001",
+    "term": "Shifting development pathways to sustainability",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1002",
+    "term": "Short-lived climate forcers",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q1003",
+    "term": "Short-lived climate pollutants",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q1004",
+    "term": "Significant wave height",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1005",
+    "term": "Simple climate model",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q1006",
+    "term": "Sink",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q1007",
+    "term": "Small Island Developing States",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q1008",
+    "term": "Smart grids",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1009",
+    "term": "Snow cover",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1010",
+    "term": "Snow cover duration",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1011",
+    "term": "Snow cover extent",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1012",
+    "term": "Snow water equivalent",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1013",
+    "term": "Social cost of carbon",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1014",
+    "term": "Social costs",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1015",
+    "term": "Social-ecological system",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1016",
+    "term": "Social group",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1017",
+    "term": "Social identity",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1018",
+    "term": "Social inclusion",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1019",
+    "term": "Social infrastructure",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1020",
+    "term": "Social justice",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1021",
+    "term": "Social learning",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1022",
+    "term": "Social protection",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1023",
+    "term": "Societal transformations",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1024",
+    "term": "Socio-economic scenario",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q1025",
+    "term": "Socio-technical transitions",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1026",
+    "term": "Soil carbon sequestration",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1027",
+    "term": "Soil erosion",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1028",
+    "term": "Soil moisture",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1029",
+    "term": "Soil organic carbon",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1030",
+    "term": "Soil organic matter",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1031",
+    "term": "Soil temperature",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1032",
+    "term": "Solar activity",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1033",
+    "term": "Solar cycle",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1034",
+    "term": "Solar energy",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1035",
+    "term": "Solar radiation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1036",
+    "term": "Solar radiation modification",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q1037",
+    "term": "Solubility pump",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1038",
+    "term": "Solution space",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1039",
+    "term": "Source",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q1040",
+    "term": "South American monsoon",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1041",
+    "term": "South Pacific Convergence Zone",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1042",
+    "term": "South and South East Asian monsoon",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1043",
+    "term": "Southern Annular Mode",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q1044",
+    "term": "Southern Ocean",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1045",
+    "term": "Spatial and temporal scales",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1046",
+    "term": "Specific humidity",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1047",
+    "term": "Spill-over effect",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1048",
+    "term": "Stadial or stade",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1049",
+    "term": "Standard",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1050",
+    "term": "Steric sea level change",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1051",
+    "term": "Storm surge",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1052",
+    "term": "Storm tracks",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1053",
+    "term": "Storyline",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q1054",
+    "term": "Stranded assets",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1055",
+    "term": "Stratification",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1056",
+    "term": "Stratosphere",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1057",
+    "term": "Stratosphere–troposphere exchange",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1058",
+    "term": "Stratospheric aerosol injection",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1059",
+    "term": "Stratospheric ozone",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1060",
+    "term": "Stratospheric polar vortex",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1061",
+    "term": "Stratospheric sounding unit",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1062",
+    "term": "Streamflow",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1063",
+    "term": "Stressors",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1064",
+    "term": "Subduction",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1065",
+    "term": "Subnational actors",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1066",
+    "term": "Sudden stratospheric warming",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1067",
+    "term": "Sufficiency",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1068",
+    "term": "Sulphur hexafluoride",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1069",
+    "term": "Sunspots",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1070",
+    "term": "Supply-side measures",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1071",
+    "term": "Surface energy budget",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1072",
+    "term": "Surface mass balance",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1073",
+    "term": "Surprises",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1074",
+    "term": "Sustainability",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1075",
+    "term": "Sustainable Development Goals",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1076",
+    "term": "Sustainable development",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1077",
+    "term": "Sustainable development pathways",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1078",
+    "term": "Sustainable forest management",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1079",
+    "term": "Sustainable intensification",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1080",
+    "term": "Sustainable land management",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1081",
+    "term": "Swash",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1082",
+    "term": "Sympagic",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1083",
+    "term": "Systems of Innovation",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1084",
+    "term": "Talik",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1085",
+    "term": "Technical potential",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q1086",
+    "term": "Technology deployment",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1087",
+    "term": "Technology diffusion",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1088",
+    "term": "Technology transfer",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1089",
+    "term": "Teleconnection",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q1090",
+    "term": "Teleconnection pattern",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1091",
+    "term": "Temperature overshoot",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q1092",
+    "term": "Terrestrial radiation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1093",
+    "term": "Thermocline",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1094",
+    "term": "Thermokarst",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1095",
+    "term": "Thermosteric sea level change",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1096",
+    "term": "Tide gauge",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1097",
+    "term": "Tier",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1098",
+    "term": "Time of emergence",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1099",
+    "term": "Tipping element",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1100",
+    "term": "Tipping point",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q1101",
+    "term": "Top-of-atmosphere energy budget",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1102",
+    "term": "Total alkalinity",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1103",
+    "term": "Total carbon budget",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q1104",
+    "term": "Total solar irradiance",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1105",
+    "term": "Total water level",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1106",
+    "term": "Trace gas",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1107",
+    "term": "Trade-off",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1108",
+    "term": "Traditional biomass",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1109",
+    "term": "Transformation",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1110",
+    "term": "Transformation pathways",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1111",
+    "term": "Transformational adaptation",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1112",
+    "term": "Transformative change",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1113",
+    "term": "Transient climate response",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q1114",
+    "term": "Transient climate response to cumulative CO2 emissions",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q1115",
+    "term": "Transition",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1116",
+    "term": "Tree line",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1117",
+    "term": "Tree rings",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1118",
+    "term": "Trend estimates uncertainty",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1119",
+    "term": "Tropical Atlantic Variability",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1120",
+    "term": "Tropical cyclone",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1121",
+    "term": "Tropopause",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1122",
+    "term": "Troposphere",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1123",
+    "term": "Tropospheric ozone",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1124",
+    "term": "Tsunami",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1125",
+    "term": "Tundra",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1126",
+    "term": "Turnover time",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1127",
+    "term": "Typological regions",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1128",
+    "term": "Uncertainty",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q1129",
+    "term": "United Nations Convention to Combat Desertification",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1130",
+    "term": "United Nations Framework Convention on Climate Change",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q1131",
+    "term": "Uptake",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q1132",
+    "term": "Upwelling region",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1133",
+    "term": "Urban Systems",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1134",
+    "term": "Urban",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1135",
+    "term": "Urban and peri-urban agriculture",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1136",
+    "term": "Urban heat island",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q1137",
+    "term": "Urbanisation",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1138",
+    "term": "Urbanization",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1139",
+    "term": "Values and beliefs",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1140",
+    "term": "Variable renewable energy",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1141",
+    "term": "Vector-borne disease",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1142",
+    "term": "Ventilation",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1143",
+    "term": "Verification",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1144",
+    "term": "Vertical land motion",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1145",
+    "term": "Very short-lived halogenated substances",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1146",
+    "term": "Volatile organic compounds",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1147",
+    "term": "Vulnerability",
+    "series": "Q77; Q106; Q150"
+  },
+  {
+    "qid": "Q1148",
+    "term": "Vulnerability index",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1149",
+    "term": "Walker circulation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1150",
+    "term": "Water-borne diseases",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1151",
+    "term": "Water cycle",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1152",
+    "term": "Water mass",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1153",
+    "term": "Water security",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1154",
+    "term": "Water-use efficiency",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1155",
+    "term": "Wave setup",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1156",
+    "term": "Weathering",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1157",
+    "term": "Well-being",
+    "series": "Q106; Q150"
+  },
+  {
+    "qid": "Q1158",
+    "term": "Well-mixed greenhouse gas",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1159",
+    "term": "West African monsoon",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1160",
+    "term": "Wetland",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1161",
+    "term": "Wind energy",
+    "series": "Q150"
+  },
+  {
+    "qid": "Q1162",
+    "term": "Younger Dryas",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1163",
+    "term": "Zero emissions commitment",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q1164",
+    "term": "Displacement",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1165",
+    "term": "Impact assessment",
+    "series": ""
+  },
+  {
+    "qid": "Q1166",
+    "term": "pH",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1167",
+    "term": "1.5°C pathway",
+    "series": "Q77; Q150"
+  },
+  {
+    "qid": "Q1168",
+    "term": "1.5°C warmer worlds",
+    "series": "Q10"
+  },
+  {
+    "qid": "Q1169",
+    "term": "13C",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1170",
+    "term": "14C",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1171",
+    "term": "2030 Agenda for Sustainable Development",
+    "series": "Q106"
+  },
+  {
+    "qid": "Q1172",
+    "term": "Ablation",
+    "series": "Q77"
+  },
+  {
+    "qid": "Q1173",
+    "term": "Abrupt change",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1174",
+    "term": "Abrupt climate change",
+    "series": "Q77; Q106"
+  },
+  {
+    "qid": "Q1175",
+    "term": "Acceptability of policy or system change",
+    "series": "Q150"
+  }
+]

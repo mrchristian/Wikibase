@@ -123,7 +123,7 @@ pip install wikibaseintegrator python-dotenv
 Open `upload_to_wikibase.ipynb` and run cells step by step:
 1. **Section 3** — connects to Wikibase and creates any missing properties. Copy the printed IDs into `.env`.
 2. **Configuration cell** — set all `PROP_*` variables (or load from `.env`).
-3. **Sections 4–6** — parse XML, upload all terms, then update series items with `has tag`.
+3. **Sections 4–6** — parse XML, upload all terms and save results.
 
 Set `DRY_RUN = True` in the Configuration cell to preview without writing.
 Set `LIMIT = 9` for a test run of the first 9 terms.
@@ -156,7 +156,7 @@ DRY_RUN=true python upload_to_wikibase.py
 | `PROP_SOURCE_VERSION` | Property ID for source version qualifier | *(set after first run)* |
 | `PROP_REFERENCE_URL` | Property ID for reference URL | *(set after first run)* |
 | `PROP_DATE_ACCESSED` | Property ID for date accessed | *(set after first run)* |
-| `PROP_HAS_TAG` | Property ID for `has tag` | `P12` (pre-existing) |
+| `PROP_DEFINITION` | Property ID for glossary definition text | *(set after first run)* |
 | `INSTANCE_OF_QID` | QID for the Category item | `Q1` |
 | `DRY_RUN` | `true` to preview without writing | `false` |
 | `LIMIT` | Process only first N terms (0 = all) | `0` |
@@ -170,32 +170,29 @@ Results are saved to `outputs/upload_log.json`.
 ```
 Glossary Term (Qxxx)
 ├─ label       : [term name]
-├─ description : [full definition text — up to 2,500 chars]
+├─ description : Subject, term, tag: [term name]
 ├─ alias       : [also known as] (optional, when different from label)
 ├─ instance of : Category (Q1)
 │  ├─ qualifier : source version = "IPCC Glossary v1.5"
 │  └─ reference : URL = https://apps.ipcc.ch/glossary/
 │                 date accessed = 2026-05-27
-└─ part of series : [Series Qxx] (one statement per series)
-```
-
-After upload, each series item is also updated:
-
-```
-Series Item (e.g. Q77 — WGI)
-└─ has tag : [term Qxxx]   ← appended; existing entries preserved
+├─ part of series : [Series Qxx] (one statement per series)
+└─ Definition  : [full definition text — monolingualtext, up to 2,500 chars]
+   ├─ qualifier : source version = "IPCC Glossary v1.5"
+   └─ reference : URL = https://apps.ipcc.ch/glossary/
+                  date accessed = 2026-05-27
 ```
 
 ### Properties
 
 | Property | PID (LOCAL) | Datatype | Notes |
 |---|---|---|---|
-| instance of | P13 | wikibase-item | Target: Q1 (Category) |
-| part of series | P14 | wikibase-item | Target: Q77/Q106/Q150/Q10 |
-| source version | P15 | string | Qualifier on `instance of` |
-| reference URL | P16 | url | Reference on `instance of` |
-| date accessed | P17 | time | Reference on `instance of` |
-| has tag | P12 | wikibase-item | Pre-existing; added to series items |
+| instance of | P1 | wikibase-item | Target: Q1 (Category) |
+| part of series | P3 | wikibase-item | Target: Q77/Q106/Q150/Q10 |
+| Source | P6 | url | Reference on statements |
+| Definition | P13 | monolingualtext | Full glossary definition text |
+| date accessed | P18 | time | Reference on statements |
+| source version | P19 | string | Qualifier on statements |
 
 ## Example Term
 
@@ -206,17 +203,16 @@ WGI; WGIII,1.5°C pathway,1.5°C pathway,"A pathway of emissions..."
 
 **Wikibase Result:**
 - **Label:** 1.5°C pathway
-- **Description:** A pathway of emissions... *(full text, no truncation)*
+- **Description:** Subject, term, tag: 1.5°C pathway
 - **Statements:**
   - instance of: Category (Q1)
     - qualifier: source version = IPCC Glossary v1.5
     - reference: https://apps.ipcc.ch/glossary/ + date accessed: 2026-05-27
   - part of series: WGI (Q77)
   - part of series: WGIII (Q150)
-
-**Series items updated:**
-- Q77 (WGI) gains `has tag` → this term's QID
-- Q150 (WGIII) gains `has tag` → this term's QID
+  - Definition: "A pathway of emissions..." (en)
+    - qualifier: source version = IPCC Glossary v1.5
+    - reference: https://apps.ipcc.ch/glossary/ + date accessed: 2026-05-27
 
 ## Statistics
 
@@ -242,12 +238,12 @@ pip install pandas lxml jupyterlab wikibaseintegrator python-dotenv
 
 ## LocalSettings Prerequisite
 
-The Wikibase description character limit must be raised in `LocalSettings.general.php` (repo root):
+The Wikibase monolingualtext character limit must be raised in `LocalSettings.general.php` (repo root):
 
 ```php
-# Increase multi-language string length limit so full definitions fit in descriptions.
-# Default is 250; raising to 2500 accommodates the longest IPCC glossary entry (~2103 chars).
-$wgWBRepoSettings['string-limits']['multilang']['length'] = 2500;
+# Increase monolingualtext string length limit so full definitions fit in the Definition statement.
+# Default is 400; raising to 2500 accommodates the longest IPCC glossary entry (~2103 chars).
+$wgWBRepoSettings['string-limits']['VT:monolingualtext']['length'] = 2500;
 ```
 
 This file is bind-mounted into the `wikibase` container. Changes take effect after:

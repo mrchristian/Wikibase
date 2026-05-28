@@ -71,9 +71,8 @@
     environment:
       # Keep heap within server RAM (3.7 GB total, shared with MariaDB + Wikibase).
       HEAP_SIZE: "1g"
-      # GC log rotation: 5 files x 20 MB = 100 MB max. Prevents unbounded growth
-      # in the container writable layer (Java 9+ -Xlog syntax).
-      GC_LOGS: "-Xlog:gc:file=/var/log/wdqs/gc.log:time,level,tags:filecount=5,filesize=20m -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+ParallelRefProcEnabled"
+      # GC_LOGS is intentionally NOT overridden here: the runBlazegraph.sh default
+      # for Java 8 already includes -XX:+UseGCLogFileRotation with 10 x 20 MB files.
     volumes:
       - wdqs_data:/wdqs/data
       - wdqs_log:/var/log/wdqs

@@ -4,6 +4,7 @@
 .venv/
 backup.sql
 pages/
+data-import/
 local-dump.sql
 memory.md
 images.zip

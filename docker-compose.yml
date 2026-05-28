@@ -73,10 +73,7 @@
       HEAP_SIZE: "1g"
       # GC log rotation: 5 files x 20 MB = 100 MB max. Prevents unbounded growth
       # in the container writable layer (Java 9+ -Xlog syntax).
-      GC_LOGS: "-Xlog:gc:file=/var/log/wdqs/gc.log:time,level,tags:filecount=5,filesize=20m\
-               -XX:+UnlockExperimentalVMOptions\
-               -XX:G1NewSizePercent=20\
-               -XX:+ParallelRefProcEnabled"
+      GC_LOGS: "-Xlog:gc:file=/var/log/wdqs/gc.log:time,level,tags:filecount=5,filesize=20m -XX:+UnlockExperimentalVMOptions -XX:G1NewSizePercent=20 -XX:+ParallelRefProcEnabled"
     volumes:
       - wdqs_data:/wdqs/data
       - wdqs_log:/var/log/wdqs

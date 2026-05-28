@@ -120,11 +120,11 @@ foreach ($cmd in @("docker","ssh","scp")) {
 if (-not (Test-Path $SSH_KEY)) { Die "Sync key not found at $SSH_KEY." }
 
 Write-Host "Testing SSH to DEV ($DEV_HOST)..." -ForegroundColor Yellow
-ssh -i $SSH_KEY -o BatchMode=yes -o ConnectTimeout=10 "${DEV_USER}@${DEV_HOST}" "echo OK" | Out-Null
+$null = ssh -i $SSH_KEY -o BatchMode=yes -o ConnectTimeout=10 "${DEV_USER}@${DEV_HOST}" "echo OK" 2>&1
 if ($LASTEXITCODE -ne 0) { Die "Cannot SSH to DEV. Ensure public key is in authorized_keys." }
 
 Write-Host "Testing SSH to PROD ($PROD_HOST)..." -ForegroundColor Yellow
-ssh -i $SSH_KEY -o BatchMode=yes -o ConnectTimeout=10 "${PROD_USER}@${PROD_HOST}" "echo OK" | Out-Null
+$null = ssh -i $SSH_KEY -o BatchMode=yes -o ConnectTimeout=10 "${PROD_USER}@${PROD_HOST}" "echo OK" 2>&1
 if ($LASTEXITCODE -ne 0) { Die "Cannot SSH to PROD. Ensure public key is in authorized_keys." }
 
 OK "Pre-flight passed"

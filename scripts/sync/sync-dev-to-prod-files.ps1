@@ -90,7 +90,7 @@ function BytesToMB([long]$bytes) {
 Step "1. Creating tar.gz archive of DEV images (excluding thumbnails)"
 $cmd = "docker exec $DEV_CONTAINER tar --exclude=thumb -czf /tmp/$ARCHIVE_NAME /var/www/html/images"
 $sshCmd = "ssh -i $SSH_KEY $DEV_USER@$DEV_HOST '$cmd'"
-Invoke-Expression $sshCmd | Out-Null
+$null = Invoke-Expression $sshCmd 2>&1
 OK "Archive created on DEV"
 
 Step "2. Copying archive from DEV to Windows machine"
@@ -120,26 +120,26 @@ tar -xzf $ARCHIVE_NAME --strip-components=4 -C $PROD_VOLUME
 chown -R www-data:www-data $PROD_VOLUME
 "@
 $sshCmd = "ssh -i $SSH_KEY $PROD_USER@$PROD_HOST '$cmd'"
-Invoke-Expression $sshCmd | Out-Null
+$null = Invoke-Expression $sshCmd 2>&1
 OK "Images extracted to PROD volume"
 
 Step "5. Restarting PROD wikibase container"
 $cmd = "cd /opt/wikibase && docker compose -f docker-compose.yml -f docker-compose.prod.yml restart wikibase"
 $sshCmd = "ssh -i $SSH_KEY $PROD_USER@$PROD_HOST '$cmd'"
-Invoke-Expression $sshCmd | Out-Null
+$null = Invoke-Expression $sshCmd 2>&1
 OK "PROD wikibase container restarted"
 
 Step "6. Cleanup: removing temporary files"
 # DEV cleanup
 $cmd = "rm -f /tmp/$ARCHIVE_NAME"
 $sshCmd = "ssh -i $SSH_KEY $DEV_USER@$DEV_HOST '$cmd'"
-Invoke-Expression $sshCmd | Out-Null
+$null = Invoke-Expression $sshCmd 2>&1
 OK "Cleaned up DEV temporary files"
 
 # PROD cleanup
 $cmd = "rm -f /tmp/$ARCHIVE_NAME"
 $sshCmd = "ssh -i $SSH_KEY $PROD_USER@$PROD_HOST '$cmd'"
-Invoke-Expression $sshCmd | Out-Null
+$null = Invoke-Expression $sshCmd 2>&1
 OK "Cleaned up PROD temporary files"
 
 Write-Host ""

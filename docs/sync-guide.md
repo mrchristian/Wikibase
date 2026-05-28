@@ -42,7 +42,11 @@ A `mysqldump` from one environment imported into the other. This is a complete r
 
 ### Pull production → local
 
-> **Windows/PowerShell note**: Do NOT use `>` redirection to pipe `mysqldump` output into a file. PowerShell 5.1 writes UTF-16LE (BOM), which corrupts the SQL and causes import errors. See `backups/mariadb-backup-powershell-encoding-notes.md` for the full explanation. The steps below avoid this entirely.
+> **Windows/PowerShell 5.1 encoding pitfalls** — two separate issues:
+>
+> 1. **Output redirection (`>`) corrupts SQL dumps.** PowerShell 5.1 writes redirected output as UTF-16LE with BOM, which corrupts the SQL file and causes import errors. *Never* use `mysqldump ... > file.sql` from PowerShell. Always use `--result-file=` inside the container, then `docker cp` the file out. See `backups/mariadb-backup-powershell-encoding-notes.md` for the full explanation.
+>
+> 2. **Non-ASCII characters in `.ps1` scripts break the parser.** PowerShell 5.1 reads `.ps1` files *without* a UTF-8 BOM as Windows-1252. Any UTF-8 multi-byte character (em dash `—`, en dash `–`, smart quotes, arrows `→`, etc.) is misread and causes parser errors such as `"Missing closing '}' in statement block"`. Fix: use only ASCII in `.ps1` files (e.g. `--` instead of `—`), or save the file with a UTF-8 BOM (VS Code: bottom-right encoding selector → "Save with Encoding" → "UTF-8 with BOM").
 
 #### Automated script
 

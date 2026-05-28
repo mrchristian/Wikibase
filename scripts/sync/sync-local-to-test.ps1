@@ -190,10 +190,14 @@ OK "Dump at $TEST_HOST_TEMP on TEST host"
 # ---------------------------------------------------------------------------
 Step "4/10  Importing dump into TEST database"
 
+Write-Host "  Dropping and recreating TEST database for a clean import..." -ForegroundColor Yellow
+ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker exec ${TEST_CONTAINER} mysql -u ${TEST_DB_USER} -p'${TEST_DB_PASS}' -e 'DROP DATABASE IF EXISTS ${TEST_DB_NAME}; CREATE DATABASE ${TEST_DB_NAME} CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;'"
+if ($LASTEXITCODE -ne 0) { Die "Failed to drop/recreate TEST database." }
+
 ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker cp ${TEST_HOST_TEMP} ${TEST_CONTAINER}:${TARGET_CONTAINER_TEMP}"
 if ($LASTEXITCODE -ne 0) { Die "docker cp of dump to TEST container failed." }
 
-ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker exec ${TEST_CONTAINER} mysql -u ${TEST_DB_USER} -p'${TEST_DB_PASS}' --default-character-set=utf8mb4 ${TEST_DB_NAME} -e 'source ${TARGET_CONTAINER_TEMP}'"
+ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker exec ${TEST_CONTAINER} mysql -u ${TEST_DB_USER} -p'${TEST_DB_PASS}' -f --default-character-set=utf8mb4 ${TEST_DB_NAME} -e 'source ${TARGET_CONTAINER_TEMP}'"
 if ($LASTEXITCODE -ne 0) { Die "Database import on TEST failed." }
 
 ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker exec ${TEST_CONTAINER} rm -f ${TARGET_CONTAINER_TEMP}; rm -f ${TEST_HOST_TEMP}"
@@ -204,25 +208,19 @@ OK "Database import complete on TEST"
 # ---------------------------------------------------------------------------
 Step "5/10  Clearing stale cache tables on TEST"
 
-ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker exec ${TEST_CONTAINER} mysql -u ${TEST_DB_USER} -p'${TEST_DB_PASS}' ${TEST_DB_NAME} -e 'TRUNCATE TABLE objectcache; TRUNCATE TABLE l10n_cache;'"
-if ($LASTEXITCODE -ne 0) { Die "Cache truncation on TEST failed." }
-OK "objectcache and l10n_cache cleared on TEST"
+ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker exec ${TEST_CONTAINER} mysql -u ${TEST_DB_USER} -p'${TEST_DB_PASS}' ${TEST_DB_NAME} -e 'DELETE FROM objectcache; DELETE FROM l10n_cache;'"
+if ($LASTEXITCODE -ne 0) {
+    Write-Host "[WARN] Cache truncation on TEST had errors (non-fatal — table may not exist)." -ForegroundColor Yellow
+} else {
+    OK "objectcache and l10n_cache cleared on TEST"
+}
 
 # ---------------------------------------------------------------------------
-# Step 6 -- Reset MediaWiki Admin password to TEST-specific value
-#           The imported DB contains LOCAL's admin password; this resets it
-#           to the TEST_MW_ADMIN_PASS from .env so admins can log in on TEST.
+# Step 6 -- Run MediaWiki maintenance update + rebuild recentchanges
+#           MUST run before changePassword -- update.php creates the actor
+#           table and other schema objects that changePassword depends on.
 # ---------------------------------------------------------------------------
-Step "6/10  Resetting MediaWiki Admin password on TEST"
-
-ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker exec ${TEST_WB_CONTAINER} php /var/www/html/maintenance/run.php changePassword --conf /config/LocalSettings.php --user=admin --password='${TEST_MW_ADMIN_PASS}'"
-if ($LASTEXITCODE -ne 0) { Die "Admin password reset on TEST failed." }
-OK "Admin password reset to TEST value"
-
-# ---------------------------------------------------------------------------
-# Step 7 -- Run MediaWiki maintenance update + rebuild recentchanges
-# ---------------------------------------------------------------------------
-Step "7/10  Running MediaWiki update on TEST"
+Step "6/10  Running MediaWiki update on TEST"
 
 ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker exec ${TEST_WB_CONTAINER} php /var/www/html/maintenance/run.php update --conf /config/LocalSettings.php --quick"
 if ($LASTEXITCODE -ne 0) { Die "MediaWiki update on TEST failed." }
@@ -230,6 +228,17 @@ if ($LASTEXITCODE -ne 0) { Die "MediaWiki update on TEST failed." }
 ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker exec ${TEST_WB_CONTAINER} php /var/www/html/maintenance/run.php rebuildrecentchanges --conf /config/LocalSettings.php"
 if ($LASTEXITCODE -ne 0) { Die "rebuildrecentchanges on TEST failed." }
 OK "MediaWiki update and recentchanges rebuild complete"
+
+# ---------------------------------------------------------------------------
+# Step 7 -- Reset MediaWiki Admin password to TEST-specific value
+#           The imported DB contains LOCAL's admin password; this resets it
+#           to the TEST_MW_ADMIN_PASS from .env so admins can log in on TEST.
+# ---------------------------------------------------------------------------
+Step "7/10  Resetting MediaWiki Admin password on TEST"
+
+ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" "docker exec ${TEST_WB_CONTAINER} php /var/www/html/maintenance/run.php changePassword --conf /config/LocalSettings.php --user=admin --password='${TEST_MW_ADMIN_PASS}'"
+if ($LASTEXITCODE -ne 0) { Die "Admin password reset on TEST failed." }
+OK "Admin password reset to TEST value"
 
 # ---------------------------------------------------------------------------
 # Step 8 -- Sync uploads/images: tar inside LOCAL container → SCP → extract on TEST

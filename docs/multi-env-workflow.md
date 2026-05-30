@@ -7,8 +7,9 @@
 > | `devops-plan.md` | Planning log — itemised task list, design decisions, build rationale |
 > | `docs/deployment-protocol.md` | Historical deployment log; server registry |
 > | `docs/hetzner-deploy-guide.md` | One-time server provisioning on Hetzner |
+> | `docs/server-admin.md` | Server resource management — disk, Docker logs, maintenance |
 > | `docs/sync-guide.md` | Background reference — sync strategy options (context only) |
-> | Sync scripts — see §4 | [`sync-local-to-dev.ps1`](../scripts/sync/sync-local-to-dev.ps1) · [`sync-local-to-test.ps1`](../scripts/sync/sync-local-to-test.ps1) · [`sync-dev-to-test.ps1`](../scripts/sync/sync-dev-to-test.ps1) · [`sync-dev-to-prod.ps1`](../scripts/sync/sync-dev-to-prod.ps1) · [`pull-from-dev.ps1`](../scripts/sync/pull-from-dev.ps1) |
+> | Sync scripts — see §4 | [`sync-local-to-dev.ps1`](../scripts/sync/sync-local-to-dev.ps1) · [`sync-local-to-test.ps1`](../scripts/sync/sync-local-to-test.ps1) · [`sync-dev-to-test.ps1`](../scripts/sync/sync-dev-to-test.ps1) · [`sync-dev-to-prod.ps1`](../scripts/sync/sync-dev-to-prod.ps1) · [`sync-test-to-prod.ps1`](../scripts/sync/sync-test-to-prod.ps1) · [`pull-from-dev.ps1`](../scripts/sync/pull-from-dev.ps1) |
 > | Experimental workflow — see §11 | [`experimental-import-workflow.ps1`](../scripts/experimental-import-workflow.ps1) |
 > | Deploy scripts — see §6 | [`deploy.sh`](../scripts/deploy/deploy.sh) · [`deploy-dev.sh`](../scripts/deploy/deploy-dev.sh) · [`deploy-test.sh`](../scripts/deploy/deploy-test.sh) · [`deploy-prod.sh`](../scripts/deploy/deploy-prod.sh) |
 
@@ -55,7 +56,7 @@ DATABASE/CONTENT FLOW (via sync scripts):
    │ (46...24)    │  (same target)   │ (46...24)    │
    └──────────────┘                  └──────┬───────┘
                                             │
-                                            │ sync-dev-to-prod
+                                            │ sync-dev-to-prod  (or sync-test-to-prod)
                                             │
                                             ↓
                                        ┌──────────────┐
@@ -209,6 +210,23 @@ TEST_MW_ADMIN_PASS=<test-mediawiki-admin-password>
 > Script: [scripts/sync/sync-dev-to-prod.ps1](../scripts/sync/sync-dev-to-prod.ps1)
 > **Note**: requires typing `PROMOTE` at the confirmation prompt to prevent accidental overwrites.
 
+### TEST → PROD  (DB)
+
+> **Use case**: promoting staged content directly from TEST to PROD when TEST is the validated source (e.g. after a bulk import was reviewed on TEST).
+
+```powershell
+.\scripts\sync\sync-test-to-prod.ps1
+```
+> Script: [scripts/sync/sync-test-to-prod.ps1](../scripts/sync/sync-test-to-prod.ps1)
+> **Note**: requires typing `PROMOTE` at the confirmation prompt to prevent accidental overwrites.
+
+Required entries in `C:\Wikibase\.env`:
+```
+TEST_DB_PASS=<test-mariadb-password>
+PROD_DB_PASS=<prod-mariadb-password>
+PROD_MW_ADMIN_PASS=<prod-mediawiki-admin-password>
+```
+
 ### DEV → PROD  (uploads/images only)
 
 ```powershell
@@ -217,12 +235,13 @@ TEST_MW_ADMIN_PASS=<test-mediawiki-admin-password>
 > Script: [scripts/sync/sync-dev-to-prod-files.ps1](../scripts/sync/sync-dev-to-prod-files.ps1)
 > **Note**: also requires `PROMOTE` confirmation.
 
-### LOCAL ← DEV  (pull DEV content to LOCAL for testing)
+### DEV → LOCAL  (pull DEV DB to LOCAL for testing)
 
 ```powershell
 .\scripts\sync\pull-from-dev.ps1
 ```
 > Script: [scripts/sync/pull-from-dev.ps1](../scripts/sync/pull-from-dev.ps1)
+> **Note**: DB only — no `-DbOnly` flag needed. Uploads/images are not copied.
 
 ---
 

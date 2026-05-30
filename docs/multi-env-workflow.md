@@ -494,3 +494,35 @@ State is tracked in `C:\Wikibase\backups\.workflow_state.json`:
 Snapshots are stored in `C:\Wikibase\backups\`:
 - `experimental_snapshot.sql` — Active rollback point
 - `approved_experiment_YYYYMMDD_HHMMSS.sql` — Archived approved snapshots
+
+---
+
+## 12. Backup Strategy
+
+### What is already covered
+
+| Asset | How it is backed up |
+|-------|---------------------|
+| Config / scripts / docs | GitHub (`mrchristian/Wikibase` `master`) — push after every change |
+| Database (authoritative) | DEV server — Hetzner infrastructure; supplemented by SQL dumps in `C:\Wikibase\backups\` |
+| Database (point-in-time) | `pull-from-dev.ps1` writes timestamped `.sql` files to `C:\Wikibase\backups\` |
+| Experimental snapshots | `C:\Wikibase\backups\approved_experiment_*.sql` (created by experimental workflow) |
+
+### Gitignored items that need separate backup
+
+The following are excluded from the GitHub repo and must be backed up independently:
+
+| Item | Why gitignored | Recommended backup |
+|------|---------------|--------------------|
+| `C:\Wikibase\.env` | Contains passwords | Store key/value pairs in a password manager (Bitwarden, KeePass, etc.) |
+| `C:\Wikibase\backups\*.sql` | Large binary files | Enable cloud sync on `C:\Wikibase\backups\` (e.g. OneDrive) |
+| Uploads / images | Large binaries | DEV server is authoritative; `sync-local-to-dev.ps1` keeps DEV current |
+| `data-import/` | Large data files | Keep source files in their own repo or cloud storage |
+| `.ssh-setup.md` | Security | Copy to password manager or encrypted notes |
+
+### Minimum backup checklist
+
+- [ ] All config changes pushed to GitHub (`git push` / PR merged)
+- [ ] `C:\Wikibase\.env` passwords recorded in password manager
+- [ ] `C:\Wikibase\backups\` folder synced to cloud storage (OneDrive or equivalent)
+- [ ] SSH key `C:\Users\<user>\.ssh\id_wikibase_sync` backed up securely (or regeneratable — pub key is on servers)

@@ -11,6 +11,7 @@
 > | `docs/sync-guide.md` | Background reference — sync strategy options (context only) |
 > | Sync scripts — see §4 | [`sync-local-to-dev.ps1`](../scripts/sync/sync-local-to-dev.ps1) · [`sync-local-to-test.ps1`](../scripts/sync/sync-local-to-test.ps1) · [`sync-dev-to-test.ps1`](../scripts/sync/sync-dev-to-test.ps1) · [`sync-dev-to-prod.ps1`](../scripts/sync/sync-dev-to-prod.ps1) · [`sync-test-to-prod.ps1`](../scripts/sync/sync-test-to-prod.ps1) · [`pull-from-dev.ps1`](../scripts/sync/pull-from-dev.ps1) |
 > | Experimental workflow — see §11 | [`experimental-import-workflow.ps1`](../scripts/experimental-import-workflow.ps1) |
+> | Backup scripts — see §12 | [`backup-local-db.ps1`](../scripts/backup/backup-local-db.ps1) |
 > | Deploy scripts — see §6 | [`deploy.sh`](../scripts/deploy/deploy.sh) · [`deploy-dev.sh`](../scripts/deploy/deploy-dev.sh) · [`deploy-test.sh`](../scripts/deploy/deploy-test.sh) · [`deploy-prod.sh`](../scripts/deploy/deploy-prod.sh) |
 
 This document is the master reference for the 4-tier Docker DevOps workflow.
@@ -499,13 +500,23 @@ Snapshots are stored in `C:\Wikibase\backups\`:
 
 ## 12. Backup Strategy
 
+### Taking a local backup
+
+Run [`backup-local-db.ps1`](../scripts/backup/backup-local-db.ps1) from `C:\Wikibase` to dump the local MariaDB database to a timestamped `.sql` file in `C:\Wikibase\backups\`:
+
+```powershell
+.\scripts\backup\backup-local-db.ps1
+```
+
+Outputs `mw_db_YYYYMMDD_HHMMSS.sql`. See [`backups/README.md`](../backups/README.md) for full backup guide (DB + filesystem + config files).
+
 ### What is already covered
 
 | Asset | How it is backed up |
 |-------|---------------------|
 | Config / scripts / docs | GitHub (`mrchristian/Wikibase` `master`) — push after every change |
 | Database (authoritative) | DEV server — Hetzner infrastructure; supplemented by SQL dumps in `C:\Wikibase\backups\` |
-| Database (point-in-time) | `pull-from-dev.ps1` writes timestamped `.sql` files to `C:\Wikibase\backups\` |
+| Database (point-in-time) | [`backup-local-db.ps1`](../scripts/backup/backup-local-db.ps1) and `pull-from-dev.ps1` write timestamped `.sql` files to `C:\Wikibase\backups\` |
 | Experimental snapshots | `C:\Wikibase\backups\approved_experiment_*.sql` (created by experimental workflow) |
 
 ### Gitignored items that need separate backup

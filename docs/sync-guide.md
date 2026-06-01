@@ -50,10 +50,10 @@ A `mysqldump` from one environment imported into the other. This is a complete r
 
 #### Automated script
 
-`scripts/sync/pull-from-production.ps1` handles the full process. Run it from PowerShell:
+`scripts/sync/pull-from-dev.ps1` handles the full process. Run it from PowerShell:
 
 ```powershell
-.\scripts\sync\pull-from-production.ps1
+.\scripts\sync\pull-from-dev.ps1
 ```
 
 The script requires the Windows **SSH Agent** to be running with your key loaded so SSH/SCP calls are non-interactive. Set this up once (requires an **Administrator** PowerShell):

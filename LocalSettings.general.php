@@ -15,3 +15,6 @@ $wgWBRepoSettings['string-limits']['multilang']['length'] = 2500;
 
 # Increase monolingualtext property value limit (default 400) for IPCC definition statements.
 $wgWBRepoSettings['string-limits']['VT:monolingualtext']['length'] = 2500;
+
+# Increase string property value limit (default 400) to accommodate DOI abstracts (~1100 chars).
+$wgWBRepoSettings['string-limits']['VT:string']['length'] = 2500;

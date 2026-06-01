@@ -12,3 +12,6 @@ services:
   wdqs-frontend:
     ports:
       - "8081:80"
+    environment:
+      WDQS_PUBLIC_URL: "http://localhost:8081/proxy/sparql"
+      WIKIBASE_PUBLIC_URL: "http://localhost:8080/w/api.php"

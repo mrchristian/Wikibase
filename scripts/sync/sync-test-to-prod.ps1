@@ -240,25 +240,24 @@ ssh -i $PROD_SSH_KEY "${PROD_USER}@${PROD_HOST}" "docker exec ${PROD_WB_CONTAINE
 OK "recentchanges rebuilt on PROD"
 
 # ---------------------------------------------------------------------------
-# Step 7 — Re-register PROD sitelinks
+# Step 7 — Re-register PROD sitelinks then restart wikibase
 # ---------------------------------------------------------------------------
 Step "7/8  Re-registering PROD sitelinks"
 
-ssh -i $PROD_SSH_KEY "${PROD_USER}@${PROD_HOST}" "cd /opt/wikibase && docker compose -f docker-compose.yml -f docker-compose.prod.yml restart wikibase-sitelinks-init"
+# sleep 20 gives wikibase-sitelinks-init time to finish init-sitelinks.sh before
+# wikibase restarts and reads the sites table (same pattern as sync-local-to-test.ps1).
+ssh -i $PROD_SSH_KEY "${PROD_USER}@${PROD_HOST}" "cd /opt/wikibase && docker compose -f docker-compose.yml -f docker-compose.prod.yml restart wikibase-sitelinks-init && sleep 20 && docker compose -f docker-compose.yml -f docker-compose.prod.yml restart wikibase"
 if ($LASTEXITCODE -ne 0) {
-    Write-Host "[WARN] Sitelinks init restart failed (non-fatal - check manually)." -ForegroundColor Yellow
+    Write-Host "[WARN] Sitelinks init or wikibase restart failed (non-fatal - check manually)." -ForegroundColor Yellow
 } else {
-    OK "Sitelinks init restarted on PROD"
+    OK "Sitelinks init complete and wikibase restarted on PROD"
 }
 
 # ---------------------------------------------------------------------------
-# Step 8 — Restart wikibase container on PROD
+# Step 8 — (no-op — wikibase already restarted in step 7)
 # ---------------------------------------------------------------------------
-Step "8/8  Restarting wikibase container on PROD"
-
-ssh -i $PROD_SSH_KEY "${PROD_USER}@${PROD_HOST}" "cd /opt/wikibase && docker compose -f docker-compose.yml -f docker-compose.prod.yml restart wikibase"
-if ($LASTEXITCODE -ne 0) { Die "Failed to restart wikibase on PROD." }
-OK "Wikibase restarted on PROD"
+Step "8/8  Wikibase restart"
+OK "Wikibase was restarted as part of step 7"
 
 # ---------------------------------------------------------------------------
 # Summary

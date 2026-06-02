@@ -1,0 +1,49 @@
+<!-- ================================================================== -->
+<!-- IPCC AR6 Acronyms - Document Type Definition                         -->
+<!--                                                                      -->
+<!-- Structures the IPCC AR6 acronym dataset for Wikibase import.         -->
+<!--                                                                      -->
+<!-- Reports covered:                                                     -->
+<!--   SR1.5  - Q10 - Special Report on Global Warming of 1.5 degrees C        -->
+<!--   SRCCL  - Q35 - Special Report on Climate Change and Land                 -->
+<!--   SROCC  - Q57 - Special Report on the Ocean and Cryosphere in a          -->
+<!--            Changing Climate                                          -->
+<!--   SYR    - Q189 -  Synthesis Report                                          -->
+<!--   WGI    - Q77 - Working Group I: The Physical Science Basis               -->
+<!--   WGII   - Q106 - Working Group II: Impacts, Adaptation and Vulnerability   -->
+<!--   WGIII  - Q150 - Working Group III: Mitigation of Climate Change           -->
+<!-- ================================================================== -->
+
+<!-- Root element: contains one entry per unique acronym code. -->
+<!ELEMENT ipcc-acronyms (acronym+)>
+
+<!--
+  acronym  : One deduplicated entry per acronym code across all AR6 reports.
+  @id      : Unique record identifier in the form A0001, A0002, ...
+-->
+<!ELEMENT acronym (code, descriptions, reports)>
+<!ATTLIST acronym
+    id  ID  #REQUIRED>
+
+<!-- The acronym code as it appears in IPCC AR6 documents (e.g. AFOLU). -->
+<!ELEMENT code (#PCDATA)>
+
+<!--
+  One or more full expansions of the acronym.
+  Multiple description elements are present where wording varies across reports.
+-->
+<!ELEMENT descriptions (description+)>
+
+<!--
+  @source : Semicolon-separated list of the AR6 report(s) that use this
+            particular wording of the description.
+-->
+<!ELEMENT description (#PCDATA)>
+<!ATTLIST description
+    source  CDATA  #IMPLIED>
+
+<!-- The AR6 reports in which this acronym appears, one element per report. -->
+<!ELEMENT reports (report+)>
+
+<!-- An IPCC AR6 report identifier (e.g. WGI, WGII, SR1.5). -->
+<!ELEMENT report (#PCDATA)>

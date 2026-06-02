@@ -1,0 +1,96 @@
+<!-- ================================================================== -->
+<!-- IPCC AR6 Bibliographic Enrichment - Document Type Definition        -->
+<!--                                                                      -->
+<!-- Structures DOI-sourced bibliographic property statements for        -->
+<!-- import into existing Series (Q4) and Chapter (Q6) Wikibase items.  -->
+<!--                                                                      -->
+<!-- Pipeline:                                                            -->
+<!--   series_chapters.csv                                                -->
+<!--       -> csv_to_enrichment_xml.py                                   -->
+<!--       -> outputs/enrichment.xml  (validated against this DTD)       -->
+<!--       -> import_doi_enrichment.py                                   -->
+<!--       -> new property statements on existing Wikibase items          -->
+<!--                                                                      -->
+<!-- New properties created on bootstrap run:                             -->
+<!--   Publisher (DOI)         string   -- publisher name from Crossref  -->
+<!--   ISBN Electronic (DOI)   string   -- electronic ISBN               -->
+<!--   ISBN Print (DOI)        string   -- print ISBN                    -->
+<!--   Licence URL (DOI)       url      -- licence URL (Series only)     -->
+<!--   Abstract (DOI)          string   -- abstract text (Series only)   -->
+<!--                                                                      -->
+<!-- Existing reference properties (not created by bootstrap):           -->
+<!--   P17  reference URL      url      -- provenance source URL         -->
+<!--   P18  date accessed      time     -- date the source was accessed  -->
+<!--   P19  source version     string   -- data provider (e.g. Crossref) -->
+<!-- ================================================================== -->
+
+<!--
+  Root element: one file contains all enrichment statements for every
+  Series and Chapter item processed from series_chapters.csv.
+
+  @generated  ISO 8601 date the file was produced (e.g. 2026-06-01).
+-->
+<!ELEMENT bibliographic-enrichment (item+)>
+<!ATTLIST bibliographic-enrichment
+    generated CDATA #IMPLIED>
+
+<!--
+  item        : One existing Wikibase item to be enriched.
+
+  @qid        : Wikibase QID of the existing item (e.g. Q10).
+  @type       : Either "Series" (instance of Q4) or "Chapter" (instance of Q6).
+  @label      : Human-readable English label (for logging/validation only).
+-->
+<!ELEMENT item (statement+)>
+<!ATTLIST item
+    qid   CDATA              #REQUIRED
+    type  (Series|Chapter)   #REQUIRED
+    label CDATA              #REQUIRED>
+
+<!--
+  statement   : One property statement to add to the parent item.
+
+  @prop       : English label of the Wikibase property to use.
+                The import script resolves this label to a PID at runtime,
+                creating the property (in bootstrap mode) if it does not
+                yet exist.  Examples:
+                  "Publisher (DOI)"
+                  "ISBN Electronic (DOI)"
+                  "ISBN Print (DOI)"
+                  "Licence URL (DOI)"
+                  "Abstract (DOI)"
+
+  @datatype   : Wikibase datatype for the property value.
+                Allowed values: string | url
+                Used by the import script when creating new properties.
+
+  @value      : The statement value as a plain string.
+-->
+<!ELEMENT statement (reference)>
+<!ATTLIST statement
+    prop     CDATA         #REQUIRED
+    datatype (string|url)  #REQUIRED
+    value    CDATA         #REQUIRED>
+
+<!--
+  reference   : Provenance block attached to the parent statement.
+                Contains one <ref> per reference snak.
+-->
+<!ELEMENT reference (ref+)>
+
+<!--
+  ref         : A single reference snak (property + value pair).
+
+  @pid        : PID of the reference property.
+                Fixed values used in this pipeline:
+                  P17  reference URL  (url datatype)
+                  P18  date accessed  (time datatype, YYYY-MM-DD)
+                  P19  source version (string datatype, e.g. "Crossref")
+
+  @value      : String representation of the reference value.
+                For P18, use ISO 8601 date format (YYYY-MM-DD).
+-->
+<!ELEMENT ref EMPTY>
+<!ATTLIST ref
+    pid   CDATA  #REQUIRED
+    value CDATA  #REQUIRED>

@@ -1,0 +1,83 @@
+<!-- ================================================================== -->
+<!-- IPCC AR6 Authors — Document Type Definition                         -->
+<!--                                                                      -->
+<!-- Models IPCC AR6 author data for import into a Wikibase instance.    -->
+<!-- Each <author> element represents one unique person. Chapter          -->
+<!-- contributions are nested inside the author, with Role stored as a   -->
+<!-- child element so it can be used as a Wikibase qualifier on the       -->
+<!-- "contributed to chapter" statement.                                  -->
+<!--                                                                      -->
+<!-- Wikibase import target: ClimateKG LOCAL                             -->
+<!-- Purpose: create Author items linked to Chapter items                -->
+<!-- ================================================================== -->
+
+<!-- Root element: one entry per unique author. -->
+<!ELEMENT ipcc-authors (author+)>
+
+<!--
+  author  : One entry per unique IPCC AR6 author.
+  @id     : Unique record identifier matching Author_ID in
+            authors_normalised.csv  (e.g. AU0001).
+-->
+<!ELEMENT author (climatkg_author_id, last_name, first_name, gender?,
+                  citizenship?, country_of_residence?, affiliation?,
+                  chapter_contributions)>
+<!ATTLIST author
+    id  ID  #REQUIRED>
+
+<!-- The stable ClimateKG identifier for this author (e.g. AU0001).
+     Maps to the Wikibase property "ClimateKG Author ID" (String). -->
+<!ELEMENT climatkg_author_id (#PCDATA)>
+
+<!-- Author's family name in title case (e.g. Aldunce). -->
+<!ELEMENT last_name (#PCDATA)>
+
+<!-- Author's given name(s) as recorded in IPCC AR6 (e.g. Paulina). -->
+<!ELEMENT first_name (#PCDATA)>
+
+<!-- Single character gender code: F or M. -->
+<!ELEMENT gender (#PCDATA)>
+
+<!-- Country of citizenship (short form, e.g. Chile, UK, USA). -->
+<!ELEMENT citizenship (#PCDATA)>
+
+<!-- Country where the author was resident during AR6 (short form). -->
+<!ELEMENT country_of_residence (#PCDATA)>
+
+<!-- Institutional affiliation as recorded in IPCC AR6. -->
+<!ELEMENT affiliation (#PCDATA)>
+
+<!-- Container for all chapter contributions by this author. -->
+<!ELEMENT chapter_contributions (contribution+)>
+
+<!--
+  contribution  : One statement per chapter the author contributed to.
+                  Maps to a Wikibase "contributed to chapter" statement
+                  (WikibaseItem → chapter QID) with Role as a qualifier.
+  @chapter_qid  : Wikibase QID of the chapter item (e.g. Q190).
+  @report       : AR6 report code (e.g. SYR, WGI, WGII, WGIII,
+                  SR1.5, SRCCL, SROCC).
+  @chapter      : Full chapter title for human readability.
+-->
+<!ELEMENT contribution (role, source_url, date_accessed)>
+<!ATTLIST contribution
+    chapter_qid  CDATA  #REQUIRED
+    report       CDATA  #REQUIRED
+    chapter      CDATA  #REQUIRED>
+
+<!-- The author's role in this chapter contribution. Used as a Wikibase
+     qualifier on the "contributed to chapter" statement.
+     Values: Coordinating Lead Author | Lead Author | Review Editor |
+             Core Writing Team | Author | Lead -->
+<!ELEMENT role (#PCDATA)>
+
+<!-- Source URL for this chapter contribution record.
+     Value: https://apps.ipcc.ch/report/authors/
+     Imported as a Wikibase reference on the "contributed to chapter" statement
+     using property P6 (Source, Url). -->
+<!ELEMENT source_url (#PCDATA)>
+
+<!-- Date the source was accessed (human-readable, e.g. "18 March 2026").
+     Imported as a Wikibase reference on the "contributed to chapter" statement
+     using property P17 (date accessed, Time). -->  
+<!ELEMENT date_accessed (#PCDATA)>

@@ -1,0 +1,1791 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE bibliographic-enrichment SYSTEM "bibliographic-enrichment.dtd">
+<bibliographic-enrichment generated="2026-06-01">
+  <item qid="Q10" type="Series" label="Special Report: Global Warming of 1.5°C">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157940">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157957">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="Licence URL (DOI)" datatype="url" value="https://www.cambridge.org/core/terms">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="Abstract (DOI)" datatype="string" value="The Intergovernmental Panel on Climate Change (IPCC) is the leading international body for assessing the science related to climate change. It provides regular assessments of the scientific basis of climate change, its impacts and future risks, and options for adaptation and mitigation. This IPCC Special Report is a comprehensive assessment of our understanding of global warming of 1.5°C, future climate change, potential impacts and associated risks, emission pathways, and system transitions consistent with 1.5°C global warming, and strengthening the global response to climate change in the context of sustainable development and efforts to eradicate poverty. It serves policymakers, decision makers, stakeholders and all interested parties with unbiased, up-to-date, policy-relevant information. This title is also available as Open Access on Cambridge Core.">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q35" type="Series" label="Special Report: Climate Change and Land">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157988">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009158015">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="Licence URL (DOI)" datatype="url" value="https://www.cambridge.org/core/terms">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="Abstract (DOI)" datatype="string" value="The Intergovernmental Panel on Climate Change (IPCC) is the leading international body for assessing the science related to climate change. It provides policymakers with regular assessments of the scientific basis of human-induced climate change, its impacts and future risks, and options for adaptation and mitigation. This IPCC Special Report on Climate Change and Land (SRCCL) is the most comprehensive and up-to-date scientific assessment of the multiple interactions between climate change and land, assessing climate change, desertification, land degradation, sustainable land management, food security, and greenhouse gas fluxes in terrestrial ecosystems. It assesses the options for governance and decision-making across multiple scales. It serves policymakers, decision makers, stakeholders, and all interested parties with unbiased, up-to-date, policy-relevant information. This title is also available as Open Access on Cambridge Core.">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q57" type="Series" label="Special Report: The Ocean and Cryosphere in a Changing Climate">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157964">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157971">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="Licence URL (DOI)" datatype="url" value="https://www.cambridge.org/core/terms">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="Abstract (DOI)" datatype="string" value="The Intergovernmental Panel on Climate Change (IPCC) is the leading international body for assessing the science related to climate change. It provides policymakers with regular assessments of the scientific basis of human-induced climate change, its impacts and future risks, and options for adaptation and mitigation. This IPCC Special Report on the Ocean and Cryosphere in a Changing Climate is the most comprehensive and up-to-date assessment of the observed and projected changes to the ocean and cryosphere and their associated impacts and risks, with a focus on resilience, risk management response options, and adaptation measures, considering both their potential and limitations. It brings together knowledge on physical and biogeochemical changes, the interplay with ecosystem changes, and the implications for human communities. It serves policymakers, decision makers, stakeholders, and all interested parties with unbiased, up-to-date, policy-relevant information. This title is also available as Open Access on Cambridge Core.">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q77" type="Series" label="Working Group I: Climate Change 2021 – The Physical Science Basis">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="Licence URL (DOI)" datatype="url" value="https://www.cambridge.org/core/terms">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="Abstract (DOI)" datatype="string" value="The Working Group I contribution to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change (IPCC) provides a comprehensive assessment of the physical science basis of climate change. It considers in situ and remote observations; paleoclimate information; understanding of climate drivers and physical, chemical, and biological processes and feedbacks; global and regional climate modelling; advances in methods of analyses; and insights from climate services. It assesses the current state of the climate; human influence on climate in all regions; future climate change including sea level rise; global warming effects including extremes; climate information for risk assessment and regional adaptation; limiting climate change by reaching net zero carbon dioxide emissions and reducing other greenhouse gas emissions; and benefits for air quality. The report serves policymakers, decision makers, stakeholders, and all interested parties with the latest policy-relevant information on climate change. Available as Open Access on Cambridge Core.">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q106" type="Series" label="Working Group II: Climate Change 2022 – Impacts, Adaptation and Vulnerability">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="Licence URL (DOI)" datatype="url" value="https://www.cambridge.org/core/terms">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="Abstract (DOI)" datatype="string" value="The Working Group II contribution to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change (IPCC) provides a comprehensive assessment of the scientific literature relevant to climate change impacts, adaptation and vulnerability. The report recognizes the interactions of climate, ecosystems and biodiversity, and human societies, and integrates across the natural, ecological, social and economic sciences. It emphasizes how efforts in adaptation and in reducing greenhouse gas emissions can come together in a process called climate resilient development, which enables a liveable future for biodiversity and humankind. The IPCC is the leading body for assessing climate change science. IPCC reports are produced in comprehensive, objective and transparent ways, ensuring they reflect the full range of views in the scientific literature. Novel elements include focused topical assessments, and an atlas presenting observed climate change impacts and future risks from global to regional scales. Available as Open Access on Cambridge Core.">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q150" type="Series" label="Working Group III: Climate Change 2022 – Mitigation of Climate Change">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="Licence URL (DOI)" datatype="url" value="https://www.cambridge.org/core/terms">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="Abstract (DOI)" datatype="string" value="This Working Group III contribution to the IPCC Sixth Assessment Report provides a comprehensive and transparent assessment of the literature on climate change mitigation. The report assesses progress in climate change mitigation options for reducing emissions and enhancing sinks. With greenhouse gas emissions at the highest levels in human history, this report provides options to achieve net zero, as pledged by many countries. The report highlights for the first time the social and demand-side aspects of climate mitigation, and assesses the literature on human behaviour, lifestyle, and culture, and its implications for mitigation action. It brings a wide range of disciplines, notably from the social sciences, within the scope of the assessment. IPCC reports are a trusted source for decision makers, policymakers, and stakeholders at all levels (international, regional, national, local) and in all branches (government, businesses, NGOs). Available as Open Access on Cambridge Core.">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q189" type="Series" label="Climate Change 2023: Synthesis Report. Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change">
+    <statement prop="Publisher (DOI)" datatype="string" value="Intergovernmental Panel on Climate Change (IPCC)">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.59327/IPCC/AR6-9789291691647" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="Abstract (DOI)" datatype="string" value="The Synthesis Report (SYR) is a stand-alone synthesis of the most policy-relevant evidence from the scientific, technical, and socio-economic literature assessed in the Sixth Assessment Report (AR6) of the Intergovernmental Panel on Climate Change (IPCC). The SYR distils and integrates the main findings of the three reports of the Working Groups of the IPCC during the AR6, and the three AR6 Special Reports into a concise document. It consists of a Summary for Policymakers and a longer report.">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.59327/IPCC/AR6-9789291691647" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q14" type="Chapter" label="Summary for Policymakers">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157940">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157957">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q17" type="Chapter" label="Technical Summary">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157940">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157957">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q21" type="Chapter" label="Framing and Context">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157940">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157957">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q24" type="Chapter" label="Mitigation Pathways Compatible with 1.5°C in the Context of Sustainable Development">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157940">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157957">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q26" type="Chapter" label="Impacts of 1.5°C Global Warming on Natural and Human Systems">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157940">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157957">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q30" type="Chapter" label="Strengthening and Implementing the Global Response">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157940">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157957">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q33" type="Chapter" label="Sustainable Development, Poverty Eradication and Reducing Inequalities">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157940">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157957">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157940.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q38" type="Chapter" label="Summary for Policymakers">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157988">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009158015">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q41" type="Chapter" label="Technical Summary">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157988">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009158015">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q44" type="Chapter" label="Framing and context">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157988">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009158015">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q45" type="Chapter" label="Land–climate interactions">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157988">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009158015">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q48" type="Chapter" label="Desertification">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157988">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009158015">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q50" type="Chapter" label="Land degradation">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157988">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009158015">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q53" type="Chapter" label="Food security">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157988">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009158015">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q54" type="Chapter" label="Interlinkages between desertification, land degradation, food security and greenhouse gas fluxes: Synergies, trade-offs and integrated response options">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.008" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157988">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.008" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009158015">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.008" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q55" type="Chapter" label="Risk management and decision-making in relation to sustainable development">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.009" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157988">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.009" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009158015">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157988.009" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q60" type="Chapter" label="Summary for Policymakers">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157964">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157971">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q61" type="Chapter" label="Technical Summary">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157964">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157971">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q64" type="Chapter" label="Framing and Context of the Report">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157964">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157971">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q67" type="Chapter" label="High Mountain Areas">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157964">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157971">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q69" type="Chapter" label="Polar Regions">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157964">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157971">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q71" type="Chapter" label="Sea Level Rise and Implications for Low-Lying Islands, Coasts and Communities">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157964">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157971">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q72" type="Chapter" label="Changing Ocean, Marine Ecosystems, and Dependent Communities">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157964">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157971">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q74" type="Chapter" label="Extremes, Abrupt Changes and Managing Risks">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.008" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157964">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.008" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157971">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.008" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q76" type="Chapter" label="Integrative Cross-Chapter Box on Low-lying Islands and Coasts">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.009" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157964">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.009" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Print (DOI)" datatype="string" value="9781009157971">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157964.009" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q79" type="Chapter" label="Summary for Policymakers">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q80" type="Chapter" label="Technical Summary">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q83" type="Chapter" label="Framing, Context, and Methods">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q85" type="Chapter" label="Changing State of the Climate System">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q87" type="Chapter" label="Human Influence on the Climate System">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q88" type="Chapter" label="Future Global Climate: Scenario-based Projections and Near-term Information">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q90" type="Chapter" label="Global Carbon and Other Biogeochemical Cycles and Feedbacks">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q93" type="Chapter" label="Short-lived Climate Forcers">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.008" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.008" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q95" type="Chapter" label="The Earth’s Energy Budget, Climate Feedbacks and Climate Sensitivity">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.009" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.009" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q96" type="Chapter" label="Water Cycle Changes">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.010" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.010" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q98" type="Chapter" label="Ocean, Cryosphere and Sea Level Change">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.011" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.011" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q100" type="Chapter" label="Linking Global to Regional Climate Change">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.012" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.012" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q101" type="Chapter" label="Weather and Climate Extreme Events in a Changing Climate">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.013" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.013" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q103" type="Chapter" label="Climate Change Information for Regional Impact and for Risk Assessment">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.014" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.014" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q104" type="Chapter" label="Atlas">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.021" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157896">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157896.021" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q107" type="Chapter" label="Summary for Policymakers">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q109" type="Chapter" label="Technical Summary">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q111" type="Chapter" label="Point of Departure and Key Concepts">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q112" type="Chapter" label="Terrestrial and Freshwater Ecosystems and Their Services">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q114" type="Chapter" label="Oceans and Coastal Ecosystems and Their Services">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q116" type="Chapter" label="Water">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q117" type="Chapter" label="Food, Fibre and Other Ecosystem Products">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q120" type="Chapter" label="Cities, Settlements and Key Infrastructure">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.008" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.008" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q123" type="Chapter" label="Health, Wellbeing and the Changing Structure of Communities">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.009" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.009" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q125" type="Chapter" label="Poverty, Livelihoods and Sustainable Development">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.010" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.010" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q126" type="Chapter" label="Africa">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.011" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.011" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q127" type="Chapter" label="Asia">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.012" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.012" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q128" type="Chapter" label="Australasia">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.013" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.013" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q129" type="Chapter" label="Central and South America">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.014" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.014" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q130" type="Chapter" label="Europe">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.015" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.015" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q131" type="Chapter" label="North America">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.016" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.016" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q132" type="Chapter" label="Small Islands">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.017" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.017" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q133" type="Chapter" label="Key Risks across Sectors and Regions">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.025" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.025" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q135" type="Chapter" label="Decision-Making Options for Managing Risk">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.026" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.026" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q136" type="Chapter" label="Climate Resilient Development Pathways">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.027" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.027" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q140" type="Chapter" label="Biodiversity Hotspots">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.018" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.018" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q141" type="Chapter" label="Cities and Settlements by the Sea">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.019" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.019" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q142" type="Chapter" label="Deserts, Semiarid Areas and Desertification">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.020" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.020" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q143" type="Chapter" label="Mediterranean Region">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.021" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.021" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q145" type="Chapter" label="Mountains">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.022" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.022" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q146" type="Chapter" label="Polar Regions">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.023" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.023" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q149" type="Chapter" label="Tropical Forests">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.024" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009325844">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009325844.024" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q151" type="Chapter" label="Summary for Policymakers">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q152" type="Chapter" label="Technical Summary">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.002" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q154" type="Chapter" label="Introduction and Framing">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.003" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q157" type="Chapter" label="Emissions Trends and Drivers">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.004" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q158" type="Chapter" label="Mitigation Pathways Compatible with Long-term Goals">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.005" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q160" type="Chapter" label="Mitigation and Development Pathways in the Near to Mid-term">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.006" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q164" type="Chapter" label="Demand, Services and Social Aspects of Mitigation">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.007" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q168" type="Chapter" label="Energy Systems">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.008" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.008" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q170" type="Chapter" label="Agriculture, Forestry and Other Land Uses (AFOLU)">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.009" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.009" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q172" type="Chapter" label="Urban Systems and Other Settlements">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.010" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.010" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q174" type="Chapter" label="Buildings">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.011" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.011" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q176" type="Chapter" label="Transport">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.012" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.012" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q178" type="Chapter" label="Industry">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.013" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.013" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q179" type="Chapter" label="Cross-sectoral Perspectives">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.014" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.014" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q181" type="Chapter" label="National and Sub-national Policies and Institutions">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.015" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.015" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q183" type="Chapter" label="International Cooperation">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.016" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.016" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q184" type="Chapter" label="Investment and Finance">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.017" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.017" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q186" type="Chapter" label="Innovation, Technology Development and Transfer">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.018" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.018" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q188" type="Chapter" label="Accelerating the Transition in the Context of Sustainable Development">
+    <statement prop="Publisher (DOI)" datatype="string" value="Cambridge University Press">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.019" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+    <statement prop="ISBN Electronic (DOI)" datatype="string" value="9781009157926">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.1017/9781009157926.019" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q190" type="Chapter" label="Summary for Policymakers">
+    <statement prop="Publisher (DOI)" datatype="string" value="Intergovernmental Panel on Climate Change (IPCC)">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.59327/IPCC/AR6-9789291691647.001" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+  <item qid="Q192" type="Chapter" label="Longer Report">
+    <statement prop="Publisher (DOI)" datatype="string" value="Intergovernmental Panel on Climate Change (IPCC)">
+      <reference>
+        <ref pid="P17" value="https://doi.org/10.59327/IPCC/AR6-9789291691647" />
+        <ref pid="P18" value="2026-06-01" />
+        <ref pid="P19" value="Crossref" />
+      </reference>
+    </statement>
+  </item>
+</bibliographic-enrichment>
+

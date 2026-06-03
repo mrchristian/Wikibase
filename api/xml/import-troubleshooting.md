@@ -6,11 +6,14 @@ Happens with both the original export and the anchored version — confirmed wik
 
 ## Options to try (in order)
 
-### 1. Use the maintenance script (most reliable)
-Bypasses HTTP/PHP upload limits entirely.
+### 1. Use the maintenance script (most reliable) ✅ CONFIRMED WORKING
+Bypasses HTTP/PHP upload limits entirely. Container name is `wikibase` (not `wikibase-wikibase-1`).
 ```powershell
-docker cp api/xml/ClimateKG-20260602204800-anchored.xml wikibase-wikibase-1:/tmp/import.xml
-docker exec wikibase-wikibase-1 php /var/www/html/maintenance/importDump.php /tmp/import.xml
+docker cp api/xml/ClimateKG-20260602204800-anchored.xml wikibase:/tmp/import.xml
+docker exec wikibase php /var/www/html/maintenance/importDump.php /tmp/import.xml
+# Post-import (recommended)
+docker exec wikibase php /var/www/html/maintenance/rebuildrecentchanges.php
+docker exec wikibase php /var/www/html/maintenance/initSiteStats.php --update
 ```
 
 ### 2. Increase PHP memory_limit

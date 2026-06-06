@@ -1,0 +1,1001 @@
+QID,Label,item
+Q1,Category,http://localhost:8080/entity/Q1
+Q10,Special Report: Global Warming of 1.5°C,http://localhost:8080/entity/Q10
+Q100,Linking Global to Regional Climate Change,http://localhost:8080/entity/Q100
+Q1000,Storm surge,http://localhost:8080/entity/Q1000
+Q1001,Storm tracks,http://localhost:8080/entity/Q1001
+Q1002,Storyline,http://localhost:8080/entity/Q1002
+Q1003,Stranded assets,http://localhost:8080/entity/Q1003
+Q1004,Stratification,http://localhost:8080/entity/Q1004
+Q1005,Stratosphere,http://localhost:8080/entity/Q1005
+Q1006,Stratosphere–troposphere exchange,http://localhost:8080/entity/Q1006
+Q1007,Stratospheric aerosol injection,http://localhost:8080/entity/Q1007
+Q1008,Stratospheric ozone,http://localhost:8080/entity/Q1008
+Q1009,Stratospheric polar vortex,http://localhost:8080/entity/Q1009
+Q101,Weather and Climate Extreme Events in a Changing Climate,http://localhost:8080/entity/Q101
+Q1010,Stratospheric sounding unit,http://localhost:8080/entity/Q1010
+Q1011,Streamflow,http://localhost:8080/entity/Q1011
+Q1012,Stressors,http://localhost:8080/entity/Q1012
+Q1013,Subduction,http://localhost:8080/entity/Q1013
+Q1014,Subnational actors,http://localhost:8080/entity/Q1014
+Q1015,Sudden stratospheric warming,http://localhost:8080/entity/Q1015
+Q1016,Sufficiency,http://localhost:8080/entity/Q1016
+Q1017,Sulphur hexafluoride,http://localhost:8080/entity/Q1017
+Q1018,Sunspots,http://localhost:8080/entity/Q1018
+Q1019,Supply-side measures,http://localhost:8080/entity/Q1019
+Q102,Climate services,http://localhost:8080/entity/Q102
+Q1020,Surface energy budget,http://localhost:8080/entity/Q1020
+Q1021,Surface mass balance,http://localhost:8080/entity/Q1021
+Q1022,Surprises,http://localhost:8080/entity/Q1022
+Q1023,Sustainability,http://localhost:8080/entity/Q1023
+Q1024,Sustainable Development Goals,http://localhost:8080/entity/Q1024
+Q1025,Sustainable development,http://localhost:8080/entity/Q1025
+Q1026,Sustainable development pathways,http://localhost:8080/entity/Q1026
+Q1027,Sustainable forest management,http://localhost:8080/entity/Q1027
+Q1028,Sustainable intensification,http://localhost:8080/entity/Q1028
+Q1029,Sustainable land management,http://localhost:8080/entity/Q1029
+Q103,Climate Change Information for Regional Impact and for Risk Assessment,http://localhost:8080/entity/Q103
+Q1030,Swash,http://localhost:8080/entity/Q1030
+Q1031,Sympagic,http://localhost:8080/entity/Q1031
+Q1032,Systems of Innovation,http://localhost:8080/entity/Q1032
+Q1033,Talik,http://localhost:8080/entity/Q1033
+Q1034,Technical potential,http://localhost:8080/entity/Q1034
+Q1035,Technology deployment,http://localhost:8080/entity/Q1035
+Q1036,Technology diffusion,http://localhost:8080/entity/Q1036
+Q1037,Technology transfer,http://localhost:8080/entity/Q1037
+Q1038,Teleconnection,http://localhost:8080/entity/Q1038
+Q1039,Teleconnection pattern,http://localhost:8080/entity/Q1039
+Q104,Atlas,http://localhost:8080/entity/Q104
+Q1040,Temperature overshoot,http://localhost:8080/entity/Q1040
+Q1041,Terrestrial radiation,http://localhost:8080/entity/Q1041
+Q1042,Thermocline,http://localhost:8080/entity/Q1042
+Q1043,Thermokarst,http://localhost:8080/entity/Q1043
+Q1044,Thermosteric sea level change,http://localhost:8080/entity/Q1044
+Q1045,Tide gauge,http://localhost:8080/entity/Q1045
+Q1046,Tier,http://localhost:8080/entity/Q1046
+Q1047,Time of emergence,http://localhost:8080/entity/Q1047
+Q1048,Tipping element,http://localhost:8080/entity/Q1048
+Q1049,Tipping point,http://localhost:8080/entity/Q1049
+Q105,Life Sciences,http://localhost:8080/entity/Q105
+Q1050,Top-of-atmosphere energy budget,http://localhost:8080/entity/Q1050
+Q1051,Total alkalinity,http://localhost:8080/entity/Q1051
+Q1052,Total carbon budget,http://localhost:8080/entity/Q1052
+Q1053,Total solar irradiance,http://localhost:8080/entity/Q1053
+Q1054,Total water level,http://localhost:8080/entity/Q1054
+Q1055,Trace gas,http://localhost:8080/entity/Q1055
+Q1056,Trade-off,http://localhost:8080/entity/Q1056
+Q1057,Traditional biomass,http://localhost:8080/entity/Q1057
+Q1058,Transformation,http://localhost:8080/entity/Q1058
+Q1059,Transformation pathways,http://localhost:8080/entity/Q1059
+Q106,"Working Group II: Climate Change 2022 – Impacts, Adaptation and Vulnerability",http://localhost:8080/entity/Q106
+Q1060,Transformational adaptation,http://localhost:8080/entity/Q1060
+Q1061,Transformative change,http://localhost:8080/entity/Q1061
+Q1062,Transient climate response,http://localhost:8080/entity/Q1062
+Q1063,Transient climate response to cumulative CO2 emissions,http://localhost:8080/entity/Q1063
+Q1064,Transition,http://localhost:8080/entity/Q1064
+Q1065,Tree line,http://localhost:8080/entity/Q1065
+Q1066,Tree rings,http://localhost:8080/entity/Q1066
+Q1067,Trend estimates uncertainty,http://localhost:8080/entity/Q1067
+Q1068,Tropical Atlantic Variability,http://localhost:8080/entity/Q1068
+Q1069,Tropical cyclone,http://localhost:8080/entity/Q1069
+Q107,Summary for Policymakers,http://localhost:8080/entity/Q107
+Q1070,Tropopause,http://localhost:8080/entity/Q1070
+Q1071,Troposphere,http://localhost:8080/entity/Q1071
+Q1072,Tropospheric ozone,http://localhost:8080/entity/Q1072
+Q1073,Tsunami,http://localhost:8080/entity/Q1073
+Q1074,Tundra,http://localhost:8080/entity/Q1074
+Q1075,Turnover time,http://localhost:8080/entity/Q1075
+Q1076,Typological regions,http://localhost:8080/entity/Q1076
+Q1077,Uncertainty,http://localhost:8080/entity/Q1077
+Q1078,United Nations Convention to Combat Desertification,http://localhost:8080/entity/Q1078
+Q1079,United Nations Framework Convention on Climate Change,http://localhost:8080/entity/Q1079
+Q108,Risk,http://localhost:8080/entity/Q108
+Q1080,Uptake,http://localhost:8080/entity/Q1080
+Q1081,Upwelling region,http://localhost:8080/entity/Q1081
+Q1082,Urban Systems,http://localhost:8080/entity/Q1082
+Q1083,Urban,http://localhost:8080/entity/Q1083
+Q1084,Urban and peri-urban agriculture,http://localhost:8080/entity/Q1084
+Q1085,Urban heat island,http://localhost:8080/entity/Q1085
+Q1086,Urbanisation,http://localhost:8080/entity/Q1086
+Q1087,Urbanization,http://localhost:8080/entity/Q1087
+Q1088,Values and beliefs,http://localhost:8080/entity/Q1088
+Q1089,Variable renewable energy,http://localhost:8080/entity/Q1089
+Q109,Technical Summary,http://localhost:8080/entity/Q109
+Q1090,Vector-borne disease,http://localhost:8080/entity/Q1090
+Q1091,Ventilation,http://localhost:8080/entity/Q1091
+Q1092,Verification,http://localhost:8080/entity/Q1092
+Q1093,Vertical land motion,http://localhost:8080/entity/Q1093
+Q1094,Very short-lived halogenated substances,http://localhost:8080/entity/Q1094
+Q1095,Volatile organic compounds,http://localhost:8080/entity/Q1095
+Q1096,Vulnerability,http://localhost:8080/entity/Q1096
+Q1097,Vulnerability index,http://localhost:8080/entity/Q1097
+Q1098,Walker circulation,http://localhost:8080/entity/Q1098
+Q1099,Water-borne diseases,http://localhost:8080/entity/Q1099
+Q11,Confidence,http://localhost:8080/entity/Q11
+Q110,Chapters,http://localhost:8080/entity/Q110
+Q1100,Water cycle,http://localhost:8080/entity/Q1100
+Q1101,Water mass,http://localhost:8080/entity/Q1101
+Q1102,Water security,http://localhost:8080/entity/Q1102
+Q1103,Water-use efficiency,http://localhost:8080/entity/Q1103
+Q1104,Wave setup,http://localhost:8080/entity/Q1104
+Q1105,Weathering,http://localhost:8080/entity/Q1105
+Q1106,Well-being,http://localhost:8080/entity/Q1106
+Q1107,Well-mixed greenhouse gas,http://localhost:8080/entity/Q1107
+Q1108,West African monsoon,http://localhost:8080/entity/Q1108
+Q1109,Wetland,http://localhost:8080/entity/Q1109
+Q111,Point of Departure and Key Concepts,http://localhost:8080/entity/Q111
+Q1110,Wind energy,http://localhost:8080/entity/Q1110
+Q1111,Younger Dryas,http://localhost:8080/entity/Q1111
+Q1112,Zero emissions commitment,http://localhost:8080/entity/Q1112
+Q1113,Displacement,http://localhost:8080/entity/Q1113
+Q1114,pH,http://localhost:8080/entity/Q1114
+Q1115,1.5°C pathway,http://localhost:8080/entity/Q1115
+Q1116,1.5°C warmer worlds,http://localhost:8080/entity/Q1116
+Q1117,13C,http://localhost:8080/entity/Q1117
+Q1118,14C,http://localhost:8080/entity/Q1118
+Q1119,Tropical Atlantic Variability,http://localhost:8080/entity/Q1119
+Q112,Terrestrial and Freshwater Ecosystems and Their Services,http://localhost:8080/entity/Q112
+Q1120,Ablation,http://localhost:8080/entity/Q1120
+Q1121,Tropopause,http://localhost:8080/entity/Q1121
+Q1122,Troposphere,http://localhost:8080/entity/Q1122
+Q1123,Acceptability of policy or system change,http://localhost:8080/entity/Q1123
+Q1124,Tsunami,http://localhost:8080/entity/Q1124
+Q1125,Tundra,http://localhost:8080/entity/Q1125
+Q1126,Acclimatisation,http://localhost:8080/entity/Q1126
+Q1127,Accumulation,http://localhost:8080/entity/Q1127
+Q1128,Uncertainty,http://localhost:8080/entity/Q1128
+Q1129,Acute food insecurity,http://localhost:8080/entity/Q1129
+Q113,Ocean acidification,http://localhost:8080/entity/Q113
+Q1130,Adaptation,http://localhost:8080/entity/Q1130
+Q1131,Adaptation Fund,http://localhost:8080/entity/Q1131
+Q1132,Upwelling region,http://localhost:8080/entity/Q1132
+Q1133,Urban Systems,http://localhost:8080/entity/Q1133
+Q1134,Urban,http://localhost:8080/entity/Q1134
+Q1135,Adaptation limits,http://localhost:8080/entity/Q1135
+Q1136,Urban heat island,http://localhost:8080/entity/Q1136
+Q1137,Adaptation opportunity,http://localhost:8080/entity/Q1137
+Q1138,Urbanization,http://localhost:8080/entity/Q1138
+Q1139,Adaptation pathways,http://localhost:8080/entity/Q1139
+Q114,Oceans and Coastal Ecosystems and Their Services,http://localhost:8080/entity/Q114
+Q1140,Variable renewable energy,http://localhost:8080/entity/Q1140
+Q1141,Vector-borne disease,http://localhost:8080/entity/Q1141
+Q1142,Adaptive management,http://localhost:8080/entity/Q1142
+Q1143,Verification,http://localhost:8080/entity/Q1143
+Q1144,Additionality,http://localhost:8080/entity/Q1144
+Q1145,Adjustments,http://localhost:8080/entity/Q1145
+Q1146,Advection,http://localhost:8080/entity/Q1146
+Q1147,Vulnerability,http://localhost:8080/entity/Q1147
+Q1148,Aerosol,http://localhost:8080/entity/Q1148
+Q1149,Aerosol–cloud interaction,http://localhost:8080/entity/Q1149
+Q115,Water security,http://localhost:8080/entity/Q115
+Q1150,Water-borne diseases,http://localhost:8080/entity/Q1150
+Q1151,Water cycle,http://localhost:8080/entity/Q1151
+Q1152,Water mass,http://localhost:8080/entity/Q1152
+Q1153,Afforestation,http://localhost:8080/entity/Q1153
+Q1154,Agreement,http://localhost:8080/entity/Q1154
+Q1155,Wave setup,http://localhost:8080/entity/Q1155
+Q1156,"Agriculture, Forestry and Other Land Use",http://localhost:8080/entity/Q1156
+Q1157,Agroecology,http://localhost:8080/entity/Q1157
+Q1158,Agroforestry,http://localhost:8080/entity/Q1158
+Q1159,Air mass,http://localhost:8080/entity/Q1159
+Q116,Water,http://localhost:8080/entity/Q116
+Q1160,Air pollution,http://localhost:8080/entity/Q1160
+Q1161,Wind energy,http://localhost:8080/entity/Q1161
+Q1162,Albedo,http://localhost:8080/entity/Q1162
+Q1163,Zero emissions commitment,http://localhost:8080/entity/Q1163
+Q1164,Displacement,http://localhost:8080/entity/Q1164
+Q1165,Annular modes,http://localhost:8080/entity/Q1165
+Q1166,pH,http://localhost:8080/entity/Q1166
+Q1167,1.5°C pathway,http://localhost:8080/entity/Q1167
+Q1168,1.5°C warmer worlds,http://localhost:8080/entity/Q1168
+Q1169,13C,http://localhost:8080/entity/Q1169
+Q117,"Food, Fibre and Other Ecosystem Products",http://localhost:8080/entity/Q117
+Q1170,14C,http://localhost:8080/entity/Q1170
+Q1171,2030 Agenda for Sustainable Development,http://localhost:8080/entity/Q1171
+Q1172,Ablation,http://localhost:8080/entity/Q1172
+Q1173,Abrupt change,http://localhost:8080/entity/Q1173
+Q1174,Abrupt climate change,http://localhost:8080/entity/Q1174
+Q1175,Acceptability of policy or system change,http://localhost:8080/entity/Q1175
+Q1176,Aridity,http://localhost:8080/entity/Q1176
+Q1179,Atlantic Meridional Mode,http://localhost:8080/entity/Q1179
+Q118,Urban,http://localhost:8080/entity/Q118
+Q1180,Atlantic Meridional Overturning Circulation,http://localhost:8080/entity/Q1180
+Q1181,Atlantic Multi-decadal Oscillation,http://localhost:8080/entity/Q1181
+Q1182,Atlantic Multi-decadal Variability,http://localhost:8080/entity/Q1182
+Q1183,Atlantic Zonal Mode,http://localhost:8080/entity/Q1183
+Q1184,Atmosphere,http://localhost:8080/entity/Q1184
+Q1185,Atmospheric boundary layer,http://localhost:8080/entity/Q1185
+Q1186,Atmospheric rivers,http://localhost:8080/entity/Q1186
+Q1188,Australian and Maritime Continent monsoon,http://localhost:8080/entity/Q1188
+Q119,Cities,http://localhost:8080/entity/Q119
+Q1192,"Avoid, Shift, Improve",http://localhost:8080/entity/Q1192
+Q1193,Basal lubrication,http://localhost:8080/entity/Q1193
+Q1195,Baseline/reference,http://localhost:8080/entity/Q1195
+Q1199,Benthos,http://localhost:8080/entity/Q1199
+Q12,Global warming,http://localhost:8080/entity/Q12
+Q120,"Cities, Settlements and Key Infrastructure",http://localhost:8080/entity/Q120
+Q1201,Biochar,http://localhost:8080/entity/Q1201
+Q1202,Biochemical oxygen demand,http://localhost:8080/entity/Q1202
+Q1203,Biodiversity,http://localhost:8080/entity/Q1203
+Q1207,Bioethanol,http://localhost:8080/entity/Q1207
+Q121,Health,http://localhost:8080/entity/Q121
+Q1210,Biogenic volatile organic compounds,http://localhost:8080/entity/Q1210
+Q1212,Biological pump,http://localhost:8080/entity/Q1212
+Q1215,Biosphere,http://localhost:8080/entity/Q1215
+Q1216,Bipolar seesaw,http://localhost:8080/entity/Q1216
+Q1217,Black carbon,http://localhost:8080/entity/Q1217
+Q1218,Blocking,http://localhost:8080/entity/Q1218
+Q1219,Blue carbon,http://localhost:8080/entity/Q1219
+Q122,Mental health,http://localhost:8080/entity/Q122
+Q1221,Brewer–Dobson circulation,http://localhost:8080/entity/Q1221
+Q1223,Business as usual,http://localhost:8080/entity/Q1223
+Q1224,"CMIP3, CMIP5 and CMIP6",http://localhost:8080/entity/Q1224
+Q1225,CO2 equivalent emission,http://localhost:8080/entity/Q1225
+Q1226,Calcification,http://localhost:8080/entity/Q1226
+Q123,"Health, Wellbeing and the Changing Structure of Communities",http://localhost:8080/entity/Q123
+Q1230,Carbon–climate feedback,http://localhost:8080/entity/Q1230
+Q1231,Carbon cycle,http://localhost:8080/entity/Q1231
+Q1232,Carbon dioxide,http://localhost:8080/entity/Q1232
+Q1233,Carbon dioxide fertilisation,http://localhost:8080/entity/Q1233
+Q1234,Carbon dioxide capture and storage,http://localhost:8080/entity/Q1234
+Q1235,Carbon dioxide capture and utilisation,http://localhost:8080/entity/Q1235
+Q1236,Carbon dioxide removal,http://localhost:8080/entity/Q1236
+Q1237,Carbon feedback,http://localhost:8080/entity/Q1237
+Q124,Vulnerability,http://localhost:8080/entity/Q124
+Q1240,Carbon neutrality,http://localhost:8080/entity/Q1240
+Q1241,Carbon price,http://localhost:8080/entity/Q1241
+Q1245,Carbonate pump,http://localhost:8080/entity/Q1245
+Q1246,Cascading impacts,http://localhost:8080/entity/Q1246
+Q125,"Poverty, Livelihoods and Sustainable Development",http://localhost:8080/entity/Q125
+Q1250,Chaotic,http://localhost:8080/entity/Q1250
+Q1252,Chlorofluorocarbons,http://localhost:8080/entity/Q1252
+Q1255,Circular economy,http://localhost:8080/entity/Q1255
+Q1256,Cirrus cloud thinning,http://localhost:8080/entity/Q1256
+Q1257,Cities,http://localhost:8080/entity/Q1257
+Q1259,City region,http://localhost:8080/entity/Q1259
+Q126,Africa,http://localhost:8080/entity/Q126
+Q1261,Clausius–Clapeyron equation/relationship,http://localhost:8080/entity/Q1261
+Q1262,Climate,http://localhost:8080/entity/Q1262
+Q1263,Climate–carbon cycle feedback,http://localhost:8080/entity/Q1263
+Q1264,Climate change,http://localhost:8080/entity/Q1264
+Q1265,Climate change commitment,http://localhost:8080/entity/Q1265
+Q1266,Climate extreme,http://localhost:8080/entity/Q1266
+Q1267,Climate feedback,http://localhost:8080/entity/Q1267
+Q1268,Climate feedback parameter,http://localhost:8080/entity/Q1268
+Q1269,Climate finance,http://localhost:8080/entity/Q1269
+Q127,Asia,http://localhost:8080/entity/Q127
+Q1270,Climate forecast,http://localhost:8080/entity/Q1270
+Q1272,Climate index,http://localhost:8080/entity/Q1272
+Q1275,Climate justice,http://localhost:8080/entity/Q1275
+Q1277,Climate metrics,http://localhost:8080/entity/Q1277
+Q1278,Climate model,http://localhost:8080/entity/Q1278
+Q1279,Climate pattern,http://localhost:8080/entity/Q1279
+Q128,Australasia,http://localhost:8080/entity/Q128
+Q1280,Climate prediction,http://localhost:8080/entity/Q1280
+Q1281,Climate projection,http://localhost:8080/entity/Q1281
+Q1284,Climate resilient development pathways,http://localhost:8080/entity/Q1284
+Q1288,Climate services,http://localhost:8080/entity/Q1288
+Q1289,Climate simulation ensemble,http://localhost:8080/entity/Q1289
+Q129,Central and South America,http://localhost:8080/entity/Q129
+Q1290,Climate-smart agriculture,http://localhost:8080/entity/Q1290
+Q1291,Climate system,http://localhost:8080/entity/Q1291
+Q1293,Climate variability,http://localhost:8080/entity/Q1293
+Q1294,Climate velocity,http://localhost:8080/entity/Q1294
+Q1296,Climatic impact-driver,http://localhost:8080/entity/Q1296
+Q1297,Cloud condensation nuclei,http://localhost:8080/entity/Q1297
+Q1298,Cloud feedback,http://localhost:8080/entity/Q1298
+Q13,Pathways,http://localhost:8080/entity/Q13
+Q130,Europe,http://localhost:8080/entity/Q130
+Q1302,Coast,http://localhost:8080/entity/Q1302
+Q1304,Cold days/cold nights,http://localhost:8080/entity/Q1304
+Q1305,Common era,http://localhost:8080/entity/Q1305
+Q1306,Communicable disease,http://localhost:8080/entity/Q1306
+Q1307,Community-based adaptation,http://localhost:8080/entity/Q1307
+Q1308,Compatible emissions,http://localhost:8080/entity/Q1308
+Q131,North America,http://localhost:8080/entity/Q131
+Q1310,Compound weather/climate events,http://localhost:8080/entity/Q1310
+Q1311,Concentrations scenario,http://localhost:8080/entity/Q1311
+Q1313,Confidence,http://localhost:8080/entity/Q1313
+Q1314,Conservation agriculture,http://localhost:8080/entity/Q1314
+Q1315,Constant composition commitment,http://localhost:8080/entity/Q1315
+Q1318,Convection,http://localhost:8080/entity/Q1318
+Q1319,Coping,http://localhost:8080/entity/Q1319
+Q132,Small Islands,http://localhost:8080/entity/Q132
+Q1322,Coral reef,http://localhost:8080/entity/Q1322
+Q1323,Cosmogenic radioisotopes,http://localhost:8080/entity/Q1323
+Q1324,Cost–benefit analysis,http://localhost:8080/entity/Q1324
+Q1325,Cost-effectiveness analysis,http://localhost:8080/entity/Q1325
+Q1326,Coupled Model Intercomparison Project,http://localhost:8080/entity/Q1326
+Q1328,Cultural impacts,http://localhost:8080/entity/Q1328
+Q133,Key Risks across Sectors and Regions,http://localhost:8080/entity/Q133
+Q1330,Dansgaard-Oeschger events,http://localhost:8080/entity/Q1330
+Q1331,Data assimilation,http://localhost:8080/entity/Q1331
+Q1338,Decoupling,http://localhost:8080/entity/Q1338
+Q1339,Deep uncertainty,http://localhost:8080/entity/Q1339
+Q134,Climate finance,http://localhost:8080/entity/Q134
+Q1340,Deforestation,http://localhost:8080/entity/Q1340
+Q1341,Deglacial or deglaciation or glacial termination,http://localhost:8080/entity/Q1341
+Q1343,Deliberative governance,http://localhost:8080/entity/Q1343
+Q1344,Demand,http://localhost:8080/entity/Q1344
+Q1345,Demand- and supply-side measures,http://localhost:8080/entity/Q1345
+Q1347,Desertification,http://localhost:8080/entity/Q1347
+Q1348,Detection,http://localhost:8080/entity/Q1348
+Q135,Decision-Making Options for Managing Risk,http://localhost:8080/entity/Q135
+Q1350,Developed/developing countries,http://localhost:8080/entity/Q1350
+Q1351,Development pathways,http://localhost:8080/entity/Q1351
+Q1352,Diatoms,http://localhost:8080/entity/Q1352
+Q1354,Dimensions of integration,http://localhost:8080/entity/Q1354
+Q1355,Direct air capture,http://localhost:8080/entity/Q1355
+Q1359,Disaster,http://localhost:8080/entity/Q1359
+Q136,Climate Resilient Development Pathways,http://localhost:8080/entity/Q136
+Q1361,Disaster risk,http://localhost:8080/entity/Q1361
+Q1362,Disaster risk management,http://localhost:8080/entity/Q1362
+Q1363,Disaster risk reduction,http://localhost:8080/entity/Q1363
+Q1364,Discharge,http://localhost:8080/entity/Q1364
+Q1365,Discounting,http://localhost:8080/entity/Q1365
+Q1367,Dissolved inorganic carbon,http://localhost:8080/entity/Q1367
+Q1368,Distributive equity,http://localhost:8080/entity/Q1368
+Q137,Cross-Chapter Papers,http://localhost:8080/entity/Q137
+Q1370,Dobson unit,http://localhost:8080/entity/Q1370
+Q1371,Downscaling,http://localhost:8080/entity/Q1371
+Q1374,Drought,http://localhost:8080/entity/Q1374
+Q1375,Dynamic global vegetation model,http://localhost:8080/entity/Q1375
+Q1377,Early Eocene Climatic Optimum,http://localhost:8080/entity/Q1377
+Q1378,Early warning systems,http://localhost:8080/entity/Q1378
+Q1379,Earth’s energy budget,http://localhost:8080/entity/Q1379
+Q138,Biodiversity,http://localhost:8080/entity/Q138
+Q1384,Earth system model,http://localhost:8080/entity/Q1384
+Q1386,Earth system sensitivity,http://localhost:8080/entity/Q1386
+Q1387,East Asian monsoon,http://localhost:8080/entity/Q1387
+Q1389,Eastern boundary upwelling systems,http://localhost:8080/entity/Q1389
+Q139,Biodiversity hotspots,http://localhost:8080/entity/Q139
+Q1391,Ecosystem,http://localhost:8080/entity/Q1391
+Q1392,Ecosystem-based adaptation,http://localhost:8080/entity/Q1392
+Q1393,Ecosystem health,http://localhost:8080/entity/Q1393
+Q1394,Ecosystem services,http://localhost:8080/entity/Q1394
+Q1395,Effective equilibrium climate sensitivity,http://localhost:8080/entity/Q1395
+Q1396,Effective radiative forcing due to aerosol–cloud interactions,http://localhost:8080/entity/Q1396
+Q1397,Effective radiative forcing due to aerosol–radiation interactions,http://localhost:8080/entity/Q1397
+Q1398,Ekman transport,http://localhost:8080/entity/Q1398
+Q1399,El Niño–Southern Oscillation,http://localhost:8080/entity/Q1399
+Q14,Summary for Policymakers,http://localhost:8080/entity/Q14
+Q140,Biodiversity Hotspots,http://localhost:8080/entity/Q140
+Q1400,Electromagnetic spectrum,http://localhost:8080/entity/Q1400
+Q1402,"Embodied [emissions, water, land]",http://localhost:8080/entity/Q1402
+Q1403,Emergence,http://localhost:8080/entity/Q1403
+Q1404,Emergent constraint,http://localhost:8080/entity/Q1404
+Q1405,Emission and Socio-economic Scenario Ensemble,http://localhost:8080/entity/Q1405
+Q1406,Emission factor/Emissions intensity,http://localhost:8080/entity/Q1406
+Q1409,Emissions scenario,http://localhost:8080/entity/Q1409
+Q141,Cities and Settlements by the Sea,http://localhost:8080/entity/Q141
+Q1410,Emulation,http://localhost:8080/entity/Q1410
+Q1411,Emulators,http://localhost:8080/entity/Q1411
+Q1412,Enabling conditions,http://localhost:8080/entity/Q1412
+Q1415,Energy balance,http://localhost:8080/entity/Q1415
+Q1416,Energy balance model,http://localhost:8080/entity/Q1416
+Q1417,Energy budget,http://localhost:8080/entity/Q1417
+Q1418,Energy efficiency,http://localhost:8080/entity/Q1418
+Q142,"Deserts, Semiarid Areas and Desertification",http://localhost:8080/entity/Q142
+Q1420,Energy security,http://localhost:8080/entity/Q1420
+Q1423,Enhanced weathering,http://localhost:8080/entity/Q1423
+Q1424,Ensemble,http://localhost:8080/entity/Q1424
+Q1425,Enteric fermentation,http://localhost:8080/entity/Q1425
+Q1427,Equilibrium and transient climate experiment,http://localhost:8080/entity/Q1427
+Q1429,Equilibrium line,http://localhost:8080/entity/Q1429
+Q143,Mediterranean Region,http://localhost:8080/entity/Q143
+Q1430,Equity,http://localhost:8080/entity/Q1430
+Q1431,Equivalent carbon dioxide emission,http://localhost:8080/entity/Q1431
+Q1438,Evolutionary adaptation,http://localhost:8080/entity/Q1438
+Q1439,Exergy,http://localhost:8080/entity/Q1439
+Q144,Mountains,http://localhost:8080/entity/Q144
+Q1442,External forcing,http://localhost:8080/entity/Q1442
+Q1443,Externality/external cost/external benefit,http://localhost:8080/entity/Q1443
+Q1444,Extinction,http://localhost:8080/entity/Q1444
+Q1448,Extreme climate event,http://localhost:8080/entity/Q1448
+Q1449,Extreme/heavy precipitation event,http://localhost:8080/entity/Q1449
+Q145,Mountains,http://localhost:8080/entity/Q145
+Q1450,Extreme sea level,http://localhost:8080/entity/Q1450
+Q1451,Extreme weather event,http://localhost:8080/entity/Q1451
+Q1454,Feasibility,http://localhost:8080/entity/Q1454
+Q1457,Fingerprint,http://localhost:8080/entity/Q1457
+Q1458,Fire weather,http://localhost:8080/entity/Q1458
+Q146,Polar Regions,http://localhost:8080/entity/Q146
+Q1460,Fitness-for-purpose,http://localhost:8080/entity/Q1460
+Q1464,Flood,http://localhost:8080/entity/Q1464
+Q1467,Food loss and waste,http://localhost:8080/entity/Q1467
+Q1468,Food security,http://localhost:8080/entity/Q1468
+Q1469,Food system,http://localhost:8080/entity/Q1469
+Q147,Forest,http://localhost:8080/entity/Q147
+Q1470,Foraminifera,http://localhost:8080/entity/Q1470
+Q1471,Forcing,http://localhost:8080/entity/Q1471
+Q1472,Forest,http://localhost:8080/entity/Q1472
+Q148,Sustainable forest management,http://localhost:8080/entity/Q148
+Q1480,Fugitive emissions,http://localhost:8080/entity/Q1480
+Q1481,Gender equity,http://localhost:8080/entity/Q1481
+Q1483,General circulation model,http://localhost:8080/entity/Q1483
+Q1485,Geoid,http://localhost:8080/entity/Q1485
+Q1486,Geostrophic winds or currents,http://localhost:8080/entity/Q1486
+Q1487,Geothermal energy,http://localhost:8080/entity/Q1487
+Q1488,Gini coefficient,http://localhost:8080/entity/Q1488
+Q149,Tropical Forests,http://localhost:8080/entity/Q149
+Q1490,Glacial isostatic adjustment,http://localhost:8080/entity/Q1490
+Q1492,Glacial or glaciation,http://localhost:8080/entity/Q1492
+Q1494,Glacier,http://localhost:8080/entity/Q1494
+Q1496,Global Environment Facility,http://localhost:8080/entity/Q1496
+Q1499,Global dimming,http://localhost:8080/entity/Q1499
+Q15,Technical potential,http://localhost:8080/entity/Q15
+Q150,Working Group III: Climate Change 2022 – Mitigation of Climate Change,http://localhost:8080/entity/Q150
+Q1502,Global mean sea level change,http://localhost:8080/entity/Q1502
+Q1505,Global monsoon,http://localhost:8080/entity/Q1505
+Q1506,Global warming,http://localhost:8080/entity/Q1506
+Q1507,Global warming potential,http://localhost:8080/entity/Q1507
+Q1508,Governance,http://localhost:8080/entity/Q1508
+Q1509,Governance capacity,http://localhost:8080/entity/Q1509
+Q151,Summary for Policymakers,http://localhost:8080/entity/Q151
+Q1510,"Gravitational, rotational and deformational effects",http://localhost:8080/entity/Q1510
+Q1512,Grazing land,http://localhost:8080/entity/Q1512
+Q1513,Green Climate Fund,http://localhost:8080/entity/Q1513
+Q1514,Green infrastructure,http://localhost:8080/entity/Q1514
+Q1515,Greenhouse effect,http://localhost:8080/entity/Q1515
+Q1516,Greenhouse gas emission metric,http://localhost:8080/entity/Q1516
+Q1517,Greenhouse gas neutrality,http://localhost:8080/entity/Q1517
+Q1518,Greenhouse gases,http://localhost:8080/entity/Q1518
+Q1519,Greenland Ice Sheet,http://localhost:8080/entity/Q1519
+Q152,Technical Summary,http://localhost:8080/entity/Q152
+Q1521,Gross domestic product,http://localhost:8080/entity/Q1521
+Q1523,Ground-level ozone,http://localhost:8080/entity/Q1523
+Q1526,Gyre,http://localhost:8080/entity/Q1526
+Q1528,Hadley circulation,http://localhost:8080/entity/Q1528
+Q1529,Halocarbons,http://localhost:8080/entity/Q1529
+Q153,Chapters,http://localhost:8080/entity/Q153
+Q1530,Halocline,http://localhost:8080/entity/Q1530
+Q1532,Halosteric sea level change,http://localhost:8080/entity/Q1532
+Q1533,Hazard,http://localhost:8080/entity/Q1533
+Q1535,Heat index,http://localhost:8080/entity/Q1535
+Q1536,Heat stress,http://localhost:8080/entity/Q1536
+Q1538,Heavy precipitation event,http://localhost:8080/entity/Q1538
+Q154,Introduction and Framing,http://localhost:8080/entity/Q154
+Q1540,Heinrich event,http://localhost:8080/entity/Q1540
+Q1542,Hindcast or retrospective forecast,http://localhost:8080/entity/Q1542
+Q1543,Holocene,http://localhost:8080/entity/Q1543
+Q1544,Household carbon footprint,http://localhost:8080/entity/Q1544
+Q1546,Human influence on the climate system,http://localhost:8080/entity/Q1546
+Q1548,Human rights,http://localhost:8080/entity/Q1548
+Q1549,Human security,http://localhost:8080/entity/Q1549
+Q155,Consumption-based emissions,http://localhost:8080/entity/Q155
+Q1550,Human system,http://localhost:8080/entity/Q1550
+Q1552,Hydrofluorocarbons,http://localhost:8080/entity/Q1552
+Q1553,Hydrological cycle,http://localhost:8080/entity/Q1553
+Q1555,Hydrological sensitivity,http://localhost:8080/entity/Q1555
+Q1559,Hypoxic,http://localhost:8080/entity/Q1559
+Q156,Cumulative emissions,http://localhost:8080/entity/Q156
+Q1562,Ice age,http://localhost:8080/entity/Q1562
+Q1563,Ice–albedo feedback,http://localhost:8080/entity/Q1563
+Q1565,Ice sheet,http://localhost:8080/entity/Q1565
+Q1566,Ice shelf,http://localhost:8080/entity/Q1566
+Q1568,Iceberg,http://localhost:8080/entity/Q1568
+Q1569,Impacts,http://localhost:8080/entity/Q1569
+Q157,Emissions Trends and Drivers,http://localhost:8080/entity/Q157
+Q1570,Income,http://localhost:8080/entity/Q1570
+Q1571,Incremental adaptation,http://localhost:8080/entity/Q1571
+Q1572,Indian Ocean Dipole,http://localhost:8080/entity/Q1572
+Q1573,Indian Ocean basin mode,http://localhost:8080/entity/Q1573
+Q1574,Indigenous Peoples,http://localhost:8080/entity/Q1574
+Q1575,Indigenous knowledge,http://localhost:8080/entity/Q1575
+Q1576,Indirect emissions,http://localhost:8080/entity/Q1576
+Q1577,Indirect land-use change,http://localhost:8080/entity/Q1577
+Q1578,Industrial revolution,http://localhost:8080/entity/Q1578
+Q1579,Inequality,http://localhost:8080/entity/Q1579
+Q158,Mitigation Pathways Compatible with Long-term Goals,http://localhost:8080/entity/Q158
+Q1580,Informal settlement,http://localhost:8080/entity/Q1580
+Q1581,Infrastructure,http://localhost:8080/entity/Q1581
+Q1582,Insolation,http://localhost:8080/entity/Q1582
+Q1583,Instantaneous radiative forcing due to aerosol–cloud interactions,http://localhost:8080/entity/Q1583
+Q1584,Instantaneous radiative forcing due to aerosol–radiation interactions,http://localhost:8080/entity/Q1584
+Q1585,Institutional capacity,http://localhost:8080/entity/Q1585
+Q1586,Institutions,http://localhost:8080/entity/Q1586
+Q1588,Integrated assessment,http://localhost:8080/entity/Q1588
+Q1589,Integrated assessment model,http://localhost:8080/entity/Q1589
+Q159,Development pathways,http://localhost:8080/entity/Q159
+Q1591,Inter-decadal Pacific Oscillation,http://localhost:8080/entity/Q1591
+Q1593,Interglacial or interglaciation,http://localhost:8080/entity/Q1593
+Q1594,Internal climate variability,http://localhost:8080/entity/Q1594
+Q1598,Interstadial or interstade,http://localhost:8080/entity/Q1598
+Q16,Global warming potential,http://localhost:8080/entity/Q16
+Q160,Mitigation and Development Pathways in the Near to Mid-term,http://localhost:8080/entity/Q160
+Q1601,Isostatic or Isostasy,http://localhost:8080/entity/Q1601
+Q1602,Isotopes,http://localhost:8080/entity/Q1602
+Q1603,Just transitions,http://localhost:8080/entity/Q1603
+Q1606,Key climate indicators,http://localhost:8080/entity/Q1606
+Q1609,Land,http://localhost:8080/entity/Q1609
+Q161,Energy services,http://localhost:8080/entity/Q161
+Q1610,Land cover,http://localhost:8080/entity/Q1610
+Q1612,Land degradation,http://localhost:8080/entity/Q1612
+Q162,Energy efficiency,http://localhost:8080/entity/Q162
+Q1620,Land use,http://localhost:8080/entity/Q1620
+Q1621,"Land use, land-use change and forestry",http://localhost:8080/entity/Q1621
+Q1623,Land water storage,http://localhost:8080/entity/Q1623
+Q1625,Large-scale,http://localhost:8080/entity/Q1625
+Q1626,Last millennium,http://localhost:8080/entity/Q1626
+Q163,Demand,http://localhost:8080/entity/Q163
+Q1630,Least Developed Countries,http://localhost:8080/entity/Q1630
+Q1633,Light-absorbing particles,http://localhost:8080/entity/Q1633
+Q1635,Lithosphere,http://localhost:8080/entity/Q1635
+Q1638,Local knowledge,http://localhost:8080/entity/Q1638
+Q164,"Demand, Services and Social Aspects of Mitigation",http://localhost:8080/entity/Q164
+Q1641,Long-lived climate forcers,http://localhost:8080/entity/Q1641
+Q1642,Long-lived greenhouse gases,http://localhost:8080/entity/Q1642
+Q1643,"Loss and Damage, and losses and damages",http://localhost:8080/entity/Q1643
+Q1645,"Low-likelihood, high impact outcomes",http://localhost:8080/entity/Q1645
+Q1646,Madden–Julian Oscillation,http://localhost:8080/entity/Q1646
+Q1647,Maladaptive actions,http://localhost:8080/entity/Q1647
+Q1648,Malnutrition,http://localhost:8080/entity/Q1648
+Q1649,Managed forest,http://localhost:8080/entity/Q1649
+Q165,Wind energy,http://localhost:8080/entity/Q165
+Q1651,Managed land,http://localhost:8080/entity/Q1651
+Q1653,Marine cloud brightening,http://localhost:8080/entity/Q1653
+Q1654,Marine heatwave,http://localhost:8080/entity/Q1654
+Q1655,Marine ice cliff instability,http://localhost:8080/entity/Q1655
+Q1657,Marine isotope stage,http://localhost:8080/entity/Q1657
+Q1658,Market failure,http://localhost:8080/entity/Q1658
+Q1659,Mass balance/budget,http://localhost:8080/entity/Q1659
+Q166,Energy system,http://localhost:8080/entity/Q166
+Q1662,Measurement,http://localhost:8080/entity/Q1662
+Q1663,"Measurement, Reporting and Verification",http://localhost:8080/entity/Q1663
+Q1666,Meltwater Pulse 1A,http://localhost:8080/entity/Q1666
+Q1668,Meridional overturning circulation,http://localhost:8080/entity/Q1668
+Q167,Solar energy,http://localhost:8080/entity/Q167
+Q1670,Methane,http://localhost:8080/entity/Q1670
+Q1671,Metric,http://localhost:8080/entity/Q1671
+Q1673,Microwave sounding unit,http://localhost:8080/entity/Q1673
+Q1674,Migrant,http://localhost:8080/entity/Q1674
+Q1675,Migration,http://localhost:8080/entity/Q1675
+Q1676,Mineralization/Remineralization,http://localhost:8080/entity/Q1676
+Q168,Energy Systems,http://localhost:8080/entity/Q168
+Q1683,Model initialization,http://localhost:8080/entity/Q1683
+Q1684,Model spread,http://localhost:8080/entity/Q1684
+Q1685,Models,http://localhost:8080/entity/Q1685
+Q1686,Modes of climate variability,http://localhost:8080/entity/Q1686
+Q1687,Mole fraction or mixing ratio,http://localhost:8080/entity/Q1687
+Q1689,Montreal Protocol,http://localhost:8080/entity/Q1689
+Q169,Mitigation potential,http://localhost:8080/entity/Q169
+Q1690,Mountains,http://localhost:8080/entity/Q1690
+Q1695,Natural variability,http://localhost:8080/entity/Q1695
+Q1697,Nature's contributions to people,http://localhost:8080/entity/Q1697
+Q1698,Near-surface permafrost,http://localhost:8080/entity/Q1698
+Q17,Technical Summary,http://localhost:8080/entity/Q17
+Q170,"Agriculture, Forestry and Other Land Uses (AFOLU)",http://localhost:8080/entity/Q170
+Q1700,Net negative greenhouse gas emissions,http://localhost:8080/entity/Q1700
+Q1702,Net zero CO2 emissions,http://localhost:8080/entity/Q1702
+Q1703,Net zero greenhouse gas emissions,http://localhost:8080/entity/Q1703
+Q1704,New Urban Agenda,http://localhost:8080/entity/Q1704
+Q1706,Nitrous oxide,http://localhost:8080/entity/Q1706
+Q1707,Non-CO2 emissions and radiative forcing,http://localhost:8080/entity/Q1707
+Q1709,Non-communicable diseases,http://localhost:8080/entity/Q1709
+Q171,Urban Systems,http://localhost:8080/entity/Q171
+Q1710,Non-linearity,http://localhost:8080/entity/Q1710
+Q1713,North American monsoon,http://localhost:8080/entity/Q1713
+Q1714,North Atlantic Oscillation,http://localhost:8080/entity/Q1714
+Q1715,Northern Annular Mode,http://localhost:8080/entity/Q1715
+Q1716,Ocean,http://localhost:8080/entity/Q1716
+Q1717,Ocean acidification,http://localhost:8080/entity/Q1717
+Q1718,Ocean alkalinization/Ocean alkalinity enhancement,http://localhost:8080/entity/Q1718
+Q172,Urban Systems and Other Settlements,http://localhost:8080/entity/Q172
+Q1720,Ocean deoxygenation,http://localhost:8080/entity/Q1720
+Q1721,Ocean dynamic sea level change,http://localhost:8080/entity/Q1721
+Q1722,Ocean fertilisation,http://localhost:8080/entity/Q1722
+Q1723,Ocean heat uptake efficiency,http://localhost:8080/entity/Q1723
+Q1724,Ocean stratification,http://localhost:8080/entity/Q1724
+Q1725,Offset,http://localhost:8080/entity/Q1725
+Q1726,Orbital forcing,http://localhost:8080/entity/Q1726
+Q1728,Organic farming,http://localhost:8080/entity/Q1728
+Q173,Renewable energy,http://localhost:8080/entity/Q173
+Q1732,Overshoot pathways,http://localhost:8080/entity/Q1732
+Q1733,Oxygen minimum zone,http://localhost:8080/entity/Q1733
+Q1734,Ozone,http://localhost:8080/entity/Q1734
+Q1735,Ozone-depleting substances,http://localhost:8080/entity/Q1735
+Q1736,Ozone layer,http://localhost:8080/entity/Q1736
+Q1738,Pacific Decadal Oscillation,http://localhost:8080/entity/Q1738
+Q1739,Pacific Decadal Variability,http://localhost:8080/entity/Q1739
+Q174,Buildings,http://localhost:8080/entity/Q174
+Q1741,Palaeocene–Eocene Thermal Maximum,http://localhost:8080/entity/Q1741
+Q1745,Participatory governance,http://localhost:8080/entity/Q1745
+Q1746,Particulate matter,http://localhost:8080/entity/Q1746
+Q1749,Pathways,http://localhost:8080/entity/Q1749
+Q175,Emissions scenario,http://localhost:8080/entity/Q175
+Q1753,Pelagic,http://localhost:8080/entity/Q1753
+Q1755,Percentile,http://localhost:8080/entity/Q1755
+Q1757,Permafrost,http://localhost:8080/entity/Q1757
+Q1759,Permafrost thaw,http://localhost:8080/entity/Q1759
+Q176,Transport,http://localhost:8080/entity/Q176
+Q1763,Physical climate storyline,http://localhost:8080/entity/Q1763
+Q1765,Plankton,http://localhost:8080/entity/Q1765
+Q1766,Planned relocation,http://localhost:8080/entity/Q1766
+Q1767,Plant evaporative stress,http://localhost:8080/entity/Q1767
+Q177,Direct emissions,http://localhost:8080/entity/Q177
+Q1770,Pliocene,http://localhost:8080/entity/Q1770
+Q1771,Polar amplification,http://localhost:8080/entity/Q1771
+Q1772,Policies,http://localhost:8080/entity/Q1772
+Q1775,Polycentric governance,http://localhost:8080/entity/Q1775
+Q1778,Poverty,http://localhost:8080/entity/Q1778
+Q178,Industry,http://localhost:8080/entity/Q178
+Q1780,Poverty trap,http://localhost:8080/entity/Q1780
+Q1785,Predictability,http://localhost:8080/entity/Q1785
+Q1786,Prediction quality/skill,http://localhost:8080/entity/Q1786
+Q1787,Primary energy,http://localhost:8080/entity/Q1787
+Q1788,Primary production,http://localhost:8080/entity/Q1788
+Q1789,Private costs,http://localhost:8080/entity/Q1789
+Q179,Cross-sectoral Perspectives,http://localhost:8080/entity/Q179
+Q1790,Probability density function,http://localhost:8080/entity/Q1790
+Q1792,Process-based model,http://localhost:8080/entity/Q1792
+Q1794,Projection,http://localhost:8080/entity/Q1794
+Q1796,Proxy,http://localhost:8080/entity/Q1796
+Q1797,Quasi-Biennial Oscillation,http://localhost:8080/entity/Q1797
+Q1799,Radiative forcing,http://localhost:8080/entity/Q1799
+Q18,Chapters,http://localhost:8080/entity/Q18
+Q180,Policies,http://localhost:8080/entity/Q180
+Q1800,Rapid dynamical change,http://localhost:8080/entity/Q1800
+Q1801,Reanalysis,http://localhost:8080/entity/Q1801
+Q1802,Reasons for Concern,http://localhost:8080/entity/Q1802
+Q1803,Rebound effect,http://localhost:8080/entity/Q1803
+Q1804,Reconstruction,http://localhost:8080/entity/Q1804
+Q1807,Reference scenario,http://localhost:8080/entity/Q1807
+Q1808,Reforestation,http://localhost:8080/entity/Q1808
+Q181,National and Sub-national Policies and Institutions,http://localhost:8080/entity/Q181
+Q1810,Regenerative agriculture,http://localhost:8080/entity/Q1810
+Q1812,Regional climate messages,http://localhost:8080/entity/Q1812
+Q1815,Regulation,http://localhost:8080/entity/Q1815
+Q1817,Relative sea level change,http://localhost:8080/entity/Q1817
+Q182,Agreement,http://localhost:8080/entity/Q182
+Q1820,Reporting,http://localhost:8080/entity/Q1820
+Q1821,Representative Concentration Pathways,http://localhost:8080/entity/Q1821
+Q1824,Residual risk,http://localhost:8080/entity/Q1824
+Q1825,Resilience,http://localhost:8080/entity/Q1825
+Q1829,Response time or adjustment time,http://localhost:8080/entity/Q1829
+Q183,International Cooperation,http://localhost:8080/entity/Q183
+Q1833,Risk,http://localhost:8080/entity/Q1833
+Q1839,Risk transfer,http://localhost:8080/entity/Q1839
+Q184,Investment and Finance,http://localhost:8080/entity/Q184
+Q1841,Rock glacier,http://localhost:8080/entity/Q1841
+Q1843,Salt-water intrusion/encroachment,http://localhost:8080/entity/Q1843
+Q1845,Scenario,http://localhost:8080/entity/Q1845
+Q1847,Sea ice,http://localhost:8080/entity/Q1847
+Q185,Systems of Innovation,http://localhost:8080/entity/Q185
+Q1851,Sea level change,http://localhost:8080/entity/Q1851
+Q1852,Sea level equivalent,http://localhost:8080/entity/Q1852
+Q1853,Sea level rise,http://localhost:8080/entity/Q1853
+Q1854,Sea surface temperature,http://localhost:8080/entity/Q1854
+Q1855,Semi-arid zone,http://localhost:8080/entity/Q1855
+Q1856,Semi-empirical model,http://localhost:8080/entity/Q1856
+Q1857,Sendai Framework for Disaster Risk Reduction,http://localhost:8080/entity/Q1857
+Q1859,Sensitivity,http://localhost:8080/entity/Q1859
+Q186,"Innovation, Technology Development and Transfer",http://localhost:8080/entity/Q186
+Q1862,Service provisioning,http://localhost:8080/entity/Q1862
+Q1863,Services,http://localhost:8080/entity/Q1863
+Q1865,Shared socio-economic pathways,http://localhost:8080/entity/Q1865
+Q1867,Shelf seas,http://localhost:8080/entity/Q1867
+Q1868,Shifting development pathways,http://localhost:8080/entity/Q1868
+Q1869,Shifting development pathways to sustainability,http://localhost:8080/entity/Q1869
+Q187,Transition,http://localhost:8080/entity/Q187
+Q1870,Short-lived climate forcers,http://localhost:8080/entity/Q1870
+Q1873,Simple climate model,http://localhost:8080/entity/Q1873
+Q1875,Small Island Developing States,http://localhost:8080/entity/Q1875
+Q1876,Smart grids,http://localhost:8080/entity/Q1876
+Q188,Accelerating the Transition in the Context of Sustainable Development,http://localhost:8080/entity/Q188
+Q1883,Social-ecological system,http://localhost:8080/entity/Q1883
+Q1887,Social infrastructure,http://localhost:8080/entity/Q1887
+Q189,"Climate Change 2023: Synthesis Report. Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change",http://localhost:8080/entity/Q189
+Q1890,Social protection,http://localhost:8080/entity/Q1890
+Q19,Climate response,http://localhost:8080/entity/Q19
+Q190,Summary for Policymakers,http://localhost:8080/entity/Q190
+Q1900,Solar activity,http://localhost:8080/entity/Q1900
+Q1902,Solar energy,http://localhost:8080/entity/Q1902
+Q1904,Solar radiation modification,http://localhost:8080/entity/Q1904
+Q1905,Solubility pump,http://localhost:8080/entity/Q1905
+Q1906,Solution space,http://localhost:8080/entity/Q1906
+Q1908,South American monsoon,http://localhost:8080/entity/Q1908
+Q1909,South Pacific Convergence Zone,http://localhost:8080/entity/Q1909
+Q191,Chapters,http://localhost:8080/entity/Q191
+Q1910,South and South East Asian monsoon,http://localhost:8080/entity/Q1910
+Q1911,Southern Annular Mode,http://localhost:8080/entity/Q1911
+Q1912,Southern Ocean,http://localhost:8080/entity/Q1912
+Q1913,Spatial and temporal scales,http://localhost:8080/entity/Q1913
+Q1915,Spill-over effect,http://localhost:8080/entity/Q1915
+Q1916,Stadial or stade,http://localhost:8080/entity/Q1916
+Q1917,Standard,http://localhost:8080/entity/Q1917
+Q1919,Storm surge,http://localhost:8080/entity/Q1919
+Q192,Longer Report,http://localhost:8080/entity/Q192
+Q1920,Storm tracks,http://localhost:8080/entity/Q1920
+Q1921,Storyline,http://localhost:8080/entity/Q1921
+Q1922,Stranded assets,http://localhost:8080/entity/Q1922
+Q1923,Stratification,http://localhost:8080/entity/Q1923
+Q1925,Stratosphere–troposphere exchange,http://localhost:8080/entity/Q1925
+Q1926,Stratospheric aerosol injection,http://localhost:8080/entity/Q1926
+Q1928,Stratospheric polar vortex,http://localhost:8080/entity/Q1928
+Q193,(No label),http://localhost:8080/entity/Q193
+Q1932,Subduction,http://localhost:8080/entity/Q1932
+Q1937,Sunspots,http://localhost:8080/entity/Q1937
+Q194,1.5°C warmer worlds,http://localhost:8080/entity/Q194
+Q1943,Sustainable Development Goals,http://localhost:8080/entity/Q1943
+Q1945,Sustainable development pathways,http://localhost:8080/entity/Q1945
+Q1946,Sustainable forest management,http://localhost:8080/entity/Q1946
+Q1947,Sustainable intensification,http://localhost:8080/entity/Q1947
+Q195,(No label),http://localhost:8080/entity/Q195
+Q1951,Systems of Innovation,http://localhost:8080/entity/Q1951
+Q1953,Technical potential,http://localhost:8080/entity/Q1953
+Q1956,Technology transfer,http://localhost:8080/entity/Q1956
+Q1957,Teleconnection,http://localhost:8080/entity/Q1957
+Q1958,Teleconnection pattern,http://localhost:8080/entity/Q1958
+Q1959,Temperature overshoot,http://localhost:8080/entity/Q1959
+Q196,(No label),http://localhost:8080/entity/Q196
+Q1960,Terrestrial radiation,http://localhost:8080/entity/Q1960
+Q1961,Thermocline,http://localhost:8080/entity/Q1961
+Q1965,Tier,http://localhost:8080/entity/Q1965
+Q197,(No label),http://localhost:8080/entity/Q197
+Q1970,Total alkalinity,http://localhost:8080/entity/Q1970
+Q1971,Total carbon budget,http://localhost:8080/entity/Q1971
+Q1972,Total solar irradiance,http://localhost:8080/entity/Q1972
+Q1974,Trace gas,http://localhost:8080/entity/Q1974
+Q1975,Trade-off,http://localhost:8080/entity/Q1975
+Q1978,Transformation pathways,http://localhost:8080/entity/Q1978
+Q198,(No label),http://localhost:8080/entity/Q198
+Q1982,Transient climate response to cumulative CO2 emissions,http://localhost:8080/entity/Q1982
+Q1985,Tree rings,http://localhost:8080/entity/Q1985
+Q1987,Tropical Atlantic Variability,http://localhost:8080/entity/Q1987
+Q1988,Tropical cyclone,http://localhost:8080/entity/Q1988
+Q199,(No label),http://localhost:8080/entity/Q199
+Q1994,Turnover time,http://localhost:8080/entity/Q1994
+Q1995,Typological regions,http://localhost:8080/entity/Q1995
+Q1996,Uncertainty,http://localhost:8080/entity/Q1996
+Q1997,United Nations Convention to Combat Desertification,http://localhost:8080/entity/Q1997
+Q1998,United Nations Framework Convention on Climate Change,http://localhost:8080/entity/Q1998
+Q2,Work,http://localhost:8080/entity/Q2
+Q20,Impacts,http://localhost:8080/entity/Q20
+Q200,(No label),http://localhost:8080/entity/Q200
+Q2001,Urban Systems,http://localhost:8080/entity/Q2001
+Q2002,Urban,http://localhost:8080/entity/Q2002
+Q2004,Urban heat island,http://localhost:8080/entity/Q2004
+Q2005,Urbanisation,http://localhost:8080/entity/Q2005
+Q2007,Values and beliefs,http://localhost:8080/entity/Q2007
+Q2008,Variable renewable energy,http://localhost:8080/entity/Q2008
+Q201,Acceptability of policy or system change,http://localhost:8080/entity/Q201
+Q2012,Vertical land motion,http://localhost:8080/entity/Q2012
+Q2013,Very short-lived halogenated substances,http://localhost:8080/entity/Q2013
+Q2014,Volatile organic compounds,http://localhost:8080/entity/Q2014
+Q2019,Water cycle,http://localhost:8080/entity/Q2019
+Q202,(No label),http://localhost:8080/entity/Q202
+Q2020,Water mass,http://localhost:8080/entity/Q2020
+Q2021,Water security,http://localhost:8080/entity/Q2021
+Q2022,Water-use efficiency,http://localhost:8080/entity/Q2022
+Q2025,Well-being,http://localhost:8080/entity/Q2025
+Q2026,Well-mixed greenhouse gas,http://localhost:8080/entity/Q2026
+Q2027,West African monsoon,http://localhost:8080/entity/Q2027
+Q2029,Wind energy,http://localhost:8080/entity/Q2029
+Q203,(No label),http://localhost:8080/entity/Q203
+Q2031,Zero emissions commitment,http://localhost:8080/entity/Q2031
+Q2033,Impact assessment,http://localhost:8080/entity/Q2033
+Q2034,pH,http://localhost:8080/entity/Q2034
+Q204,(No label),http://localhost:8080/entity/Q204
+Q205,(No label),http://localhost:8080/entity/Q205
+Q206,(No label),http://localhost:8080/entity/Q206
+Q207,(No label),http://localhost:8080/entity/Q207
+Q208,(No label),http://localhost:8080/entity/Q208
+Q2087,Acronym,http://localhost:8080/entity/Q2087
+Q2088,μatm,http://localhost:8080/entity/Q2088
+Q2089,1.5DS,http://localhost:8080/entity/Q2089
+Q209,(No label),http://localhost:8080/entity/Q209
+Q2090,2DS,http://localhost:8080/entity/Q2090
+Q2091,ACCESS,http://localhost:8080/entity/Q2091
+Q2092,ACCMIP,http://localhost:8080/entity/Q2092
+Q2093,ACCRN,http://localhost:8080/entity/Q2093
+Q2094,ACOLA,http://localhost:8080/entity/Q2094
+Q2095,ACs,http://localhost:8080/entity/Q2095
+Q2096,ADB,http://localhost:8080/entity/Q2096
+Q2097,ADVANCE,http://localhost:8080/entity/Q2097
+Q2098,AEZ,http://localhost:8080/entity/Q2098
+Q2099,AfDB,http://localhost:8080/entity/Q2099
+Q21,Framing and Context,http://localhost:8080/entity/Q21
+Q210,(No label),http://localhost:8080/entity/Q210
+Q2100,AFOLU,http://localhost:8080/entity/Q2100
+Q2101,AGCM,http://localhost:8080/entity/Q2101
+Q2102,AI,http://localhost:8080/entity/Q2102
+Q2103,AIM,http://localhost:8080/entity/Q2103
+Q2104,ALA,http://localhost:8080/entity/Q2104
+Q2105,AMAP,http://localhost:8080/entity/Q2105
+Q2106,AMOC,http://localhost:8080/entity/Q2106
+Q2107,AMP,http://localhost:8080/entity/Q2107
+Q2108,AMZ,http://localhost:8080/entity/Q2108
+Q2109,ANT,http://localhost:8080/entity/Q2109
+Q211,(No label),http://localhost:8080/entity/Q211
+Q2110,APEX,http://localhost:8080/entity/Q2110
+Q2111,AR,http://localhost:8080/entity/Q2111
+Q2112,AR4,http://localhost:8080/entity/Q2112
+Q2113,AR5,http://localhost:8080/entity/Q2113
+Q2114,AR6,http://localhost:8080/entity/Q2114
+Q2115,ARC,http://localhost:8080/entity/Q2115
+Q2116,ASEAN,http://localhost:8080/entity/Q2116
+Q2117,ASIA,http://localhost:8080/entity/Q2117
+Q2118,AUD,http://localhost:8080/entity/Q2118
+Q2119,B2DS,http://localhost:8080/entity/Q2119
+Q212,(No label),http://localhost:8080/entity/Q212
+Q2120,BASIC,http://localhost:8080/entity/Q2120
+Q2121,BC,http://localhost:8080/entity/Q2121
+Q2122,BCC-CSM,http://localhost:8080/entity/Q2122
+Q2123,BCM,http://localhost:8080/entity/Q2123
+Q2124,BECCS,http://localhost:8080/entity/Q2124
+Q2125,BET,http://localhost:8080/entity/Q2125
+Q2126,BEV,http://localhost:8080/entity/Q2126
+Q2127,BNEF,http://localhost:8080/entity/Q2127
+Q2128,BNU,http://localhost:8080/entity/Q2128
+Q2129,BRT,http://localhost:8080/entity/Q2129
+Q213,(No label),http://localhost:8080/entity/Q213
+Q2130,cm,http://localhost:8080/entity/Q2130
+Q2131,C,http://localhost:8080/entity/Q2131
+Q2132,CA,http://localhost:8080/entity/Q2132
+Q2133,CAF,http://localhost:8080/entity/Q2133
+Q2134,CAM,http://localhost:8080/entity/Q2134
+Q2135,CAMx,http://localhost:8080/entity/Q2135
+Q2136,CanESM,http://localhost:8080/entity/Q2136
+Q2137,CanRCM,http://localhost:8080/entity/Q2137
+Q2138,CAR,http://localhost:8080/entity/Q2138
+Q2139,CAS,http://localhost:8080/entity/Q2139
+Q214,(No label),http://localhost:8080/entity/Q214
+Q2140,Cat-HM,http://localhost:8080/entity/Q2140
+Q2141,CbA,http://localhost:8080/entity/Q2141
+Q2142,CBD,http://localhost:8080/entity/Q2142
+Q2143,CBDR-RC,http://localhost:8080/entity/Q2143
+Q2144,CBS & GNH,http://localhost:8080/entity/Q2144
+Q2145,CC,http://localhost:8080/entity/Q2145
+Q2146,CCAM,http://localhost:8080/entity/Q2146
+Q2147,CCC,http://localhost:8080/entity/Q2147
+Q2148,CCCma,http://localhost:8080/entity/Q2148
+Q2149,CCRIF,http://localhost:8080/entity/Q2149
+Q215,(No label),http://localhost:8080/entity/Q215
+Q2150,CCS,http://localhost:8080/entity/Q2150
+Q2151,CCSM,http://localhost:8080/entity/Q2151
+Q2152,CCT,http://localhost:8080/entity/Q2152
+Q2153,CCU,http://localhost:8080/entity/Q2153
+Q2154,CCUS,http://localhost:8080/entity/Q2154
+Q2155,CDD,http://localhost:8080/entity/Q2155
+Q2156,CD-LINKS,http://localhost:8080/entity/Q2156
+Q2157,CDM,http://localhost:8080/entity/Q2157
+Q2158,CDP,http://localhost:8080/entity/Q2158
+Q2159,CDR,http://localhost:8080/entity/Q2159
+Q216,(No label),http://localhost:8080/entity/Q216
+Q2160,CEA,http://localhost:8080/entity/Q2160
+Q2161,CEC,http://localhost:8080/entity/Q2161
+Q2162,CEDS,http://localhost:8080/entity/Q2162
+Q2163,CEMICS,http://localhost:8080/entity/Q2163
+Q2164,CES,http://localhost:8080/entity/Q2164
+Q2165,CESM,http://localhost:8080/entity/Q2165
+Q2166,CEU,http://localhost:8080/entity/Q2166
+Q2167,CFCs,http://localhost:8080/entity/Q2167
+Q2168,CGCM,http://localhost:8080/entity/Q2168
+Q2169,CGE,http://localhost:8080/entity/Q2169
+Q217,(No label),http://localhost:8080/entity/Q217
+Q2170,CGI,http://localhost:8080/entity/Q2170
+Q2171,CGIAR,http://localhost:8080/entity/Q2171
+Q2172,CH4,http://localhost:8080/entity/Q2172
+Q2173,CHP,http://localhost:8080/entity/Q2173
+Q2174,CI,http://localhost:8080/entity/Q2174
+Q2175,CIRED,http://localhost:8080/entity/Q2175
+Q2176,CISL,http://localhost:8080/entity/Q2176
+Q2177,CLM,http://localhost:8080/entity/Q2177
+Q2178,CMAQ,http://localhost:8080/entity/Q2178
+Q2179,CMIP3,http://localhost:8080/entity/Q2179
+Q218,(No label),http://localhost:8080/entity/Q218
+Q2180,CMIP5,http://localhost:8080/entity/Q2180
+Q2181,CMIP6,http://localhost:8080/entity/Q2181
+Q2182,CNA,http://localhost:8080/entity/Q2182
+Q2183,CNRM,http://localhost:8080/entity/Q2183
+Q2184,CO,http://localhost:8080/entity/Q2184
+Q2185,CO2,http://localhost:8080/entity/Q2185
+Q2186,CO2e,http://localhost:8080/entity/Q2186
+Q2187,CO2eq,http://localhost:8080/entity/Q2187
+Q2188,CoM,http://localhost:8080/entity/Q2188
+Q2189,COP,http://localhost:8080/entity/Q2189
+Q219,(No label),http://localhost:8080/entity/Q219
+Q2190,COPPE-COFFEE,http://localhost:8080/entity/Q2190
+Q2191,CORDEX,http://localhost:8080/entity/Q2191
+Q2192,COSMO,http://localhost:8080/entity/Q2192
+Q2193,CRCM,http://localhost:8080/entity/Q2193
+Q2194,CRDPs,http://localhost:8080/entity/Q2194
+Q2195,CRIEPI,http://localhost:8080/entity/Q2195
+Q2196,CRISPR,http://localhost:8080/entity/Q2196
+Q2197,C-ROADS,http://localhost:8080/entity/Q2197
+Q2198,CRU,http://localhost:8080/entity/Q2198
+Q2199,CSA,http://localhost:8080/entity/Q2199
+Q22,Mitigation pathways,http://localhost:8080/entity/Q22
+Q220,Adaptation deficit,http://localhost:8080/entity/Q220
+Q2200,CSC,http://localhost:8080/entity/Q2200
+Q2201,CSDI,http://localhost:8080/entity/Q2201
+Q2202,CSIRO,http://localhost:8080/entity/Q2202
+Q2203,CSP,http://localhost:8080/entity/Q2203
+Q2204,CSR,http://localhost:8080/entity/Q2204
+Q2205,CTC,http://localhost:8080/entity/Q2205
+Q2206,CWD,http://localhost:8080/entity/Q2206
+Q2207,DACCS,http://localhost:8080/entity/Q2207
+Q2208,DACS,http://localhost:8080/entity/Q2208
+Q2209,DALY,http://localhost:8080/entity/Q2209
+Q221,Adaptation gap,http://localhost:8080/entity/Q221
+Q2210,DICE,http://localhost:8080/entity/Q2210
+Q2211,DJF,http://localhost:8080/entity/Q2211
+Q2212,DM8H,http://localhost:8080/entity/Q2212
+Q2213,DNE21+,http://localhost:8080/entity/Q2213
+Q2214,DOE,http://localhost:8080/entity/Q2214
+Q2215,DRI,http://localhost:8080/entity/Q2215
+Q2216,DRM,http://localhost:8080/entity/Q2216
+Q2217,DTU,http://localhost:8080/entity/Q2217
+Q2218,E,http://localhost:8080/entity/Q2218
+Q2219,EAF,http://localhost:8080/entity/Q2219
+Q222,Adaptation limits,http://localhost:8080/entity/Q222
+Q2220,EAIS,http://localhost:8080/entity/Q2220
+Q2221,EAS,http://localhost:8080/entity/Q2221
+Q2222,EbA,http://localhost:8080/entity/Q2222
+Q2223,EC,http://localhost:8080/entity/Q2223
+Q2224,ECF,http://localhost:8080/entity/Q2224
+Q2225,ECMWF,http://localhost:8080/entity/Q2225
+Q2226,ECS,http://localhost:8080/entity/Q2226
+Q2227,EDGAR,http://localhost:8080/entity/Q2227
+Q2228,EEA,http://localhost:8080/entity/Q2228
+Q2229,EGMAM,http://localhost:8080/entity/Q2229
+Q223,Adaptation needs,http://localhost:8080/entity/Q223
+Q2230,E-HYPE,http://localhost:8080/entity/Q2230
+Q2231,EJ,http://localhost:8080/entity/Q2231
+Q2232,EMEP,http://localhost:8080/entity/Q2232
+Q2233,EMF,http://localhost:8080/entity/Q2233
+Q2234,EMIC,http://localhost:8080/entity/Q2234
+Q2235,ENA,http://localhost:8080/entity/Q2235
+Q2236,ENSO,http://localhost:8080/entity/Q2236
+Q2237,EOR,http://localhost:8080/entity/Q2237
+Q2238,EPA,http://localhost:8080/entity/Q2238
+Q2239,EPIs,http://localhost:8080/entity/Q2239
+Q224,Adaptation options,http://localhost:8080/entity/Q224
+Q2240,ERA,http://localhost:8080/entity/Q2240
+Q2241,ERF,http://localhost:8080/entity/Q2241
+Q2242,ERFaci,http://localhost:8080/entity/Q2242
+Q2243,ERFari,http://localhost:8080/entity/Q2243
+Q2244,ESCOs,http://localhost:8080/entity/Q2244
+Q2245,ESL,http://localhost:8080/entity/Q2245
+Q2246,ESM,http://localhost:8080/entity/Q2246
+Q2247,ESR,http://localhost:8080/entity/Q2247
+Q2248,ESRB ASC,http://localhost:8080/entity/Q2248
+Q2249,ESRL,http://localhost:8080/entity/Q2249
+Q225,Adaptation pathways,http://localhost:8080/entity/Q225
+Q2250,Eta-CPTEC,http://localhost:8080/entity/Q2250
+Q2251,ETP,http://localhost:8080/entity/Q2251
+Q2252,ETS,http://localhost:8080/entity/Q2252
+Q2253,EU,http://localhost:8080/entity/Q2253
+Q2254,EU-FP6,http://localhost:8080/entity/Q2254
+Q2255,EUG4,http://localhost:8080/entity/Q2255
+Q2256,EURO-CORDEX,http://localhost:8080/entity/Q2256
+Q2257,EV,http://localhost:8080/entity/Q2257
+Q2258,EW,http://localhost:8080/entity/Q2258
+Q2259,FAIR,http://localhost:8080/entity/Q2259
+Q226,Adaptive capacity,http://localhost:8080/entity/Q226
+Q2260,FAO,http://localhost:8080/entity/Q2260
+Q2261,FAOSTAT,http://localhost:8080/entity/Q2261
+Q2262,FAQ,http://localhost:8080/entity/Q2262
+Q2263,FARM,http://localhost:8080/entity/Q2263
+Q2264,Fe,http://localhost:8080/entity/Q2264
+Q2265,FEMA,http://localhost:8080/entity/Q2265
+Q2266,FF,http://localhost:8080/entity/Q2266
+Q2267,FF&I,http://localhost:8080/entity/Q2267
+Q2268,F-gas,http://localhost:8080/entity/Q2268
+Q2269,FGOALS,http://localhost:8080/entity/Q2269
+Q227,Adaptive governance,http://localhost:8080/entity/Q227
+Q2270,FIO,http://localhost:8080/entity/Q2270
+Q2271,FMNR,http://localhost:8080/entity/Q2271
+Q2272,FUND,http://localhost:8080/entity/Q2272
+Q2273,FUSSR,http://localhost:8080/entity/Q2273
+Q2274,g,http://localhost:8080/entity/Q2274
+Q2275,GAMS,http://localhost:8080/entity/Q2275
+Q2276,GBAM,http://localhost:8080/entity/Q2276
+Q2277,GCAM,http://localhost:8080/entity/Q2277
+Q2278,GCC,http://localhost:8080/entity/Q2278
+Q2279,GCEC,http://localhost:8080/entity/Q2279
+Q228,Adaptive management,http://localhost:8080/entity/Q228
+Q2280,GCM,http://localhost:8080/entity/Q2280
+Q2281,GCP,http://localhost:8080/entity/Q2281
+Q2282,GDP,http://localhost:8080/entity/Q2282
+Q2283,GE,http://localhost:8080/entity/Q2283

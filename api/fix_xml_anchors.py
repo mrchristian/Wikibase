@@ -184,7 +184,9 @@ def main():
     new_ref_lines = ref_lines.copy()
     for para_start, anchor_ids in span_map.items():
         # Multiple anchors on one paragraph (rare): sort for determinism
-        spans = "".join(f'<span id="{aid}"></span>' for aid in sorted(anchor_ids))
+        # Use XML-escaped tags so they survive the MediaWiki XML import parser
+        # (bare '<span>' inside <text> XML content is silently stripped by libxml2)
+        spans = "".join(f'&lt;span id="{aid}"&gt;&lt;/span&gt;' for aid in sorted(anchor_ids))
         new_ref_lines[para_start] = spans + new_ref_lines[para_start]
 
     new_content = body + "\n".join(new_ref_lines)

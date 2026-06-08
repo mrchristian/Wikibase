@@ -3,7 +3,7 @@ from urllib.parse import quote
 
 # Configuration
 WIKI_URL = "https://prod-climatekg.semanticclimate.org"
-PAGE_TITLE = "IPCC:AR6/WGIII/Chapter-9"
+PAGE_TITLE = "IPCC:AR6/SR15/Chapter-1"
 
 def fetch_wiki_page_html(wiki_url, page_title):
     """
@@ -59,7 +59,7 @@ if __name__ == "__main__":
         html = fetch_wiki_page_html(WIKI_URL, PAGE_TITLE)
         
         # Save to file
-        output_file = "chapter_9.html"
+        output_file = "api/sr15-ch1.html"
         save_html_to_file(html, output_file)
         
         # Print first 500 characters as preview

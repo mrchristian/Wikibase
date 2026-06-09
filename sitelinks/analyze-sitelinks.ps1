@@ -122,6 +122,7 @@ function Analyze-Environment {
 
 | Item ID | Item Label | Sitelink URL |
 |---------|------------|--------------|
+
 "@
 
     foreach ($item in ($seriesRegistered | Sort-Object { $_.itemLabel.value })) {
@@ -139,6 +140,7 @@ function Analyze-Environment {
 
 | Item ID | Item Label | Wiki Page URL |
 |---------|------------|---------------|
+
 "@
 
     foreach ($item in ($seriesUnregistered | Sort-Object { $_.itemLabel.value })) {
@@ -156,6 +158,7 @@ function Analyze-Environment {
 
 | Item ID | Item Label |
 |---------|------------|
+
 "@
 
     foreach ($item in ($seriesMissing | Sort-Object { $_.itemLabel.value })) {
@@ -171,6 +174,7 @@ function Analyze-Environment {
 
 | Item ID | Item Label | Sitelink URL |
 |---------|------------|--------------|
+
 "@
 
     foreach ($item in ($chaptersRegistered | Sort-Object { $_.itemLabel.value })) {
@@ -188,6 +192,7 @@ function Analyze-Environment {
 
 | Item ID | Item Label | Wiki Page URL |
 |---------|------------|---------------|
+
 "@
 
     foreach ($item in ($chaptersUnregistered | Sort-Object { $_.itemLabel.value })) {
@@ -205,6 +210,7 @@ function Analyze-Environment {
 
 | Item ID | Item Label |
 |---------|------------|
+
 "@
 
     foreach ($item in ($chaptersMissing | Sort-Object { $_.itemLabel.value })) {

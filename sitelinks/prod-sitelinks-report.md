@@ -1,6 +1,6 @@
 # Sitelink Coverage Report: PROD Environment
 
-**Generated:** 2026-06-09 16:03:52
+**Generated:** 2026-06-09 16:13:12
 **Base URL:** https://prod-climatekg.semanticclimate.org
 
 ---
@@ -32,7 +32,8 @@
 ## Series (Q4) - Registered Sitelinks ✅
 
 | Item ID | Item Label | Sitelink URL |
-|---------|------------|--------------|| [Q35](https://prod-climatekg.semanticclimate.org/entity/Q35) | Special Report: Climate Change and Land | [IPCC:AR6/SRCCL](https://prod-climatekg.semanticclimate.org/wiki/IPCC:AR6/SRCCL) |
+|---------|------------|--------------|
+| [Q35](https://prod-climatekg.semanticclimate.org/entity/Q35) | Special Report: Climate Change and Land | [IPCC:AR6/SRCCL](https://prod-climatekg.semanticclimate.org/wiki/IPCC:AR6/SRCCL) |
 | [Q10](https://prod-climatekg.semanticclimate.org/entity/Q10) | Special Report: Global Warming of 1.5°C | [IPCC:AR6/SR15](https://prod-climatekg.semanticclimate.org/wiki/IPCC:AR6/SR15) |
 | [Q57](https://prod-climatekg.semanticclimate.org/entity/Q57) | Special Report: The Ocean and Cryosphere in a Changing Climate | [IPCC:AR6/SROCC](https://prod-climatekg.semanticclimate.org/wiki/IPCC:AR6/SROCC) |
 | [Q77](https://prod-climatekg.semanticclimate.org/entity/Q77) | Working Group I: Climate Change 2021 – The Physical Science Basis | [IPCC:AR6/WGI](https://prod-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI) |
@@ -44,7 +45,8 @@
 *These items have corresponding wiki pages that exist but are not registered as sitelinks in Wikibase.*
 
 | Item ID | Item Label | Wiki Page URL |
-|---------|------------|---------------|| [Q189](https://prod-climatekg.semanticclimate.org/entity/Q189) | Climate Change 2023: Synthesis Report. Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change | [IPCC:AR6/SYR](https://prod-climatekg.semanticclimate.org/wiki/IPCC:AR6/SYR) |
+|---------|------------|---------------|
+| [Q189](https://prod-climatekg.semanticclimate.org/entity/Q189) | Climate Change 2023: Synthesis Report. Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change | [IPCC:AR6/SYR](https://prod-climatekg.semanticclimate.org/wiki/IPCC:AR6/SYR) |
 | [Q106](https://prod-climatekg.semanticclimate.org/entity/Q106) | Working Group II: Climate Change 2022 – Impacts, Adaptation and Vulnerability | [IPCC:AR6/WGII](https://prod-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII) |
 | [Q150](https://prod-climatekg.semanticclimate.org/entity/Q150) | Working Group III: Climate Change 2022 – Mitigation of Climate Change | [IPCC:AR6/WGII](https://prod-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII) |
 
@@ -56,12 +58,14 @@
 
 | Item ID | Item Label |
 |---------|------------|
+
 ---
 
 ## Chapters (Q6) - Registered Sitelinks ✅
 
 | Item ID | Item Label | Sitelink URL |
-|---------|------------|--------------|| [Q188](https://prod-climatekg.semanticclimate.org/entity/Q188) | Accelerating the Transition in the Context of Sustainable Development | [IPCC:AR6/WGIII/Chapter-17](https://prod-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-17) |
+|---------|------------|--------------|
+| [Q188](https://prod-climatekg.semanticclimate.org/entity/Q188) | Accelerating the Transition in the Context of Sustainable Development | [IPCC:AR6/WGIII/Chapter-17](https://prod-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-17) |
 | [Q126](https://prod-climatekg.semanticclimate.org/entity/Q126) | Africa | [IPCC:AR6/WGII/Chapter-9](https://prod-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-9) |
 | [Q170](https://prod-climatekg.semanticclimate.org/entity/Q170) | Agriculture, Forestry and Other Land Uses (AFOLU) | [IPCC:AR6/WGIII/Chapter-7](https://prod-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-7) |
 | [Q127](https://prod-climatekg.semanticclimate.org/entity/Q127) | Asia | [IPCC:AR6/WGII/Chapter-10](https://prod-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-10) |
@@ -156,6 +160,7 @@
 
 | Item ID | Item Label | Wiki Page URL |
 |---------|------------|---------------|
+
 ---
 
 ## Chapters (Q6) - Missing ❌
@@ -163,7 +168,8 @@
 *These items have no wiki pages.*
 
 | Item ID | Item Label |
-|---------|------------|| [Q125](https://prod-climatekg.semanticclimate.org/entity/Q125) | Poverty, Livelihoods and Sustainable Development |
+|---------|------------|
+| [Q125](https://prod-climatekg.semanticclimate.org/entity/Q125) | Poverty, Livelihoods and Sustainable Development |
 
 ---
 

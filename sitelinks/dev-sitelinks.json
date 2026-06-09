@@ -1,0 +1,2550 @@
+{
+  "head": {
+    "vars": [
+      "item",
+      "itemLabel",
+      "type",
+      "typeLabel",
+      "sitelink",
+      "sitelinkStatus"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q188",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Accelerating the Transition in the Context of Sustainable Development"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-17",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q126",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Africa"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-9",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q170",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Agriculture, Forestry and Other Land Uses (AFOLU)"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-7",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q127",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Asia"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-10",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q140",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Biodiversity Hotspots"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Cross-Chapter-Paper-1",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q174",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Buildings"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-9",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q129",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Central and South America"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-12",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q72",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Changing Ocean, Marine Ecosystems, and Dependent Communities"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SROCC/Chapter-5",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q85",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Changing State of the Climate System"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/Chapter-2",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q141",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Cities and Settlements by the Sea"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Cross-Chapter-Paper-2",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q120",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Cities, Settlements and Key Infrastructure"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-6",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q103",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Climate Change Information for Regional Impact and for Risk Assessment"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/Chapter-12",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q136",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Climate Resilient Development Pathways"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-18",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q179",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Cross-sectoral Perspectives"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-12",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q135",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Decision-Making Options for Managing Risk"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-17",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q164",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Demand, Services and Social Aspects of Mitigation"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-5",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q48",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Desertification"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SRCCL/Chapter-3",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q142",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Deserts, Semiarid Areas and Desertification"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Cross-Chapter-Paper-3",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q157",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Emissions Trends and Drivers"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-2",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q168",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Energy Systems"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-6",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q130",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Europe"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-13",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q74",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Extremes, Abrupt Changes and Managing Risks"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SROCC/Chapter-6",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q53",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Food security"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SRCCL/Chapter-5",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q117",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Food, Fibre and Other Ecosystem Products"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-5",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q21",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Framing and Context"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SR15/Chapter-1",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q44",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Framing and context"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SRCCL/Chapter-1",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q64",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Framing and Context of the Report"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SROCC/Chapter-1",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q83",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Framing, Context, and Methods"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/Chapter-1",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q88",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Future Global Climate: Scenario-based Projections and Near-term Information"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/Chapter-4",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q90",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Global Carbon and Other Biogeochemical Cycles and Feedbacks"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/Chapter-5",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q123",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Health, Wellbeing and the Changing Structure of Communities"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-7",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q67",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "High Mountain Areas"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SROCC/Chapter-2",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q87",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Human Influence on the Climate System"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/Chapter-3",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q26",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Impacts of 1.5°C Global Warming on Natural and Human Systems"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SR15/Chapter-3",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q178",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Industry"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-11",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q186",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Innovation, Technology Development and Transfer"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-16",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q76",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Integrative Cross-Chapter Box on Low-lying Islands and Coasts"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SROCC/Cross-Chapter-Box-9",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q54",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Interlinkages between desertification, land degradation, food security and greenhouse gas fluxes: Synergies, trade-offs and integrated response options"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SRCCL/Chapter-6",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q183",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "International Cooperation"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-14",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q154",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Introduction and Framing"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-1",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q184",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Investment and Finance"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-15",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q133",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Key Risks across Sectors and Regions"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-16",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q50",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Land degradation"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SRCCL/Chapter-4",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q45",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Land–climate interactions"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SRCCL/Chapter-2",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q100",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Linking Global to Regional Climate Change"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/Chapter-10",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q192",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Longer Report"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SYR/Longer-Report",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q143",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mediterranean Region"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Cross-Chapter-Paper-4",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q160",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mitigation and Development Pathways in the Near to Mid-term"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-4",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q24",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mitigation Pathways Compatible with 1.5°C in the Context of Sustainable Development"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SR15/Chapter-2",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q158",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mitigation Pathways Compatible with Long-term Goals"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-3",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q145",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Mountains"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Cross-Chapter-Paper-5",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q181",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "National and Sub-national Policies and Institutions"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-13",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q131",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "North America"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-14",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q98",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ocean, Cryosphere and Sea Level Change"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/Chapter-9",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q114",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Oceans and Coastal Ecosystems and Their Services"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-3",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q111",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Point of Departure and Key Concepts"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-1",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q69",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Polar Regions"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SROCC/Chapter-3",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q146",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Polar Regions"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Cross-Chapter-Paper-6",
+          "type": "uri"
+        }
+      },
+      {
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Poverty, Livelihoods and Sustainable Development"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q125",
+          "type": "uri"
+        },
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "No",
+          "type": "literal"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q55",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Risk management and decision-making in relation to sustainable development"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SRCCL/Chapter-7",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q71",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Sea Level Rise and Implications for Low-Lying Islands, Coasts and Communities"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SROCC/Chapter-4",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q93",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Short-lived Climate Forcers"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/Chapter-6",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q132",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Small Islands"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-15",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q30",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Strengthening and Implementing the Global Response"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SR15/Chapter-4",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q38",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Summary for Policymakers"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SRCCL/SPM",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q60",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Summary for Policymakers"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SROCC/SPM",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q151",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Summary for Policymakers"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/SPM",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q107",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Summary for Policymakers"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/SPM",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q190",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Summary for Policymakers"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SYR/SPM",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q79",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Summary for Policymakers"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/SPM",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q14",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Summary for Policymakers"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SR15/SPM",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q33",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Sustainable Development, Poverty Eradication and Reducing Inequalities"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SR15/Chapter-5",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q17",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Technical Summary"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SR15/TS",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q152",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Technical Summary"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/TS",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q80",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Technical Summary"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/TS",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q61",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Technical Summary"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SROCC/TS",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q109",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Technical Summary"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/TS",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q41",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Technical Summary"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SRCCL/TS",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q112",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Terrestrial and Freshwater Ecosystems and Their Services"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-2",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q95",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "The Earth’s Energy Budget, Climate Feedbacks and Climate Sensitivity"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/Chapter-7",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q176",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Transport"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-10",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q149",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Tropical Forests"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Cross-Chapter-Paper-7",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q172",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Urban Systems and Other Settlements"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGIII/Chapter-8",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q116",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Water"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII/Chapter-4",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q96",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Water Cycle Changes"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/Chapter-8",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Chapter",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q101",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Weather and Climate Extreme Events in a Changing Climate"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q6",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/Chapter-11",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Series",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q189",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Climate Change 2023: Synthesis Report. Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q4",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SYR",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Series",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q35",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Special Report: Climate Change and Land"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q4",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SRCCL",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Series",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q10",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Special Report: Global Warming of 1.5°C"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q4",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SR15",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Series",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q57",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Special Report: The Ocean and Cryosphere in a Changing Climate"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q4",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/SROCC",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Series",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q77",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Working Group I: Climate Change 2021 – The Physical Science Basis"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q4",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Series",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q106",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Unregistered",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Working Group II: Climate Change 2022 – Impacts, Adaptation and Vulnerability"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q4",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Series",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q150",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Unregistered",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Working Group III: Climate Change 2022 – Mitigation of Climate Change"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q4",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGII",
+          "type": "uri"
+        }
+      },
+      {
+        "typeLabel": {
+          "value": "Unknown",
+          "type": "literal"
+        },
+        "item": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q104",
+          "type": "uri"
+        },
+        "sitelinkStatus": {
+          "value": "Yes",
+          "type": "literal"
+        },
+        "itemLabel": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Atlas"
+        },
+        "type": {
+          "value": "https://dev-climatekg.semanticclimate.org/entity/Q5",
+          "type": "uri"
+        },
+        "sitelink": {
+          "value": "https://dev-climatekg.semanticclimate.org/wiki/IPCC:AR6/WGI/Chapter-Atlas",
+          "type": "uri"
+        }
+      }
+    ]
+  }
+}

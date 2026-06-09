@@ -1,0 +1,309 @@
+{
+  "pageid": 2422,
+  "ns": 120,
+  "title": "Item:Q189",
+  "lastrevid": 10490,
+  "modified": "2026-06-01T20:54:08Z",
+  "type": "item",
+  "id": "Q189",
+  "labels": {
+    "en": {
+      "language": "en",
+      "value": "Climate Change 2023: Synthesis Report. Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change"
+    }
+  },
+  "descriptions": {
+    "en": {
+      "language": "en",
+      "value": "Synthesis Report. Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change"
+    }
+  },
+  "aliases": {
+    "en": [
+      {
+        "language": "en",
+        "value": "IPCC_AR6; IPCC_AR6_SYR"
+      }
+    ]
+  },
+  "claims": {
+    "P1": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P1",
+          "hash": "6056844c4a6d3699fbafab69805eed5ca36eab0e",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 4,
+              "id": "Q4"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q189$34EDFE5C-6B8C-422E-A8D5-4B8C116948F4",
+        "rank": "normal"
+      }
+    ],
+    "P3": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P3",
+          "hash": "2501d06d0cbc272492a3e5c26c24943b9318dca0",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 7,
+              "id": "Q7"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q189$1484368D-3D3A-4F29-B6CC-CA030CABB10A",
+        "rank": "normal"
+      }
+    ],
+    "P10": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P10",
+          "hash": "596896a86039ceb164f2dd973fe2119d7c20cf9d",
+          "datavalue": {
+            "value": "10.59327/IPCC/AR6-9789291691647",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q189$248D3848-AA94-4C12-9443-5F9320A4D926",
+        "rank": "normal"
+      }
+    ],
+    "P11": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P11",
+          "hash": "ad1155af91593812a67dae968eb7edeac00313fa",
+          "datavalue": {
+            "value": "No license specified",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q189$80F363F2-32D7-4ACD-AE3A-1A88841DD35E",
+        "rank": "normal"
+      }
+    ],
+    "P8": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P8",
+          "hash": "b890447c97a84b94b6daa2ebf6285eac5e5f6f40",
+          "datavalue": {
+            "value": "2023-07-25",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q189$CC6DA8A6-1593-40D5-80C4-F16909A0EDF4",
+        "rank": "normal"
+      }
+    ],
+    "P12": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12",
+          "hash": "b486302a66ada63616738f58541cee4debed3363",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 8,
+              "id": "Q8"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q189$DFB86004-1D86-41AC-92CF-2C9E4E94D626",
+        "rank": "normal"
+      },
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P12",
+          "hash": "3c97ce591ceafc530aa862a88b6a59d457d5fefc",
+          "datavalue": {
+            "value": {
+              "entity-type": "item",
+              "numeric-id": 56,
+              "id": "Q56"
+            },
+            "type": "wikibase-entityid"
+          },
+          "datatype": "wikibase-item"
+        },
+        "type": "statement",
+        "id": "Q189$BF05C4AB-C7D5-4BBD-B2E6-B99D8E92F4B1",
+        "rank": "normal"
+      }
+    ],
+    "P29": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P29",
+          "hash": "82540c0ae15a70c691bdfa6e7dcc62960847dd30",
+          "datavalue": {
+            "value": "Intergovernmental Panel on Climate Change (IPCC)",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q189$D019B895-6CE2-4E86-AC16-7F4A3A659D03",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "04c184ae6f8e69b50430f72098dfb303a3853d3b",
+            "snaks": {
+              "P17": [
+                {
+                  "snaktype": "value",
+                  "property": "P17",
+                  "hash": "70ff0f3751b1f2af362b1fb91d0005712cf3696d",
+                  "datavalue": {
+                    "value": "https://doi.org/10.59327/IPCC/AR6-9789291691647",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P18": [
+                {
+                  "snaktype": "value",
+                  "property": "P18",
+                  "hash": "62e4afa6ff55038bfc1f80f95bff5a79f05eed25",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-06-01T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P19": [
+                {
+                  "snaktype": "value",
+                  "property": "P19",
+                  "hash": "27649d4897f57fb558858dcecb16912b69942698",
+                  "datavalue": {
+                    "value": "Crossref",
+                    "type": "string"
+                  },
+                  "datatype": "string"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P17",
+              "P18",
+              "P19"
+            ]
+          }
+        ]
+      }
+    ],
+    "P33": [
+      {
+        "mainsnak": {
+          "snaktype": "value",
+          "property": "P33",
+          "hash": "ab27492d2b2ba1e2694472d63e7364c4008a456c",
+          "datavalue": {
+            "value": "The Synthesis Report (SYR) is a stand-alone synthesis of the most policy-relevant evidence from the scientific, technical, and socio-economic literature assessed in the Sixth Assessment Report (AR6) of the Intergovernmental Panel on Climate Change (IPCC). The SYR distils and integrates the main findings of the three reports of the Working Groups of the IPCC during the AR6, and the three AR6 Special Reports into a concise document. It consists of a Summary for Policymakers and a longer report.",
+            "type": "string"
+          },
+          "datatype": "string"
+        },
+        "type": "statement",
+        "id": "Q189$C92C8673-2EBE-4ED3-A058-8A607BC1AADC",
+        "rank": "normal",
+        "references": [
+          {
+            "hash": "04c184ae6f8e69b50430f72098dfb303a3853d3b",
+            "snaks": {
+              "P17": [
+                {
+                  "snaktype": "value",
+                  "property": "P17",
+                  "hash": "70ff0f3751b1f2af362b1fb91d0005712cf3696d",
+                  "datavalue": {
+                    "value": "https://doi.org/10.59327/IPCC/AR6-9789291691647",
+                    "type": "string"
+                  },
+                  "datatype": "url"
+                }
+              ],
+              "P18": [
+                {
+                  "snaktype": "value",
+                  "property": "P18",
+                  "hash": "62e4afa6ff55038bfc1f80f95bff5a79f05eed25",
+                  "datavalue": {
+                    "value": {
+                      "time": "+2026-06-01T00:00:00Z",
+                      "timezone": 0,
+                      "before": 0,
+                      "after": 0,
+                      "precision": 11,
+                      "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+                    },
+                    "type": "time"
+                  },
+                  "datatype": "time"
+                }
+              ],
+              "P19": [
+                {
+                  "snaktype": "value",
+                  "property": "P19",
+                  "hash": "27649d4897f57fb558858dcecb16912b69942698",
+                  "datavalue": {
+                    "value": "Crossref",
+                    "type": "string"
+                  },
+                  "datatype": "string"
+                }
+              ]
+            },
+            "snaks-order": [
+              "P17",
+              "P18",
+              "P19"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "sitelinks": {}
+}

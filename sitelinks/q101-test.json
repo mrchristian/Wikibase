@@ -1,0 +1,341 @@
+{
+  "entities": {
+    "Q101": {
+      "pageid": 2334,
+      "ns": 120,
+      "title": "Item:Q101",
+      "lastrevid": 10692,
+      "modified": "2026-06-01T20:55:28Z",
+      "type": "item",
+      "id": "Q101",
+      "labels": {
+        "en": {
+          "language": "en",
+          "value": "Weather and Climate Extreme Events in a Changing Climate"
+        }
+      },
+      "descriptions": {
+        "en": {
+          "language": "en",
+          "value": "Climate Change 2021 – The Physical Science Basis"
+        }
+      },
+      "aliases": {
+        "en": [
+          {
+            "language": "en",
+            "value": "IPCC_AR6; IPCC_AR6_WGI; B:1; C:11"
+          }
+        ]
+      },
+      "claims": {
+        "P1": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P1",
+              "hash": "b8dce1c2f57c39767c85aac552254e073a343af3",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 6,
+                  "id": "Q6"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q101$C8182CB8-7943-4313-AF32-05774DFF4446",
+            "rank": "normal"
+          }
+        ],
+        "P3": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P3",
+              "hash": "f75f67b9daa1fe363d3b99d67bd5d73f2dba4f61",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 81,
+                  "id": "Q81"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q101$BB233546-C099-45BB-B145-25142DF0647C",
+            "rank": "normal"
+          }
+        ],
+        "P5": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P5",
+              "hash": "c018a3eaee7ad233557799e64d7c1c7fbfdfd984",
+              "datavalue": {
+                "value": "https://wikibase.runstop.uk/wiki/IPCC:Wg1:Chapter:Chapter-11",
+                "type": "string"
+              },
+              "datatype": "url"
+            },
+            "type": "statement",
+            "id": "Q101$AD0EC809-4597-432C-941A-90158244E21D",
+            "rank": "normal"
+          }
+        ],
+        "P6": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P6",
+              "hash": "53e1bec1312c8cc817718f4a725ecb28ed019690",
+              "datavalue": {
+                "value": "https://www.ipcc.ch/report/ar6/wg1/chapter/chapter-11/",
+                "type": "string"
+              },
+              "datatype": "url"
+            },
+            "type": "statement",
+            "id": "Q101$713FA687-DA55-4E10-B5FD-4716B53AD8DF",
+            "rank": "normal"
+          }
+        ],
+        "P7": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P7",
+              "hash": "e30dda14f528ae84a8aee7adcc0650bbf81a750d",
+              "datavalue": {
+                "value": "https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_Chapter11.pdf",
+                "type": "string"
+              },
+              "datatype": "url"
+            },
+            "type": "statement",
+            "id": "Q101$AA354927-9AE6-4245-89D3-212E17213B47",
+            "rank": "normal"
+          }
+        ],
+        "P10": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P10",
+              "hash": "69dc73f8ce96c49fde23861b43012034e52e98ee",
+              "datavalue": {
+                "value": "10.1017/9781009157896.013",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "id": "Q101$76F181FF-0B7B-4BD2-9450-F5E8229CAE9A",
+            "rank": "normal"
+          }
+        ],
+        "P9": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P9",
+              "hash": "1875457909e464fd8980f931fa451bc2f3c1627b",
+              "datavalue": {
+                "value": "W3215426448",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "id": "Q101$23F667B5-017E-452E-B395-764C05B22C9F",
+            "rank": "normal"
+          }
+        ],
+        "P12": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P12",
+              "hash": "6d9ee1900a6b69f77962820bfd223af92d957701",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 73,
+                  "id": "Q73"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q101$B1877F62-933A-4B10-872E-761B18EC28DB",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P12",
+              "hash": "fd6a9499c0c9aa28c64ee62e61a3a4358a16953a",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 12,
+                  "id": "Q12"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q101$37801939-31EA-4DBE-A4D5-E0542E18FF87",
+            "rank": "normal"
+          },
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P12",
+              "hash": "8a882b504d38316b215cafe597bef013eb5a4f04",
+              "datavalue": {
+                "value": {
+                  "entity-type": "item",
+                  "numeric-id": 25,
+                  "id": "Q25"
+                },
+                "type": "wikibase-entityid"
+              },
+              "datatype": "wikibase-item"
+            },
+            "type": "statement",
+            "id": "Q101$862235DC-7F0F-4DE7-929F-B5BF1A69DC53",
+            "rank": "normal"
+          }
+        ],
+        "P29": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P29",
+              "hash": "5b7f1060600cb6fb6ea28d19a248d81dd75d35b1",
+              "datavalue": {
+                "value": "Cambridge University Press",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "id": "Q101$DD4953C0-2E18-4A6F-B891-23AB63D3C919",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "d5112831a098e6955e761f8c689f92d79f131010",
+                "snaks": {
+                  "P17": [
+                    {
+                      "snaktype": "value",
+                      "property": "P17",
+                      "hash": "1f1ac0cf03774f2c8b78396b78411f20f7412b0b",
+                      "datavalue": "@{value=https://doi.org/10.1017/9781009157896.013; type=string}",
+                      "datatype": "url"
+                    }
+                  ],
+                  "P18": [
+                    {
+                      "snaktype": "value",
+                      "property": "P18",
+                      "hash": "62e4afa6ff55038bfc1f80f95bff5a79f05eed25",
+                      "datavalue": "@{value=; type=time}",
+                      "datatype": "time"
+                    }
+                  ],
+                  "P19": [
+                    {
+                      "snaktype": "value",
+                      "property": "P19",
+                      "hash": "27649d4897f57fb558858dcecb16912b69942698",
+                      "datavalue": "@{value=Crossref; type=string}",
+                      "datatype": "string"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P17",
+                  "P18",
+                  "P19"
+                ]
+              }
+            ]
+          }
+        ],
+        "P30": [
+          {
+            "mainsnak": {
+              "snaktype": "value",
+              "property": "P30",
+              "hash": "750c7293f86356f05484934b19dc830240ed1587",
+              "datavalue": {
+                "value": "9781009157896",
+                "type": "string"
+              },
+              "datatype": "string"
+            },
+            "type": "statement",
+            "id": "Q101$7C466025-29B8-4A4A-9982-2A11F323802C",
+            "rank": "normal",
+            "references": [
+              {
+                "hash": "d5112831a098e6955e761f8c689f92d79f131010",
+                "snaks": {
+                  "P17": [
+                    {
+                      "snaktype": "value",
+                      "property": "P17",
+                      "hash": "1f1ac0cf03774f2c8b78396b78411f20f7412b0b",
+                      "datavalue": "@{value=https://doi.org/10.1017/9781009157896.013; type=string}",
+                      "datatype": "url"
+                    }
+                  ],
+                  "P18": [
+                    {
+                      "snaktype": "value",
+                      "property": "P18",
+                      "hash": "62e4afa6ff55038bfc1f80f95bff5a79f05eed25",
+                      "datavalue": "@{value=; type=time}",
+                      "datatype": "time"
+                    }
+                  ],
+                  "P19": [
+                    {
+                      "snaktype": "value",
+                      "property": "P19",
+                      "hash": "27649d4897f57fb558858dcecb16912b69942698",
+                      "datavalue": "@{value=Crossref; type=string}",
+                      "datatype": "string"
+                    }
+                  ]
+                },
+                "snaks-order": [
+                  "P17",
+                  "P18",
+                  "P19"
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "sitelinks": {
+        "climatekg-wiki": {
+          "site": "climatekg-wiki",
+          "title": "IPCC:AR6/WGI/Chapter-11",
+          "badges": []
+        }
+      }
+    }
+  },
+  "success": 1
+}

@@ -1,7 +1,7 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-    Promote the TEST database to the PRODUCTION server.
+    Promote the TEST database (and optionally images) to the PRODUCTION server.
 
 .DESCRIPTION
     1. Dumps the TEST MariaDB database inside the TEST container using --result-file
@@ -16,6 +16,15 @@
     7. Re-registers PROD sitelinks by restarting wikibase-sitelinks-init.
     8. Restarts the wikibase container on PROD.
 
+    With -IncludeImages:
+    9. Tars /var/www/html/images (excluding thumb/) from the TEST wikibase
+       container, SCP's it via this Windows machine to PROD, copies it into
+       the PROD wikibase container and extracts it, then fixes ownership and
+       clears stale thumbnails.
+
+.PARAMETER IncludeImages
+    Also promote uploaded images from TEST to PROD.
+
 .NOTES
     TEST DB password is read from TEST_DB_PASS in C:\Wikibase\.env (gitignored).
     PROD DB password is read from PROD_DB_PASS in C:\Wikibase\.env (gitignored).
@@ -29,6 +38,9 @@
 
     SSH key: C:\Users\<user>\.ssh\id_wikibase_sync
 #>
+param(
+    [switch]$IncludeImages
+)
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
@@ -38,6 +50,9 @@ $ErrorActionPreference = "Stop"
 # ---------------------------------------------------------------------------
 Write-Host ""
 Write-Host "WARNING: This will overwrite the PRODUCTION database with TEST data." -ForegroundColor Red
+if ($IncludeImages) {
+    Write-Host "WARNING: This will ALSO overwrite PRODUCTION images/uploads with TEST data." -ForegroundColor Red
+}
 Write-Host "Production: prod-climatekg.semanticclimate.org (178.105.222.174)" -ForegroundColor Red
 Write-Host ""
 $confirm = Read-Host "Type PROMOTE to confirm"
@@ -66,6 +81,16 @@ $PROD_SSH_KEY    = "C:\Users\$env:USERNAME\.ssh\id_wikibase_sync"  # authorized 
 $BACKUP_DIR      = "C:\Wikibase\backups"
 $TIMESTAMP       = Get-Date -Format "yyyyMMdd_HHmmss"
 $DUMP_FILENAME   = "test_to_prod_$TIMESTAMP.sql"
+
+$TEST_WB_CONTAINER = "wikibase"           # wikibase (Apache/PHP) container on TEST
+$PROD_WB_CONTAINER = "wikibase"           # wikibase (Apache/PHP) container on PROD
+
+$IMAGES_ARCHIVE          = "test_to_prod_images_$TIMESTAMP.tar.gz"
+$TEST_IMAGES_ARCHIVE     = "/tmp/$IMAGES_ARCHIVE"   # inside TEST wikibase container
+$TEST_HOST_IMAGES_TEMP   = "/tmp/$IMAGES_ARCHIVE"   # on TEST host after docker cp
+$LOCAL_IMAGES_FILE       = Join-Path $BACKUP_DIR $IMAGES_ARCHIVE
+$PROD_HOST_IMAGES_TEMP   = "/tmp/$IMAGES_ARCHIVE"   # on PROD host before docker cp
+$PROD_IMAGES_TEMP        = "/tmp/images_restore.tar.gz"  # inside PROD wikibase container
 
 $CONTAINER_TEMP        = "/tmp/$DUMP_FILENAME"
 $TEST_HOST_TEMP        = "/tmp/$DUMP_FILENAME"
@@ -219,11 +244,9 @@ if ($LASTEXITCODE -ne 0) {
 }
 
 # ---------------------------------------------------------------------------
-# Step 6 — Reset PROD admin password + run MediaWiki update
+# Step 6 -- Reset PROD admin password + run MediaWiki update
 # ---------------------------------------------------------------------------
 Step "6/8  Resetting PROD admin password and running MediaWiki update"
-
-$PROD_WB_CONTAINER = "wikibase"
 
 ssh -i $PROD_SSH_KEY "${PROD_USER}@${PROD_HOST}" "docker exec ${PROD_WB_CONTAINER} php /var/www/html/maintenance/run.php update --conf /config/LocalSettings.php --quick"
 if ($LASTEXITCODE -ne 0) { Die "MediaWiki update on PROD failed." }
@@ -260,6 +283,81 @@ Step "8/8  Wikibase restart"
 OK "Wikibase was restarted as part of step 7"
 
 # ---------------------------------------------------------------------------
+# Optional: Promote images from TEST to PROD
+# ---------------------------------------------------------------------------
+if ($IncludeImages) {
+    # Count images on TEST before transfer for verification
+    Step "Images 1/4  Checking TEST image count"
+    $testCount = ssh -i $TEST_SSH_KEY "${TEST_USER}@${TEST_HOST}" `
+        "docker exec $TEST_WB_CONTAINER bash -c `"find /var/www/html/images -type f -not -path '*/thumb/*' -not -name '.htaccess' -not -name 'README' | wc -l`""
+    OK "TEST image files (excluding thumbnails): $($testCount.Trim())"
+
+    # -------------------------------------------------------------------------
+    # Archive images inside TEST wikibase container (exclude thumb/)
+    # -------------------------------------------------------------------------
+    Step "Images 2/4  Archiving TEST wikibase images (excluding thumbnails)"
+
+    Write-Host "This may take a minute for large image sets..." -ForegroundColor Yellow
+    ssh -i $TEST_SSH_KEY "${TEST_USER}@${TEST_HOST}" `
+        "docker exec $TEST_WB_CONTAINER tar --exclude=thumb -czf $TEST_IMAGES_ARCHIVE /var/www/html/images && echo DONE"
+    if ($LASTEXITCODE -ne 0) { Die "tar failed inside TEST wikibase container." }
+    OK "Archive created at $TEST_IMAGES_ARCHIVE inside $TEST_WB_CONTAINER"
+
+    ssh -i $TEST_SSH_KEY "${TEST_USER}@${TEST_HOST}" `
+        "docker cp ${TEST_WB_CONTAINER}:${TEST_IMAGES_ARCHIVE} ${TEST_HOST_IMAGES_TEMP} && echo DONE"
+    if ($LASTEXITCODE -ne 0) { Die "docker cp from TEST container to host failed." }
+
+    # -------------------------------------------------------------------------
+    # SCP archive via local machine to PROD
+    # -------------------------------------------------------------------------
+    Step "Images 3/4  Transferring archive: TEST -> local -> PROD"
+
+    Write-Host "Downloading from TEST (may take several minutes)..." -ForegroundColor Yellow
+    scp -i $TEST_SSH_KEY "${TEST_USER}@${TEST_HOST}:${TEST_HOST_IMAGES_TEMP}" $LOCAL_IMAGES_FILE
+    if ($LASTEXITCODE -ne 0) { Die "SCP download of images archive from TEST failed." }
+
+    $archiveSize = (Get-Item $LOCAL_IMAGES_FILE).Length
+    if ($archiveSize -lt 100KB) { Die "Downloaded images archive is too small ($archiveSize bytes)." }
+    OK "Images archive: $([math]::Round($archiveSize / 1MB, 1)) MB -- $LOCAL_IMAGES_FILE"
+
+    # Clean up TEST temp files
+    ssh -i $TEST_SSH_KEY "${TEST_USER}@${TEST_HOST}" `
+        "docker exec ${TEST_WB_CONTAINER} rm -f ${TEST_IMAGES_ARCHIVE} ; rm -f ${TEST_HOST_IMAGES_TEMP}"
+    OK "Cleaned up TEST temp files"
+
+    Write-Host "Uploading to PROD..." -ForegroundColor Yellow
+    scp -i $PROD_SSH_KEY $LOCAL_IMAGES_FILE "${PROD_USER}@${PROD_HOST}:${PROD_HOST_IMAGES_TEMP}"
+    if ($LASTEXITCODE -ne 0) { Die "SCP upload of images archive to PROD failed." }
+    OK "Images archive uploaded to PROD"
+
+    # -------------------------------------------------------------------------
+    # Extract inside PROD wikibase container, fix ownership, purge thumbnails
+    # -------------------------------------------------------------------------
+    Step "Images 4/4  Extracting images on PROD and fixing ownership"
+
+    ssh -i $PROD_SSH_KEY "${PROD_USER}@${PROD_HOST}" `
+        "docker cp ${PROD_HOST_IMAGES_TEMP} ${PROD_WB_CONTAINER}:${PROD_IMAGES_TEMP} && echo DONE"
+    if ($LASTEXITCODE -ne 0) { Die "docker cp of images archive into PROD container failed." }
+
+    ssh -i $PROD_SSH_KEY "${PROD_USER}@${PROD_HOST}" `
+        "docker exec ${PROD_WB_CONTAINER} sh -c 'find /var/www/html/images -mindepth 1 -not -name ckglogo1.png -not -name ckglogo1.svg -delete 2>/dev/null; tar -xzf ${PROD_IMAGES_TEMP} --strip-components=3 -C /var/www/html --exclude=var/www/html/images/ckglogo1.png --exclude=var/www/html/images/ckglogo1.svg && chown -R www-data:www-data /var/www/html/images && find /var/www/html/images/thumb -mindepth 1 -delete 2>/dev/null && rm -f ${PROD_IMAGES_TEMP} && echo DONE'"
+    if ($LASTEXITCODE -ne 0) { Die "Images extraction on PROD failed." }
+    OK "Images extracted, ownership fixed, stale thumbnails cleared on PROD"
+
+    ssh -i $PROD_SSH_KEY "${PROD_USER}@${PROD_HOST}" "rm -f ${PROD_HOST_IMAGES_TEMP}"
+
+    # Verify file count
+    $prodCount = ssh -i $PROD_SSH_KEY "${PROD_USER}@${PROD_HOST}" `
+        "docker exec ${PROD_WB_CONTAINER} bash -c `"find /var/www/html/images -type f -not -path '*/thumb/*' -not -name '.htaccess' -not -name 'README' | wc -l`""
+    OK "PROD image files after restore: $($prodCount.Trim())"
+    if ([int]$prodCount.Trim() -lt [int]$testCount.Trim()) {
+        Write-Host "[WARN] PROD count ($($prodCount.Trim())) is less than TEST count ($($testCount.Trim())). Some files may be missing." -ForegroundColor Yellow
+    } else {
+        OK "Image counts match or exceed TEST ($($testCount.Trim()) TEST / $($prodCount.Trim()) PROD)"
+    }
+}
+
+# ---------------------------------------------------------------------------
 # Summary
 # ---------------------------------------------------------------------------
 Write-Host ""
@@ -268,7 +366,13 @@ Write-Host " TEST → PROD sync complete!" -ForegroundColor Green
 Write-Host "============================================================" -ForegroundColor Green
 Write-Host ""
 Write-Host "  Local dump file : $LOCAL_FILE"
+if ($IncludeImages) {
+    Write-Host "  Images archive  : $LOCAL_IMAGES_FILE"
+}
 Write-Host "  Timestamp       : $TIMESTAMP"
 Write-Host ""
 Write-Host "Verify at https://prod-climatekg.semanticclimate.org" -ForegroundColor Yellow
+if ($IncludeImages) {
+    Write-Host "  Verify images at https://prod-climatekg.semanticclimate.org/wiki/Special:ListFiles" -ForegroundColor Yellow
+}
 Write-Host ""

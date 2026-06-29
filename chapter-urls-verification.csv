@@ -1,0 +1,89 @@
+QID,Label,MediaWiki_Page_Title,P5_URL
+Q14,Summary for Policymakers,IPCC:AR6/SR15/SPM,http://localhost:8080/wiki/IPCC:AR6/SR15/SPM
+Q17,Technical Summary,IPCC:AR6/SR15/TS,http://localhost:8080/wiki/IPCC:AR6/SR15/TS
+Q21,Framing and Context,IPCC:AR6/SR15/Chapter-1,http://localhost:8080/wiki/IPCC:AR6/SR15/Chapter-1
+Q24,Mitigation Pathways Compatible with 1.5°C in the Context of Sustainable Development,IPCC:AR6/SR15/Chapter-2,http://localhost:8080/wiki/IPCC:AR6/SR15/Chapter-2
+Q26,Impacts of 1.5°C Global Warming on Natural and Human Systems,IPCC:AR6/SR15/Chapter-3,http://localhost:8080/wiki/IPCC:AR6/SR15/Chapter-3
+Q30,Strengthening and Implementing the Global Response,IPCC:AR6/SR15/Chapter-4,http://localhost:8080/wiki/IPCC:AR6/SR15/Chapter-4
+Q33,"Sustainable Development, Poverty Eradication and Reducing Inequalities",IPCC:AR6/SR15/Chapter-5,http://localhost:8080/wiki/IPCC:AR6/SR15/Chapter-5
+Q38,Summary for Policymakers,IPCC:AR6/SRCCL/SPM,http://localhost:8080/wiki/IPCC:AR6/SRCCL/SPM
+Q41,Technical Summary,IPCC:AR6/SRCCL/TS,http://localhost:8080/wiki/IPCC:AR6/SRCCL/TS
+Q44,Framing and context,IPCC:AR6/SRCCL/Chapter-1,http://localhost:8080/wiki/IPCC:AR6/SRCCL/Chapter-1
+Q45,Land–climate interactions,IPCC:AR6/SRCCL/Chapter-2,http://localhost:8080/wiki/IPCC:AR6/SRCCL/Chapter-2
+Q48,Desertification,IPCC:AR6/SRCCL/Chapter-3,http://localhost:8080/wiki/IPCC:AR6/SRCCL/Chapter-3
+Q50,Land degradation,IPCC:AR6/SRCCL/Chapter-4,http://localhost:8080/wiki/IPCC:AR6/SRCCL/Chapter-4
+Q53,Food security,IPCC:AR6/SRCCL/Chapter-5,http://localhost:8080/wiki/IPCC:AR6/SRCCL/Chapter-5
+Q54,"Interlinkages between desertification, land degradation, food security and greenhouse gas fluxes: Synergies, trade-offs and integrated response options",IPCC:AR6/SRCCL/Chapter-6,http://localhost:8080/wiki/IPCC:AR6/SRCCL/Chapter-6
+Q55,Risk management and decision-making in relation to sustainable development,IPCC:AR6/SRCCL/Chapter-7,http://localhost:8080/wiki/IPCC:AR6/SRCCL/Chapter-7
+Q60,Summary for Policymakers,IPCC:AR6/SROCC/SPM,http://localhost:8080/wiki/IPCC:AR6/SROCC/SPM
+Q61,Technical Summary,IPCC:AR6/SROCC/TS,http://localhost:8080/wiki/IPCC:AR6/SROCC/TS
+Q64,Framing and Context of the Report,IPCC:AR6/SROCC/Chapter-1,http://localhost:8080/wiki/IPCC:AR6/SROCC/Chapter-1
+Q67,High Mountain Areas,IPCC:AR6/SROCC/Chapter-2,http://localhost:8080/wiki/IPCC:AR6/SROCC/Chapter-2
+Q69,Polar Regions,IPCC:AR6/SROCC/Chapter-3,http://localhost:8080/wiki/IPCC:AR6/SROCC/Chapter-3
+Q71,"Sea Level Rise and Implications for Low-Lying Islands, Coasts and Communities",IPCC:AR6/SROCC/Chapter-4,http://localhost:8080/wiki/IPCC:AR6/SROCC/Chapter-4
+Q72,"Changing Ocean, Marine Ecosystems, and Dependent Communities",IPCC:AR6/SROCC/Chapter-5,http://localhost:8080/wiki/IPCC:AR6/SROCC/Chapter-5
+Q74,"Extremes, Abrupt Changes and Managing Risks",IPCC:AR6/SROCC/Chapter-6,http://localhost:8080/wiki/IPCC:AR6/SROCC/Chapter-6
+Q76,Integrative Cross-Chapter Box on Low-lying Islands and Coasts,IPCC:AR6/SROCC/Cross-Chapter-Box-9,http://localhost:8080/wiki/IPCC:AR6/SROCC/Cross-Chapter-Box-9
+Q79,Summary for Policymakers,IPCC:AR6/WGI/SPM,http://localhost:8080/wiki/IPCC:AR6/WGI/SPM
+Q80,Technical Summary,IPCC:AR6/WGI/TS,http://localhost:8080/wiki/IPCC:AR6/WGI/TS
+Q83,"Framing, Context, and Methods",IPCC:AR6/WGI/Chapter-1,http://localhost:8080/wiki/IPCC:AR6/WGI/Chapter-1
+Q85,Changing State of the Climate System,IPCC:AR6/WGI/Chapter-2,http://localhost:8080/wiki/IPCC:AR6/WGI/Chapter-2
+Q87,Human Influence on the Climate System,IPCC:AR6/WGI/Chapter-3,http://localhost:8080/wiki/IPCC:AR6/WGI/Chapter-3
+Q88,Future Global Climate: Scenario-based Projections and Near-term Information,IPCC:AR6/WGI/Chapter-4,http://localhost:8080/wiki/IPCC:AR6/WGI/Chapter-4
+Q90,Global Carbon and Other Biogeochemical Cycles and Feedbacks,IPCC:AR6/WGI/Chapter-5,http://localhost:8080/wiki/IPCC:AR6/WGI/Chapter-5
+Q93,Short-lived Climate Forcers,IPCC:AR6/WGI/Chapter-6,http://localhost:8080/wiki/IPCC:AR6/WGI/Chapter-6
+Q95,"The Earth’s Energy Budget, Climate Feedbacks and Climate Sensitivity",IPCC:AR6/WGI/Chapter-7,http://localhost:8080/wiki/IPCC:AR6/WGI/Chapter-7
+Q96,Water Cycle Changes,IPCC:AR6/WGI/Chapter-8,http://localhost:8080/wiki/IPCC:AR6/WGI/Chapter-8
+Q98,"Ocean, Cryosphere and Sea Level Change",IPCC:AR6/WGI/Chapter-9,http://localhost:8080/wiki/IPCC:AR6/WGI/Chapter-9
+Q100,Linking Global to Regional Climate Change,IPCC:AR6/WGI/Chapter-10,http://localhost:8080/wiki/IPCC:AR6/WGI/Chapter-10
+Q101,Weather and Climate Extreme Events in a Changing Climate,IPCC:AR6/WGI/Chapter-11,http://localhost:8080/wiki/IPCC:AR6/WGI/Chapter-11
+Q103,Climate Change Information for Regional Impact and for Risk Assessment,IPCC:AR6/WGI/Chapter-12,http://localhost:8080/wiki/IPCC:AR6/WGI/Chapter-12
+Q104,Atlas,IPCC:AR6/WGI/Chapter-Atlas,http://localhost:8080/wiki/IPCC:AR6/WGI/Chapter-Atlas
+Q107,Summary for Policymakers,IPCC:AR6/WGII/SPM,http://localhost:8080/wiki/IPCC:AR6/WGII/SPM
+Q109,Technical Summary,IPCC:AR6/WGII/TS,http://localhost:8080/wiki/IPCC:AR6/WGII/TS
+Q111,Point of Departure and Key Concepts,IPCC:AR6/WGII/Chapter-1,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-1
+Q112,Terrestrial and Freshwater Ecosystems and Their Services,IPCC:AR6/WGII/Chapter-2,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-2
+Q114,Oceans and Coastal Ecosystems and Their Services,IPCC:AR6/WGII/Chapter-3,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-3
+Q116,Water,IPCC:AR6/WGII/Chapter-4,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-4
+Q117,"Food, Fibre and Other Ecosystem Products",IPCC:AR6/WGII/Chapter-5,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-5
+Q120,"Cities, Settlements and Key Infrastructure",IPCC:AR6/WGII/Chapter-6,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-6
+Q123,"Health, Wellbeing and the Changing Structure of Communities",IPCC:AR6/WGII/Chapter-7,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-7
+Q125,"Poverty, Livelihoods and Sustainable Development",(no sitelink),https://wikibase.runstop.uk/wiki/IPCC:Wg2:Chapter:Chapter-8
+Q126,Africa,IPCC:AR6/WGII/Chapter-9,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-9
+Q127,Asia,IPCC:AR6/WGII/Chapter-10,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-10
+Q128,Australasia,IPCC:AR6/WGII/Chapter-11,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-11
+Q129,Central and South America,IPCC:AR6/WGII/Chapter-12,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-12
+Q130,Europe,IPCC:AR6/WGII/Chapter-13,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-13
+Q131,North America,IPCC:AR6/WGII/Chapter-14,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-14
+Q132,Small Islands,IPCC:AR6/WGII/Chapter-15,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-15
+Q133,Key Risks across Sectors and Regions,IPCC:AR6/WGII/Chapter-16,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-16
+Q135,Decision-Making Options for Managing Risk,IPCC:AR6/WGII/Chapter-17,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-17
+Q136,Climate Resilient Development Pathways,IPCC:AR6/WGII/Chapter-18,http://localhost:8080/wiki/IPCC:AR6/WGII/Chapter-18
+Q140,Biodiversity Hotspots,IPCC:AR6/WGII/Cross-Chapter-Paper-1,http://localhost:8080/wiki/IPCC:AR6/WGII/Cross-Chapter-Paper-1
+Q141,Cities and Settlements by the Sea,IPCC:AR6/WGII/Cross-Chapter-Paper-2,http://localhost:8080/wiki/IPCC:AR6/WGII/Cross-Chapter-Paper-2
+Q142,"Deserts, Semiarid Areas and Desertification",IPCC:AR6/WGII/Cross-Chapter-Paper-3,http://localhost:8080/wiki/IPCC:AR6/WGII/Cross-Chapter-Paper-3
+Q143,Mediterranean Region,IPCC:AR6/WGII/Cross-Chapter-Paper-4,http://localhost:8080/wiki/IPCC:AR6/WGII/Cross-Chapter-Paper-4
+Q145,Mountains,IPCC:AR6/WGII/Cross-Chapter-Paper-5,http://localhost:8080/wiki/IPCC:AR6/WGII/Cross-Chapter-Paper-5
+Q146,Polar Regions,IPCC:AR6/WGII/Cross-Chapter-Paper-6,http://localhost:8080/wiki/IPCC:AR6/WGII/Cross-Chapter-Paper-6
+Q149,Tropical Forests,IPCC:AR6/WGII/Cross-Chapter-Paper-7,http://localhost:8080/wiki/IPCC:AR6/WGII/Cross-Chapter-Paper-7
+Q151,Summary for Policymakers,IPCC:AR6/WGIII/SPM,http://localhost:8080/wiki/IPCC:AR6/WGIII/SPM
+Q152,Technical Summary,IPCC:AR6/WGIII/TS,http://localhost:8080/wiki/IPCC:AR6/WGIII/TS
+Q154,Introduction and Framing,IPCC:AR6/WGIII/Chapter-1,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-1
+Q157,Emissions Trends and Drivers,IPCC:AR6/WGIII/Chapter-2,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-2
+Q158,Mitigation Pathways Compatible with Long-term Goals,IPCC:AR6/WGIII/Chapter-3,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-3
+Q160,Mitigation and Development Pathways in the Near to Mid-term,IPCC:AR6/WGIII/Chapter-4,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-4
+Q164,"Demand, Services and Social Aspects of Mitigation",IPCC:AR6/WGIII/Chapter-5,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-5
+Q168,Energy Systems,IPCC:AR6/WGIII/Chapter-6,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-6
+Q170,"Agriculture, Forestry and Other Land Uses (AFOLU)",IPCC:AR6/WGIII/Chapter-7,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-7
+Q172,Urban Systems and Other Settlements,IPCC:AR6/WGIII/Chapter-8,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-8
+Q174,Buildings,IPCC:AR6/WGIII/Chapter-9,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-9
+Q176,Transport,IPCC:AR6/WGIII/Chapter-10,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-10
+Q178,Industry,IPCC:AR6/WGIII/Chapter-11,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-11
+Q179,Cross-sectoral Perspectives,IPCC:AR6/WGIII/Chapter-12,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-12
+Q181,National and Sub-national Policies and Institutions,IPCC:AR6/WGIII/Chapter-13,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-13
+Q183,International Cooperation,IPCC:AR6/WGIII/Chapter-14,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-14
+Q184,Investment and Finance,IPCC:AR6/WGIII/Chapter-15,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-15
+Q186,"Innovation, Technology Development and Transfer",IPCC:AR6/WGIII/Chapter-16,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-16
+Q188,Accelerating the Transition in the Context of Sustainable Development,IPCC:AR6/WGIII/Chapter-17,http://localhost:8080/wiki/IPCC:AR6/WGIII/Chapter-17
+Q190,Summary for Policymakers,IPCC:AR6/SYR/SPM,http://localhost:8080/wiki/IPCC:AR6/SYR/SPM
+Q192,Longer Report,IPCC:AR6/SYR/Longer-Report,http://localhost:8080/wiki/IPCC:AR6/SYR/Longer-Report

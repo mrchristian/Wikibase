@@ -9,9 +9,11 @@
 > | `docs/hetzner-deploy-guide.md` | One-time server provisioning on Hetzner |
 > | `docs/server-admin.md` | Server resource management — disk, Docker logs, maintenance |
 > | `docs/sync-guide.md` | Background reference — sync strategy options (context only) |
+> | `docs/p5-url-update-guide.md` | P5 (Wiki URL) update — applying canonical URLs to Chapter items across all environments |
 > | Sync scripts — see §4 | [`sync-local-to-dev.ps1`](../scripts/sync/sync-local-to-dev.ps1) · [`sync-local-to-test.ps1`](../scripts/sync/sync-local-to-test.ps1) · [`sync-dev-to-test.ps1`](../scripts/sync/sync-dev-to-test.ps1) · [`sync-dev-to-prod.ps1`](../scripts/sync/sync-dev-to-prod.ps1) · [`sync-test-to-prod.ps1`](../scripts/sync/sync-test-to-prod.ps1) · [`pull-from-dev.ps1`](../scripts/sync/pull-from-dev.ps1) |
 > | Experimental workflow — see §11 | [`experimental-import-workflow.ps1`](../scripts/experimental-import-workflow.ps1) |
 > | Backup scripts — see §12 | [`backup-local-db.ps1`](../scripts/backup/backup-local-db.ps1) |
+> | WDQS maintenance — see §13 | [`wdqs-reindex-prod.ps1`](../scripts/wdqs-reindex-prod.ps1) |
 > | Deploy scripts — see §6 | [`deploy.sh`](../scripts/deploy/deploy.sh) · [`deploy-dev.sh`](../scripts/deploy/deploy-dev.sh) · [`deploy-test.sh`](../scripts/deploy/deploy-test.sh) · [`deploy-prod.sh`](../scripts/deploy/deploy-prod.sh) |
 
 This document is the master reference for the 4-tier Docker DevOps workflow.
@@ -216,10 +218,17 @@ TEST_MW_ADMIN_PASS=<test-mediawiki-admin-password>
 > **Use case**: promoting staged content directly from TEST to PROD when TEST is the validated source (e.g. after a bulk import was reviewed on TEST).
 
 ```powershell
+# DB only
 .\scripts\sync\sync-test-to-prod.ps1
+
+# DB + uploaded images (wikibase_images volume)
+.\scripts\sync\sync-test-to-prod.ps1 -IncludeImages
 ```
 > Script: [scripts/sync/sync-test-to-prod.ps1](../scripts/sync/sync-test-to-prod.ps1)
 > **Note**: requires typing `PROMOTE` at the confirmation prompt to prevent accidental overwrites.
+> `-IncludeImages` tars `/var/www/html/images` (excluding `thumb/`) from the TEST container,
+> stages it via this Windows machine, copies it into the PROD container and extracts it,
+> then fixes `www-data` ownership and clears stale thumbnails.
 
 Required entries in `C:\Wikibase\.env`:
 ```
@@ -239,10 +248,17 @@ PROD_MW_ADMIN_PASS=<prod-mediawiki-admin-password>
 ### DEV → LOCAL  (pull DEV DB to LOCAL for testing)
 
 ```powershell
+# DB only
 .\scripts\sync\pull-from-dev.ps1
+
+# DB + uploaded images (wikibase_images volume)
+.\scripts\sync\pull-from-dev.ps1 -IncludeImages
 ```
 > Script: [scripts/sync/pull-from-dev.ps1](../scripts/sync/pull-from-dev.ps1)
-> **Note**: DB only — no `-DbOnly` flag needed. Uploads/images are not copied.
+> `-IncludeImages` tars `/var/www/html/images` (excluding `thumb/`) from the DEV container, SCPs it to local,
+> then serves it via a temporary Python HTTP server so the local container can fetch it with `curl`
+> (avoids the `docker cp` large-file pipe crash on Windows Docker Desktop).
+> Requires `python` on PATH when using `-IncludeImages`.
 
 ---
 
@@ -537,3 +553,37 @@ The following are excluded from the GitHub repo and must be backed up independen
 - [ ] `C:\Wikibase\.env` passwords recorded in password manager
 - [ ] `C:\Wikibase\backups\` folder synced to cloud storage (OneDrive or equivalent)
 - [ ] SSH key `C:\Users\<user>\.ssh\id_wikibase_sync` backed up securely (or regeneratable — pub key is on servers)
+
+---
+
+## 13. WDQS Maintenance
+
+### Full re-index (SPARQL index out of date)
+
+Use when the SPARQL/Query UI is returning stale or missing results that don't match the Wikibase database — for example after a database restore, or when the wdqs-updater has fallen too far behind and incremental updates are no longer catching up.
+
+```powershell
+.\scripts\wdqs-reindex-prod.ps1
+```
+
+> Script: [scripts/wdqs-reindex-prod.ps1](../scripts/wdqs-reindex-prod.ps1)
+> Type `REINDEX` at the confirmation prompt.
+
+**What it does:**
+1. Stops `wdqs-updater` (incremental updater)
+2. Stops `wdqs` (Blazegraph)
+3. Deletes the Blazegraph journal file from the `wdqs_data` Docker volume
+4. Restarts `wdqs` with a fresh empty journal
+5. Waits for `wdqs` to become healthy (up to 5 minutes)
+6. Restarts `wdqs-updater` — with no stored timestamp it loads **all items from scratch**
+
+> **Downtime**: WDQS/SPARQL is unavailable during the re-index. Expect **10–30+ minutes** depending on item count.
+
+**Monitor progress:**
+```sh
+ssh -i C:\Users\<user>\.ssh\id_wikibase_sync root@178.105.222.174 'docker logs -f wikibase-wdqs-updater'
+```
+
+**Verify complete:**
+- Query UI responds at https://prod-climatekg.semanticclimate.org/query/
+- SPARQL returns results at https://prod-climatekg.semanticclimate.org/query/proxy/sparql

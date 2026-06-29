@@ -1,19 +1,29 @@
 #Requires -Version 5.1
 <#
 .SYNOPSIS
-    Pull the DEV MariaDB database and overwrite the local Wikibase instance,
-    then re-register localhost sitelinks.
+    Pull the DEV MariaDB database (and optionally uploaded images) and overwrite
+    the local Wikibase instance, then re-register localhost sitelinks.
 
 .DESCRIPTION
     1. Dumps the DEV database inside the DEV MariaDB container using
-       --result-file (bypasses SSH/PowerShell stream encoding — see
+       --result-file (bypasses SSH/PowerShell stream encoding -- see
        backups/mariadb-backup-powershell-encoding-notes.md).
     2. Copies the dump from the container to the DEV host, then SCP's it
        to this Windows machine.
     3. Copies the SQL file into the local MariaDB container and imports it from
-       inside (no PowerShell stream involved — avoids UTF-16LE corruption).
+       inside (no PowerShell stream involved -- avoids UTF-16LE corruption).
     4. Re-registers localhost sitelinks by restarting wikibase-sitelinks-init.
     5. Restarts the wikibase container to clear PHP/object caches.
+
+    With -IncludeImages:
+    6. Tars /var/www/html/images (excluding thumb/) from the DEV wikibase
+       container, SCPs it to this machine, then serves it via a temporary
+       local HTTP server so the local container can fetch it with curl
+       (avoids the docker cp large-file pipe crash on Windows Docker Desktop).
+       Fixes www-data ownership and purges stale thumbnails after extraction.
+
+.PARAMETER IncludeImages
+    Also pull uploaded images from DEV (/var/www/html/images volume).
 
 .NOTES
     DEV DB password is read from DEV_DB_PASS in a local .env file
@@ -24,6 +34,9 @@
 
     If the variable is absent the script will prompt securely.
 #>
+param(
+    [switch]$IncludeImages
+)
 
 Set-StrictMode -Version Latest
 $ErrorActionPreference = "Stop"
@@ -46,11 +59,20 @@ $LOCAL_CONTAINER  = "wikibase-mariadb"
 $BACKUP_DIR       = "C:\Wikibase\backups"
 $TIMESTAMP        = Get-Date -Format "yyyyMMdd_HHmmss"
 $DUMP_FILENAME    = "prod_pull_$TIMESTAMP.sql"
+$IMAGES_FILENAME  = "dev_images_$TIMESTAMP.tar.gz"
 
 $CONTAINER_TEMP   = "/tmp/$DUMP_FILENAME"      # path inside DEV container
 $DEV_HOST_TEMP    = "/tmp/$DUMP_FILENAME"      # path on DEV host after docker cp
 $LOCAL_FILE       = Join-Path $BACKUP_DIR $DUMP_FILENAME
 $LOCAL_CONTAINER_TEMP = "/tmp/restore.sql"      # path inside local container
+
+$DEV_WIKIBASE_CONTAINER  = "wikibase"           # wikibase container name on DEV
+$LOCAL_WIKIBASE_CONTAINER = "wikibase"          # wikibase container name on LOCAL
+$IMAGES_CONTAINER_TEMP   = "/tmp/$IMAGES_FILENAME"  # path inside DEV wikibase container
+$IMAGES_DEV_HOST_TEMP    = "/tmp/$IMAGES_FILENAME"  # path on DEV host after docker cp
+$IMAGES_LOCAL_FILE       = Join-Path $BACKUP_DIR $IMAGES_FILENAME
+$IMAGES_LOCAL_CONTAINER_TEMP = "/tmp/$IMAGES_FILENAME"  # path inside local container (downloaded via curl)
+$IMAGES_HTTP_PORT        = 9876                 # temporary HTTP server port (must be free)
 
 # ---------------------------------------------------------------------------
 # Resolve DEV DB password
@@ -109,6 +131,17 @@ if (-not $?) { Die "ssh command not found. Ensure OpenSSH is installed." }
 
 $null = Get-Command scp -ErrorAction SilentlyContinue
 if (-not $?) { Die "scp command not found. Ensure OpenSSH is installed." }
+
+if ($IncludeImages) {
+    $null = Get-Command python -ErrorAction SilentlyContinue
+    if (-not $?) { Die "python not found on PATH. Required for -IncludeImages (temporary HTTP server)." }
+
+    $portInUse = Get-NetTCPConnection -LocalPort $IMAGES_HTTP_PORT -ErrorAction SilentlyContinue
+    if ($portInUse) {
+        Die "Port $IMAGES_HTTP_PORT is already in use. Free the port or edit `$IMAGES_HTTP_PORT in this script."
+    }
+    OK "Port $IMAGES_HTTP_PORT is free"
+}
 
 OK "All required commands found"
 
@@ -267,6 +300,115 @@ docker exec wikibase php /var/www/html/maintenance/run.php changePassword `
 OK "Admin password reset to local default (adminpass123!)"
 
 # ---------------------------------------------------------------------------
+# Optional: Pull images from DEV
+# ---------------------------------------------------------------------------
+if ($IncludeImages) {
+    # Count images on DEV before transfer for verification
+    Step "Images 1/5  Checking DEV image count"
+    $devCount = ssh -i $SSH_KEY "${DEV_USER}@${DEV_HOST}" `
+        "docker exec $DEV_WIKIBASE_CONTAINER bash -c `"find /var/www/html/images -type f -not -path '*/thumb/*' -not -name '.htaccess' -not -name 'README' | wc -l`""
+    OK "DEV image files (excluding thumbnails): $($devCount.Trim())"
+
+    # -------------------------------------------------------------------------
+    # Archive images inside DEV container (exclude thumb/ -- regenerated on demand)
+    # -------------------------------------------------------------------------
+    Step "Images 2/5  Archiving DEV wikibase images (excluding thumbnails)"
+
+    Write-Host "This may take a minute for large image sets..." -ForegroundColor Yellow
+    ssh -i $SSH_KEY "${DEV_USER}@${DEV_HOST}" `
+        "docker exec $DEV_WIKIBASE_CONTAINER tar -czf $IMAGES_CONTAINER_TEMP --exclude=./thumb -C /var/www/html/images . && echo DONE"
+    if ($LASTEXITCODE -ne 0) { Die "tar failed inside DEV container. Check disk space and container health." }
+    OK "Archive created at $IMAGES_CONTAINER_TEMP inside $DEV_WIKIBASE_CONTAINER"
+
+    # -------------------------------------------------------------------------
+    # Copy archive to DEV host then SCP to local machine
+    # -------------------------------------------------------------------------
+    Step "Images 3/5  Downloading archive to local machine"
+
+    ssh -i $SSH_KEY "${DEV_USER}@${DEV_HOST}" `
+        "docker cp ${DEV_WIKIBASE_CONTAINER}:${IMAGES_CONTAINER_TEMP} ${IMAGES_DEV_HOST_TEMP} && echo DONE"
+    if ($LASTEXITCODE -ne 0) { Die "docker cp from DEV container to host failed." }
+
+    Write-Host "Downloading via SCP (may take several minutes for large image sets)..." -ForegroundColor Yellow
+    scp -i $SSH_KEY "${DEV_USER}@${DEV_HOST}:${IMAGES_DEV_HOST_TEMP}" $IMAGES_LOCAL_FILE
+    if ($LASTEXITCODE -ne 0) { Die "SCP download of images archive failed." }
+
+    $archiveSize = (Get-Item $IMAGES_LOCAL_FILE).Length
+    if ($archiveSize -lt 100KB) {
+        Die "Downloaded archive is only $archiveSize bytes -- transfer likely failed."
+    }
+    OK "Archive saved as $IMAGES_LOCAL_FILE ($([math]::Round($archiveSize / 1MB, 1)) MB)"
+
+    # Tidy up remote temp files
+    ssh -i $SSH_KEY "${DEV_USER}@${DEV_HOST}" `
+        "docker exec $DEV_WIKIBASE_CONTAINER rm -f $IMAGES_CONTAINER_TEMP ; rm -f $IMAGES_DEV_HOST_TEMP"
+    OK "Cleaned up temp files on DEV server"
+
+    # -------------------------------------------------------------------------
+    # Serve archive over HTTP so the local container can fetch it via curl.
+    # docker cp of large files (> ~100 MB) crashes Docker Desktop on Windows
+    # via the named-pipe backend. Serving over HTTP is the reliable workaround.
+    # -------------------------------------------------------------------------
+    Step "Images 4/5  Transferring archive into local container (via HTTP)"
+
+    Write-Host "Starting temporary HTTP server on port $IMAGES_HTTP_PORT ..." -ForegroundColor Yellow
+    $httpJob = Start-Job -ScriptBlock {
+        param($dir, $port)
+        Set-Location $dir
+        python -m http.server $port
+    } -ArgumentList $BACKUP_DIR, $IMAGES_HTTP_PORT
+
+    Start-Sleep -Seconds 2
+
+    Write-Host "Container downloading archive from host (host.docker.internal:$IMAGES_HTTP_PORT)..." -ForegroundColor Yellow
+    docker exec $LOCAL_WIKIBASE_CONTAINER curl -s -o $IMAGES_LOCAL_CONTAINER_TEMP `
+        "http://host.docker.internal:${IMAGES_HTTP_PORT}/${IMAGES_FILENAME}"
+    if ($LASTEXITCODE -ne 0) {
+        Stop-Job $httpJob | Out-Null ; Remove-Job $httpJob | Out-Null
+        Die "curl inside container failed. Ensure curl is available in the container image."
+    }
+
+    $innerSize = docker exec $LOCAL_WIKIBASE_CONTAINER bash -c "stat -c%s $IMAGES_LOCAL_CONTAINER_TEMP 2>/dev/null || echo 0"
+    if ([long]$innerSize.Trim() -lt 100KB) {
+        Stop-Job $httpJob | Out-Null ; Remove-Job $httpJob | Out-Null
+        Die "Archive inside container is too small ($innerSize bytes). Download may have been truncated."
+    }
+    OK "Archive downloaded into container ($([math]::Round([long]$innerSize.Trim() / 1MB, 1)) MB)"
+
+    Stop-Job $httpJob | Out-Null
+    Remove-Job $httpJob | Out-Null
+    OK "Temporary HTTP server stopped"
+
+    # -------------------------------------------------------------------------
+    # Extract, fix ownership, purge stale thumbnails
+    # -------------------------------------------------------------------------
+    Step "Images 5/5  Extracting images and fixing ownership"
+
+    docker exec $LOCAL_WIKIBASE_CONTAINER tar -xzf $IMAGES_LOCAL_CONTAINER_TEMP -C /var/www/html/images
+    if ($LASTEXITCODE -ne 0) { Die "tar extraction failed inside local container." }
+
+    docker exec $LOCAL_WIKIBASE_CONTAINER chown -R www-data:www-data /var/www/html/images
+    OK "Ownership set to www-data:www-data"
+
+    # Purge stale thumbnails -- MediaWiki regenerates them on first page view
+    docker exec $LOCAL_WIKIBASE_CONTAINER bash -c "find /var/www/html/images/thumb -mindepth 1 -delete 2>/dev/null; echo done" | Out-Null
+    OK "Stale thumbnails cleared (will regenerate on demand)"
+
+    docker exec $LOCAL_WIKIBASE_CONTAINER rm -f $IMAGES_LOCAL_CONTAINER_TEMP
+    OK "Cleaned up archive from local container"
+
+    # Verify file count
+    $localCount = docker exec $LOCAL_WIKIBASE_CONTAINER bash -c `
+        "find /var/www/html/images -type f -not -path '*/thumb/*' -not -name '.htaccess' -not -name 'README' | wc -l"
+    OK "Local image files after restore: $($localCount.Trim())"
+    if ([int]$localCount.Trim() -lt [int]$devCount.Trim()) {
+        Write-Host "[WARN] Local count ($($localCount.Trim())) is less than DEV count ($($devCount.Trim())). Some files may be missing." -ForegroundColor Yellow
+    } else {
+        OK "Image counts match or exceed DEV ($($devCount.Trim()) DEV / $($localCount.Trim()) local)"
+    }
+}
+
+# ---------------------------------------------------------------------------
 # Summary
 # ---------------------------------------------------------------------------
 Write-Host ""
@@ -275,11 +417,18 @@ Write-Host " Pull from DEV complete!" -ForegroundColor Green
 Write-Host "============================================================" -ForegroundColor Green
 Write-Host ""
 Write-Host "  Local dump file : $LOCAL_FILE"
+if ($IncludeImages) {
+    Write-Host "  Images archive  : $IMAGES_LOCAL_FILE"
+}
 Write-Host "  Timestamp       : $TIMESTAMP"
 Write-Host ""
 Write-Host "Verify at http://localhost:8080" -ForegroundColor Yellow
 Write-Host ""
 Write-Host "  Local admin login: admin / adminpass123!" -ForegroundColor Yellow
 Write-Host ""
+if ($IncludeImages) {
+    Write-Host "  Verify images at http://localhost:8080/wiki/Special:ListFiles" -ForegroundColor Yellow
+    Write-Host ""
+}
 Write-Host "Note: Sitelinks should now be registered for mywiki (localhost)."
 Write-Host "Verify at http://localhost:8080/wiki/Special:Sites"

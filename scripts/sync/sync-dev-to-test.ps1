@@ -182,14 +182,12 @@ OK "Dump at $TEST_HOST_TEMP on TEST host"
 # ---------------------------------------------------------------------------
 Step "5/10  Importing dump into TEST database"
 
-ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" @"
+ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" (@"
 docker cp ${TEST_HOST_TEMP} ${TEST_CONTAINER}:${TARGET_CONTAINER_TEMP}
-docker exec ${TEST_CONTAINER} mysql -f -u ${TEST_DB_USER} -p'${TEST_DB_PASS}' \
-  --default-character-set=utf8mb4 ${TEST_DB_NAME} \
-  -e 'source ${TARGET_CONTAINER_TEMP}'
+docker exec ${TEST_CONTAINER} mysql -f -u ${TEST_DB_USER} -p'${TEST_DB_PASS}' --default-character-set=utf8mb4 ${TEST_DB_NAME} -e 'source ${TARGET_CONTAINER_TEMP}'
 docker exec ${TEST_CONTAINER} rm -f ${TARGET_CONTAINER_TEMP}
 rm -f ${TEST_HOST_TEMP}
-"@
+"@ -replace "`r`n", "`n")
 OK "Database import complete on TEST"
 
 # ---------------------------------------------------------------------------
@@ -238,14 +236,11 @@ if ($DbOnly) {
 # ---------------------------------------------------------------------------
 Step "7/10  Clearing stale cache tables on TEST"
 
-$cacheResult = ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" @"
-docker exec ${TEST_CONTAINER} mysql -u ${TEST_DB_USER} -p'${TEST_DB_PASS}' ${TEST_DB_NAME} \
-  -e 'TRUNCATE TABLE IF EXISTS objectcache; TRUNCATE TABLE IF EXISTS l10n_cache;'
-docker exec wikibase php /var/www/html/maintenance/run.php update \
-  --conf /config/LocalSettings.php --quick
-docker exec wikibase php /var/www/html/maintenance/run.php rebuildrecentchanges \
-  --conf /config/LocalSettings.php
-"@
+$cacheResult = ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" (@"
+docker exec ${TEST_CONTAINER} mysql -u ${TEST_DB_USER} -p'${TEST_DB_PASS}' ${TEST_DB_NAME} -e 'TRUNCATE TABLE IF EXISTS objectcache; TRUNCATE TABLE IF EXISTS l10n_cache;'
+docker exec wikibase php /var/www/html/maintenance/run.php update --conf /config/LocalSettings.php --quick
+docker exec wikibase php /var/www/html/maintenance/run.php rebuildrecentchanges --conf /config/LocalSettings.php
+"@ -replace "`r`n", "`n")
 if ($LASTEXITCODE -ne 0) {
     Write-Host "[WARN] Cache truncation or MediaWiki update had errors (non-fatal)." -ForegroundColor Yellow
 } else {
@@ -271,11 +266,11 @@ if ($LASTEXITCODE -ne 0) {
 # ---------------------------------------------------------------------------
 Step "9/10  Re-registering TEST sitelinks"
 
-ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" @"
+ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" (@"
 cd /opt/wikibase
 docker compose -f docker-compose.yml -f docker-compose.test.yml restart wikibase-sitelinks-init
 sleep 15
-"@
+"@ -replace "`r`n", "`n")
 OK "Sitelinks init restarted on TEST"
 
 # ---------------------------------------------------------------------------
@@ -283,10 +278,10 @@ OK "Sitelinks init restarted on TEST"
 # ---------------------------------------------------------------------------
 Step "10/10  Restarting wikibase container on TEST"
 
-ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" @"
+ssh -i $SSH_KEY "${TEST_USER}@${TEST_HOST}" (@"
 cd /opt/wikibase
 docker compose -f docker-compose.yml -f docker-compose.test.yml restart wikibase
-"@
+"@ -replace "`r`n", "`n")
 OK "Wikibase restarted on TEST"
 
 # ---------------------------------------------------------------------------

@@ -201,7 +201,11 @@ TEST_MW_ADMIN_PASS=<test-mediawiki-admin-password>
 ### DEV → TEST
 
 ```powershell
+# Full sync (DB + images)
 .\scripts\sync\sync-dev-to-test.ps1
+
+# DB only (skip uploads/images sync)
+.\scripts\sync\sync-dev-to-test.ps1 -DbOnly
 ```
 > Script: [scripts/sync/sync-dev-to-test.ps1](../scripts/sync/sync-dev-to-test.ps1)
 

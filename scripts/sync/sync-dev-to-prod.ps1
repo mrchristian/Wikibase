@@ -64,7 +64,7 @@ $PROD_DB_USER    = "wikibase"
 $PROD_DB_NAME    = "my_wiki"
 $PROD_CONTAINER  = "wikibase-mariadb"
 
-$SSH_KEY         = "C:\Users\$env:USERNAME\.ssh\id_rsa"
+$SSH_KEY         = "C:\Users\$env:USERNAME\.ssh\id_wikibase_sync"
 $BACKUP_DIR      = "C:\Wikibase\backups"
 $TIMESTAMP       = Get-Date -Format "yyyyMMdd_HHmmss"
 $DUMP_FILENAME   = "dev_to_prod_$TIMESTAMP.sql"
@@ -72,7 +72,7 @@ $DUMP_FILENAME   = "dev_to_prod_$TIMESTAMP.sql"
 $CONTAINER_TEMP       = "/tmp/$DUMP_FILENAME"
 $DEV_HOST_TEMP        = "/tmp/$DUMP_FILENAME"
 $LOCAL_FILE           = Join-Path $BACKUP_DIR $DUMP_FILENAME
-$PROD_HOST_TEMP       = "/tmp/$DUMP_FILENAME"
+$PROD_HOST_TEMP       = "/root/$DUMP_FILENAME"
 $TARGET_CONTAINER_TEMP = "/tmp/restore.sql"
 
 # ---------------------------------------------------------------------------
@@ -173,6 +173,7 @@ OK "Cleaned up DEV temp files"
 Step "4/8  Uploading dump to PROD host"
 
 scp -i $SSH_KEY $LOCAL_FILE "${PROD_USER}@${PROD_HOST}:${PROD_HOST_TEMP}"
+if ($LASTEXITCODE -ne 0) { Die "SCP upload to PROD failed -- check disk space on PROD: ssh root@${PROD_HOST} 'df -h /tmp'" }
 OK "Dump at $PROD_HOST_TEMP on PROD host"
 
 # ---------------------------------------------------------------------------
@@ -180,11 +181,13 @@ OK "Dump at $PROD_HOST_TEMP on PROD host"
 # ---------------------------------------------------------------------------
 Step "5/8  Importing dump into PROD database"
 
-ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" @"
-docker exec -i ${PROD_CONTAINER} mysql -u ${PROD_DB_USER} -p'${PROD_DB_PASS}' \
-  --default-character-set=utf8mb4 ${PROD_DB_NAME} < ${PROD_HOST_TEMP}
+ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" (@"
+docker cp ${PROD_HOST_TEMP} ${PROD_CONTAINER}:${TARGET_CONTAINER_TEMP}
+docker exec ${PROD_CONTAINER} mysql -f -u ${PROD_DB_USER} -p'${PROD_DB_PASS}' --default-character-set=utf8mb4 ${PROD_DB_NAME} -e 'source ${TARGET_CONTAINER_TEMP}'
+docker exec ${PROD_CONTAINER} rm -f ${TARGET_CONTAINER_TEMP}
 rm -f ${PROD_HOST_TEMP}
-"@
+"@ -replace "`r`n", "`n")
+if ($LASTEXITCODE -ne 0) { Die "Database import into PROD failed (exit $LASTEXITCODE)." }
 OK "Database import complete on PROD"
 
 # ---------------------------------------------------------------------------
@@ -192,14 +195,11 @@ OK "Database import complete on PROD"
 # ---------------------------------------------------------------------------
 Step "6/8  Clearing stale cache tables on PROD"
 
-ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" @"
-docker exec ${PROD_CONTAINER} mysql -u ${PROD_DB_USER} -p'${PROD_DB_PASS}' ${PROD_DB_NAME} \
-  -e 'TRUNCATE TABLE objectcache; TRUNCATE TABLE l10n_cache;'
-docker exec wikibase php /var/www/html/maintenance/run.php update \
-  --conf /config/LocalSettings.php --quick
-docker exec wikibase php /var/www/html/maintenance/run.php rebuildrecentchanges \
-  --conf /config/LocalSettings.php
-"@
+ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" (@"
+docker exec ${PROD_CONTAINER} mysql -u ${PROD_DB_USER} -p'${PROD_DB_PASS}' ${PROD_DB_NAME} -e 'TRUNCATE TABLE objectcache; TRUNCATE TABLE l10n_cache;'
+docker exec wikibase php /var/www/html/maintenance/run.php update --conf /config/LocalSettings.php --quick
+docker exec wikibase php /var/www/html/maintenance/run.php rebuildrecentchanges --conf /config/LocalSettings.php
+"@ -replace "`r`n", "`n")
 OK "Caches cleared and MediaWiki updated on PROD"
 
 # ---------------------------------------------------------------------------
@@ -207,11 +207,11 @@ OK "Caches cleared and MediaWiki updated on PROD"
 # ---------------------------------------------------------------------------
 Step "7/8  Re-registering PROD sitelinks"
 
-ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" @"
+ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" (@"
 cd /opt/wikibase
 docker compose -f docker-compose.yml -f docker-compose.prod.yml restart wikibase-sitelinks-init
 sleep 15
-"@
+"@ -replace "`r`n", "`n")
 OK "Sitelinks init restarted on PROD"
 
 # ---------------------------------------------------------------------------
@@ -219,10 +219,10 @@ OK "Sitelinks init restarted on PROD"
 # ---------------------------------------------------------------------------
 Step "8/8  Restarting wikibase container on PROD"
 
-ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" @"
+ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" (@"
 cd /opt/wikibase
 docker compose -f docker-compose.yml -f docker-compose.prod.yml restart wikibase
-"@
+"@ -replace "`r`n", "`n")
 OK "Wikibase restarted on PROD"
 
 # ---------------------------------------------------------------------------

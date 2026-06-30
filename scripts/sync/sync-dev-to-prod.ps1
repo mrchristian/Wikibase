@@ -79,13 +79,15 @@ $TARGET_CONTAINER_TEMP = "/tmp/restore.sql"
 # Resolve passwords from .env
 # ---------------------------------------------------------------------------
 $envFile = "C:\Wikibase\.env"
-$DEV_DB_PASS  = $null
-$PROD_DB_PASS = $null
+$DEV_DB_PASS      = $null
+$PROD_DB_PASS     = $null
+$PROD_MW_ADMIN_PASS = $null
 
 if (Test-Path $envFile) {
     Get-Content $envFile | ForEach-Object {
-        if ($_ -match "^DEV_DB_PASS\s*=")  { $DEV_DB_PASS  = ($_ -split "=", 2)[1].Trim() }
-        if ($_ -match "^PROD_DB_PASS\s*=") { $PROD_DB_PASS = ($_ -split "=", 2)[1].Trim() }
+        if ($_ -match "^DEV_DB_PASS\s*=")       { $DEV_DB_PASS       = ($_ -split "=", 2)[1].Trim() }
+        if ($_ -match "^PROD_DB_PASS\s*=")      { $PROD_DB_PASS      = ($_ -split "=", 2)[1].Trim() }
+        if ($_ -match "^PROD_MW_ADMIN_PASS\s*=") { $PROD_MW_ADMIN_PASS = ($_ -split "=", 2)[1].Trim() }
     }
 }
 
@@ -189,6 +191,15 @@ rm -f ${PROD_HOST_TEMP}
 "@ -replace "`r`n", "`n")
 if ($LASTEXITCODE -ne 0) { Die "Database import into PROD failed (exit $LASTEXITCODE)." }
 OK "Database import complete on PROD"
+
+# Reset PROD MediaWiki admin password (DB import overwrites it with DEV's password)
+if (-not [string]::IsNullOrEmpty($PROD_MW_ADMIN_PASS)) {
+    Write-Host "  Resetting MediaWiki admin password on PROD..." -ForegroundColor Yellow
+    ssh -i $SSH_KEY "${PROD_USER}@${PROD_HOST}" (@"
+docker exec wikibase php /var/www/html/maintenance/run.php changePassword --user=admin --password='${PROD_MW_ADMIN_PASS}' --conf /config/LocalSettings.php
+"@ -replace "`r`n", "`n")
+    OK "MediaWiki admin password reset on PROD"
+}
 
 # ---------------------------------------------------------------------------
 # Step 6 — Clear stale cache tables on PROD

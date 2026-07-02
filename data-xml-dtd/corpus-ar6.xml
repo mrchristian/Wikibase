@@ -1,10 +1,10 @@
-<?xml version="1.0" ?>
-<!DOCTYPE work SYSTEM "work.dtd">
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE work SYSTEM "corpus-ar6.dtd">
 <work>
-  <publication id="IPCC_AR6">
+  <report_series id="IPCC_AR6">
     <title>IPCC Sixth Assessment Report</title>
     <description>IPCC Cycle</description>
-    <series id="IPCC_AR6_SR15">
+    <report id="IPCC_AR6_SR15">
       <title>Special Report: Global Warming of 1.5°C</title>
       <description>Global Warming of 1.5°C</description>
       <doi>10.1017/9781009157940</doi>
@@ -13,10 +13,10 @@
       <date>2022-06-09</date>
       <pdf>https://www.ipcc.ch/site/assets/uploads/sites/2/2022/06/SR15_Full_Report_HR.pdf</pdf>
       <openalex>W4281382652</openalex>
-      <front_matter>
+      <text_division_spm_ts>
         <chapter id="1">
           <title>Summary for Policymakers</title>
-          <wiki>https://test.kewl.org/wiki/IPCC:Sr15:Chapter:Spm  </wiki>
+          <wiki>https://test.kewl.org/wiki/IPCC:Sr15:Chapter:Spm</wiki>
           <source>https://www.ipcc.ch/sr15/chapter/spm/</source>
           <pdf>https://www.ipcc.ch/site/assets/uploads/sites/2/2022/06/SPM_version_report_HR.pdf</pdf>
           <doi>10.1017/9781009157940.001</doi>
@@ -32,9 +32,9 @@
           <openalex>W4281400632</openalex>
           <tags>Global warming; Technical potential; Global warming potential</tags>
         </chapter>
-      </front_matter>
-      <books>
-        <book id="1">
+      </text_division_spm_ts>
+      <text_divisions>
+        <text_division id="1">
           <title>Chapters</title>
           <chapters>
             <chapter id="1">
@@ -83,10 +83,10 @@
               <tags>Adaptation; Sustainable development; Climate justice</tags>
             </chapter>
           </chapters>
-        </book>
-      </books>
-    </series>
-    <series id="IPCC_AR6_SRCCL">
+        </text_division>
+      </text_divisions>
+    </report>
+    <report id="IPCC_AR6_SRCCL">
       <title>Special Report: Climate Change and Land</title>
       <description>Climate Change and Land</description>
       <doi>10.1017/9781009157988</doi>
@@ -95,7 +95,7 @@
       <date>2022-12-08</date>
       <pdf>https://www.ipcc.ch/site/assets/uploads/sites/4/2022/11/SRCCL_Full_Report.pdf</pdf>
       <openalex>W4309402431</openalex>
-      <front_matter>
+      <text_division_spm_ts>
         <chapter id="1">
           <title>Summary for Policymakers</title>
           <wiki>https://test.kewl.org/wiki/IPCC:Srccl:Chapter:Summary-for-policymakers</wiki>
@@ -114,9 +114,9 @@
           <openalex>W4309402493</openalex>
           <tags>Land; Land-use change; Land-cover change</tags>
         </chapter>
-      </front_matter>
-      <books>
-        <book id="1">
+      </text_division_spm_ts>
+      <text_divisions>
+        <text_division id="1">
           <title>Chapters</title>
           <chapters>
             <chapter id="1">
@@ -183,10 +183,10 @@
               <tags>Land; Climate governance; Land management</tags>
             </chapter>
           </chapters>
-        </book>
-      </books>
-    </series>
-    <series id="IPCC_AR6_SROCC">
+        </text_division>
+      </text_divisions>
+    </report>
+    <report id="IPCC_AR6_SROCC">
       <title>Special Report: The Ocean and Cryosphere in a Changing Climate</title>
       <description>The Ocean and Cryosphere in a Changing Climate</description>
       <doi>10.1017/9781009157964</doi>
@@ -195,7 +195,7 @@
       <date>2022-05-19</date>
       <pdf>https://www.ipcc.ch/site/assets/uploads/sites/3/2022/03/SROCC_FullReport_FINAL.pdf</pdf>
       <openalex>W4210363077</openalex>
-      <front_matter>
+      <text_division_spm_ts>
         <chapter id="1">
           <title>Summary for Policymakers</title>
           <wiki>https://test.kewl.org/wiki/IPCC:Srocc:Chapter:Summary-for-policymakers</wiki>
@@ -214,9 +214,9 @@
           <openalex>W4210767500</openalex>
           <tags>Confidence; Ocean; Impacts</tags>
         </chapter>
-      </front_matter>
-      <books>
-        <book id="1">
+      </text_division_spm_ts>
+      <text_divisions>
+        <text_division id="1">
           <title>Chapters</title>
           <chapters>
             <chapter id="1">
@@ -274,8 +274,8 @@
               <tags>Climate extreme; Ocean; Global warming</tags>
             </chapter>
           </chapters>
-        </book>
-        <book id="2">
+        </text_division>
+        <text_division id="2">
           <title>Cross-Chapter-Box</title>
           <chapters>
             <chapter id="1">
@@ -288,10 +288,10 @@
               <tags>Sea level change; Adaptation; Ocean</tags>
             </chapter>
           </chapters>
-        </book>
-      </books>
-    </series>
-    <series id="IPCC_AR6_WGI">
+        </text_division>
+      </text_divisions>
+    </report>
+    <report id="IPCC_AR6_WGI">
       <title>Working Group I: Climate Change 2021 – The Physical Science Basis</title>
       <description>Climate Change 2021 – The Physical Science Basis</description>
       <doi>10.1017/9781009157896</doi>
@@ -300,7 +300,7 @@
       <date>2023-07-06</date>
       <pdf>https://www.ipcc.ch/report/ar6/wg1/downloads/report/IPCC_AR6_WGI_FullReport.pdf</pdf>
       <openalex>W4382363623</openalex>
-      <front_matter>
+      <text_division_spm_ts>
         <chapter id="1">
           <title>Summary for Policymakers</title>
           <wiki>https://test.kewl.org/wiki/IPCC:Wg1:Chapter:Summary-for-policymakers</wiki>
@@ -319,9 +319,9 @@
           <openalex>W4382358677</openalex>
           <tags>Confidence; Global warming; Climate model</tags>
         </chapter>
-      </front_matter>
-      <books>
-        <book id="1">
+      </text_division_spm_ts>
+      <text_divisions>
+        <text_division id="1">
           <title>Chapters</title>
           <chapters>
             <chapter id="1">
@@ -433,8 +433,8 @@
               <tags>Confidence; Climate extreme; Climate services</tags>
             </chapter>
           </chapters>
-        </book>
-        <book id="2">
+        </text_division>
+        <text_division id="2">
           <title>Atlas</title>
           <chapters>
             <chapter id="1">
@@ -447,10 +447,10 @@
               <tags>Climate model; Regional climate model; Climate variability</tags>
             </chapter>
           </chapters>
-        </book>
-      </books>
-    </series>
-    <series id="IPCC_AR6_WGII">
+        </text_division>
+      </text_divisions>
+    </report>
+    <report id="IPCC_AR6_WGII">
       <title>Working Group II: Climate Change 2022 – Impacts, Adaptation and Vulnerability</title>
       <description>Climate Change 2022 – Impacts, Adaptation and Vulnerability</description>
       <doi>10.1017/9781009325844</doi>
@@ -459,7 +459,7 @@
       <date>2023-06-22</date>
       <pdf>https://www.ipcc.ch/report/ar6/wg2/downloads/report/IPCC_AR6_WGII_FullReport.pdf</pdf>
       <openalex>W4382362038</openalex>
-      <front_matter>
+      <text_division_spm_ts>
         <chapter id="1">
           <title>Summary for Policymakers</title>
           <wiki>https://test.kewl.org/wiki/IPCC:Wg2:Chapter:Summary-for-policymakers</wiki>
@@ -478,9 +478,9 @@
           <openalex>W4382363579</openalex>
           <tags>Confidence; Adaptation; Risk</tags>
         </chapter>
-      </front_matter>
-      <books>
-        <book id="1">
+      </text_division_spm_ts>
+      <text_divisions>
+        <text_division id="1">
           <title>Chapters</title>
           <chapters>
             <chapter id="1">
@@ -646,8 +646,8 @@
               <tags>Adaptation; Sustainable development; Climate system</tags>
             </chapter>
           </chapters>
-        </book>
-        <book id="2">
+        </text_division>
+        <text_division id="2">
           <title>Cross-Chapter Papers</title>
           <chapters>
             <chapter id="1">
@@ -714,10 +714,10 @@
               <tags>Forest; Land; Sustainable forest management</tags>
             </chapter>
           </chapters>
-        </book>
-      </books>
-    </series>
-    <series id="IPCC_AR6_WGIII">
+        </text_division>
+      </text_divisions>
+    </report>
+    <report id="IPCC_AR6_WGIII">
       <title>Working Group III: Climate Change 2022 – Mitigation of Climate Change</title>
       <description>Climate Change 2022 – Mitigation of Climate Change</description>
       <doi>10.1017/9781009157926</doi>
@@ -726,7 +726,7 @@
       <date>2023-08-17</date>
       <pdf>https://www.ipcc.ch/report/ar6/wg3/downloads/report/IPCC_AR6_WGIII_FullReport.pdf</pdf>
       <openalex>W3216798413</openalex>
-      <front_matter>
+      <text_division_spm_ts>
         <chapter id="1">
           <title>Summary for Policymakers</title>
           <wiki>https://test.kewl.org/wiki/IPCC:Wg3:Chapter:Summary-for-policymakers</wiki>
@@ -745,9 +745,9 @@
           <openalex>W4385229598</openalex>
           <tags>Mitigation; Confidence; Mitigation pathways</tags>
         </chapter>
-      </front_matter>
-      <books>
-        <book id="1">
+      </text_division_spm_ts>
+      <text_divisions>
+        <text_division id="1">
           <title>Chapters</title>
           <chapters>
             <chapter id="1">
@@ -904,19 +904,19 @@
               <tags>Sustainable development; Mitigation; Transition</tags>
             </chapter>
           </chapters>
-        </book>
-      </books>
-    </series>
-    <series id="IPCC_AR6_SYR">
+        </text_division>
+      </text_divisions>
+    </report>
+    <report id="IPCC_AR6_SYR">
       <title>Climate Change 2023: Synthesis Report. Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change</title>
-      <description>Synthesis Report. Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change </description>
+      <description>Synthesis Report. Contribution of Working Groups I, II and III to the Sixth Assessment Report of the Intergovernmental Panel on Climate Change</description>
       <doi>10.59327/IPCC/AR6-9789291691647</doi>
       <license>No license specified</license>
       <tags>Social Sciences; Climate action</tags>
       <date>2023-07-25</date>
       <pdf>https://www.ipcc.ch/report/ar6/syr/downloads/report/IPCC_AR6_SYR_FullVolume.pdf</pdf>
       <openalex>W4385118605</openalex>
-      <front_matter>
+      <text_division_spm_ts>
         <chapter id="1">
           <title>Summary for Policymakers</title>
           <wiki>https://test.kewl.org/wiki/IPCC:Syr</wiki>
@@ -926,9 +926,9 @@
           <openalex>W4385123314</openalex>
           <tags>Confidence; Adaptation; Global warming</tags>
         </chapter>
-      </front_matter>
-      <books>
-        <book id="1">
+      </text_division_spm_ts>
+      <text_divisions>
+        <text_division id="1">
           <title>Chapters</title>
           <chapters>
             <chapter id="1">
@@ -941,9 +941,8 @@
               <tags>Confidence; Adaptation; Global warming</tags>
             </chapter>
           </chapters>
-        </book>
-      </books>
-    </series>
-  </publication>
+        </text_division>
+      </text_divisions>
+    </report>
+  </report_series>
 </work>
-<!-- vim: set shiftwidth=2 tabstop=2 softtabstop=2 expandtab: -->

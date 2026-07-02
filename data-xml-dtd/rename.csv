@@ -1,0 +1,5 @@
+Existing term corpus-ar6.dtd,New term corpus-ar6.dtd,Existing label WB,New Label WB,QID WB,Also known as WB
+publication,report_series,Publication,Report Series,Q3,Monographic Series
+series,report,Series,Report,Q4,Book; Monograph; Volume   
+book,text_division,Book,Text Division,Q5,Division
+front_matter,text_division_spm_ts,Front Matter,Text Division SPM TS,,Division

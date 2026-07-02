@@ -1,13 +1,13 @@
 <!-- The root container for any abstract art or structured publication -->
-<!ELEMENT work (publication | ANY)>
+<!ELEMENT work (report_series | ANY)>
 
 <!-- Use this structure when the 'work' is specifically a document -->
-<!ELEMENT publication (title, description, (series+ | book+))>
-<!ATTLIST publication id ID #REQUIRED>
+<!ELEMENT report_series (title, description, (report+ | text_division+))>
+<!ATTLIST report_series id ID #REQUIRED>
 
-<!-- At least one of DOI or ISBN is required for a Series -->
-<!ELEMENT series (title, description, ((doi, isbn?) | (isbn, doi?)), license, tags, date, front_matter?, books, pdf?, openalex?)>
-<!ATTLIST series id CDATA #REQUIRED>
+<!-- At least one of DOI or ISBN is required for a Report -->
+<!ELEMENT report (title, description, ((doi, isbn?) | (isbn, doi?)), license, tags, date, text_division_spm_ts?, text_divisions, pdf?, openalex?)>
+<!ATTLIST report id CDATA #REQUIRED>
 
 <!ELEMENT title (#PCDATA)>
 <!ELEMENT description (#PCDATA)>
@@ -18,12 +18,12 @@
 <!ELEMENT pdf (#PCDATA)>
 <!ELEMENT openalex (#PCDATA)>
 
-<!ELEMENT front_matter (chapter+)>
-<!ELEMENT books (book+)>
+<!ELEMENT text_division_spm_ts (chapter+)>
+<!ELEMENT text_divisions (text_division+)>
 
-<!-- At least one of DOI or ISBN is required for a Book -->
-<!ELEMENT book (title, description?, ((doi, isbn?) | (isbn, doi?)), license?, tags?, date?, front_matter?, chapters)>
-<!ATTLIST book id CDATA #REQUIRED>
+<!-- At least one of DOI or ISBN is required for a Text Division -->
+<!ELEMENT text_division (title, description?, ((doi, isbn?) | (isbn, doi?)), license?, tags?, date?, text_division_spm_ts?, chapters)>
+<!ATTLIST text_division id CDATA #REQUIRED>
 
 <!ELEMENT chapters (chapter+)>
 

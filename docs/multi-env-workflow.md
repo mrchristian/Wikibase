@@ -13,6 +13,7 @@
 > | Sync scripts — see §4 | [`sync-local-to-dev.ps1`](../scripts/sync/sync-local-to-dev.ps1) · [`sync-local-to-test.ps1`](../scripts/sync/sync-local-to-test.ps1) · [`sync-dev-to-test.ps1`](../scripts/sync/sync-dev-to-test.ps1) · [`sync-dev-to-prod.ps1`](../scripts/sync/sync-dev-to-prod.ps1) · [`sync-test-to-prod.ps1`](../scripts/sync/sync-test-to-prod.ps1) · [`pull-from-dev.ps1`](../scripts/sync/pull-from-dev.ps1) |
 > | Experimental workflow — see §11 | [`experimental-import-workflow.ps1`](../scripts/experimental-import-workflow.ps1) |
 > | Backup scripts — see §12 | [`backup-local-db.ps1`](../scripts/backup/backup-local-db.ps1) |
+> | Verification script — see §10 | [`verify-env-sync.ps1`](../scripts/verify-env-sync.ps1) |
 > | WDQS maintenance — see §13 | [`wdqs-reindex-prod.ps1`](../scripts/wdqs-reindex-prod.ps1) |
 > | Deploy scripts — see §6 | [`deploy.sh`](../scripts/deploy/deploy.sh) · [`deploy-dev.sh`](../scripts/deploy/deploy-dev.sh) · [`deploy-test.sh`](../scripts/deploy/deploy-test.sh) · [`deploy-prod.sh`](../scripts/deploy/deploy-prod.sh) |
 
@@ -384,6 +385,27 @@ The actual passwords are stored in `/opt/wikibase/.env` on each server (printed 
 ---
 
 ## 10. Verification Checklist
+
+### Quick cross-environment sync check
+
+Run [`verify-env-sync.ps1`](../scripts/verify-env-sync.ps1) from `C:\Wikibase` to compare LOCAL, DEV, TEST, and PROD against DEV as the DB source of truth:
+
+```powershell
+.\scripts\verify-env-sync.ps1
+
+# Skip LOCAL when it is being used for experimental work
+.\scripts\verify-env-sync.ps1 -ExcludeLocal
+```
+
+The script checks:
+- Wiki responds
+- Query UI responds
+- SPARQL responds
+- `MAX(rc_timestamp)` from `recentchanges`
+- Chapter count in SPARQL for `P1=Q6` (expected: 88)
+- Whether `Q128` is present in SPARQL
+
+Treat an environment as fully in sync only when its DB timestamp, chapter count, and `Q128` SPARQL status all match DEV.
 
 After deploying or syncing an environment, verify:
 

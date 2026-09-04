@@ -299,7 +299,7 @@ if ($IncludeImages) {
 
     Write-Host "This may take a minute for large image sets..." -ForegroundColor Yellow
     ssh -i $TEST_SSH_KEY "${TEST_USER}@${TEST_HOST}" `
-        "docker exec $TEST_WB_CONTAINER tar --exclude=thumb -czf $TEST_IMAGES_ARCHIVE /var/www/html/images && echo DONE"
+        "docker exec $TEST_WB_CONTAINER tar -czf $TEST_IMAGES_ARCHIVE --exclude=./thumb -C /var/www/html/images . && echo DONE"
     if ($LASTEXITCODE -ne 0) { Die "tar failed inside TEST wikibase container." }
     OK "Archive created at $TEST_IMAGES_ARCHIVE inside $TEST_WB_CONTAINER"
 
@@ -340,7 +340,7 @@ if ($IncludeImages) {
     if ($LASTEXITCODE -ne 0) { Die "docker cp of images archive into PROD container failed." }
 
     ssh -i $PROD_SSH_KEY "${PROD_USER}@${PROD_HOST}" `
-        "docker exec ${PROD_WB_CONTAINER} sh -c 'find /var/www/html/images -mindepth 1 -not -name ckglogo1.png -not -name ckglogo1.svg -delete 2>/dev/null; tar -xzf ${PROD_IMAGES_TEMP} --strip-components=3 -C /var/www/html --exclude=var/www/html/images/ckglogo1.png --exclude=var/www/html/images/ckglogo1.svg && chown -R www-data:www-data /var/www/html/images && find /var/www/html/images/thumb -mindepth 1 -delete 2>/dev/null && rm -f ${PROD_IMAGES_TEMP} && echo DONE'"
+        "docker exec ${PROD_WB_CONTAINER} sh -c 'find /var/www/html/images -mindepth 1 -not -name ckglogo1.png -not -name ckglogo1.svg -delete 2>/dev/null; tar -xzf ${PROD_IMAGES_TEMP} -C /var/www/html/images && chown -R www-data:www-data /var/www/html/images; find /var/www/html/images/thumb -mindepth 1 -delete 2>/dev/null || true; rm -f ${PROD_IMAGES_TEMP}; echo DONE'"
     if ($LASTEXITCODE -ne 0) { Die "Images extraction on PROD failed." }
     OK "Images extracted, ownership fixed, stale thumbnails cleared on PROD"
 

@@ -9,6 +9,17 @@ $wgLogos = [
 	'icon' => "$wgResourceBasePath/images/ckglogo1.svg",
 ];
 
+# Permissions hardening: anonymous visitors are read-only.
+# Logged-in users retain standard editing rights.
+$wgGroupPermissions['*']['edit'] = false;
+$wgGroupPermissions['*']['createpage'] = false;
+$wgGroupPermissions['*']['createtalk'] = false;
+$wgGroupPermissions['*']['createaccount'] = false;
+
+$wgGroupPermissions['user']['edit'] = true;
+$wgGroupPermissions['user']['createpage'] = true;
+$wgGroupPermissions['user']['createtalk'] = true;
+
 # Increase multi-language string length limit so full definitions fit in descriptions.
 # Default is 250; raising to 2500 accommodates the longest IPCC glossary entry (~2103 chars).
 $wgWBRepoSettings['string-limits']['multilang']['length'] = 2500;

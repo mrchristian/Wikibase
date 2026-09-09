@@ -25,6 +25,28 @@ set -euo pipefail
 : "${COMPOSE_FILE:?Variable COMPOSE_FILE must be set by the calling wrapper.}"
 : "${ENV_TEMPLATE:?Variable ENV_TEMPLATE must be set by the calling wrapper.}"
 
+# Optional temporary web protection (HTTP Basic Auth)
+# Set BASIC_AUTH_ENABLED=true and provide BASIC_AUTH_USER/BASIC_AUTH_PASS
+# to protect the site at the Nginx layer.
+BASIC_AUTH_ENABLED="${BASIC_AUTH_ENABLED:-false}"
+BASIC_AUTH_USER="${BASIC_AUTH_USER:-}"
+BASIC_AUTH_PASS="${BASIC_AUTH_PASS:-}"
+BASIC_AUTH_FILE="/etc/nginx/.htpasswd-wikibase"
+
+BASIC_AUTH_ON=0
+case "${BASIC_AUTH_ENABLED,,}" in
+    1|true|yes|on)
+        BASIC_AUTH_ON=1
+        ;;
+esac
+
+if [ "$BASIC_AUTH_ON" -eq 1 ]; then
+    if [ -z "$BASIC_AUTH_USER" ] || [ -z "$BASIC_AUTH_PASS" ]; then
+        echo "[error] BASIC_AUTH_ENABLED is true but BASIC_AUTH_USER/BASIC_AUTH_PASS is missing"
+        exit 1
+    fi
+fi
+
 ADMIN_EMAIL="simon.worthington@tib.eu"
 REPO_URL="https://github.com/mrchristian/Wikibase.git"
 INSTALL_DIR="/opt/wikibase"
@@ -105,6 +127,21 @@ fi
 # ------------------------------------------------------------------
 echo "[6/7] Configuring Nginx reverse proxy..."
 
+AUTH_DIRECTIVES=""
+if [ "$BASIC_AUTH_ON" -eq 1 ]; then
+    echo "      Temporary Basic Auth is enabled for $WIKIBASE_DOMAIN"
+    AUTH_HASH=$(openssl passwd -apr1 "$BASIC_AUTH_PASS")
+    printf '%s:%s\n' "$BASIC_AUTH_USER" "$AUTH_HASH" > "$BASIC_AUTH_FILE"
+    chmod 640 "$BASIC_AUTH_FILE"
+    chown root:www-data "$BASIC_AUTH_FILE" 2>/dev/null || true
+    AUTH_DIRECTIVES="    auth_basic \"Restricted\";
+    auth_basic_user_file $BASIC_AUTH_FILE;
+
+"
+else
+    echo "      Basic Auth is disabled"
+fi
+
 cat > /etc/nginx/sites-available/wikibase << NGINX
 server {
     listen 80;
@@ -112,6 +149,8 @@ server {
     server_name ${WIKIBASE_DOMAIN};
 
     client_max_body_size 64m;
+
+${AUTH_DIRECTIVES}
 
     # Main wiki
     location / {
@@ -174,6 +213,10 @@ echo ""
 echo "Containers are initializing (this takes 3–5 minutes)."
 echo "Monitor with:  docker compose logs -f"
 echo ""
+if [ "$BASIC_AUTH_ON" -eq 1 ]; then
+    echo "Basic Auth is active for this deployment (user: $BASIC_AUTH_USER)"
+    echo ""
+fi
 echo "Once the wiki responds at http://$WIKIBASE_DOMAIN, run:"
 echo "  certbot --nginx -d $WIKIBASE_DOMAIN --non-interactive --agree-tos -m $ADMIN_EMAIL"
 echo ""

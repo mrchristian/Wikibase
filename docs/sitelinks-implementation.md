@@ -4,6 +4,11 @@ This document details the implementation of Sitelinks within the ClimateKG Wikib
 
 The sitelink group is named **`climatekg-wiki`** across all environments. Each environment has its own `sites.<env>.xml` file with the correct domain URL; Docker Compose mounts the appropriate file at runtime.
 
+> **Patch status (2026-09-09)**
+> A sitelinks safety patch has been applied in `scripts/deploy/init-sitelinks.sh` to prevent remote environments (DEV/TEST/PROD) from keeping `localhost` URLs if a LOCAL `sites.xml` import is run accidentally.
+> The patch uses `MW_WG_SERVER` to set the correct remote domain/protocol and now writes environment-aware interwiki URLs.
+> Runtime repair has also been applied on DEV by re-running `wikibase-sitelinks-init` with `docker-compose.dev.yml` and restarting `wikibase`.
+
 ## Deployment Strategy
 
 All changes in this guide live on branch **`feature-dev-sitelinks`**. The rollout is gated on a LOCAL validation step before any remote environment is touched.

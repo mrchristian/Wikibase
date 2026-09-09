@@ -2,6 +2,11 @@
 
 This guide documents the workflow for updating the **P5 (Wiki URL)** property on all Chapter items (P1=Q6) in ClimateKG Wikibase to use the canonical URL derived from each item's `climatekg-wiki` sitelink.
 
+> **Patch status (2026-09-09)**
+> A sitelinks safety patch has been applied in `scripts/deploy/init-sitelinks.sh` to prevent remote environments (DEV/TEST/PROD) from keeping `localhost` URLs if a LOCAL `sites.xml` import is run accidentally.
+> The patch uses `MW_WG_SERVER` to set the correct remote domain/protocol and now writes environment-aware interwiki URLs.
+> Runtime repair has also been applied on DEV by re-running `wikibase-sitelinks-init` with `docker-compose.dev.yml` and restarting `wikibase`.
+
 ---
 
 ## Background

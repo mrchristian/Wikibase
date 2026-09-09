@@ -41,17 +41,43 @@ echo "[OK] Site language set to 'en'"
 # Extract correct values from the site_data paths which are imported correctly.
 # Note: site_domain must be reachable from inside the container for API validation.
 # For LOCAL, use 'localhost' (not 'localhost:8080') since port 8080 is only on host.
+#
+# Safety guard for remote envs:
+# If sites.xml was accidentally imported from LOCAL on a remote server,
+# site_data can contain localhost:8080. In that case, override to the
+# configured MW_WG_SERVER host (DEV/TEST/PROD) instead of keeping localhost.
 echo "Fixing site_domain and site_protocol..."
+WG_SERVER="${MW_WG_SERVER:-}"
+if [[ "$WG_SERVER" =~ ^https?:// ]]; then
+    WG_SERVER_HOST="${WG_SERVER#*://}"
+    WG_SERVER_HOST="${WG_SERVER_HOST%%/*}"
+else
+    WG_SERVER_HOST=""
+fi
+
+if [[ -n "$WG_SERVER_HOST" && "$WG_SERVER_HOST" != "localhost:8080" && "$WG_SERVER_HOST" != "localhost" ]]; then
+    SITE_DOMAIN_LOCALHOST_CASE="'${WG_SERVER_HOST}'"
+else
+    SITE_DOMAIN_LOCALHOST_CASE="'localhost'"
+fi
+
+if [[ "$WG_SERVER" == https://* ]]; then
+    SITE_PROTOCOL_LOCALHOST_CASE="'https'"
+else
+    SITE_PROTOCOL_LOCALHOST_CASE="'http'"
+fi
+
 SITE_FIX_SQL="
 UPDATE sites
 SET
     site_protocol = CASE
+        WHEN site_data LIKE '%localhost:8080%' THEN ${SITE_PROTOCOL_LOCALHOST_CASE}
         WHEN site_data LIKE '%https://%' THEN 'https'
         WHEN site_data LIKE '%http://%' THEN 'http'
         ELSE site_protocol
     END,
     site_domain = CASE
-        WHEN site_data LIKE '%localhost:8080%' THEN 'localhost'
+        WHEN site_data LIKE '%localhost:8080%' THEN ${SITE_DOMAIN_LOCALHOST_CASE}
         WHEN site_data LIKE '%dev-climatekg.semanticclimate.org%' THEN 'dev-climatekg.semanticclimate.org'
         WHEN site_data LIKE '%test-climatekg.semanticclimate.org%' THEN 'test-climatekg.semanticclimate.org'
         WHEN site_data LIKE '%prod-climatekg.semanticclimate.org%' THEN 'prod-climatekg.semanticclimate.org'
@@ -64,9 +90,14 @@ echo "[OK] Site domain and protocol configured"
 
 # Add interwiki entry for climatekg-wiki (needed for sitelink validation)
 echo "Adding interwiki entry for climatekg-wiki..."
+if [[ -n "$WG_SERVER_HOST" && "$WG_SERVER_HOST" != "localhost:8080" && "$WG_SERVER_HOST" != "localhost" ]]; then
+    INTERWIKI_BASE="${WG_SERVER%/}"
+else
+    INTERWIKI_BASE="http://localhost"
+fi
 INTERWIKI_SQL="
 INSERT IGNORE INTO interwiki (iw_prefix, iw_url, iw_api, iw_wikiid, iw_local)
-VALUES ('climatekg-wiki', 'http://localhost/wiki/\$1', 'http://localhost/w/api.php', '', 1);
+VALUES ('climatekg-wiki', '${INTERWIKI_BASE}/wiki/\$1', '${INTERWIKI_BASE}/w/api.php', '', 1);
 "
 /usr/local/bin/php maintenance/run.php sql --conf /config/LocalSettings.php --query "$INTERWIKI_SQL" 2>&1 || true
 echo "[OK] Interwiki entry added"

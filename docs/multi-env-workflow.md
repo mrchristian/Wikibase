@@ -10,6 +10,7 @@
 > | `docs/server-admin.md` | Server resource management — disk, Docker logs, maintenance |
 > | `docs/sync-guide.md` | Background reference — sync strategy options (context only) |
 > | `docs/p5-url-update-guide.md` | P5 (Wiki URL) update — applying canonical URLs to Chapter items across all environments |
+> | `docs/temporary-web-password-protection.md` | Temporary web access gate (Basic Auth) for DEV/TEST/PROD, including rollback |
 > | Sync scripts — see §4 | [`sync-local-to-dev.ps1`](../scripts/sync/sync-local-to-dev.ps1) · [`sync-local-to-test.ps1`](../scripts/sync/sync-local-to-test.ps1) · [`sync-dev-to-test.ps1`](../scripts/sync/sync-dev-to-test.ps1) · [`sync-dev-to-prod.ps1`](../scripts/sync/sync-dev-to-prod.ps1) · [`sync-test-to-prod.ps1`](../scripts/sync/sync-test-to-prod.ps1) · [`pull-from-dev.ps1`](../scripts/sync/pull-from-dev.ps1) |
 > | Experimental workflow — see §11 | [`experimental-import-workflow.ps1`](../scripts/experimental-import-workflow.ps1) |
 > | Backup scripts — see §12 | [`backup-local-db.ps1`](../scripts/backup/backup-local-db.ps1) |
@@ -18,6 +19,12 @@
 > | Deploy scripts — see §6 | [`deploy.sh`](../scripts/deploy/deploy.sh) · [`deploy-dev.sh`](../scripts/deploy/deploy-dev.sh) · [`deploy-test.sh`](../scripts/deploy/deploy-test.sh) · [`deploy-prod.sh`](../scripts/deploy/deploy-prod.sh) |
 
 This document is the master reference for the 4-tier Docker DevOps workflow.
+
+> **Patch status (2026-09-09)**
+> A sitelinks safety patch has been applied in `scripts/deploy/init-sitelinks.sh` to prevent remote environments (DEV/TEST/PROD) from keeping `localhost` URLs if a LOCAL `sites.xml` import is run accidentally.
+> The patch uses `MW_WG_SERVER` to set the correct remote domain/protocol and now writes environment-aware interwiki URLs.
+> Runtime repair has also been applied on DEV by re-running `wikibase-sitelinks-init` with `docker-compose.dev.yml` and restarting `wikibase`.
+> Temporary host-level Basic Auth protection for DEV/TEST/PROD was also applied; see `docs/temporary-web-password-protection.md`.
 
 ---
 

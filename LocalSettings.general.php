@@ -20,6 +20,24 @@ $wgGroupPermissions['user']['edit'] = true;
 $wgGroupPermissions['user']['createpage'] = true;
 $wgGroupPermissions['user']['createtalk'] = true;
 
+# On localhost and DEV, default Vector Appearance menu to collapsed.
+# This primarily affects anonymous users and users without an explicit saved preference.
+if (
+	strpos( $wgServer, 'localhost' ) !== false ||
+	strpos( $wgServer, 'dev-climatekg.semanticclimate.org' ) !== false
+) {
+	$wgHooks['SetupAfterCache'][] = static function () {
+		global $wgDefaultUserOptions;
+		$wgDefaultUserOptions['vector-appearance-pinned'] = 0;
+	};
+}
+
+# Logged-out visitors should not see the Vector Add languages menu.
+$wgVectorLanguageInHeader = [
+	'logged_in' => true,
+	'logged_out' => false,
+];
+
 # Increase multi-language string length limit so full definitions fit in descriptions.
 # Default is 250; raising to 2500 accommodates the longest IPCC glossary entry (~2103 chars).
 $wgWBRepoSettings['string-limits']['multilang']['length'] = 2500;

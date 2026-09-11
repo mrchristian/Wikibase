@@ -20,17 +20,27 @@ $wgGroupPermissions['user']['edit'] = true;
 $wgGroupPermissions['user']['createpage'] = true;
 $wgGroupPermissions['user']['createtalk'] = true;
 
-# On localhost and DEV, default Vector Appearance menu to collapsed.
+# Default Vector Appearance menu to collapsed on all hosts.
 # This primarily affects anonymous users and users without an explicit saved preference.
-if (
-	strpos( $wgServer, 'localhost' ) !== false ||
-	strpos( $wgServer, 'dev-climatekg.semanticclimate.org' ) !== false
-) {
-	$wgHooks['SetupAfterCache'][] = static function () {
-		global $wgDefaultUserOptions;
-		$wgDefaultUserOptions['vector-appearance-pinned'] = 0;
-	};
-}
+$wgHooks['SetupAfterCache'][] = static function () {
+	global $wgDefaultUserOptions;
+	$wgDefaultUserOptions['vector-appearance-pinned'] = 0;
+};
+
+# Hide Vector Appearance controls for anonymous users on all hosts.
+$wgHooks['BeforePageDisplay'][] = static function ( OutputPage $out, Skin $skin ) {
+	if ( $out->getUser()->isRegistered() ) {
+		return true;
+	}
+
+	$out->addInlineStyle(
+		'#vector-appearance-dropdown,' .
+		'.vector-appearance-landmark,' .
+		'#vector-appearance-pinned-container{display:none !important;}'
+	);
+
+	return true;
+};
 
 # Logged-out visitors should not see the Vector Add languages menu.
 $wgVectorLanguageInHeader = [

@@ -6,6 +6,9 @@ This guide documents the workflow for updating the **P5 (Wiki URL)** property on
 > A sitelinks safety patch has been applied in `scripts/deploy/init-sitelinks.sh` to prevent remote environments (DEV/TEST/PROD) from keeping `localhost` URLs if a LOCAL `sites.xml` import is run accidentally.
 > The patch uses `MW_WG_SERVER` to set the correct remote domain/protocol and now writes environment-aware interwiki URLs.
 > Runtime repair has also been applied on DEV by re-running `wikibase-sitelinks-init` with `docker-compose.dev.yml` and restarting `wikibase`.
+>
+> **Patch status (2026-09-30)**
+> DEV/TEST/PROD are now protected by a host-level Nginx Basic Auth wall (see [`docs/temporary-web-password-protection.md`](temporary-web-password-protection.md)), which was blocking this script's SPARQL and MediaWiki API requests with `401 Unauthorized`. `scripts/update-chapter-wiki-urls.py` now sends Basic Auth credentials automatically — see [Credentials](#credentials) below.
 
 ---
 
@@ -52,6 +55,11 @@ There are **88 Chapter items** (Q6), all of which have a `climatekg-wiki` siteli
 2. `C:\Wikibase\.env` file
 3. Interactive prompt (last resort)
 
+**Basic Auth (DEV/TEST/PROD only)** — these environments also sit behind a host-level Nginx Basic Auth wall. The script sends credentials automatically, read from (in priority order, no interactive prompt — silently skipped if unset, which is fine for LOCAL):
+1. `<ENV>_BASIC_AUTH_USER` / `<ENV>_BASIC_AUTH_PASS` (env-specific override, e.g. `DEV_BASIC_AUTH_USER`)
+2. `WEB_BASIC_AUTH_USER` / `WEB_BASIC_AUTH_PASS` (shared fallback — currently used since DEV/TEST/PROD share the same credentials)
+3. `C:\Wikibase\.env` file (same keys)
+
 **The script is idempotent** — safe to re-run at any time. Items already at the correct URL are skipped.
 
 ---
@@ -64,6 +72,7 @@ This is the one-time workflow to apply the update to all four environments. Afte
 
 - Docker containers running on LOCAL (`docker compose up -d`)
 - `.env` contains `WB_PASSWORD`, `DEV_MW_ADMIN_PASS`, `TEST_MW_ADMIN_PASS`, `PROD_MW_ADMIN_PASS`
+- `.env` contains `WEB_BASIC_AUTH_USER` / `WEB_BASIC_AUTH_PASS` (needed for DEV/TEST/PROD, since they're behind Nginx Basic Auth)
 - SSH key set up for DEV, TEST, PROD servers
 
 ---
@@ -225,12 +234,12 @@ python scripts/_gen_verification_csv.py
 
 ## Environment → Password Variable Mapping
 
-| Environment | Password variable    | API endpoint                                           |
-|-------------|---------------------|--------------------------------------------------------|
-| LOCAL       | `WB_PASSWORD`        | `http://localhost:8080/w/api.php`                      |
-| DEV         | `DEV_MW_ADMIN_PASS`  | `https://dev-climatekg.semanticclimate.org/w/api.php`  |
-| TEST        | `TEST_MW_ADMIN_PASS` | `https://test-climatekg.semanticclimate.org/w/api.php` |
-| PROD        | `PROD_MW_ADMIN_PASS` | `https://prod-climatekg.semanticclimate.org/w/api.php` |
+| Environment | Password variable    | Basic Auth variables (Nginx wall)         | API endpoint                                           |
+|-------------|---------------------|--------------------------------------------|--------------------------------------------------------|
+| LOCAL       | `WB_PASSWORD`        | (none — not protected)                     | `http://localhost:8080/w/api.php`                      |
+| DEV         | `DEV_MW_ADMIN_PASS`  | `WEB_BASIC_AUTH_USER` / `WEB_BASIC_AUTH_PASS` (or `DEV_BASIC_AUTH_USER`/`PASS`)  | `https://dev-climatekg.semanticclimate.org/w/api.php`  |
+| TEST        | `TEST_MW_ADMIN_PASS` | `WEB_BASIC_AUTH_USER` / `WEB_BASIC_AUTH_PASS` (or `TEST_BASIC_AUTH_USER`/`PASS`) | `https://test-climatekg.semanticclimate.org/w/api.php` |
+| PROD        | `PROD_MW_ADMIN_PASS` | `WEB_BASIC_AUTH_USER` / `WEB_BASIC_AUTH_PASS` (or `PROD_BASIC_AUTH_USER`/`PASS`) | `https://prod-climatekg.semanticclimate.org/w/api.php` |
 
 All variables are read from `C:\Wikibase\.env`.
 

@@ -16,6 +16,14 @@ Credentials are read from the environment (same vars used by sync scripts):
 If the variable is not set, falls back to reading C:\Wikibase\.env, then
 prompts interactively as a last resort.
 
+DEV/TEST/PROD are additionally protected by a host-level Nginx Basic Auth
+wall (see docs/temporary-web-password-protection.md). Credentials for that
+are read from (in priority order), and are OPTIONAL for 'local':
+    <ENV>_BASIC_AUTH_USER / <ENV>_BASIC_AUTH_PASS   (env-specific override)
+    WEB_BASIC_AUTH_USER / WEB_BASIC_AUTH_PASS        (shared fallback)
+Same lookup order as passwords: environment variable, then C:\Wikibase\.env.
+If neither is set, requests are sent without Basic Auth (fine for 'local').
+
 Example:
     python scripts/update-chapter-wiki-urls.py --env local --dry-run
     python scripts/update-chapter-wiki-urls.py --env local
@@ -102,6 +110,39 @@ def get_password(env_var, env_file="C:\\Wikibase\\.env"):
     return getpass.getpass(f"Enter password for {env_var}: ")
 
 
+def get_optional_value(env_var, env_file="C:\\Wikibase\\.env"):
+    """Return value from env var or .env file. Returns None if not set (no prompt)."""
+    val = os.environ.get(env_var)
+    if val:
+        return val
+
+    if os.path.isfile(env_file):
+        with open(env_file, encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line.startswith("#") or "=" not in line:
+                    continue
+                key, _, value = line.partition("=")
+                if key.strip() == env_var:
+                    return value.strip()
+    return None
+
+
+def get_basic_auth(env_name):
+    """
+    Return (user, pass) tuple for the host-level Nginx Basic Auth wall on
+    DEV/TEST/PROD, or None if not configured (e.g. for 'local').
+    Checks <ENV>_BASIC_AUTH_USER/PASS first, then falls back to the shared
+    WEB_BASIC_AUTH_USER/PASS.
+    """
+    prefix = env_name.upper()
+    user = get_optional_value(f"{prefix}_BASIC_AUTH_USER") or get_optional_value("WEB_BASIC_AUTH_USER")
+    pw   = get_optional_value(f"{prefix}_BASIC_AUTH_PASS") or get_optional_value("WEB_BASIC_AUTH_PASS")
+    if user and pw:
+        return (user, pw)
+    return None
+
+
 # ---------------------------------------------------------------------------
 # Auth helpers  (same pattern as migrate_wikibase.py)
 # ---------------------------------------------------------------------------
@@ -140,7 +181,7 @@ def get_csrf_token(session, api_url):
 # Step 1 — SPARQL: find all QIDs where P1 = Q6
 # ---------------------------------------------------------------------------
 
-def get_chapter_qids(sparql_url, prop_base, entity_base):
+def get_chapter_qids(sparql_url, prop_base, entity_base, auth=None):
     """Query SPARQL for all items where P1 = Q6. Returns a list of QID strings."""
     p1_uri = prop_base + "P1"
     q6_uri = entity_base + "Q6"
@@ -151,7 +192,8 @@ SELECT ?item WHERE {{
 }}
 """
     r = requests.get(sparql_url, params={"query": query, "format": "json"},
-                     headers={"Accept": "application/sparql-results+json"})
+                     headers={"Accept": "application/sparql-results+json"},
+                     auth=auth)
     r.raise_for_status()
     bindings = r.json()["results"]["bindings"]
     qids = []
@@ -275,6 +317,10 @@ def main():
     print(f"{'[DRY RUN] ' if dry else ''}Environment: {args.env.upper()}")
     print(f"           API:    {cfg['api_url']}")
     print(f"           SPARQL: {cfg['sparql_url']}")
+
+    basic_auth = get_basic_auth(args.env)
+    if basic_auth:
+        print(f"           Basic Auth: enabled (user='{basic_auth[0]}')")
     print()
 
     # ------------------------------------------------------------------
@@ -282,7 +328,7 @@ def main():
     # ------------------------------------------------------------------
     print("[1/4] Querying SPARQL for P1=Q6 items...")
     try:
-        qids = get_chapter_qids(cfg["sparql_url"], cfg["prop_base"], cfg["entity_base"])
+        qids = get_chapter_qids(cfg["sparql_url"], cfg["prop_base"], cfg["entity_base"], auth=basic_auth)
     except Exception as e:
         print(f"[error] SPARQL query failed: {e}")
         print("        Is the WDQS container running? Try: docker compose ps")
@@ -303,6 +349,8 @@ def main():
 
     session = requests.Session()
     session.headers.update({"User-Agent": "ClimateKG-UpdateChapterURLs/1.0"})
+    if basic_auth:
+        session.auth = basic_auth
 
     login(session, cfg["api_url"], cfg["username"], password)
     token = get_csrf_token(session, cfg["api_url"])

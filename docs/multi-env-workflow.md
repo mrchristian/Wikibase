@@ -101,6 +101,112 @@ REMOTE:    443/HTTPS for all services (wiki at /, query at /query/)
 
 ---
 
+## Command Cheat Sheet
+
+Quick reference for operators. Run from `C:\Wikibase`. Full details: §4 (sync), §11 (experiments), §12 (backups).
+
+### Start / Stop LOCAL (prerequisite before any sync/experiment)
+
+```powershell
+# 1. Make sure Docker Desktop (Windows) is running first — start it from the Start Menu if not.
+# 2. Bring up the local stack (auto-loads docker-compose.override.yml):
+docker compose up -d
+
+# 3. Confirm all 5 containers are healthy:
+docker compose ps
+
+# 4. Load the wiki to review changes before promoting:
+#    http://localhost:8080
+
+# 5. When finished for the session, stop the local stack:
+docker compose down
+```
+
+### Push / Pull Between Environments (one pair at a time)
+
+```powershell
+# LOCAL -> DEV   (promote local content; DEV is DB source of truth; type PROMOTE)
+.\scripts\sync\sync-local-to-dev.ps1
+.\scripts\sync\sync-local-to-dev.ps1 -DbOnly
+
+# LOCAL -> TEST  (stage local content directly on TEST)
+.\scripts\sync\sync-local-to-test.ps1
+.\scripts\sync\sync-local-to-test.ps1 -DbOnly
+
+# DEV -> TEST    (standard promotion)
+.\scripts\sync\sync-dev-to-test.ps1
+.\scripts\sync\sync-dev-to-test.ps1 -DbOnly
+
+# DEV -> PROD    (DB; type PROMOTE)
+.\scripts\sync\sync-dev-to-prod.ps1
+
+# DEV -> PROD    (uploads/images only; type PROMOTE)
+.\scripts\sync\sync-dev-to-prod-files.ps1
+
+# TEST -> PROD   (DB; type PROMOTE)
+.\scripts\sync\sync-test-to-prod.ps1
+.\scripts\sync\sync-test-to-prod.ps1 -IncludeImages
+
+# DEV -> LOCAL   (pull DEV DB down for local testing)
+.\scripts\sync\pull-from-dev.ps1
+.\scripts\sync\pull-from-dev.ps1 -IncludeImages
+
+# Verify all environments are in sync with DEV
+.\scripts\verify-env-sync.ps1
+```
+
+### Local Experiments (sandbox for imports/testing)
+
+```powershell
+.\scripts\experimental-import-workflow.ps1 status    # CLEAN or EXPERIMENTAL?
+.\scripts\experimental-import-workflow.ps1 start      # snapshot, begin experiment
+# ...run your import scripts...
+.\scripts\experimental-import-workflow.ps1 approve    # keep changes as new clean base
+.\scripts\experimental-import-workflow.ps1 rollback   # discard, restore clean base
+.\scripts\experimental-import-workflow.ps1 sync       # pull fresh DEV data (CLEAN state only)
+```
+
+### Local Backups
+
+```powershell
+.\scripts\backup\backup-local-db.ps1   # dumps local DB to backups\mw_db_<timestamp>.sql
+```
+
+### Special Post-Sync Fixups (instance-specific URLs)
+
+Each environment (LOCAL/DEV/TEST/PROD) has its own domain, so URLs baked into the DB from the source environment can be wrong on the target. Standard sync scripts fix the first item automatically — the other two are only needed if URLs still look wrong or after a manual/out-of-band import.
+
+```powershell
+# 1. Sitelinks (site_domain/protocol) — AUTOMATIC in all sync-*.ps1 / pull-from-dev.ps1 scripts.
+#    They restart wikibase-sitelinks-init, which re-runs init-sitelinks.sh and rewrites
+#    site_domain/site_protocol from that environment's MW_WG_SERVER. No manual step needed.
+#    Manual re-run if ever required (run ON the target server):
+docker compose -f docker-compose.yml -f docker-compose.<env>.yml restart wikibase-sitelinks-init
+
+# 2. P5 "Wiki URL" on Chapter items — NOT automatic; run manually if links point to the
+#    wrong domain (e.g. after a raw/manual sites.xml import outside the sync scripts).
+#    Replace --env with the environment you just synced INTO (local, dev, test, or prod).
+#    Always preview with --dry-run first, then re-run without it to apply.
+#
+#    Example - fixing DEV after a LOCAL -> DEV sync:
+python scripts\update-chapter-wiki-urls.py --env dev --dry-run   # preview: shows old -> new URLs, changes nothing
+python scripts\update-chapter-wiki-urls.py --env dev             # apply: writes the new URLs
+
+#    Same pattern for the other environments:
+python scripts\update-chapter-wiki-urls.py --env test --dry-run
+python scripts\update-chapter-wiki-urls.py --env test
+python scripts\update-chapter-wiki-urls.py --env prod --dry-run
+python scripts\update-chapter-wiki-urls.py --env prod
+#    (DEV/TEST/PROD are behind Nginx Basic Auth - credentials are picked up
+#    automatically from .env, see docs/temporary-web-password-protection.md)
+
+# 3. Sanity check after any sync/import
+.\scripts\verify-env-sync.ps1
+```
+> See §7 for the per-environment `sites.xml` / `wdqs-custom-config.json` files, and [`docs/p5-url-update-guide.md`](p5-url-update-guide.md) for full P5 details.
+
+---
+
 ## 1. Environment Overview
 
 | Env   | Server IP        | Domain                                   | Purpose                                      |

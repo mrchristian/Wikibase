@@ -42,13 +42,24 @@ $envFile = "C:\Wikibase\.env"
 $DEV_DB_PASS = $null
 $TEST_DB_PASS = $null
 $PROD_DB_PASS = $null
+$WEB_BASIC_AUTH_USER = $null
+$WEB_BASIC_AUTH_PASS = $null
 
 if (Test-Path $envFile) {
     Get-Content $envFile | ForEach-Object {
         if ($_ -match "^DEV_DB_PASS\s*=") { $DEV_DB_PASS = ($_ -split "=", 2)[1].Trim() }
         if ($_ -match "^TEST_DB_PASS\s*=") { $TEST_DB_PASS = ($_ -split "=", 2)[1].Trim() }
         if ($_ -match "^PROD_DB_PASS\s*=") { $PROD_DB_PASS = ($_ -split "=", 2)[1].Trim() }
+        if ($_ -match "^WEB_BASIC_AUTH_USER\s*=") { $WEB_BASIC_AUTH_USER = ($_ -split "=", 2)[1].Trim() }
+        if ($_ -match "^WEB_BASIC_AUTH_PASS\s*=") { $WEB_BASIC_AUTH_PASS = ($_ -split "=", 2)[1].Trim() }
     }
+}
+
+# DEV/TEST/PROD sit behind a host-level Nginx Basic Auth wall (see
+# docs/temporary-web-password-protection.md). LOCAL has none.
+$WebBasicAuth = $null
+if ($WEB_BASIC_AUTH_USER -and $WEB_BASIC_AUTH_PASS) {
+    $WebBasicAuth = "${WEB_BASIC_AUTH_USER}:${WEB_BASIC_AUTH_PASS}"
 }
 
 $environments = @(
@@ -64,6 +75,7 @@ $environments = @(
         DbPass = "wikibase"
         EntityBase = "http://localhost:8080/entity/"
         PropDirectBase = "http://localhost:8080/prop/direct/"
+        BasicAuth = $null
     }
     [pscustomobject]@{
         Name = "DEV"
@@ -79,6 +91,7 @@ $environments = @(
         DbPass = $DEV_DB_PASS
         EntityBase = "https://dev-climatekg.semanticclimate.org/entity/"
         PropDirectBase = "https://dev-climatekg.semanticclimate.org/prop/direct/"
+        BasicAuth = $WebBasicAuth
     }
     [pscustomobject]@{
         Name = "TEST"
@@ -94,6 +107,7 @@ $environments = @(
         DbPass = $TEST_DB_PASS
         EntityBase = "https://test-climatekg.semanticclimate.org/entity/"
         PropDirectBase = "https://test-climatekg.semanticclimate.org/prop/direct/"
+        BasicAuth = $WebBasicAuth
     }
     [pscustomobject]@{
         Name = "PROD"
@@ -109,6 +123,7 @@ $environments = @(
         DbPass = $PROD_DB_PASS
         EntityBase = "https://prod-climatekg.semanticclimate.org/entity/"
         PropDirectBase = "https://prod-climatekg.semanticclimate.org/prop/direct/"
+        BasicAuth = $WebBasicAuth
     }
 )
 
@@ -120,13 +135,19 @@ function Step([string]$msg) { Write-Host ""; Write-Host "=== $msg ===" -Foregrou
 function OK([string]$msg) { Write-Host "[OK] $msg" -ForegroundColor Green }
 function Warn([string]$msg) { Write-Host "[WARN] $msg" -ForegroundColor Yellow }
 
-function Test-Url200([string]$url) {
-    $statusCode = curl.exe -s -L -o NUL -w "%{http_code}" $url
+function Test-Url200([string]$url, [string]$basicAuth) {
+    $curlArgs = @("-s", "-L", "-o", "NUL", "-w", "%{http_code}")
+    if ($basicAuth) { $curlArgs += @("-u", $basicAuth) }
+    $curlArgs += $url
+    $statusCode = curl.exe @curlArgs
     return $LASTEXITCODE -eq 0 -and $statusCode -match '^[23][0-9][0-9]$'
 }
 
-function Invoke-SparqlScalar([string]$endpoint, [string]$query, [string]$variableName) {
-    $json = curl.exe -s -L -G -H "Accept: application/sparql-results+json" --data-urlencode "query=$query" --data-urlencode "format=json" $endpoint
+function Invoke-SparqlScalar([string]$endpoint, [string]$query, [string]$variableName, [string]$basicAuth) {
+    $curlArgs = @("-s", "-L", "-G", "-H", "Accept: application/sparql-results+json")
+    if ($basicAuth) { $curlArgs += @("-u", $basicAuth) }
+    $curlArgs += @("--data-urlencode", "query=$query", "--data-urlencode", "format=json", $endpoint)
+    $json = curl.exe @curlArgs
     if ($LASTEXITCODE -ne 0) {
         throw "SPARQL HTTP request failed"
     }
@@ -177,13 +198,13 @@ function Get-EnvironmentStatus($envConfig) {
 
     $notes = New-Object System.Collections.Generic.List[string]
 
-    if (Test-Url200 $envConfig.WikiUrl) {
+    if (Test-Url200 $envConfig.WikiUrl $envConfig.BasicAuth) {
         $status.Wiki = "OK"
     } else {
         $notes.Add("wiki down")
     }
 
-    if (Test-Url200 $envConfig.QueryUrl) {
+    if (Test-Url200 $envConfig.QueryUrl $envConfig.BasicAuth) {
         $status.QueryUI = "OK"
     } else {
         $notes.Add("query ui down")
@@ -192,8 +213,8 @@ function Get-EnvironmentStatus($envConfig) {
     try {
         $countQuery = "SELECT (COUNT(*) AS ?c) WHERE { ?item <$($envConfig.PropDirectBase)P1> <$($envConfig.EntityBase)Q6> . }"
         $q128Query = "SELECT (COUNT(*) AS ?c) WHERE { <$($envConfig.EntityBase)Q128> ?p ?o . }"
-        $status.ChapterCount = [int](Invoke-SparqlScalar $envConfig.SparqlUrl $countQuery "c")
-        $status.Q128Triples = [int](Invoke-SparqlScalar $envConfig.SparqlUrl $q128Query "c")
+        $status.ChapterCount = [int](Invoke-SparqlScalar $envConfig.SparqlUrl $countQuery "c" $envConfig.BasicAuth)
+        $status.Q128Triples = [int](Invoke-SparqlScalar $envConfig.SparqlUrl $q128Query "c" $envConfig.BasicAuth)
         $status.SPARQL = "OK"
         if ($status.ChapterCount -ne 88) {
             $notes.Add("chapter count $($status.ChapterCount) != 88")

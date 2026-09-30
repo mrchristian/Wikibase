@@ -1,10 +1,14 @@
 # =============================================================================
-# TEST overrides for Wikibase on test-climatekg.semanticclimate.org
-# Server: 46.224.66.24
+# IMPORT overrides for Wikibase on import-climatekg.tibwiki.io
+# Server: climatekgdi21.service.tib.eu
+#
+# Independent Wikibase stack/DB used as a data-import staging sandbox.
+# Not a promotion target for other envs - content is later synced FROM here
+# INTO dev, once approved (see docs/deployment-protocol.md follow-up plan).
 #
 # Usage:
-#   cp .env.test.template .env   (edit passwords first!)
-#   docker compose -f docker-compose.yml -f docker-compose.test.yml up -d
+#   cp .env.import.template .env   (edit passwords first!)
+#   docker compose -f docker-compose.yml -f docker-compose.import.yml up -d
 # =============================================================================
 
 services:
@@ -50,7 +54,7 @@ services:
       WDQS_PUBLIC_URL: "/query/proxy/sparql"
       WIKIBASE_PUBLIC_URL: "https://${WIKIBASE_DOMAIN}/w/api.php"
     volumes:
-      - ./${WDQS_CONFIG_FILE:-wdqs-custom-config.test.json}:/usr/share/nginx/html/custom-config.json
+      - ./${WDQS_CONFIG_FILE:-wdqs-custom-config.import.json}:/usr/share/nginx/html/custom-config.json
 
   wikibase-sitelinks-init:
     environment:
@@ -63,5 +67,5 @@ services:
     volumes:
       - wikibase_config:/config
       - ./LocalSettings.sitelinks.php:/var/www/html/LocalSettings.d/LocalSettings.sitelinks.php:ro
-      - ./${SITES_FILE:-sites.test.xml}:/extra-config/sites.xml:ro
+      - ./${SITES_FILE:-sites.import.xml}:/extra-config/sites.xml:ro
       - ./scripts/deploy/init-sitelinks.sh:/init-sitelinks.sh:ro

@@ -42,6 +42,10 @@ $envFile = "C:\Wikibase\.env"
 $DEV_DB_PASS = $null
 $TEST_DB_PASS = $null
 $PROD_DB_PASS = $null
+$DEV_NEW_DB_PASS = $null
+$TEST_NEW_DB_PASS = $null
+$PROD_NEW_DB_PASS = $null
+$IMPORT_DB_PASS = $null
 $WEB_BASIC_AUTH_USER = $null
 $WEB_BASIC_AUTH_PASS = $null
 
@@ -50,6 +54,10 @@ if (Test-Path $envFile) {
         if ($_ -match "^DEV_DB_PASS\s*=") { $DEV_DB_PASS = ($_ -split "=", 2)[1].Trim() }
         if ($_ -match "^TEST_DB_PASS\s*=") { $TEST_DB_PASS = ($_ -split "=", 2)[1].Trim() }
         if ($_ -match "^PROD_DB_PASS\s*=") { $PROD_DB_PASS = ($_ -split "=", 2)[1].Trim() }
+        if ($_ -match "^DEV_NEW_DB_PASS\s*=") { $DEV_NEW_DB_PASS = ($_ -split "=", 2)[1].Trim() }
+        if ($_ -match "^TEST_NEW_DB_PASS\s*=") { $TEST_NEW_DB_PASS = ($_ -split "=", 2)[1].Trim() }
+        if ($_ -match "^PROD_NEW_DB_PASS\s*=") { $PROD_NEW_DB_PASS = ($_ -split "=", 2)[1].Trim() }
+        if ($_ -match "^IMPORT_DB_PASS\s*=") { $IMPORT_DB_PASS = ($_ -split "=", 2)[1].Trim() }
         if ($_ -match "^WEB_BASIC_AUTH_USER\s*=") { $WEB_BASIC_AUTH_USER = ($_ -split "=", 2)[1].Trim() }
         if ($_ -match "^WEB_BASIC_AUTH_PASS\s*=") { $WEB_BASIC_AUTH_PASS = ($_ -split "=", 2)[1].Trim() }
     }
@@ -76,6 +84,7 @@ $environments = @(
         EntityBase = "http://localhost:8080/entity/"
         PropDirectBase = "http://localhost:8080/prop/direct/"
         BasicAuth = $null
+        UseSudo = $false
     }
     [pscustomobject]@{
         Name = "DEV"
@@ -92,6 +101,7 @@ $environments = @(
         EntityBase = "https://dev-climatekg.semanticclimate.org/entity/"
         PropDirectBase = "https://dev-climatekg.semanticclimate.org/prop/direct/"
         BasicAuth = $WebBasicAuth
+        UseSudo = $false
     }
     [pscustomobject]@{
         Name = "TEST"
@@ -108,6 +118,7 @@ $environments = @(
         EntityBase = "https://test-climatekg.semanticclimate.org/entity/"
         PropDirectBase = "https://test-climatekg.semanticclimate.org/prop/direct/"
         BasicAuth = $WebBasicAuth
+        UseSudo = $false
     }
     [pscustomobject]@{
         Name = "PROD"
@@ -124,6 +135,76 @@ $environments = @(
         EntityBase = "https://prod-climatekg.semanticclimate.org/entity/"
         PropDirectBase = "https://prod-climatekg.semanticclimate.org/prop/direct/"
         BasicAuth = $WebBasicAuth
+        UseSudo = $false
+    }
+    # --- New TIB machines (staged validation - old envs above are the still-canonical ones) ---
+    [pscustomobject]@{
+        Name = "DEV-NEW"
+        WikiUrl = "https://dev-climatekg.tibwiki.io/wiki/Main_Page"
+        QueryUrl = "https://dev-climatekg.tibwiki.io/query/"
+        SparqlUrl = "https://dev-climatekg.tibwiki.io/query/proxy/sparql"
+        DbMode = "remote"
+        Host = "climatekg01.develop.service.tib.eu"
+        User = "worthingtons"
+        DbContainer = "wikibase-mariadb"
+        DbUser = "wikibase"
+        DbName = "my_wiki"
+        DbPass = $DEV_NEW_DB_PASS
+        EntityBase = "https://dev-climatekg.tibwiki.io/entity/"
+        PropDirectBase = "https://dev-climatekg.tibwiki.io/prop/direct/"
+        BasicAuth = $null
+        UseSudo = $true
+    }
+    [pscustomobject]@{
+        Name = "TEST-NEW"
+        WikiUrl = "https://test-climatekg.tibwiki.io/wiki/Main_Page"
+        QueryUrl = "https://test-climatekg.tibwiki.io/query/"
+        SparqlUrl = "https://test-climatekg.tibwiki.io/query/proxy/sparql"
+        DbMode = "remote"
+        Host = "climatekg11.test.service.tib.eu"
+        User = "worthingtons"
+        DbContainer = "wikibase-mariadb"
+        DbUser = "wikibase"
+        DbName = "my_wiki"
+        DbPass = $TEST_NEW_DB_PASS
+        EntityBase = "https://test-climatekg.tibwiki.io/entity/"
+        PropDirectBase = "https://test-climatekg.tibwiki.io/prop/direct/"
+        BasicAuth = $null
+        UseSudo = $true
+    }
+    [pscustomobject]@{
+        Name = "PROD-NEW"
+        WikiUrl = "https://climatekg.tibwiki.io/wiki/Main_Page"
+        QueryUrl = "https://climatekg.tibwiki.io/query/"
+        SparqlUrl = "https://climatekg.tibwiki.io/query/proxy/sparql"
+        DbMode = "remote"
+        Host = "climatekg21.service.tib.eu"
+        User = "worthingtons"
+        DbContainer = "wikibase-mariadb"
+        DbUser = "wikibase"
+        DbName = "my_wiki"
+        DbPass = $PROD_NEW_DB_PASS
+        EntityBase = "https://climatekg.tibwiki.io/entity/"
+        PropDirectBase = "https://climatekg.tibwiki.io/prop/direct/"
+        BasicAuth = $null
+        UseSudo = $true
+    }
+    [pscustomobject]@{
+        Name = "IMPORT"
+        WikiUrl = "https://import-climatekg.tibwiki.io/wiki/Main_Page"
+        QueryUrl = "https://import-climatekg.tibwiki.io/query/"
+        SparqlUrl = "https://import-climatekg.tibwiki.io/query/proxy/sparql"
+        DbMode = "remote"
+        Host = "climatekgdi21.service.tib.eu"
+        User = "worthingtons"
+        DbContainer = "wikibase-mariadb"
+        DbUser = "wikibase"
+        DbName = "my_wiki"
+        DbPass = $IMPORT_DB_PASS
+        EntityBase = "https://import-climatekg.tibwiki.io/entity/"
+        PropDirectBase = "https://import-climatekg.tibwiki.io/prop/direct/"
+        BasicAuth = $null
+        UseSudo = $true
     }
 )
 
@@ -169,6 +250,9 @@ function Get-RemoteDbTimestamp($envConfig) {
     }
 
     $command = "docker exec $($envConfig.DbContainer) mysql -N -B -u $($envConfig.DbUser) -p$($envConfig.DbPass) $($envConfig.DbName) -e 'SELECT MAX(rc_timestamp) FROM recentchanges;'"
+    if ($envConfig.UseSudo) {
+        $command = "sudo $command"
+    }
     $output = ssh -i $SSH_KEY -o StrictHostKeyChecking=no "$($envConfig.User)@$($envConfig.Host)" $command
     if ($LASTEXITCODE -ne 0) {
         throw "Remote DB query failed for $($envConfig.Name) (exit $LASTEXITCODE)"

@@ -17,8 +17,24 @@
 #   WIKIBASE_ENV      — environment label: dev | test | prod
 #   COMPOSE_FILE      — compose override filename (e.g. docker-compose.test.yml)
 #   ENV_TEMPLATE      — .env template filename   (e.g. .env.test.template)
+#
+# Optional variables:
+#   EXTERNAL_TLS_PROXY — set to true when the box sits behind an external
+#                        TLS-terminating reverse proxy (e.g. the TIB tibwiki.io
+#                        front door) that forwards all paths to this box on
+#                        port 80. Skips Certbot install/cert issuance and only
+#                        opens ports 22/80 in the firewall — this box never
+#                        needs to terminate TLS itself.
 # =============================================================================
 set -euo pipefail
+
+EXTERNAL_TLS_PROXY="${EXTERNAL_TLS_PROXY:-false}"
+EXTERNAL_TLS_PROXY_ON=0
+case "${EXTERNAL_TLS_PROXY,,}" in
+    1|true|yes|on)
+        EXTERNAL_TLS_PROXY_ON=1
+        ;;
+esac
 
 : "${WIKIBASE_DOMAIN:?Variable WIKIBASE_DOMAIN must be set by the calling wrapper.}"
 : "${WIKIBASE_ENV:?Variable WIKIBASE_ENV must be set by the calling wrapper.}"
@@ -76,10 +92,15 @@ fi
 docker compose version
 
 # ------------------------------------------------------------------
-# 3. Install Nginx & Certbot
+# 3. Install Nginx (& Certbot, unless TLS is terminated externally)
 # ------------------------------------------------------------------
-echo "[3/7] Installing Nginx and Certbot..."
-apt-get install -y -qq nginx certbot python3-certbot-nginx
+if [ "$EXTERNAL_TLS_PROXY_ON" -eq 1 ]; then
+    echo "[3/7] Installing Nginx (Certbot skipped — EXTERNAL_TLS_PROXY is enabled)..."
+    apt-get install -y -qq nginx
+else
+    echo "[3/7] Installing Nginx and Certbot..."
+    apt-get install -y -qq nginx certbot python3-certbot-nginx
+fi
 
 # ------------------------------------------------------------------
 # 4. Clone / update the repository
@@ -194,7 +215,9 @@ systemctl reload nginx
 echo "[7/7] Configuring firewall..."
 ufw allow 22/tcp
 ufw allow 80/tcp
-ufw allow 443/tcp
+if [ "$EXTERNAL_TLS_PROXY_ON" -eq 0 ]; then
+    ufw allow 443/tcp
+fi
 ufw --force enable
 
 # ------------------------------------------------------------------
@@ -217,9 +240,16 @@ if [ "$BASIC_AUTH_ON" -eq 1 ]; then
     echo "Basic Auth is active for this deployment (user: $BASIC_AUTH_USER)"
     echo ""
 fi
-echo "Once the wiki responds at http://$WIKIBASE_DOMAIN, run:"
-echo "  certbot --nginx -d $WIKIBASE_DOMAIN --non-interactive --agree-tos -m $ADMIN_EMAIL"
-echo ""
-echo "Then verify at: https://$WIKIBASE_DOMAIN/wiki/Main_Page"
-echo "Query service:  https://$WIKIBASE_DOMAIN/query/"
+if [ "$EXTERNAL_TLS_PROXY_ON" -eq 1 ]; then
+    echo "TLS is terminated by the external reverse proxy — no local Certbot step needed."
+    echo "Once the wiki responds at http://$WIKIBASE_DOMAIN, verify end-to-end through the"
+    echo "external proxy at: https://$WIKIBASE_DOMAIN/wiki/Main_Page"
+    echo "Query service:  https://$WIKIBASE_DOMAIN/query/"
+else
+    echo "Once the wiki responds at http://$WIKIBASE_DOMAIN, run:"
+    echo "  certbot --nginx -d $WIKIBASE_DOMAIN --non-interactive --agree-tos -m $ADMIN_EMAIL"
+    echo ""
+    echo "Then verify at: https://$WIKIBASE_DOMAIN/wiki/Main_Page"
+    echo "Query service:  https://$WIKIBASE_DOMAIN/query/"
+fi
 echo ""

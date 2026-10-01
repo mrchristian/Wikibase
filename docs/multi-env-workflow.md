@@ -6,6 +6,7 @@
 > | **`docs/multi-env-workflow.md`** (this file) | **Master reference** — how to operate all environments, run scripts, promote content |
 > | `devops-plan.md` | Planning log — itemised task list, design decisions, build rationale |
 > | `docs/deployment-protocol.md` | Historical deployment log; server registry |
+> | `docs/new-tib-machines-provisioning-plan.md` | Parallel rollout plan for the new TIB environments and cutover strategy |
 > | `docs/hetzner-deploy-guide.md` | One-time server provisioning on Hetzner |
 > | `docs/server-admin.md` | Server resource management — disk, Docker logs, maintenance |
 > | `docs/sync-guide.md` | Background reference — sync strategy options (context only) |
@@ -25,6 +26,59 @@ This document is the master reference for the 4-tier Docker DevOps workflow.
 > The patch uses `MW_WG_SERVER` to set the correct remote domain/protocol and now writes environment-aware interwiki URLs.
 > Runtime repair has also been applied on DEV by re-running `wikibase-sitelinks-init` with `docker-compose.dev.yml` and restarting `wikibase`.
 > Temporary host-level Basic Auth protection for DEV/TEST/PROD was also applied; see `docs/temporary-web-password-protection.md`.
+
+---
+
+## Current Setup Diagram (as of 2026-10-01)
+
+```
+┌─────────────────────────────────────────────────────────────────────────────┐
+│                  CLIMATEKG CURRENT INFRASTRUCTURE (PARALLEL ROLLOUT)          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+LEGACY ENVIRONMENTS (still live, unchanged for now):
+┌──────────────┐        ┌──────────────┐        ┌──────────────┐
+│ OLD DEV      │        │ OLD TEST     │        │ OLD PROD     │
+│ semanticclim.│        │ semanticclim.│        │ semanticclim.│
+│ DB + files   │        │ DB + files   │        │ public site  │
+└──────┬───────┘        └──────┬───────┘        └──────┬───────┘
+       │                        │                        │
+       │                        │                        │
+       └────────────────────────┼────────────────────────┘
+                                │
+                                ▼
+                    [validation / migration window]
+
+NEW TIB ENVIRONMENTS (parallel validation / cutover target):
+┌──────────────┐   ┌──────────────┐   ┌──────────────┐   ┌──────────────┐
+│ new-IMPORT   │   │ new-DEV      │   │ new-TEST     │   │ new-PROD     │
+│ import-...   │   │ dev-...      │   │ test-...     │   │ climatekg... │
+│ sandbox/db   │   │ migrated     │   │ validated    │   │ production   │
+│              │   │ data         │   │ data         │   │ target       │
+└──────┬───────┘   └──────┬───────┘   └──────┬───────┘   └──────┬───────┘
+       │                   │                   │                   │
+       │                   │                   │                   │
+       └───────────────────┼───────────────────┼───────────────────┘
+                           │
+                           ▼
+                new tibwiki.io domains (parallel to legacy domains)
+
+CONTROL PLANE / WORKSTATION:
+┌─────────────────────────────────────────────────────────────────────────────┐
+│ Windows workstation / repo                                                         │
+│ - runs sync / validation / migration scripts                                     │
+│ - compares old vs new environments during staged rollout                          │
+└─────────────────────────────────────────────────────────────────────────────┘
+
+ROLL-OUT MODEL:
+old DEV/TEST/PROD  ──────► keep running as live legacy systems
+       │
+       └───── migrate / validate / compare ──────► new-DEV → new-TEST → new-PROD
+                                                    │
+                                                    └────► new-IMPORT is sandbox
+```
+
+> This is the current operating model: old environments remain in service while the new TIB stack is validated in parallel. The legacy workflow diagram below remains as the historical operating model and the canonical script/command set for the existing live environments.
 
 ---
 
@@ -153,6 +207,32 @@ docker compose down
 
 # Verify all environments are in sync with DEV
 .\scripts\verify-env-sync.ps1
+```
+
+### New TIB Machines (parallel validation / staged cutover)
+
+```powershell
+# Deploy the new TIB hosts during the parallel validation window.
+# These are temporary wrappers and are kept separate from the legacy old-host scripts.
+ssh <new-import-host> "cd /opt/wikibase && bash scripts/deploy/deploy-import.sh"
+ssh <new-dev-host>    "cd /opt/wikibase && bash scripts/deploy/deploy-dev-new.sh"
+ssh <new-test-host>   "cd /opt/wikibase && bash scripts/deploy/deploy-test-new.sh"
+ssh <new-prod-host>   "cd /opt/wikibase && bash scripts/deploy/deploy-prod-new.sh"
+
+# Validate the new stack side-by-side with the legacy stack.
+.\scripts\verify-env-sync.ps1
+
+# One-off data migration scripts for the new TIB rollout.
+.\scripts\sync\migrate-olddev-to-newdev.ps1
+.\scripts\sync\migrate-olddev-to-newdev.ps1 -DbOnly
+.\scripts\sync\migrate-newdev-to-newtest.ps1
+.\scripts\sync\migrate-newtest-to-newprod.ps1
+
+# External checks against the new tibwiki.io domains.
+curl -I https://import-climatekg.tibwiki.io/wiki/Main_Page
+curl -I https://dev-climatekg.tibwiki.io/wiki/Main_Page
+curl -I https://test-climatekg.tibwiki.io/wiki/Main_Page
+curl -I https://climatekg.tibwiki.io/wiki/Main_Page
 ```
 
 ### Local Experiments (sandbox for imports/testing)

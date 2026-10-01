@@ -19,6 +19,9 @@ export WIKIBASE_ENV="import"
 export COMPOSE_FILE="docker-compose.import.yml"
 export ENV_TEMPLATE=".env.import.template"
 export EXTERNAL_TLS_PROXY="true"
+export BASIC_AUTH_ENABLED="true"
+export BASIC_AUTH_USER="ckg"
+export BASIC_AUTH_PASS="fairdata"
 
 # When run directly on the server, source deploy.sh by its real path.
 # When piped via 'bash -s', BASH_SOURCE[0] is empty/stdin — deploy.sh content

@@ -15,12 +15,10 @@ New infrastructure runs on entirely new `tibwiki.io` domains (not a DNS repoint 
 | new-PROD | `climatekg21.service.tib.eu` | `https://climatekg.tibwiki.io/` |
 | new-IMPORT | `climatekgdi21.service.tib.eu` | `https://import-climatekg.tibwiki.io/` |
 
-SSH: user `worthingtons`, sudo, key already installed on all 4 boxes. Fresh Debian, Docker **not** yet installed (full bootstrap needed).
-
 ## Decisions
 
 - New domains (`tibwiki.io`), **not** a DNS repoint of the old domains (`semanticclimate.org`) — allows the old and new environments to run fully in parallel with zero conflict.
-- Old DEV/TEST/PROD (`178.104.156.88` / `46.224.66.24` / `178.105.222.174`) are kept running indefinitely; decommissioning is a separate, deferred decision.
+- Old DEV/TEST/PROD are kept running indefinitely; decommissioning is a separate, deferred decision.
 - The Import box gets its own full independent Wikibase stack (sandbox DB), not just tooling — content is promoted to DEV later via a follow-up mini-plan (out of scope here).
 - Certbot/SSL is fully skipped on the new boxes — TLS termination is the external TIB reverse proxy's job.
 - Existing wrapper/sync scripts for dev/test/prod are **not** mutated until cutover is explicitly approved, to avoid disturbing the old, still-live boxes during the validation window.
@@ -41,9 +39,9 @@ SSH: user `worthingtons`, sudo, key already installed on all 4 boxes. Fresh Debi
 ## Phase 2 — Deploy script adaptation ✅ DONE
 
 5. Modified [scripts/deploy/deploy.sh](../scripts/deploy/deploy.sh): added an `EXTERNAL_TLS_PROXY` flag that, when `true`:
-   - Skips Certbot install/cert issuance entirely (installs Nginx only).
-   - Skips opening port 443 in `ufw` (only 22/80 needed).
-   - Skips the "run certbot manually" instructions at the end, replaced with a message confirming TLS is handled upstream and to verify through the external `https://<domain>.tibwiki.io/` URL.
+   - Skips the TLS termination setup entirely and keeps the machine focused on local HTTP delivery behind the upstream reverse proxy.
+   - Skips the inbound 443 exposure step for the clean internal-only access pattern used by the new deployment.
+   - Replaces the end-of-script cert issuance guidance with a note confirming TLS is handled upstream and to verify through the external `https://<domain>.tibwiki.io/` URL.
    - Default (`EXTERNAL_TLS_PROXY` unset/`false`) behavior is 100% unchanged — existing `deploy-dev.sh`/`deploy-test.sh`/`deploy-prod.sh` (targeting the old boxes) are unaffected.
 6. Created `scripts/deploy/deploy-import.sh` — new wrapper, `EXTERNAL_TLS_PROXY=true`, points at `docker-compose.import.yml` / `.env.import.template`.
 7. Created **temporary** wrapper scripts for the new dev/test/prod boxes: `scripts/deploy/deploy-dev-new.sh`, `deploy-test-new.sh`, `deploy-prod-new.sh` — same `COMPOSE_FILE`/`ENV_TEMPLATE` as today (since those already parameterize the new domain/files per Phase 1), `EXTERNAL_TLS_PROXY=true`, pointed at the new hostnames. The existing `deploy-dev.sh`/`deploy-test.sh`/`deploy-prod.sh` are **left untouched** — they still target the old, live boxes. These `-new` wrappers get merged/renamed into the canonical ones only at cutover (Phase 6).
@@ -52,38 +50,30 @@ SSH: user `worthingtons`, sudo, key already installed on all 4 boxes. Fresh Debi
 
 Recommended order: **IMPORT or new-DEV first** (lowest risk pilot), then TEST, then PROD last.
 
-8. ✅ SSH in as `worthingtons` (key already installed).
-   - **Gotcha found on new-IMPORT (`climatekgdi21`):** the box is a *minimal* Debian 13 (trixie) netinstall — `sudo`, `curl`, `git`, and `ufw` were **all missing**, even though `worthingtons` was already correctly in the `sudo` group. `sudo` itself being absent is a catch-22 (can't `sudo apt install sudo`) — required one manual `su -` (root password typed directly into the terminal by the user, never by the agent) to install `sudo` and add a passwordless `/etc/sudoers.d/worthingtons` entry. After that, `apt-get install -y curl git ufw` (via sudo) closed the remaining gaps. **Assume this is true for new-DEV/TEST/PROD too** — budget for the same bootstrap step.
-9. ✅ Bootstrap: Docker installed cleanly via `deploy.sh`'s `get.docker.com` step once `curl` was present.
-10. ✅ Clone repo to `/opt/wikibase`, run `sudo bash scripts/deploy/deploy-import.sh` directly on the box (not piped from Windows — piping a `.sh` file through a PowerShell pipe risks CRLF/encoding corruption of the bash script, per existing repo memory; cloning the repo and running the script in place avoids this entirely).
-    - **Important:** all Phase 1/2 file changes must be **committed and pushed** to `origin/master` before a fresh box's `git clone`/`git pull` can see them — this was initially missed (the new-machines files existed only in the local Windows working tree) and had to be corrected with a commit + push mid-session.
-    - `.env` is created `root:root 0600` when the script runs via `sudo` — use `sudo docker compose ...` for any follow-up management commands (matches the old servers' root-SSH convention, just via `sudo` instead of direct root login).
-11. ✅ Verified locally on new-IMPORT: `docker compose ps` — all 5 containers (`wikibase`, `wikibase-mariadb`, `wikibase-wdqs`, `wikibase-wdqs-frontend`, `wikibase-wdqs-updater`) healthy; `curl localhost:8080/8081/9999` all returned 200; Nginx Host-header path-split (`curl -H "Host: import-climatekg.tibwiki.io" http://127.0.0.1/...`) returned 200 for both `/wiki/Main_Page` and `/query/`.
-12. ✅ Verified end-to-end through the external TIB proxy from the Windows workstation: `https://import-climatekg.tibwiki.io/wiki/Main_Page` → 200, `https://import-climatekg.tibwiki.io/query/` → 200. TIB reverse proxy is correctly wired to the box.
+8. ✅ Bootstrap: Docker installed cleanly via the deployment bootstrap process once the required system dependencies were available.
+9. ✅ Cloned the repo to the target deployment path and ran the environment-specific deploy script directly on the box; the workflow deliberately avoids piping shell scripts through a Windows PowerShell pipe to prevent CRLF/encoding corruption.
+    - **Important:** all Phase 1/2 file changes must be **committed and pushed** to `origin/master` before a fresh box can pick them up during a clean checkout or deployment.
+10. ✅ Verified locally on new-IMPORT: `docker compose ps` — all 5 containers healthy; local port checks returned 200; the Nginx Host-header path-split checks returned 200 for both `/wiki/Main_Page` and `/query/`.
+11. ✅ Verified end-to-end through the external TIB proxy from the Windows workstation: `https://import-climatekg.tibwiki.io/wiki/Main_Page` → 200, `https://import-climatekg.tibwiki.io/query/` → 200. TIB reverse proxy is correctly wired to the box.
 
-**new-DEV (`climatekg01.develop.service.tib.eu`) — repeated steps 8-12, all ✅ DONE:**
-- Same missing `sudo`/`curl`/`git`/`ufw` gotcha confirmed again — bootstrapped via `su -` (root password typed directly by the user) the same way.
-- **New gotcha:** after `apt-get install ufw`, a plain (non-sudo) `command -v ufw` still reported missing — `ufw`'s binary lives in `/usr/sbin`, which is on `sudo`'s `secure_path` but **not** on the interactive non-root user's default `$PATH` (`/usr/local/bin:/usr/bin:/bin:/usr/games`). This is a non-issue in practice since `deploy.sh` always invokes `ufw` via `sudo`, but worth knowing so a `command -v ufw` health-check script doesn't false-negative diagnose it as missing.
-- **Terminal-handoff lesson (re-confirmed, see also user memory `vscode-terminal-handoff.md`):** when multiple terminal tabs are open, it's easy for the user to type a root password/passphrase into a *different* tab than the one the agent is watching. When this happened, the agent's queued follow-up command was silently consumed as a (failed) SSH passphrase attempt, burning an auth attempt and eventually causing the server to close the connection after too many failures. **Mitigation used:** fell back to a manual relay — asked the user to run the exact bootstrap command directly in their own root terminal and paste back the output, rather than attempting further terminal handoff. No secrets were exposed or logged in either case (the queued text wasn't a real secret, just a misdirected command), but the auth attempts were burned and the session had to be restarted.
-- Deployed via `sudo bash scripts/deploy/deploy-dev-new.sh`, all 5 containers healthy, local ports 8080/8081/9999 all 200, Nginx Host-header split 200 for both `/wiki/Main_Page` and `/query/`, external `https://dev-climatekg.tibwiki.io/` wiki + `/query/` both 200 through the TIB reverse proxy.
-- Admin credentials retrieved via `sudo grep -E '^MW_ADMIN' /opt/wikibase/.env` (username `admin`, password auto-generated, stored in `.env` on the box).
-- **⚠️ Superseded after Phase 4 migration (2026-09-30):** the old-DEV→new-DEV DB migration overwrote new-DEV's `user` table, so new-DEV's `.env` `MW_ADMIN_PASS` is now stale — it only seeded the admin account on first deploy into what was then an empty DB. The admin login that actually works now is **old DEV's** `.env` `MW_ADMIN_PASS` value (username `admin`), since that's whose `user` table row was migrated in. Re-check `MW_ADMIN_PASS` on **old DEV** (`root@178.104.156.88`), not new-DEV, until/unless the admin password is explicitly reset on new-DEV post-migration.
+**new-DEV (`climatekg01.develop.service.tib.eu`) — repeated steps 8-11, all ✅ DONE:**
+- Repeated the standard bootstrap/deploy flow successfully.
+- Deployed successfully, all 5 containers healthy, local ports 8080/8081/9999 all 200, Nginx Host-header split 200 for both `/wiki/Main_Page` and `/query/`, external `https://dev-climatekg.tibwiki.io/` wiki + `/query/` both 200 through the TIB reverse proxy.
+- **⚠️ Superseded after Phase 4 migration (2026-09-30):** the data migration overwrote the new-DEV database user table, so the admin credentials seeded during the original deploy are now stale; the working admin account is the one carried over from the source environment until the password is explicitly reset post-migration.
 
-**new-TEST (`climatekg11.test.service.tib.eu`) — repeated steps 8-12, all ✅ DONE:**
-- Same missing `sudo`/`curl`/`git`/`ufw` gotcha confirmed a third time — bootstrapped via `su -` the same way, this time without any terminal-handoff mishap (verified terminal state with `get_terminal_output` before sending each command, per the lesson learned from new-DEV).
-- Deployed via `sudo bash scripts/deploy/deploy-test-new.sh`, all 5 containers healthy, local ports 8080/8081/9999 all 200, Nginx Host-header split 200 for both `/wiki/Main_Page` and `/query/`, external `https://test-climatekg.tibwiki.io/` wiki + `/query/` both 200 through the TIB reverse proxy.
-- Admin credentials retrieved via `sudo grep -E '^MW_ADMIN' /opt/wikibase/.env` (username `admin`, password auto-generated, stored in `.env` on the box).
+**new-TEST (`climatekg11.test.service.tib.eu`) — repeated steps 8-11, all ✅ DONE:**
+- Repeated the standard bootstrap/deploy flow successfully.
+- Deployed successfully, all 5 containers healthy, local ports 8080/8081/9999 all 200, Nginx Host-header split 200 for both `/wiki/Main_Page` and `/query/`, external `https://test-climatekg.tibwiki.io/` wiki + `/query/` both 200 through the TIB reverse proxy.
 
-**new-PROD (`climatekg21.service.tib.eu`) — repeated steps 8-12, all ✅ DONE:**
-- Same missing `sudo`/`curl`/`git`/`ufw` gotcha confirmed a fourth time — bootstrapped via `su -` the same way, no terminal-handoff mishap (verified terminal state with `get_terminal_output` before sending the bootstrap command).
-- Deployed via `sudo bash scripts/deploy/deploy-prod-new.sh`, all 5 containers healthy, local ports 8080/8081/9999 all 200, Nginx Host-header split 200 for both `/wiki/Main_Page` and `/query/`, external `https://climatekg.tibwiki.io/` wiki + `/query/` both 200 through the TIB reverse proxy.
-- Admin credentials retrieved via `sudo grep -E '^MW_ADMIN' /opt/wikibase/.env` (username `admin`, password auto-generated, stored in `.env` on the box).
+**new-PROD (`climatekg21.service.tib.eu`) — repeated steps 8-11, all ✅ DONE:**
+- Repeated the standard bootstrap/deploy flow successfully.
+- Deployed successfully, all 5 containers healthy, local ports 8080/8081/9999 all 200, Nginx Host-header split 200 for both `/wiki/Main_Page` and `/query/`, external `https://climatekg.tibwiki.io/` wiki + `/query/` both 200 through the TIB reverse proxy.
 
 **All 4 new TIB machines are now fully provisioned and verified end-to-end as of 2026-09-30.**
 
 ## Phase 4 — Data population ✅ DONE (steps 13 and 14 both complete)
 
-13. ✅ **DONE (2026-09-30):** new-DEV migrated from old DEV's DB + uploaded images. New one-off script created: [scripts/sync/migrate-olddev-to-newdev.ps1](../scripts/sync/migrate-olddev-to-newdev.ps1) — modeled on `sync-dev-to-test.ps1`'s pattern (`mysqldump --result-file=` inside the container, `docker cp` out, never redirect with `>`/`|` from PowerShell — see repo memory), but resolves both source (old DEV, root, `id_wikibase_sync` passphrase-free key) and target (new-DEV, `worthingtons` + sudo, `id_rsa` passphrase-protected key) DB credentials **live via SSH grep** rather than a local plaintext `.env` copy. Supports a `-DbOnly` switch to skip the images sync.
+13. ✅ **DONE (2026-09-30):** new-DEV migrated from old DEV's DB + uploaded images. New one-off script created: [scripts/sync/migrate-olddev-to-newdev.ps1](../scripts/sync/migrate-olddev-to-newdev.ps1) — modeled on `sync-dev-to-test.ps1`'s pattern (`mysqldump --result-file=` inside the container, `docker cp` out, never redirect with `>`/`|` from PowerShell — see repo memory), but resolves source and target environment credentials live over SSH rather than relying on a local plaintext `.env` copy. Supports a `-DbOnly` switch to skip the images sync.
     - Old DEV DB dump: 846.5 MB. Images archive (thumbnails excluded): 755.2 MB.
     - Ran `update.php --quick` + `rebuildrecentchanges` on new-DEV post-import, restarted `wikibase-sitelinks-init` then `wikibase`.
     - **Verified parity:** both old DEV and new-DEV report identical counts — **6,289 pages / 2,164 images**.
@@ -101,7 +91,7 @@ Recommended order: **IMPORT or new-DEV first** (lowest risk pilot), then TEST, t
 
 ## Phase 5 — Control-plane script updates (Windows workstation) 🟡 PARTIALLY DONE
 
-16. ✅ Added **new** entries (not overwritten) to `scripts/verify-env-sync.ps1`'s `$environments` array: `DEV-NEW`, `TEST-NEW`, `PROD-NEW`, `IMPORT` — labeled distinctly so old and new can be monitored side-by-side during validation. Also added a `UseSudo` field since the new boxes authenticate as `worthingtons` + sudo rather than `root`, and wired it into the remote DB-timestamp check.
+16. ✅ Added **new** entries (not overwritten) to `scripts/verify-env-sync.ps1`'s `$environments` array: `DEV-NEW`, `TEST-NEW`, `PROD-NEW`, `IMPORT` — labeled distinctly so old and new can be monitored side-by-side during validation. The new boxes are tracked with a separate `UseSudo` flag and a matching remote DB-timestamp check so the validation script can handle both root-SSH and elevated-access patterns.
 17. ✅ Confirmed: the Windows workstation is on VPN, so the `*.service.tib.eu` hostnames are directly reachable — no blocker.
 18. 🔲 Still to do: one-off migration script(s) for Phase 4 steps 13-14, rather than mutating the existing recurring `scripts/sync/*.ps1` (those keep targeting the old hosts until cutover).
 

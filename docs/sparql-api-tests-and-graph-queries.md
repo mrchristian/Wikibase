@@ -1,12 +1,144 @@
-# SPARQL Graph Queries for ClimateKG Wikibase
+# SPARQL and API Tests + Graph Queries for ClimateKG Wikibase
 
 This document contains working SPARQL queries for visualizing the ClimateKG knowledge graph.
+
+## Verified SPARQL Interfaces (climatekg.tibwiki.io)
+
+The public site is protected by nginx basic auth to reduce bot traffic.
+
+- Username: `ckg`
+- Password: `fairdata`
+
+Working addresses:
+
+- Query UI (interactive editor): https://climatekg.tibwiki.io/query/
+- SPARQL endpoint (API): https://climatekg.tibwiki.io/query/proxy/sparql
+
+### Quick Smoke Tests
+
+Use these quick checks when you need to confirm the stack is up.
+
+1. SPARQL UI is reachable
+
+```powershell
+curl.exe -u ckg:fairdata -s -o NUL -w "%{http_code}`t%{content_type}`t%{url_effective}" https://climatekg.tibwiki.io/query/
+```
+
+Expected: `200` and content type containing `text/html`.
+
+2. SPARQL endpoint executes a query
+
+```powershell
+curl.exe -u ckg:fairdata -s -G --data-urlencode "query=SELECT * WHERE { ?s ?p ?o } LIMIT 1" -H "Accept: application/sparql-results+json" -o NUL -w "%{http_code}`t%{content_type}`t%{url_effective}" https://climatekg.tibwiki.io/query/proxy/sparql
+```
+
+Expected: `200` and content type containing `application/sparql-results+json`.
+
+3. MediaWiki API responds
+
+```powershell
+curl.exe -u ckg:fairdata -s -o NUL -w "%{http_code}`t%{content_type}`t%{url_effective}" "https://climatekg.tibwiki.io/w/api.php?action=query&meta=siteinfo&format=json"
+```
+
+Expected: `200` and content type containing `application/json`.
+
+### One-Command Smoke Test
+
+Run this PowerShell snippet to check all three endpoints in one go:
+
+```powershell
+$checks = @(
+  @('SPARQL UI', 'https://climatekg.tibwiki.io/query/', 'text/html'),
+  @('SPARQL endpoint', 'https://climatekg.tibwiki.io/query/proxy/sparql?query=SELECT%20*%20WHERE%20%7B%20%3Fs%20%3Fp%20%3Fo%20%7D%20LIMIT%201', 'application/sparql-results+json'),
+  @('MediaWiki API', 'https://climatekg.tibwiki.io/w/api.php?action=query&meta=siteinfo&format=json', 'application/json')
+)
+
+foreach ($check in $checks) {
+  $name = $check[0]
+  $url = $check[1]
+  $expectedType = $check[2]
+  $result = curl.exe -u ckg:fairdata -s -o NUL -w "%{http_code}`t%{content_type}" $url
+  $parts = $result -split "`t", 2
+  $status = $parts[0]
+  $contentType = if ($parts.Count -gt 1) { $parts[1] } else { '' }
+  if ($status -eq '200' -and $contentType -like "*$expectedType*") {
+    Write-Output "PASS`t$name`t$status`t$contentType"
+  } else {
+    Write-Output "FAIL`t$name`t$status`t$contentType"
+  }
+}
+```
+
+Expected output shape:
+
+```text
+PASS    SPARQL UI        200     text/html; charset=UTF-8
+PASS    SPARQL endpoint  200     application/sparql-results+json;charset=utf-8
+PASS    MediaWiki API    200     application/json; charset=utf-8
+```
+
+### Date-Stamped Connectivity Test
+
+Test date: **2026-10-07**
+
+Test query:
+
+```sparql
+SELECT * WHERE { ?s ?p ?o } LIMIT 1
+```
+
+Command used:
+
+```powershell
+curl.exe -u ckg:fairdata -s -G --data-urlencode "query=SELECT * WHERE { ?s ?p ?o } LIMIT 1" -H "Accept: application/sparql-results+json" -o NUL -w "%{http_code}`t%{content_type}`t%{url_effective}" https://climatekg.tibwiki.io/query/proxy/sparql
+```
+
+Observed result:
+
+```text
+200	application/sparql-results+json;charset=utf-8	https://climatekg.tibwiki.io/query/proxy/sparql?query=SELECT+%2A+WHERE+%7B+%3Fs+%3Fp+%3Fo+%7D+LIMIT+1
+```
+
+UI execution check on the same date:
+
+- https://climatekg.tibwiki.io/query/ returned results for the same query.
+- Query executed successfully in the Wikibase Query Service table view.
+
+### API Running Test (MediaWiki API)
+
+Test date: **2026-10-07**
+
+API endpoint:
+
+- https://climatekg.tibwiki.io/w/api.php
+
+Command used:
+
+```powershell
+curl.exe -u ckg:fairdata -s -o NUL -w "%{http_code}`t%{content_type}`t%{url_effective}" "https://climatekg.tibwiki.io/w/api.php?action=query&meta=siteinfo&format=json"
+```
+
+Observed result:
+
+```text
+200	application/json; charset=utf-8	https://climatekg.tibwiki.io/w/api.php?action=query&meta=siteinfo&format=json
+```
+
+Optional content check (returns JSON including `query.general.sitename`):
+
+```powershell
+curl.exe -u ckg:fairdata -s "https://climatekg.tibwiki.io/w/api.php?action=query&meta=siteinfo&format=json"
+```
+
+Expected indicator in response body:
+
+- `"sitename":"ClimateKG"`
 
 ## Important Notes
 
 - **Use full property URIs**: The `wdt:` prefix may not work consistently. Use full URIs like `<https://prod-climatekg.semanticclimate.org/prop/direct/P12>` instead.
 - **Graph view trigger**: Add `#defaultView:Graph` as the first line to automatically switch to graph visualization.
-- **Query interface**: https://prod-climatekg.semanticclimate.org/query/
+- **Query interface**: https://climatekg.tibwiki.io/query/
 
 ## Key Properties Discovered
 

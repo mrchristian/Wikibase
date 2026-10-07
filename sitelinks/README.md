@@ -127,7 +127,7 @@ CSV files contain the following columns:
 ## Related Documentation
 
 - [Multi-Environment Workflow](../docs/multi-env-workflow.md) — Database sync procedures
-- [SPARQL Graph Queries](../docs/sparql-graph-queries.md) — Query examples
+- [SPARQL and API Tests + Graph Queries](../docs/sparql-api-tests-and-graph-queries.md) — Query examples and connectivity checks
 
 ---
 

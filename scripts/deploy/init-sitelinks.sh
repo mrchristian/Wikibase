@@ -1,30 +1,34 @@
 #!/bin/bash
 set -e
 
+# WBS 1.46+ images load /config/InstanceSettings.php (which sets $wgServer) via MW_CONFIG_FILE;
+# fall back to /config/LocalSettings.php for older images that don't set it.
+MW_CONF="${MW_CONFIG_FILE:-/config/LocalSettings.php}"
+
 echo "=== Wikibase Sitelinks Initialization ==="
 
 # Remove any legacy 'mywiki' entries (renamed to 'climatekg-wiki').
 # Uses || true so this is a no-op on environments that never had mywiki.
 echo "Removing legacy 'mywiki' site entries (if present)..."
 cd /var/www/html
-/usr/local/bin/php maintenance/run.php sql --conf /config/LocalSettings.php --query \
+/usr/local/bin/php maintenance/run.php sql --conf "$MW_CONF" --query \
     "DELETE si FROM site_identifiers si INNER JOIN sites s ON si.si_site = s.site_id WHERE s.site_global_key = 'mywiki';" 2>&1 || true
-/usr/local/bin/php maintenance/run.php sql --conf /config/LocalSettings.php --query \
+/usr/local/bin/php maintenance/run.php sql --conf "$MW_CONF" --query \
     "DELETE FROM sites WHERE site_global_key = 'mywiki';" 2>&1 || true
 echo "[OK] Legacy mywiki site entries removed"
 
 # Migrate existing sitelink data from mywiki to climatekg-wiki
 echo "Migrating existing sitelinks from 'mywiki' to 'climatekg-wiki'..."
-/usr/local/bin/php maintenance/run.php sql --conf /config/LocalSettings.php --query \
+/usr/local/bin/php maintenance/run.php sql --conf "$MW_CONF" --query \
     "UPDATE wb_items_per_site SET ips_site_id = 'climatekg-wiki' WHERE ips_site_id = 'mywiki';" 2>&1 || true
 echo "[OK] Existing sitelinks migrated"
 
 # Import sites into the database
 echo "Importing sites from sites.xml..."
 cd /var/www/html
-if /usr/local/bin/php maintenance/run.php importSites --conf /config/LocalSettings.php /extra-config/sites.xml 2>&1; then
+if /usr/local/bin/php maintenance/run.php importSites --conf "$MW_CONF" /extra-config/sites.xml 2>&1; then
     echo "[OK] Sites imported successfully"
-elif /usr/local/bin/php maintenance/importSites.php --conf /config/LocalSettings.php /extra-config/sites.xml 2>&1; then
+elif /usr/local/bin/php maintenance/importSites.php --conf "$MW_CONF" /extra-config/sites.xml 2>&1; then
     echo "[OK] Sites imported successfully (legacy method)"
 else
     echo "[ERROR] Failed to import sites"
@@ -33,7 +37,7 @@ fi
 
 # Set the site language (required by SiteLinksView to render without errors)
 echo "Setting site language for climatekg-wiki..."
-/usr/local/bin/php maintenance/run.php sql --conf /config/LocalSettings.php --query \
+/usr/local/bin/php maintenance/run.php sql --conf "$MW_CONF" --query \
     "UPDATE sites SET site_language = 'en' WHERE site_global_key = 'climatekg-wiki' AND (site_language IS NULL OR site_language = '');" 2>&1
 echo "[OK] Site language set to 'en'"
 
@@ -85,7 +89,7 @@ SET
     END
 WHERE site_global_key = 'climatekg-wiki';
 "
-/usr/local/bin/php maintenance/run.php sql --conf /config/LocalSettings.php --query "$SITE_FIX_SQL" 2>&1 || true
+/usr/local/bin/php maintenance/run.php sql --conf "$MW_CONF" --query "$SITE_FIX_SQL" 2>&1 || true
 echo "[OK] Site domain and protocol configured"
 
 # Add interwiki entry for climatekg-wiki (needed for sitelink validation)
@@ -99,7 +103,7 @@ INTERWIKI_SQL="
 INSERT IGNORE INTO interwiki (iw_prefix, iw_url, iw_api, iw_wikiid, iw_local)
 VALUES ('climatekg-wiki', '${INTERWIKI_BASE}/wiki/\$1', '${INTERWIKI_BASE}/w/api.php', '', 1);
 "
-/usr/local/bin/php maintenance/run.php sql --conf /config/LocalSettings.php --query "$INTERWIKI_SQL" 2>&1 || true
+/usr/local/bin/php maintenance/run.php sql --conf "$MW_CONF" --query "$INTERWIKI_SQL" 2>&1 || true
 echo "[OK] Interwiki entry added"
 
 echo ""

@@ -1,7 +1,7 @@
 version: '3'
 services:
   wikibase:
-    image: wikibase/wikibase:mw1.45.0
+    image: wikibase/wikibase:mw1.46.2
     # Don't require health check for startup
     depends_on:
       mariadb: {}  # Just wait for service to exist, not require it to be healthy

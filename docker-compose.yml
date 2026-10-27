@@ -16,6 +16,28 @@
       interval: 20s
       timeout: 5s
 
+  opensearch:
+    image: wikibase/opensearch:os1.3.20
+    container_name: wikibase-opensearch
+    restart: unless-stopped
+    environment:
+      discovery.type: single-node
+      DISABLE_INSTALL_DEMO_CONFIG: "true"
+      DISABLE_SECURITY_PLUGIN: "true"
+      bootstrap.memory_lock: "true"
+      OPENSEARCH_JAVA_OPTS: "-Xms512m -Xmx512m"
+    ports:
+      - "9200:9200"
+      - "9600:9600"
+    volumes:
+      - opensearch_data:/usr/share/opensearch/data
+    healthcheck:
+      test: ["CMD-SHELL", "curl -fsS http://localhost:9200 >/dev/null || exit 1"]
+      interval: 20s
+      timeout: 10s
+      retries: 10
+      start_period: 90s
+
   wikibase:
     build:
       context: .
@@ -38,17 +60,19 @@
       MW_WG_SERVER: "http://localhost:8080"
       WDQS_PUBLIC_ENDPOINT_URL: "http://localhost:9999/bigdata/namespace/wdq/sparql"
       WDQS_PUBLIC_FRONTEND_URL: "http://localhost:8081"
+    entrypoint: ["/bin/bash", "/bootstrap-project-config.sh"]
     volumes:
       - wikibase_config:/config
       - wikibase_images:/var/www/html/images
       - ./php/uploads.ini:/usr/local/etc/php/conf.d/zz-uploads.ini:ro
-      - ./LocalSettings.sitelinks.php:/var/www/html/LocalSettings.d/LocalSettings.sitelinks.php:ro
-      - ./WikibaseSitelinksMessages.php:/var/www/html/LocalSettings.d/WikibaseSitelinksMessages.php:ro
-      - ./LocalSettings.sparql.php:/var/www/html/LocalSettings.d/LocalSettings.sparql.php:ro
-      - ./LocalSettings.uploads.php:/var/www/html/LocalSettings.d/LocalSettings.uploads.php:ro
-      - ./LocalSettings.namespaces.php:/var/www/html/LocalSettings.d/LocalSettings.namespaces.php:ro
-      - ./LocalSettings.parserfunctions.php:/var/www/html/LocalSettings.d/LocalSettings.parserfunctions.php:ro
-      - ./LocalSettings.general.php:/var/www/html/LocalSettings.d/LocalSettings.general.php:ro
+      - ./scripts/deploy/ensure-localsettings-d.sh:/bootstrap-project-config.sh:ro
+      - ./LocalSettings.sitelinks.php:/config/LocalSettings.d/LocalSettings.sitelinks.php:ro
+      - ./WikibaseSitelinksMessages.php:/config/LocalSettings.d/WikibaseSitelinksMessages.php:ro
+      - ./LocalSettings.sparql.php:/config/LocalSettings.d/LocalSettings.sparql.php:ro
+      - ./LocalSettings.uploads.php:/config/LocalSettings.d/LocalSettings.uploads.php:ro
+      - ./LocalSettings.namespaces.php:/config/LocalSettings.d/LocalSettings.namespaces.php:ro
+      - ./LocalSettings.parserfunctions.php:/config/LocalSettings.d/LocalSettings.parserfunctions.php:ro
+      - ./LocalSettings.general.php:/config/LocalSettings.d/LocalSettings.general.php:ro
       - ./climatekg-web-logos/climatekg-logo.png:/var/www/html/images/ckglogo1.png:ro
       - ./climatekg-web-logos/climatekg-logo.svg:/var/www/html/images/ckglogo1.svg:ro
     healthcheck:
@@ -119,7 +143,7 @@
       start_period: 4m
 
   wikibase-sitelinks-init:
-    image: wikibase/wikibase:mw1.45.0
+    image: wikibase/wikibase:mw1.46.2
     container_name: wikibase-sitelinks-init
     depends_on:
       wikibase:
@@ -151,4 +175,6 @@ volumes:
     name: wdqs_data
   wdqs_log:
     name: wdqs_log
+  opensearch_data:
+    name: opensearch_data
 

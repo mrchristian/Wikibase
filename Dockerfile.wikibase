@@ -1,12 +1,21 @@
-FROM wikibase/wikibase:mw1.45.0
+FROM wikibase/wikibase:mw1.46.2
 
 WORKDIR /var/www/html
 
 COPY php/uploads.ini /usr/local/etc/php/conf.d/zz-uploads.ini
 
-# Install ProfessionalWiki SPARQL extension via git clone.
-# The extension has no external PHP library dependencies (only composer/installers
-# which is already in vendor/), so extension.json + wfLoadExtension handles everything.
-# See: https://www.mediawiki.org/wiki/Extension:SPARQL
-RUN apt-get update && apt-get install -y --no-install-recommends git && rm -rf /var/lib/apt/lists/* \
- && git clone --depth 1 https://github.com/ProfessionalWiki/SPARQL.git /var/www/html/extensions/SPARQL
+# Install supported extensions and mobile UI support for the local Wikibase image.
+# MobileFrontend is required for Vector mobile behavior; SPARQL is the project-specific
+# extension used by this site. The OpenSearch backend and Wikibase search integrations
+# must be installed explicitly because they are not bundled in the base WBS image.
+RUN apt-get update && apt-get install -y --no-install-recommends git curl unzip ca-certificates && rm -rf /var/lib/apt/lists/* \
+ && curl -fsSL https://getcomposer.org/installer -o /tmp/composer-setup.php \
+ && php /tmp/composer-setup.php --install-dir=/usr/local/bin --filename=composer \
+ && if [ ! -d /var/www/html/extensions/MobileFrontend ]; then git clone --depth 1 --branch REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/MobileFrontend.git /var/www/html/extensions/MobileFrontend; fi \
+ && if [ ! -d /var/www/html/extensions/SPARQL ]; then git clone --depth 1 https://github.com/ProfessionalWiki/SPARQL.git /var/www/html/extensions/SPARQL; fi \
+ && if [ ! -d /var/www/html/extensions/Elastica ]; then git clone --depth 1 --branch REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/Elastica.git /var/www/html/extensions/Elastica; fi \
+ && if [ ! -d /var/www/html/extensions/CirrusSearch ]; then git clone --depth 1 --branch REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/CirrusSearch.git /var/www/html/extensions/CirrusSearch; fi \
+ && if [ ! -d /var/www/html/extensions/WikibaseCirrusSearch ]; then git clone --depth 1 --branch REL1_46 https://gerrit.wikimedia.org/r/mediawiki/extensions/WikibaseCirrusSearch.git /var/www/html/extensions/WikibaseCirrusSearch; fi \
+ && composer install --working-dir=/var/www/html/extensions/Elastica --no-interaction --no-progress --prefer-dist \
+ && composer install --working-dir=/var/www/html/extensions/CirrusSearch --no-interaction --no-progress --prefer-dist \
+ && composer install --working-dir=/var/www/html/extensions/WikibaseCirrusSearch --no-interaction --no-progress --prefer-dist

@@ -35,11 +35,11 @@ function Invoke-HealthCheck {
         try {
             $containerStatus = & docker inspect --format '{{if .State.Health}}{{.State.Health.Status}}{{else}}{{.State.Status}}{{end}}' wikibase 2>$null
             if ($LASTEXITCODE -eq 0 -and $containerStatus -eq 'healthy') {
-                $response = Invoke-WebRequest -Uri $Url -Method Get -TimeoutSec $TimeoutSeconds -SkipHttpErrorCheck
-                if ($response.StatusCode -ge 200 -and $response.StatusCode -lt 400) {
+                $httpCheck = & curl.exe -fsS --max-time $TimeoutSeconds $Url 2>$null
+                if ($LASTEXITCODE -eq 0) {
                     return $true
                 }
-                $lastError = "HTTP $($response.StatusCode)"
+                $lastError = 'curl.exe reported a failed HTTP response.'
             }
             elseif ($LASTEXITCODE -eq 0) {
                 $lastError = "Container health is '$containerStatus'"

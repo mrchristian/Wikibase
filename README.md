@@ -30,7 +30,7 @@ Primary remote repository:
 - https://git.tib.eu/OSL/climate-knowledge-graph/climatekg-deploy
 
 Project governance files:
-- License: [LICENSE](LICENSE) (duplicate text also available at [LICENCE](LICENCE))
+- License: [LICENSE](LICENSE)  
 - Change history: [CHANGELOG.md](CHANGELOG.md)
 
 This workspace can still keep GitHub as a backup mirror, but active deployment flow should be centered on the TIB repository.

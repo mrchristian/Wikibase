@@ -1,281 +1,246 @@
-# Wikibase Docker Stack
+# ClimateKG Deployment Repository (TIB-first)
 
-A complete Wikibase environment running on Docker Desktop, including the SPARQL query service.
+This is a DevOps deployment repository for ClimateKG Wikibase.
 
-This is the **LOCAL** development environment. For the complete multi-environment workflow (LOCAL → DEV → TEST → PROD), see [docs/multi-env-workflow.md](docs/multi-env-workflow.md).
+```text
+		     CLIMATEKG TIB INFRA (PRIMARY)
 
-## LOCAL Environment in Context
+  Workstation/CI
+	  |
+	  v
+  git.tib.eu (origin)
+	  |
+	  v
+  DEV --------> TEST --------> PROD
+   |             |              |
+   v             v              v
+ dev-climatekg  test-climatekg  climatekg
+ .tibwiki.io    .tibwiki.io     .tibwiki.io
 
-```
-┌─────────────────────────────────────────────────┐
-│         CLIMATEKG WIKIBASE ENVIRONMENTS         │
-└─────────────────────────────────────────────────┘
+  IMPORT (disconnected clean sandbox)
+     import-climatekg.tibwiki.io
 
-┌─────────────┐
-│   LOCAL     │  ← You are here
-│ (this repo) │  • Config development
-│  port 8080  │  • Experimental imports (with rollback)
-└──────┬──────┘  • Pull from DEV for testing
-       │
-       │ Sync scripts connect to:
-       ↓
-┌─────────────┐
-│     DEV     │  Database source of truth
-│  (178...88) │  Live content editing
-└──────┬──────┘
-       ↓
-┌─────────────┐
-│    TEST     │  Staging environment
-│  (46...24)  │
-└──────┬──────┘
-       ↓
-┌─────────────┐
-│    PROD     │  Public instance
-│ (178...174) │
-└─────────────┘
+  LOCAL experiment loop (workstation)
+     CLEAN -> start -> EXPERIMENTAL -> approve/rollback -> CLEAN
 ```
 
-**For experimental imports**, use the snapshot/rollback workflow:
-```powershell
-.\scripts\experimental-import-workflow.ps1 status   # Check state
-.\scripts\experimental-import-workflow.ps1 start    # Snapshot before import
-# ... run your import scripts ...
-.\scripts\experimental-import-workflow.ps1 approve  # Keep changes
-# OR
-.\scripts\experimental-import-workflow.ps1 rollback # Discard changes
-```
+This repository is the deployment and operations source for the Climate Knowledge Graph Wikibase stack, with the TIB infrastructure as the primary target.
 
-## Prerequisites
+Primary remote repository:
+- https://git.tib.eu/OSL/climate-knowledge-graph/climatekg-deploy
 
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed and running on Windows
+This workspace can still keep GitHub as a backup mirror, but active deployment flow should be centered on the TIB repository.
 
-## Loading the Stack in Docker Desktop
+## What this repository manages
 
-### Option 1 - From the command line (recommended)
+- Docker Compose stack for Wikibase, MariaDB, WDQS, and WDQS frontend
+- Environment-specific compose overlays and configuration
+- Environment sync and migration scripts (PowerShell)
+- Deployment scripts for server bootstrap and updates
+- Validation and maintenance scripts
 
-Open a PowerShell terminal in the C:\Wikibase folder and run:
+## Current operating model
+
+The project currently runs with a parallel model:
+
+- Legacy environments continue to run while new TIB environments are validated
+- New TIB environments are the deployment focus and cutover target
+
+New TIB domains:
+- IMPORT: https://import-climatekg.tibwiki.io
+- DEV: https://dev-climatekg.tibwiki.io
+- TEST: https://test-climatekg.tibwiki.io
+- PROD: https://climatekg.tibwiki.io
+
+Full operational reference:
+- docs/multi-env-workflow.md
+
+## Repository structure (key files)
+
+- docker-compose.yml
+- docker-compose.override.yml
+- docker-compose.dev.yml
+- docker-compose.test.yml
+- docker-compose.prod.yml
+- docker-compose.import.yml
+- scripts/deploy/deploy.sh
+- scripts/deploy/deploy-dev-new.sh
+- scripts/deploy/deploy-test-new.sh
+- scripts/deploy/deploy-prod-new.sh
+- scripts/deploy/deploy-import.sh
+- scripts/sync/migrate-olddev-to-newdev.ps1
+- scripts/sync/migrate-newdev-to-newtest.ps1
+- scripts/sync/migrate-newtest-to-newprod.ps1
+- scripts/verify-env-sync.ps1
+
+## Quick start (local workstation)
+
+Prerequisites:
+- Docker Desktop for Windows
+- PowerShell 5.1 or PowerShell 7+
+- SSH access to TIB servers (for remote ops)
+
+Start local stack:
 
 ```powershell
 docker compose up -d
+docker compose ps
 ```
 
-Docker Desktop will automatically detect the running containers. Open Docker Desktop and click **Containers** in the left sidebar - you will see a **wikibase** stack with all 5 services listed.
+Local endpoints:
+- Wiki: http://localhost:8080
+- Query UI: http://localhost:8081
+- SPARQL: http://localhost:9999
 
-### Option 2 - From the Docker Desktop GUI
-
-1. Open **Docker Desktop**
-2. Go to the **Containers** view (left sidebar, top icon)
-3. If the stack is not yet running, start it from the terminal as shown above
-4. Once running, click the **wikibase** stack row to expand it and see all services
-5. Click any service name to view its logs, inspect environment variables, or open a terminal inside the container
-6. Use the start/stop/restart buttons on each container row to manage individual services
-7. Port links (e.g. 8080:80) are clickable - click them to open the service in your browser
-
-### Viewing volumes in Docker Desktop
-
-1. Click **Volumes** in the left sidebar
-2. You will see three volumes: wikibase_data, wikibase_config, and wdqs_data
-3. Click any volume to inspect its contents and size
-
-### First startup
-
-The first startup takes several minutes:
-1. MariaDB initializes the database (~30 seconds)
-2. Wikibase runs the MediaWiki installer (~2-4 minutes)
-3. Blazegraph starts and the updater begins syncing (~1 minute)
-
-Monitor progress in Docker Desktop by clicking the **wikibase** stack and watching container status change from **Starting** to **Running (healthy)**.
-
-## Services
-
-| Service | Image | Port | Description |
-|---------|-------|------|-------------|
-| **wikibase** | wikibase/wikibase:mw1.45.0 | localhost:8080 | MediaWiki + Wikibase |
-| **mariadb** | mariadb:10.11 | - | Database backend |
-| **wdqs** | wikibase/wdqs:2 | localhost:9999 | Blazegraph SPARQL endpoint |
-| **wdqs-updater** | wikibase/wdqs:2 | - | Syncs Wikibase changes to WDQS |
-| **wdqs-frontend** | Custom (see Dockerfile) | localhost:8081 | SPARQL query UI |
-| **wikibase-sitelinks-init** | wikibase/wikibase:mw1.45.0 | - | One-shot: registers sitelinks config |
-
-## Endpoints
-
-| URL | Purpose |
-|-----|---------|
-| http://localhost:8080 | Wikibase wiki |
-| http://localhost:8080/wiki/Special:CreateItem | Create a new item |
-| http://localhost:8080/wiki/Special:NewProperty | Create a new property |
-| http://localhost:8081 | SPARQL query UI |
-| http://localhost:9999/bigdata/namespace/wdq/sparql | SPARQL API (direct) |
-| http://localhost:8081/proxy/sparql | SPARQL API (via nginx proxy) |
-
-## URI format in WDQS
-
-WDQS queries use entity URIs, not wiki page URLs.
-
-- Use http://localhost:8080/entity/Q1 in SPARQL patterns
-- Do not use http://localhost:8080/wiki/Item:Q1 in SPARQL patterns
-
-Quick check:
-
-```sparql
-ASK { <http://localhost:8080/entity/Q1> ?p ?o }    # True
-ASK { <http://localhost:8080/wiki/Item:Q1> ?p ?o } # False
-```
-
-## Admin Access
-
-Default credentials are configured in your environment. For multi-environment workflow and password management, see [docs/multi-env-workflow.md](docs/multi-env-workflow.md).
-
-## SPARQL Queries
-
-### Using the query UI
-
-Open http://localhost:8081, enter a query, and click the blue play button.
-
-### Using the helper script
+Stop local stack:
 
 ```powershell
-# Basic test - is there any data?
-.\query-sparql.ps1 -Query 'ASK { ?s ?p ?o }'
-
-# Sample triples
-.\query-sparql.ps1 -Query 'SELECT * WHERE { ?s ?p ?o } LIMIT 10'
-
-# Count all triples
-.\query-sparql.ps1 -Query 'SELECT (COUNT(*) AS ?count) WHERE { ?s ?p ?o }'
-
-# Query a specific item
-.\query-sparql.ps1 -Query 'SELECT ?p ?o WHERE { <http://localhost:8080/entity/Q1> ?p ?o . } LIMIT 10'
+docker compose down
 ```
 
-### Using the API directly (PowerShell)
+## TIB deployment workflow
 
-```powershell
-$query = 'SELECT * WHERE { ?s ?p ?o } LIMIT 10'
-$encoded = [uri]::EscapeDataString($query)
-$url = "http://localhost:9999/bigdata/namespace/wdq/sparql?query=$encoded"
-$response = Invoke-WebRequest -UseBasicParsing -Uri $url -Headers @{Accept='application/sparql-results+json'}
-($response.Content | ConvertFrom-Json).results.bindings | ConvertTo-Json -Depth 5
-```
+### 1) Deploy or update a TIB environment
 
-### Using curl
+Run from the target host after repository update:
 
 ```bash
-curl -G http://localhost:9999/bigdata/namespace/wdq/sparql \
-  --data-urlencode 'query=SELECT * WHERE { ?s ?p ?o } LIMIT 10' \
-  -H 'Accept: application/sparql-results+json'
+cd /opt/wikibase
+bash scripts/deploy/deploy-dev-new.sh
+bash scripts/deploy/deploy-test-new.sh
+bash scripts/deploy/deploy-prod-new.sh
 ```
 
-## Volumes
+Use the script matching the target machine role.
 
-| Volume | Mount Point | Purpose |
-|--------|-------------|---------|
-| wikibase_data | /var/lib/mysql | MariaDB database files |
-| wikibase_config | /config | Wikibase configuration (LocalSettings.php) |
-| wdqs_data | /wdqs/data | Blazegraph triplestore data |
+IMPORT is intentionally separate from the main promotion chain and should be used as a clean sandbox for import testing:
 
-## Files
-
-| File | Purpose |
-|------|---------|
-| LocalSettings.sitelinks.php | PHP settings enabling sitelinks |
-| sites.xml | Site definition imported into the sites table |
-| init-sitelinks.sh | Initialization script for sitelinks setup |
-| docker-compose.yml | Service definitions |
-| Dockerfile.wdqs-frontend | Custom WDQS frontend image build |
-| wdqs-frontend-nginx.conf | Nginx config template with SPARQL proxy and i18n alias |
-| wdqs-custom-config.json | Frontend SPARQL endpoint configuration |
-| query-sparql.ps1 | PowerShell helper for SPARQL queries |
-
-## Sitelinks
-
-Sitelinks connect MediaWiki pages to Wikibase items. The LOCAL wiki is registered with site ID `climatekg-wiki` at `http://localhost:8080`.
-
-### Automatic Setup
-
-Sitelinks are configured automatically on first startup via the `wikibase-sitelinks-init` container:
-1. Imports `sites.xml` into the MediaWiki sites table
-2. Loads `LocalSettings.sitelinks.php` configuration
-3. Registers the local site with proper URLs
-
-### Verify Registration
-
-Visit http://localhost:8080/wiki/Special:Sites to see registered sites. You should see `climatekg-wiki` with:
-- Site ID: `climatekg-wiki`
-- URL pattern: `http://localhost:8080/wiki/$1`
-
-### Adding Sitelinks to Items
-
-1. Open an item (e.g. http://localhost:8080/wiki/Item:Q1)
-2. Scroll to **Sitelinks** section
-3. Click **add** under the **climatekg-wiki** group
-4. Enter:
-   - Site: `climatekg-wiki`
-   - Page name: `Main_Page` (or any existing page)
-5. Save
-
-The linked page will display a link back to the item in its sidebar.
-
-### Environment-Specific Sites
-
-| File | Environment | Domain |
-|------|-------------|--------|
-| `sites.xml` | LOCAL | localhost:8080 |
-| `sites.dev.xml` | DEV | dev-climatekg.semanticclimate.org |
-| `sites.test.xml` | TEST | test-climatekg.semanticclimate.org |
-| `sites.prod.xml` | PROD | prod-climatekg.semanticclimate.org |
-
-When syncing databases between environments, sitelinks are automatically re-registered for the target environment's domain.
-
-### Re-running Initialization
-
-If sitelinks are not working:
-```powershell
-docker compose restart wikibase-sitelinks-init
-docker compose restart wikibase
+```bash
+cd /opt/wikibase
+bash scripts/deploy/deploy-import.sh
 ```
 
-## Common Operations
+### 2) Promote data through the new chain
 
 ```powershell
-# Start the stack
-docker compose up -d
-
-# Check status
-docker compose ps
-
-# Stop all services
-docker compose down
-
-# View logs for a service
-docker compose logs --tail 50 wikibase
-docker compose logs --tail 50 wdqs-updater
-
-# Restart a single service
-docker compose restart wdqs-frontend
-
-# Rebuild the custom frontend after editing config files
-docker compose build --no-cache wdqs-frontend
-docker compose up -d --force-recreate wdqs-frontend
-
-# Reset WDQS data (re-sync from Wikibase)
-docker compose stop wdqs wdqs-updater
-docker compose rm -f wdqs wdqs-updater
-docker volume rm wdqs_data
-docker compose up -d wdqs wdqs-updater
-
-# Destroy everything (including data)
-docker compose down -v
+.\scripts\sync\migrate-olddev-to-newdev.ps1
+.\scripts\sync\migrate-newdev-to-newtest.ps1
+.\scripts\sync\migrate-newtest-to-newprod.ps1
 ```
+
+### 3) Verify environment parity and health
+
+```powershell
+.\scripts\verify-env-sync.ps1
+```
+
+External checks:
+
+```powershell
+curl -I https://dev-climatekg.tibwiki.io/wiki/Main_Page
+curl -I https://test-climatekg.tibwiki.io/wiki/Main_Page
+curl -I https://climatekg.tibwiki.io/wiki/Main_Page
+```
+
+Separate IMPORT sandbox check:
+
+```powershell
+curl -I https://import-climatekg.tibwiki.io/wiki/Main_Page
+```
+
+### 4) Local experiment loop (import test cycle)
+
+Use local workflow state tracking to test imports safely, then keep or discard changes:
+
+```powershell
+.\scripts\experimental-import-workflow.ps1 status
+.\scripts\experimental-import-workflow.ps1 start
+# run import scripts here
+.\scripts\experimental-import-workflow.ps1 approve
+# or rollback instead of approve:
+.\scripts\experimental-import-workflow.ps1 rollback
+```
+
+## Git remotes (recommended)
+
+Use TIB as origin and keep GitHub as backup mirror:
+
+```bash
+git remote -v
+# origin  git@git.tib.eu:OSL/climate-knowledge-graph/climatekg-deploy.git
+# github  https://github.com/mrchristian/Wikibase.git
+```
+
+If needed, set them explicitly:
+
+```bash
+git remote rename origin github
+git remote add origin git@git.tib.eu:OSL/climate-knowledge-graph/climatekg-deploy.git
+```
+
+Push local main to remote master (current branch strategy):
+
+```bash
+git push -u origin main:master
+```
+
+## Environment sync scripts (legacy and parallel support)
+
+These scripts remain available and documented because they are still used during the transition window:
+
+- scripts/sync/sync-local-to-dev.ps1
+- scripts/sync/sync-local-to-test.ps1
+- scripts/sync/sync-dev-to-test.ps1
+- scripts/sync/sync-dev-to-prod.ps1
+- scripts/sync/sync-test-to-prod.ps1
+- scripts/sync/pull-from-dev.ps1
+
+Canonical details and guardrails:
+- docs/multi-env-workflow.md
 
 ## Troubleshooting
 
-| Symptom | Cause | Fix |
-|---------|-------|-----|
-| Wikibase returns 500 | MariaDB not ready yet | Wait for healthcheck; check docker compose logs mariadb |
-| SPARQL query returns 0 rows | Updater hasn't synced yet | Check docker compose logs wdqs-updater; wait a few minutes after creating items |
-| SPARQL query for Item:Q1 returns false/empty | Using wiki page URL instead of entity URI | Use http://localhost:8080/entity/Q1 in queries, not http://localhost:8080/wiki/Item:Q1 |
-| WDQS frontend query error | CORS if hitting port 9999 directly | Frontend uses /proxy/sparql - ensure the custom image is built |
-| i18n 404 errors in frontend | Missing jquery.uls alias | Rebuild with docker compose build wdqs-frontend |
-| Container keeps restarting | Dependency not healthy | Run docker compose ps and check healthcheck status |
-| Stack not visible in Docker Desktop | Containers not running | Run docker compose up -d from the C:\Wikibase folder |
+### SSH works but git fetch/push fails
+
+- Verify access to the project path:
+
+```bash
+git ls-remote git@git.tib.eu:OSL/climate-knowledge-graph/climatekg-deploy.git
+```
+
+- If prompted repeatedly, ensure your key is loaded and has project access.
+
+### SPARQL data appears stale
+
+Use reindex workflow:
+
+```powershell
+.\scripts\wdqs-reindex-prod.ps1
+```
+
+### Container health issues
+
+```powershell
+docker compose ps
+docker compose logs --tail 100 wikibase
+docker compose logs --tail 100 wdqs
+docker compose logs --tail 100 wdqs-updater
+```
+
+## Security and secrets
+
+- Do not commit .env files or private keys
+- Keep environment passwords in a secure password manager
+- Keep SQL backups in controlled storage
+
+## Documentation map
+
+- Master operations guide: docs/multi-env-workflow.md
+- Deployment history and registry: docs/deployment-protocol.md
+- New TIB rollout plan: docs/new-tib-machines-provisioning-plan.md
+- Server administration: docs/server-admin.md
+- Temporary access protection: docs/temporary-web-password-protection.md
+
+## Status note
+
+This README intentionally prioritizes TIB deployment and migration operations. For deeper command-level details and edge-case procedures, use docs/multi-env-workflow.md as the authoritative runbook.

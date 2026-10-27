@@ -176,6 +176,23 @@ docker compose ps
 docker compose down
 ```
 
+### Safe Local Update + Auto-Rollback
+
+Use the safe local deployment helper before upgrading the Wikibase application suite or pulling new Docker config. It records the current commit, backs up the live MariaDB, fetches the newest image tags with `docker compose pull`, rebuilds the stack, and automatically restores the previous Git state plus the database if the site does not return healthy.
+
+```powershell
+# Preview only: show what would happen without making a change
+.\scripts\deploy\safe-local-update.ps1 -WhatIf
+
+# Safe update against the local Docker Desktop stack
+.\scripts\deploy\safe-local-update.ps1
+
+# Override the default check URL if needed
+.\scripts\deploy\safe-local-update.ps1 -HealthUrl "http://localhost:8080/wiki/Main_Page"
+```
+
+> The script refuses to proceed if the working tree is dirty, backs up the database to `backups\safe-update-<timestamp>\`, pulls the newest Docker tags for the suite, and restores the last Git commit plus the SQL backup if the health check fails.
+
 ### Push / Pull Between Environments (one pair at a time)
 
 ```powershell

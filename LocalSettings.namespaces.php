@@ -17,3 +17,10 @@ $wgExtraNamespaces[ NS_IPCC_TALK ] = 'IPCC_talk';
 # Allow subpages in both the content and talk namespaces.
 $wgNamespacesWithSubpages[ NS_IPCC      ] = true;
 $wgNamespacesWithSubpages[ NS_IPCC_TALK ] = true;
+
+# Include IPCC pages and Wikibase Item (120) / Property (122) entities in default searches,
+# in addition to the main namespace. Users can still narrow this on Special:Search.
+$wgNamespacesToBeSearchedDefault[ NS_MAIN ] = true;
+$wgNamespacesToBeSearchedDefault[ NS_IPCC ] = true;
+$wgNamespacesToBeSearchedDefault[ 120 ] = true;
+$wgNamespacesToBeSearchedDefault[ 122 ] = true;

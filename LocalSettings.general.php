@@ -9,6 +9,46 @@ $wgLogos = [
 	'icon' => "$wgResourceBasePath/images/ckglogo1.svg",
 ];
 
+# Default to the installed mobile skin for this local instance.
+# The runtime image includes MinervaNeue, which is the MediaWiki mobile skin
+# used with MobileFrontend; forcing Vector here defeats the mobile view.
+$wgDefaultSkin = 'minerva';
+
+# OpenSearch / CirrusSearch backend wiring for the local Wikibase stack.
+# These extensions are present in the WBS image and need to be enabled explicitly.
+if ( file_exists( "$IP/extensions/Elastica/extension.json" ) ) {
+	wfLoadExtension( 'Elastica' );
+}
+if ( file_exists( "$IP/extensions/CirrusSearch/extension.json" ) ) {
+	wfLoadExtension( 'CirrusSearch' );
+}
+if ( file_exists( "$IP/extensions/WikibaseCirrusSearch/extension.json" ) ) {
+	wfLoadExtension( 'WikibaseCirrusSearch' );
+	$wgWBCSUseCirrus = true;
+}
+
+$wgSearchType = 'CirrusSearch';
+$wgCirrusSearchServers = [
+	[
+		'host' => 'opensearch',
+		'port' => 9200,
+		'transport' => 'http',
+		'path' => '',
+	],
+];
+$wgCirrusSearchIndexBaseName = 'mywiki';
+
+# Enable MobileFrontend explicitly when the extension is available in the image.
+# This keeps the container bootable even before the mobile extension is added,
+# but it configures the site to use the installed Minerva mobile skin once present.
+if ( file_exists( "$IP/extensions/MobileFrontend/extension.json" ) ) {
+	wfLoadExtension( 'MobileFrontend' );
+	$wgMFDefaultSkinClass = 'SkinMinerva';
+	$wgMFAutodetectMobileView = true;
+	$wgMFShowMobileViewToTablets = true;
+	$wgMFVaryOnUA = true;
+}
+
 # Permissions hardening: anonymous visitors are read-only.
 # Logged-in users retain standard editing rights.
 $wgGroupPermissions['*']['edit'] = false;

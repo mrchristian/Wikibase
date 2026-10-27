@@ -1,0 +1,4 @@
+# Shell scripts and container config are executed/mounted in Linux containers:
+# always keep LF, regardless of core.autocrlf.
+*.sh text eol=lf
+Dockerfile* text eol=lf

@@ -140,21 +140,21 @@ $composeArgs = @('compose')
 foreach ($file in $ComposeFiles) {
     $composeArgs += @('-f', $file)
 }
-$pullArgs = @('compose')
+$buildArgs = @('compose')
 foreach ($file in $ComposeFiles) {
-    $pullArgs += @('-f', $file)
+    $buildArgs += @('-f', $file)
 }
-$pullArgs += @('pull')
+$buildArgs += @('build', '--pull')
 
-Write-Step 'Pulling the newest Docker image tags for the Wikibase suite'
-if ($PSCmdlet.ShouldProcess("docker $($pullArgs -join ' ')", 'Fetch the latest application images before restarting the stack')) {
-    & docker @pullArgs
+Write-Step 'Building the local Wikibase images with the newest base layers'
+if ($PSCmdlet.ShouldProcess("docker $($buildArgs -join ' ')", 'Rebuild the custom application images before restarting the stack')) {
+    & docker @buildArgs
     if ($LASTEXITCODE -ne 0) {
-        throw 'docker compose pull failed while updating the application suite.'
+        throw 'docker compose build --pull failed while updating the application suite.'
     }
 }
 
-$composeArgs += @('up', '-d', '--build')
+$composeArgs += @('up', '-d', '--no-build')
 
 Write-Step 'Starting the rebuild'
 if ($PSCmdlet.ShouldProcess("docker $($composeArgs -join ' ')", 'Redeploy the stack with the latest Docker config')) {

@@ -33,11 +33,20 @@ function Invoke-HealthCheck {
 
     while ((Get-Date) -lt $deadline) {
         try {
-            $response = Invoke-WebRequest -Uri $Url -Method Get -TimeoutSec $TimeoutSeconds -SkipHttpErrorCheck
-            if ($response.StatusCode -ge 200 -and $response.StatusCode -lt 400) {
-                return $true
+            $containerStatus = & docker inspect --format '{{if .State.Health}}{{.State.Health.Status}}{{else}}{{.State.Status}}{{end}}' wikibase 2>$null
+            if ($LASTEXITCODE -eq 0 -and $containerStatus -eq 'healthy') {
+                $response = Invoke-WebRequest -Uri $Url -Method Get -TimeoutSec $TimeoutSeconds -SkipHttpErrorCheck
+                if ($response.StatusCode -ge 200 -and $response.StatusCode -lt 400) {
+                    return $true
+                }
+                $lastError = "HTTP $($response.StatusCode)"
             }
-            $lastError = "HTTP $($response.StatusCode)"
+            elseif ($LASTEXITCODE -eq 0) {
+                $lastError = "Container health is '$containerStatus'"
+            }
+            else {
+                $lastError = 'Docker health inspection failed.'
+            }
         }
         catch {
             $lastError = $_.Exception.Message

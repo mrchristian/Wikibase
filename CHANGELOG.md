@@ -10,6 +10,24 @@ The format is based on Keep a Changelog, and this project follows semantic-style
 - Added `LICENCE` with GNU General Public License v3.0 text.
 - Added `CHANGELOG.md` to track project changes.
 
+## [2026-10-28]
+
+### Fixed
+- Local `wikibase-wdqs-updater` crash loop ("RDF store reports the last update time is before the minimum safe poll time"). Wiped the local `wdqs_data` volume and reloaded WDQS from a fresh `dumpRdf.php` export (3,986 entities, 141,715 triples, concept URI `http://localhost:8080`). The updater now starts from the dump timestamp and polls normally.
+
+### Changed
+- `docs/mw-update-checklist.md`: SPARQL check now points to `http://localhost:9999/bigdata/namespace/wdq/sparql` (the root URL returns 404 by design); added a local graph query to the Query UI check.
+
+### Verified (LOCAL, mw1.46.2)
+- All containers healthy with 0 restarts; MariaDB 10.11.19; OpenSearch cluster green (3 indices green).
+- Wiki pages, custom namespaces (IPCC 3000, Item 120, Property 122, EntitySchema 640) and full-text/entity search respond correctly.
+- All SPARQL queries from `docs/sparql-api-tests-and-graph-queries.md` return data on localhost when the base URI is changed to `http://localhost:8080`.
+
+### Known issues
+- DEV/TEST/PROD (mw1.45) have not yet been updated or tested with the OpenSearch/mw1.46.2 changes; DEV update planned next.
+- `docs/sparql-api-tests-and-graph-queries.md` queries use `prod-climatekg.semanticclimate.org` URIs; each environment needs its own base URI.
+- No scripted WDQS wipe/reload exists yet; the local reload was run manually.
+
 ## [2026-10-27]
 
 ### Added
@@ -31,7 +49,7 @@ The format is based on Keep a Changelog, and this project follows semantic-style
 - Added local experimental loop documentation (CLEAN -> EXPERIMENTAL -> approve/rollback).
 
 ### Known issues
-- `wikibase-wdqs-updater` crash-loops locally (RDF store last update time is before the minimum safe poll time); needs a WDQS journal wipe and reload.
+- `wikibase-wdqs-updater` crash-looped locally (RDF store last update time is before the minimum safe poll time); resolved 2026-10-28.
 - DEV/TEST/PROD (mw1.45) have not yet been updated or tested with the OpenSearch/mw1.46.2 changes.
 
 ### Infrastructure

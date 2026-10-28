@@ -93,8 +93,10 @@ docker compose ps
 
 Local endpoints:
 - Wiki: http://localhost:8080
+- MediaWiki API: http://localhost:8080/w/api.php
 - Query UI: http://localhost:8081
-- SPARQL: http://localhost:9999
+- SPARQL endpoint: http://localhost:9999/bigdata/namespace/wdq/sparql (the root http://localhost:9999/ returns 404 by design)
+- Blazegraph workbench: http://localhost:9999/bigdata/
 
 Stop local stack:
 

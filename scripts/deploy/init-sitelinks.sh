@@ -19,8 +19,12 @@ echo "[OK] Legacy mywiki site entries removed"
 
 # Migrate existing sitelink data from mywiki to climatekg-wiki
 echo "Migrating existing sitelinks from 'mywiki' to 'climatekg-wiki'..."
+# UPDATE IGNORE skips rows that would collide with an existing climatekg-wiki row (error 1062
+# aborted the whole statement before); any mywiki rows left over are exactly those duplicates.
 /usr/local/bin/php maintenance/run.php sql --conf "$MW_CONF" --query \
-    "UPDATE wb_items_per_site SET ips_site_id = 'climatekg-wiki' WHERE ips_site_id = 'mywiki';" 2>&1 || true
+    "UPDATE IGNORE wb_items_per_site SET ips_site_id = 'climatekg-wiki' WHERE ips_site_id = 'mywiki';" 2>&1 || true
+/usr/local/bin/php maintenance/run.php sql --conf "$MW_CONF" --query \
+    "DELETE FROM wb_items_per_site WHERE ips_site_id = 'mywiki';" 2>&1 || true
 echo "[OK] Existing sitelinks migrated"
 
 # Import sites into the database
@@ -99,9 +103,12 @@ if [[ -n "$WG_SERVER_HOST" && "$WG_SERVER_HOST" != "localhost:8080" && "$WG_SERV
 else
     INTERWIKI_BASE="http://localhost"
 fi
+# ON DUPLICATE KEY UPDATE (not INSERT IGNORE): a migrated DB already carries the source
+# environment's row, which must be rewritten to this environment's URL.
 INTERWIKI_SQL="
-INSERT IGNORE INTO interwiki (iw_prefix, iw_url, iw_api, iw_wikiid, iw_local)
-VALUES ('climatekg-wiki', '${INTERWIKI_BASE}/wiki/\$1', '${INTERWIKI_BASE}/w/api.php', '', 1);
+INSERT INTO interwiki (iw_prefix, iw_url, iw_api, iw_wikiid, iw_local)
+VALUES ('climatekg-wiki', '${INTERWIKI_BASE}/wiki/\$1', '${INTERWIKI_BASE}/w/api.php', '', 1)
+ON DUPLICATE KEY UPDATE iw_url = VALUES(iw_url), iw_api = VALUES(iw_api), iw_local = VALUES(iw_local);
 "
 /usr/local/bin/php maintenance/run.php sql --conf "$MW_CONF" --query "$INTERWIKI_SQL" 2>&1 || true
 echo "[OK] Interwiki entry added"

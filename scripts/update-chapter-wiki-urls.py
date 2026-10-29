@@ -60,6 +60,17 @@ ENV_CONFIG = {
         "password_env": "DEV_MW_ADMIN_PASS",
         "username":    "admin",
     },
+    # New TIB DEV (climatekg01.develop.service.tib.eu). Admin password is the
+    # one carried over from the old DEV DB migration (DEV_MW_ADMIN_PASS).
+    "newdev": {
+        "api_url":     "https://dev-climatekg.tibwiki.io/w/api.php",
+        "sparql_url":  "https://dev-climatekg.tibwiki.io/query/proxy/sparql",
+        "entity_base": "https://dev-climatekg.tibwiki.io/entity/",
+        "prop_base":   "https://dev-climatekg.tibwiki.io/prop/direct/",
+        "wiki_base":   "https://dev-climatekg.tibwiki.io",
+        "password_env": "DEV_MW_ADMIN_PASS",
+        "username":    "admin",
+    },
     "test": {
         "api_url":     "https://test-climatekg.semanticclimate.org/w/api.php",
         "sparql_url":  "https://test-climatekg.semanticclimate.org/query/proxy/sparql",

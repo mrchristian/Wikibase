@@ -26,9 +26,6 @@
       DISABLE_SECURITY_PLUGIN: "true"
       bootstrap.memory_lock: "true"
       OPENSEARCH_JAVA_OPTS: "-Xms512m -Xmx512m"
-    ports:
-      - "9200:9200"
-      - "9600:9600"
     volumes:
       - opensearch_data:/usr/share/opensearch/data
     healthcheck:

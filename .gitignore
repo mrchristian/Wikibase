@@ -14,6 +14,7 @@ wikibase-images.tar.gz
 images/
 backups/
 pages-backup/
+health-check/
 push_to_production.py
 wikibase-config-*.tar.gz
 wikibase-uploads-*.zip

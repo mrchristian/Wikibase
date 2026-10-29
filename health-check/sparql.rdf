@@ -1,0 +1,1198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+	xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+
+<rdf:Description rdf:nodeID="service">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sparql-service-description#Service"/>
+	<endpoint xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://dev-climatekg.tibwiki.io/bigdata/namespace/wdq/sparql"/>
+	<supportedLanguage xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/sparql-service-description#SPARQL10Query"/>
+	<supportedLanguage xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/sparql-service-description#SPARQL11Query"/>
+	<supportedLanguage xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/sparql-service-description#SPARQL11Update"/>
+	<feature xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/sparql-service-description#BasicFederatedQuery"/>
+	<feature xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.bigdata.com/rdf#/features/KB/Mode/Triples"/>
+	<inputFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/RDF_XML"/>
+	<inputFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/N-Triples"/>
+	<inputFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/Turtle"/>
+	<inputFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/N3"/>
+	<inputFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/TriG/Spec/"/>
+	<inputFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://sw.deri.org/2008/07/n-quads/#n-quads"/>
+	<inputFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/SPARQL_Results_XML"/>
+	<inputFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/SPARQL_Results_JSON"/>
+	<inputFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/SPARQL_Results_CSV"/>
+	<inputFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/SPARQL_Results_TSV"/>
+	<resultFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/RDF_XML"/>
+	<resultFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/N-Triples"/>
+	<resultFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/Turtle"/>
+	<resultFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/N3"/>
+	<resultFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.wiwiss.fu-berlin.de/suhl/bizer/TriG/Spec/"/>
+	<resultFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/SPARQL_Results_XML"/>
+	<resultFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/SPARQL_Results_JSON"/>
+	<resultFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/SPARQL_Results_CSV"/>
+	<resultFormat xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:resource="http://www.w3.org/ns/formats/SPARQL_Results_TSV"/>
+	<defaultDataset xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:nodeID="defaultDataset"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultDataset">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sparql-service-description#Dataset"/>
+	<rdf:type rdf:resource="http://rdfs.org/ns/void#Dataset"/>
+	<title xmlns="http://purl.org/dc/terms/" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wdq</title>
+	<Namespace xmlns="http://www.bigdata.com/rdf#/features/KB/" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">wdq</Namespace>
+	<sparqlEndpoint xmlns="http://rdfs.org/ns/void#" rdf:resource="http://dev-climatekg.tibwiki.io/bigdata/namespace/wdq/sparql/wdq/sparql"/>
+	<uriRegexPattern xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#string">^.*</uriRegexPattern>
+	<vocabulary xmlns="http://rdfs.org/ns/void#" rdf:resource="http://creativecommons.org/ns"/>
+	<vocabulary xmlns="http://rdfs.org/ns/void#" rdf:resource="http://schema.org/"/>
+	<vocabulary xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology"/>
+	<vocabulary xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns"/>
+	<vocabulary xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/2000/01/rdf-schema"/>
+	<vocabulary xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/2002/07/owl"/>
+	<vocabulary xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/2004/02/skos/core"/>
+	<vocabulary xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/ns/prov"/>
+	<vocabulary xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/"/>
+	<vocabulary xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/"/>
+	<vocabulary xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/qualifier/"/>
+	<vocabulary xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/reference/"/>
+	<vocabulary xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/reference/value/"/>
+	<vocabulary xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/"/>
+	<defaultGraph xmlns="http://www.w3.org/ns/sparql-service-description#" rdf:nodeID="defaultGraph"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<rdf:type rdf:resource="http://www.w3.org/ns/sparql-service-description#Graph"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">141716</triples>
+	<entities xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">25042</entities>
+	<properties xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#int">116</properties>
+	<classes xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#int">10</classes>
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153671"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153671">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20723</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153672"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153672">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#rank"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20293</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153673"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153673">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/qualifier/P19"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">6064</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153674"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153674">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P3"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">4458</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153675"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153675">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P3"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">4458</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153676"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153676">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P3"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">4458</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153677"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153677">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://schema.org/dateModified"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3988</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153678"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153678">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://schema.org/description"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3988</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153679"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153679">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/2000/01/rdf-schema#label"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3988</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153680"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153680">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://schema.org/version"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3986</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153681"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153681">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#statements"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3986</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153682"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153682">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#sitelinks"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3956</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153683"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153683">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#identifiers"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3956</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153684"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153684">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P1"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3951</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153685"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153685">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P1"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3951</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153686"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153686">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P1"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3951</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153687"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153687">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P13"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3234</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153688"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153688">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P13"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3234</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153689"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153689">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P13"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3234</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153690"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153690">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/ns/prov#wasDerivedFrom"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3231</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153691"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153691">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P27"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1164</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153692"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153692">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P27"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1164</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153693"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153693">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/qualifier/P28"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1164</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153694"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153694">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P27"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1164</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153695"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153695">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P20"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153696"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153696">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P21"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153697"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153697">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P22"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153698"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153698">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P23"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153699"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153699">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P24"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153700"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153700">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P25"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153701"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153701">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P20"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153702"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153702">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P21"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153703"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153703">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P22"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153704"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153704">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P23"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153705"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153705">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P24"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153706"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153706">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P25"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153707"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153707">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P20"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153708"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153708">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P21"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153709"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153709">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P22"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153710"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153710">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P23"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153711"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153711">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P24"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153712"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153712">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P25"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">932</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153713"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153713">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P26"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">928</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153714"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153714">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P26"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">928</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153715"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153715">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P26"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">928</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153716"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153716">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/2004/02/skos/core#altLabel"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">345</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153717"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153717">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P12"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">277</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153718"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153718">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P12"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">277</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153719"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153719">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P12"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">277</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153720"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153720">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/reference/P18"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">96</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153721"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153721">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/reference/value/P18"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">96</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153722"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153722">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P10"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">95</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153723"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153723">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P29"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">95</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153724"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153724">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P10"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">95</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153725"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153725">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P29"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">95</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153726"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153726">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/reference/P17"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">95</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153727"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153727">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P10"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">95</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153728"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153728">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P29"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">95</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153729"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153729">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://schema.org/about"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">95</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153730"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153730">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://schema.org/inLanguage"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">95</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153731"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153731">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://schema.org/name"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">95</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153732"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153732">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://schema.org/isPartOf"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">95</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153733"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153733">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/reference/P19"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">94</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153734"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153734">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P30"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">92</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153735"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153735">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P30"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">92</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153736"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153736">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P30"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">92</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153737"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153737">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P5"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">88</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153738"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153738">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P6"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">88</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153739"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153739">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P7"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">88</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153740"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153740">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P9"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">88</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153741"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153741">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P5"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">88</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153742"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153742">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P6"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">88</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153743"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153743">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P7"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">88</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153744"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153744">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P9"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">88</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153745"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153745">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P5"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">88</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153746"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153746">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P6"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">88</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153747"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153747">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P7"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">88</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153748"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153748">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P9"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">88</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153749"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153749">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#claim"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153750"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153750">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#directClaim"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153751"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153751">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#novalue"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153752"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153752">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#propertyType"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153753"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153753">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#qualifier"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153754"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153754">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#qualifierValue"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153755"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153755">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#reference"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153756"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153756">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#referenceValue"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153757"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153757">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#statementProperty"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153758"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153758">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#statementValue"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153759"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153759">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/2002/07/owl#complementOf"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153760"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153760">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/2002/07/owl#onProperty"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153761"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153761">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/2002/07/owl#someValuesFrom"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153762"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153762">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P31"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">28</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153763"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153763">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P31"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">28</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153764"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153764">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P31"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">28</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153765"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153765">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P11"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">7</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153766"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153766">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P33"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">7</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153767"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153767">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P8"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">7</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153768"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153768">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P11"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">7</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153769"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153769">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P33"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">7</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153770"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153770">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P8"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">7</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153771"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153771">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P11"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">7</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153772"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153772">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P33"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">7</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153773"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153773">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P8"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">7</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153774"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153774">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/direct/P32"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">6</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153775"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153775">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/P32"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">6</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153776"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153776">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/statement/P32"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">6</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153777"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153777">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#timeValue"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153778"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153778">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#timePrecision"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153779"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153779">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#timeTimezone"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153780"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153780">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#timeCalendarModel"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153781"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153781">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://creativecommons.org/ns#license"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153782"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153782">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://schema.org/softwareVersion"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153783"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153783">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="https://dev-climatekg.tibwiki.io/prop/reference/P6"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153784"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153784">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/2002/07/owl#imports"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153785"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153785">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#wikiGroup"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<propertyPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153786"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153786">
+	<property xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#timestamp"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<classPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153787"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153787">
+	<class xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#BestRank"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">20293</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<classPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153788"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153788">
+	<class xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/2002/07/owl#ObjectProperty"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">164</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<classPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153789"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153789">
+	<class xmlns="http://rdfs.org/ns/void#" rdf:resource="http://schema.org/Article"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">95</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<classPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153790"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153790">
+	<class xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/2002/07/owl#DatatypeProperty"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">76</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<classPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153791"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153791">
+	<class xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#Property"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<classPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153792"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153792">
+	<class xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/2002/07/owl#Class"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<classPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153793"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153793">
+	<class xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/2002/07/owl#Restriction"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">30</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<classPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153794"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153794">
+	<class xmlns="http://rdfs.org/ns/void#" rdf:resource="http://wikiba.se/ontology#TimeValue"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">3</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<classPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153795"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153795">
+	<class xmlns="http://rdfs.org/ns/void#" rdf:resource="http://schema.org/Dataset"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1</triples>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="defaultGraph">
+	<classPartition xmlns="http://rdfs.org/ns/void#" rdf:nodeID="node1k6400lljx153796"/>
+</rdf:Description>
+
+<rdf:Description rdf:nodeID="node1k6400lljx153796">
+	<class xmlns="http://rdfs.org/ns/void#" rdf:resource="http://www.w3.org/2002/07/owl#Ontology"/>
+	<triples xmlns="http://rdfs.org/ns/void#" rdf:datatype="http://www.w3.org/2001/XMLSchema#long">1</triples>
+</rdf:Description>
+
+</rdf:RDF>

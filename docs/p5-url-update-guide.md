@@ -46,7 +46,9 @@ There are **88 Chapter items** (Q6), all of which have a `climatekg-wiki` siteli
 
 **Flags:**
 ```
---env   local | dev | test | prod    (default: local)
+--env   local | dev | newdev | test | prod    (default: local)
+        dev    = OLD DEV  (dev-climatekg.semanticclimate.org)
+        newdev = NEW TIB DEV  (dev-climatekg.tibwiki.io; uses DEV_MW_ADMIN_PASS)
 --dry-run                            List planned changes without writing anything
 ```
 

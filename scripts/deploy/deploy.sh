@@ -64,7 +64,9 @@ if [ "$BASIC_AUTH_ON" -eq 1 ]; then
 fi
 
 ADMIN_EMAIL="simon.worthington@tib.eu"
-REPO_URL="https://github.com/mrchristian/Wikibase.git"
+# Source of truth is TIB GitLab; override with REPO_URL=... (e.g. the GitHub mirror).
+# A fresh box needs read access (deploy key/token) - see scripts/deploy/switch-git-remote.sh.
+REPO_URL="${REPO_URL:-git@git.tib.eu:OSL/climate-knowledge-graph/climatekg-deploy.git}"
 INSTALL_DIR="/opt/wikibase"
 
 echo "==========================================="

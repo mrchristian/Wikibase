@@ -9,6 +9,15 @@ The format is based on Keep a Changelog, and this project follows semantic-style
 ### Added
 - Added `LICENCE` with GNU General Public License v3.0 text.
 - Added `CHANGELOG.md` to track project changes.
+- Added `scripts/deploy/switch-git-remote.sh` to point a server's `/opt/wikibase` clone at TIB GitLab (read-only deploy key or token); old remote kept as `github`.
+- Added `--env newdev` to `scripts/update-chapter-wiki-urls.py` (targets `dev-climatekg.tibwiki.io`; `--env dev` still targets the old DEV).
+
+### Changed
+- `scripts/deploy/deploy.sh` `REPO_URL` now defaults to TIB GitLab (override with `REPO_URL=...`).
+- Docs (`docs/multi-env-workflow.md`, `docs/hetzner-deploy-guide.md`) now describe TIB GitLab as the source of truth, GitHub as a backup mirror.
+
+### Security
+- Moved OpenSearch ports 9200/9600 from `docker-compose.yml` to `docker-compose.override.yml` (local only) so DEV/TEST/PROD do not publish an unauthenticated OpenSearch on all interfaces.
 
 ## [2026-10-28]
 

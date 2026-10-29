@@ -11,6 +11,7 @@
 > | `docs/server-admin.md` | Server resource management — disk, Docker logs, maintenance |
 > | `docs/sync-guide.md` | Background reference — sync strategy options (context only) |
 > | `docs/p5-url-update-guide.md` | P5 (Wiki URL) update — applying canonical URLs to Chapter items across all environments |
+> | `scripts/deploy/switch-git-remote.sh` | Points a server clone's `origin` at TIB GitLab — see §3 |
 > | `docs/temporary-web-password-protection.md` | Temporary web access gate (Basic Auth) for DEV/TEST/PROD, including rollback |
 > | Sync scripts — see §4 | [`sync-local-to-dev.ps1`](../scripts/sync/sync-local-to-dev.ps1) · [`sync-local-to-test.ps1`](../scripts/sync/sync-local-to-test.ps1) · [`sync-dev-to-test.ps1`](../scripts/sync/sync-dev-to-test.ps1) · [`sync-dev-to-prod.ps1`](../scripts/sync/sync-dev-to-prod.ps1) · [`sync-test-to-prod.ps1`](../scripts/sync/sync-test-to-prod.ps1) · [`pull-from-dev.ps1`](../scripts/sync/pull-from-dev.ps1) |
 > | Experimental workflow — see §11 | [`experimental-import-workflow.ps1`](../scripts/experimental-import-workflow.ps1) |
@@ -89,16 +90,16 @@ old DEV/TEST/PROD  ──────► keep running as live legacy systems
 │                          CLIMATEKG DEVOPS WORKFLOW                          │
 └─────────────────────────────────────────────────────────────────────────────┘
 
-CODE/CONFIG FLOW (via GitHub):
+CODE/CONFIG FLOW (via TIB GitLab; GitHub = backup mirror):
 ┌──────────────┐
-│   LOCAL      │  1. Fork repo, make changes
-│ (workstation)│  2. Create PR to master
+│   LOCAL      │  1. Make changes, commit
+│ (workstation)│  2. Push to origin (TIB GitLab) and github (mirror)
 └──────┬───────┘
-       │ PR
+       │ push
        ↓
 ┌──────────────┐
-│   GitHub     │  Master branch = source of truth
-│   master     │
+│ TIB GitLab   │  Master branch = source of truth
+│   master     │  (git.tib.eu/OSL/climate-knowledge-graph/climatekg-deploy)
 └──┬───┬───┬───┘
    │   │   │ git pull (manual on each server)
    ↓   ↓   ↓
@@ -337,7 +338,7 @@ python scripts\update-chapter-wiki-urls.py --env prod
 
 | What          | Where                        | Notes                                                      |
 |---------------|------------------------------|------------------------------------------------------------|
-| Code / config | GitHub `master` branch       | Fed by fork PRs from LOCAL; servers `git pull` on demand   |
+| Code / config | TIB GitLab `master` branch   | Pushed from LOCAL (GitHub is a backup mirror); new TIB servers `git pull` from TIB `origin` on demand |
 | Database      | DEV server                   | Content is edited on DEV, then promoted upward             |
 
 ---
@@ -345,19 +346,42 @@ python scripts\update-chapter-wiki-urls.py --env prod
 ## 3. Git Workflow (Code Changes)
 
 ```
-LOCAL fork  →  PR to master  →  manual git pull on each server  →  redeploy
+LOCAL  →  push to TIB GitLab master (+ GitHub mirror)  →  manual git pull on each server  →  redeploy
 ```
 
-1. **LOCAL**: Create a GitHub fork. Make configuration changes (compose files, LocalSettings, etc.).
-2. Open a **Pull Request** against `mrchristian/Wikibase` on `master`.
-3. After merge, SSH to each server and `git pull`:
-   ```sh
-   ssh root@<server-ip>
-   cd /opt/wikibase
-   git pull 
-   --ff-only
-   docker compose -f docker-compose.yml -f docker-compose.<env>.yml up -d --build
+| Remote | Role | URL |
+|---|---|---|
+| `origin` (LOCAL) | Source of truth (TIB GitLab) | `git@git.tib.eu:OSL/climate-knowledge-graph/climatekg-deploy.git` |
+| `github` (LOCAL) | Backup mirror | `https://github.com/mrchristian/Wikibase.git` |
+
+1. **LOCAL**: Make configuration changes (compose files, LocalSettings, etc.) and commit.
+2. Push to both remotes (the servers must be able to see the commit, so always push before deploying):
+   ```powershell
+   git push origin HEAD:master; git push github HEAD:master
    ```
+3. SSH to each **new TIB server** (`worthingtons`, sudo required) and pull from TIB:
+   ```sh
+   cd /opt/wikibase
+   sudo git pull --ff-only
+   sudo docker compose -f docker-compose.yml -f docker-compose.<env>.yml up -d --build
+   ```
+
+#### One-off: point a server clone at TIB git
+
+New TIB servers were originally cloned from GitHub. Switch each one's `origin` to TIB GitLab with [`scripts/deploy/switch-git-remote.sh`](../scripts/deploy/switch-git-remote.sh) (run on the server, as root):
+
+```sh
+cd /opt/wikibase
+sudo git pull --ff-only                              # make sure the script is present
+sudo bash scripts/deploy/switch-git-remote.sh        # SSH deploy key (default)
+sudo bash scripts/deploy/switch-git-remote.sh <url>  # or an HTTPS URL carrying a read-only deploy token
+```
+
+- If no deploy key exists, the script generates `/root/.ssh/id_ed25519_ckg_deploy`, prints the public key and exits (code 2). Add it in GitLab as a **read-only deploy key**, then re-run.
+- It verifies read access before changing anything, keeps the old remote as `github`, sets the upstream, and does **not** pull.
+- `scripts/deploy/deploy.sh` now defaults `REPO_URL` to the TIB SSH URL (override with `REPO_URL=...`). A fresh box needs the deploy key before its first clone.
+
+> The OLD Hetzner servers (semanticclimate.org) are still cloned from GitHub and keep pulling from GitHub until they are retired.
 
 ---
 
@@ -766,14 +790,14 @@ Outputs `mw_db_YYYYMMDD_HHMMSS.sql`. See [`backups/README.md`](../backups/README
 
 | Asset | How it is backed up |
 |-------|---------------------|
-| Config / scripts / docs | GitHub (`mrchristian/Wikibase` `master`) — push after every change |
+| Config / scripts / docs | TIB GitLab (`climatekg-deploy` `master`), mirrored to GitHub (`mrchristian/Wikibase`) — push to both after every change |
 | Database (authoritative) | DEV server — Hetzner infrastructure; supplemented by SQL dumps in `C:\Wikibase\backups\` |
 | Database (point-in-time) | [`backup-local-db.ps1`](../scripts/backup/backup-local-db.ps1) and `pull-from-dev.ps1` write timestamped `.sql` files to `C:\Wikibase\backups\` |
 | Experimental snapshots | `C:\Wikibase\backups\approved_experiment_*.sql` (created by experimental workflow) |
 
 ### Gitignored items that need separate backup
 
-The following are excluded from the GitHub repo and must be backed up independently:
+The following are excluded from the git repo (TIB GitLab and the GitHub mirror) and must be backed up independently:
 
 | Item | Why gitignored | Recommended backup |
 |------|---------------|--------------------|
@@ -785,7 +809,7 @@ The following are excluded from the GitHub repo and must be backed up independen
 
 ### Minimum backup checklist
 
-- [ ] All config changes pushed to GitHub (`git push` / PR merged)
+- [ ] All config changes pushed to TIB GitLab and the GitHub mirror (`git push origin HEAD:master; git push github HEAD:master`)
 - [ ] `C:\Wikibase\.env` passwords recorded in password manager
 - [ ] `C:\Wikibase\backups\` folder synced to cloud storage (OneDrive or equivalent)
 - [ ] SSH key `C:\Users\<user>\.ssh\id_wikibase_sync` backed up securely (or regeneratable — pub key is on servers)

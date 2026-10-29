@@ -87,6 +87,8 @@ docker compose version
 
 ## 4. Clone the Repository
 
+> This guide covers the legacy Hetzner servers, cloned from the GitHub mirror. For new TIB servers, clone from TIB GitLab (`git@git.tib.eu:OSL/climate-knowledge-graph/climatekg-deploy.git`, needs a read-only deploy key) or run `scripts/deploy/switch-git-remote.sh` on an existing clone. See `docs/multi-env-workflow.md` section 3.
+
 ```bash
 cd /opt
 git clone https://github.com/mrchristian/Wikibase.git wikibase

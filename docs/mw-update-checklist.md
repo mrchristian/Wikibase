@@ -49,7 +49,7 @@ Use this checklist after a deployment or rebuild to confirm the site still works
 - [ ] custom LocalSettings files are still being loaded (add more detail about what this means) 
 
 ### 4. Functional checks
-- [ ] Search - run from several pages, use predictive and list view 
+- [ ] Search - run from several pages, use predictive and list view. See data stats for search index count. 
 - [ ] item pages load
 - [ ] entity editing or form access works if applicable. Try a QID, PID, and normal page
 - [ ] SPARQL endpoint is reachable if used in this environment

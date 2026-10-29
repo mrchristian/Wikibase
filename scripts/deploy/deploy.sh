@@ -195,7 +195,10 @@ ${AUTH_DIRECTIVES}
     }
 
     # SPARQL proxy endpoint (used by the query UI)
+    # Read-only: Blazegraph accepts SPARQL Update only via POST, so POST is denied here.
+    # The wdqs-updater talks to wdqs over the Docker network and is unaffected.
     location /query/proxy/sparql {
+        limit_except GET HEAD OPTIONS { deny all; }
         proxy_pass http://127.0.0.1:9999/bigdata/namespace/wdq/sparql;
         proxy_set_header Host \$host;
         proxy_set_header X-Real-IP \$remote_addr;

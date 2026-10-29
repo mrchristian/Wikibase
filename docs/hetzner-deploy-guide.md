@@ -164,8 +164,9 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 
-    # SPARQL proxy endpoint
+    # SPARQL proxy endpoint (read-only: POST denied, Blazegraph updates need POST)
     location /query/proxy/sparql {
+        limit_except GET HEAD OPTIONS { deny all; }
         proxy_pass http://127.0.0.1:9999/bigdata/namespace/wdq/sparql;
         proxy_set_header Host $host;
         proxy_set_header X-Real-IP $remote_addr;

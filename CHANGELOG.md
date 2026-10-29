@@ -11,9 +11,17 @@ The format is based on Keep a Changelog, and this project follows semantic-style
 - Added `CHANGELOG.md` to track project changes.
 - Added `scripts/deploy/switch-git-remote.sh` to point a server's `/opt/wikibase` clone at TIB GitLab (read-only deploy key or token); old remote kept as `github`.
 - Added `--env newdev` to `scripts/update-chapter-wiki-urls.py` (targets `dev-climatekg.tibwiki.io`; `--env dev` still targets the old DEV).
+- Added `scripts/remove-stale-sitelink.py` to remove a retired sitelink site id (e.g. `mywiki`) from item JSON via `wbeditentity`.
 
 ### Changed
 - `scripts/deploy/deploy.sh` `REPO_URL` now defaults to TIB GitLab (override with `REPO_URL=...`).
+- `scripts/deploy/init-sitelinks.sh` is idempotent for duplicate `mywiki` sitelinks (`UPDATE IGNORE` + delete leftovers) and upserts the interwiki row.
+
+### Deployed (new-DEV, 2026-10-29)
+- new-DEV (`dev-climatekg.tibwiki.io`) upgraded to MW 1.46.2 with OpenSearch/CirrusSearch; WDQS reloaded (~141.7k triples); P5 URLs on `tibwiki.io`.
+- Lesson: removing the `mywiki` row from `sites` leaves `mywiki` in item JSON; `Special:EntityData` then prints PHP warnings into the Turtle output and the wdqs-updater gives up on that item (`RDF parsing error`). Fix: re-register the site temporarily (`importSites`), run `remove-stale-sitelink.py`, rerun `wikibase-sitelinks-init`. Check before TEST/PROD: `SELECT` pages in ns 120 whose text contains `"mywiki"`.
+- Lesson: an auto-created plain `mywiki_content` index blocks `UpdateSearchIndexConfig --startOver`; delete it first and build the Cirrus index before any API edits.
+- Lesson: keep `wdqs-updater` stopped until the WDQS reload finishes; the updater only retries a failed entity on a new edit.
 - Docs (`docs/multi-env-workflow.md`, `docs/hetzner-deploy-guide.md`) now describe TIB GitLab as the source of truth, GitHub as a backup mirror.
 
 ### Security

@@ -26,6 +26,10 @@ The format is based on Keep a Changelog, and this project follows semantic-style
 
 ### Security
 - Moved OpenSearch ports 9200/9600 from `docker-compose.yml` to `docker-compose.override.yml` (local only) so DEV/TEST/PROD do not publish an unauthenticated OpenSearch on all interfaces.
+- Fixed: the public `/query/proxy/sparql` endpoint accepted SPARQL Update (POST `update=...`) behind Basic Auth only, so anyone with the login could modify WDQS. `scripts/deploy/deploy.sh` and `docs/hetzner-deploy-guide.md` now add `limit_except GET HEAD OPTIONS { deny all; }` to that nginx location. Already-deployed hosts need the same line added to `/etc/nginx/sites-available/wikibase` by hand (new-DEV: confirm applied; TEST and PROD pending). Found 2026-10-29 on new-DEV; a test triple (`<urn:x:a> <urn:x:b> <urn:x:c>`) was inserted and removed.
+- `wdqs-frontend-nginx.conf`: the Query UI container's `/proxy/sparql` is now read-only too (same `limit_except`).
+- LOCAL: `docker-compose.override.yml` publishes Blazegraph `9999` on `127.0.0.1` only (was all interfaces). Direct writes on `localhost:9999` remain possible from the local machine (the workbench needs POST).
+- Known: OpenSearch `9200`/`9600` in `docker-compose.override.yml` are still published on all interfaces (LOCAL only).
 
 ## [2026-10-28]
 

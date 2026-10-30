@@ -71,6 +71,19 @@ ENV_CONFIG = {
         "password_env": "DEV_MW_ADMIN_PASS",
         "username":    "admin",
     },
+    # New TIB TEST (climatekg11.test.service.tib.eu). The migration resets the
+    # admin password to new-TEST's own /opt/wikibase/.env MW_ADMIN_PASS, so it
+    # differs from DEV. Set NEWTEST_MW_ADMIN_PASS in C:\Wikibase\.env (or the
+    # script prompts for it).
+    "newtest": {
+        "api_url":     "https://test-climatekg.tibwiki.io/w/api.php",
+        "sparql_url":  "https://test-climatekg.tibwiki.io/query/proxy/sparql",
+        "entity_base": "https://test-climatekg.tibwiki.io/entity/",
+        "prop_base":   "https://test-climatekg.tibwiki.io/prop/direct/",
+        "wiki_base":   "https://test-climatekg.tibwiki.io",
+        "password_env": "NEWTEST_MW_ADMIN_PASS",
+        "username":    "admin",
+    },
     "test": {
         "api_url":     "https://test-climatekg.semanticclimate.org/w/api.php",
         "sparql_url":  "https://test-climatekg.semanticclimate.org/query/proxy/sparql",
@@ -112,7 +125,7 @@ def get_password(env_var, env_file="C:\\Wikibase\\.env"):
                 if line.startswith("#") or "=" not in line:
                     continue
                 key, _, value = line.partition("=")
-                if key.strip() == env_var:
+                if key.strip() == env_var and value.strip():
                     return value.strip()
 
     # Interactive fallback

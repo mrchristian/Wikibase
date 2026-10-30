@@ -11,6 +11,8 @@ The format is based on Keep a Changelog, and this project follows semantic-style
 - Added `CHANGELOG.md` to track project changes.
 - Added `scripts/deploy/switch-git-remote.sh` to point a server's `/opt/wikibase` clone at TIB GitLab (read-only deploy key or token); old remote kept as `github`.
 - Added `--env newdev` to `scripts/update-chapter-wiki-urls.py` (targets `dev-climatekg.tibwiki.io`; `--env dev` still targets the old DEV).
+- Added `--env newtest` to `scripts/update-chapter-wiki-urls.py` (targets `test-climatekg.tibwiki.io`; password from `NEWTEST_MW_ADMIN_PASS` in `.env`, or prompted). Also works with `remove-stale-sitelink.py`.
+- `get_password()` in `scripts/update-chapter-wiki-urls.py` now treats an empty `.env` value as missing and prompts instead of attempting an empty password.
 - Added `scripts/remove-stale-sitelink.py` to remove a retired sitelink site id (e.g. `mywiki`) from item JSON via `wbeditentity`.
 
 ### Changed
@@ -24,9 +26,17 @@ The format is based on Keep a Changelog, and this project follows semantic-style
 - Lesson: keep `wdqs-updater` stopped until the WDQS reload finishes; the updater only retries a failed entity on a new edit.
 - Docs (`docs/multi-env-workflow.md`, `docs/hetzner-deploy-guide.md`) now describe TIB GitLab as the source of truth, GitHub as a backup mirror.
 
+### Deployed (new-TEST, 2026-10-30)
+- new-TEST (`test-climatekg.tibwiki.io`, `climatekg11.test.service.tib.eu`) restored and upgraded to WBS 8 / MW 1.46.2, brought to parity with new-DEV. Verified: WDQS 3,956 items / 30 properties / 88 chapters, Q128 loaded without `mywiki`, CirrusSearch index built (content 4,101 + general 2,188 = 6,289 pages), P5 on 88 chapters on `tibwiki.io`, public SPARQL POST update returns 403, job backlog drained (except `enotifNotify`).
+- Lesson: new-TEST's admin password is the server's own `/opt/wikibase/.env` `MW_ADMIN_PASS` (the migration resets it), not the DEV one. Keep it in the workstation `.env` as `NEWTEST_MW_ADMIN_PASS`; `TEST_MW_ADMIN_PASS` is the legacy TEST server.
+- Lesson: a cloned server has no `.env`; it is not in git and must be recreated.
+- Lesson: re-registering `mywiki` for `remove-stale-sitelink.py` only works if the temporary site's group is in `siteLinkGroups` (`climatekg-wiki`); with group `mywiki` the API answers `Unknown site`. Edit `<group>` in the temporary XML before `importSites`, then restart `wikibase` (APCu site cache), then run the script, then rerun `wikibase-sitelinks-init`.
+- Lesson: a one-off WDQS fill must bypass the image entrypoint: `docker compose run --rm --no-deps --entrypoint sh wdqs-updater -c 'cd /wdqs && ./runUpdate.sh -h http://wdqs:9999 -- --wikibaseUrl http://wikibase --conceptUri "$WIKIBASE_CONCEPT_URI" --entityNamespaces 120,122 --idrange 1-<maxQ>'`. With the default entrypoint `sh -c` fails silently (`can't cd to /nonexistent`) and a wrapper script can still report success. `--idrange` takes numbers only (items); properties need `--ids P1,P2,...`.
+- Lesson: WDQS keeps a bare `wikibase:timestamp` triple for ids that no longer exist, so subject counts overstate the data. Count with `?s schema:version ?v` instead.
+
 ### Security
 - Moved OpenSearch ports 9200/9600 from `docker-compose.yml` to `docker-compose.override.yml` (local only) so DEV/TEST/PROD do not publish an unauthenticated OpenSearch on all interfaces.
-- Fixed: the public `/query/proxy/sparql` endpoint accepted SPARQL Update (POST `update=...`) behind Basic Auth only, so anyone with the login could modify WDQS. `scripts/deploy/deploy.sh` and `docs/hetzner-deploy-guide.md` now add `limit_except GET HEAD OPTIONS { deny all; }` to that nginx location. Already-deployed hosts need the same line added to `/etc/nginx/sites-available/wikibase` by hand (new-DEV: applied and verified, POST returns 403; TEST and PROD pending). Found 2026-10-29 on new-DEV; a test triple (`<urn:x:a> <urn:x:b> <urn:x:c>`) was inserted and removed.
+- Fixed: the public `/query/proxy/sparql` endpoint accepted SPARQL Update (POST `update=...`) behind Basic Auth only, so anyone with the login could modify WDQS. `scripts/deploy/deploy.sh` and `docs/hetzner-deploy-guide.md` now add `limit_except GET HEAD OPTIONS { deny all; }` to that nginx location. Already-deployed hosts need the same line added to `/etc/nginx/sites-available/wikibase` by hand (new-DEV and new-TEST: applied and verified, POST returns 403; PROD pending). Found 2026-10-29 on new-DEV; a test triple (`<urn:x:a> <urn:x:b> <urn:x:c>`) was inserted and removed.
 - `wdqs-frontend-nginx.conf`: the Query UI container's `/proxy/sparql` is now read-only too (same `limit_except`).
 - LOCAL: `docker-compose.override.yml` publishes Blazegraph `9999` on `127.0.0.1` only (was all interfaces). Direct writes on `localhost:9999` remain possible from the local machine (the workbench needs POST).
 - Known: OpenSearch `9200`/`9600` in `docker-compose.override.yml` are still published on all interfaces (LOCAL only).

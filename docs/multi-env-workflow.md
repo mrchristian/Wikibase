@@ -847,3 +847,33 @@ ssh -i C:\Users\<user>\.ssh\id_wikibase_sync root@178.105.222.174 'docker logs -
 **Verify complete:**
 - Query UI responds at https://prod-climatekg.semanticclimate.org/query/
 - SPARQL returns results at https://prod-climatekg.semanticclimate.org/query/proxy/sparql
+
+### Partial fill on a new TIB host (database restored, WDQS incomplete)
+
+Use when `recentchanges` is too short for the updater to catch up (e.g. new-TEST after a DB migration), so the wipe-and-restart procedure above is not suitable. Run on the server in `/opt/wikibase`, with `C="sudo docker compose -f docker-compose.yml -f docker-compose.<env>.yml"`:
+
+```sh
+$C stop wdqs-updater
+# items: --idrange takes plain numbers up to the highest Q id
+$C run -T --rm --no-deps --entrypoint sh wdqs-updater -c 'cd /wdqs && ./runUpdate.sh -h http://wdqs:9999 -- --wikibaseUrl http://wikibase --conceptUri "$WIKIBASE_CONCEPT_URI" --entityNamespaces 120,122 --idrange 1-<maxQ>'
+# properties (and single items): --ids with an explicit list
+IDS=$(seq -s, -f 'P%g' 1 60)
+$C run --rm --no-deps -e IDS="$IDS" --entrypoint sh wdqs-updater -c 'cd /wdqs && ./runUpdate.sh -h http://wdqs:9999 -- --wikibaseUrl http://wikibase --conceptUri "$WIKIBASE_CONCEPT_URI" --entityNamespaces 120,122 --ids "$IDS"'
+$C up -d wdqs-updater
+```
+
+> `--entrypoint sh` is required: with the image's default entrypoint, `sh -c "cd /wdqs ..."` fails with `can't cd to /nonexistent` and does nothing.
+
+Count real entities with `schema:version` (ids that no longer exist keep a bare `wikibase:timestamp` triple):
+
+```sparql
+SELECT (COUNT(DISTINCT ?s) AS ?n) WHERE { ?s <http://schema.org/version> ?v . FILTER(REGEX(STR(?s),"/entity/Q[0-9]+$")) }
+```
+
+### Stale `mywiki` sitelink on an item
+
+An item whose JSON still contains the retired `mywiki` sitelink breaks `Special:EntityData` (PHP warnings in the output) and the updater skips it. Fix from the workstation:
+
+1. On the server, set `<group>` in `temp-mywiki-sites.xml` to `climatekg-wiki` (inside the container copy) and run `php maintenance/run.php importSites <file>`, then restart `wikibase`.
+2. `python scripts\remove-stale-sitelink.py --env <env> --site mywiki <Qid> --dry-run`, then without `--dry-run`.
+3. Restart `wikibase-sitelinks-init` so the `sites` table is normalised again, then reload the item into WDQS with `--ids <Qid>`.

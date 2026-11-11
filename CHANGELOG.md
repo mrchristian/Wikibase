@@ -29,7 +29,7 @@ The format is based on Keep a Changelog, and this project follows semantic-style
 ### Deployed (new-PROD, 2026-11-11)
 - new-PROD (`climatekg.tibwiki.io`, `climatekg21.service.tib.eu`) upgraded to MW 1.46.2 with OpenSearch/CirrusSearch, brought to parity with new-DEV/new-TEST. Verified: WDQS 141,714 triples / 88 chapters, stale `mywiki` sitelink (Q128) removed first, CirrusSearch content 4,101 + general 2,188 = 6,289 pages, P5 on 88 chapters on `tibwiki.io`, public SPARQL POST update returns 403, all containers healthy, `wdqs-updater` running.
 - Added `--env newprod` to `scripts/update-chapter-wiki-urls.py` (password from `NEWPROD_MW_ADMIN_PASS` in `.env`, or prompted). Added `temp-mywiki-sites.newprod.xml`.
-- PROD keeps Basic Auth in nginx; do not re-run `deploy.sh` with the repo prod wrapper (it would drop it).
+- Basic Auth removed from PROD nginx (2026-11-11); the site is now public. `/query/proxy/sparql` still rejects POST (403). `deploy-prod-new.sh` (Basic Auth off) now matches the real state.
 - Lesson: the temp `mywiki` site row can vanish if `wikibase-sitelinks-init` runs first; re-import it before removing the sitelink.
 - Lesson: `wbgetentities`/edit calls can drop connections (`RemoteDisconnected`) while services restart; the P5 script is idempotent, so re-run it.
 

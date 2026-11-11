@@ -39,13 +39,11 @@ Started 2026-11-10. Same procedure as new-DEV (2026-10-29) and new-TEST (2026-10
        add a "Deployed (new-PROD)" entry to `CHANGELOG.md`.
 
 ## Follow-ups
-- [ ] Remove Basic Auth from PROD (user decision 2026-11-10, deferred to the next morning). Do it only after the TODO list above is
-      done or knowingly accepted, since the site is public once auth is off. Steps on the server: back up
-      `/etc/nginx/sites-available/wikibase`, `sudo sed -i '/auth_basic/d'` on it, `sudo nginx -t && sudo systemctl reload nginx`,
-      then check `https://climatekg.tibwiki.io/wiki/Main_Page` returns 200 without credentials. Optionally delete
-      `/etc/nginx/.htpasswd-wikibase`. The repo wrapper `deploy-prod-new.sh` already has Basic Auth off, so it matches.
-- [ ] Rotate the Basic Auth password (it is plaintext in the `deploy-*-new.sh` wrappers) and move it to `.env`.
-- [ ] Align `scripts/deploy/deploy-prod-new.sh` with the real PROD state (Basic Auth is enabled in nginx on PROD);
-      do not re-run `deploy.sh` with the current wrapper or it will drop Basic Auth.
+- [x] Remove Basic Auth from PROD (done 2026-11-11). Removed `auth_basic*` from `/etc/nginx/sites-available/wikibase`, reloaded nginx;
+      `https://climatekg.tibwiki.io/wiki/Main_Page` returns 200 without credentials, SPARQL POST still 403.
+      Backup: `/home/worthingtons/nginx-wikibase.pre-auth-removal.bak` (previous: `nginx-wikibase.pre-upgrade.bak`).
+      The repo wrapper `deploy-prod-new.sh` already has Basic Auth off, so it now matches the real state.
+- [ ] Optionally delete `/etc/nginx/.htpasswd-wikibase` on PROD (no longer referenced).
+- [ ] Rotate the DEV/TEST Basic Auth password (still enabled there; plaintext in the `deploy-dev-new.sh`/`deploy-test-new.sh` wrappers) and move it to `.env`.
 - [ ] Drop the server stash once nothing in it is needed.
 - [ ] Revoke the GitLab access token that is embedded in a file name in `~/.ssh`, and delete that file.

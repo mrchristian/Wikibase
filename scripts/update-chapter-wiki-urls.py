@@ -84,6 +84,18 @@ ENV_CONFIG = {
         "password_env": "NEWTEST_MW_ADMIN_PASS",
         "username":    "admin",
     },
+    # New TIB PROD (climatekg21.service.tib.eu). Admin password is new-PROD's own
+    # /opt/wikibase/.env MW_ADMIN_PASS. Set NEWPROD_MW_ADMIN_PASS in
+    # C:\Wikibase\.env (or the script prompts for it).
+    "newprod": {
+        "api_url":     "https://climatekg.tibwiki.io/w/api.php",
+        "sparql_url":  "https://climatekg.tibwiki.io/query/proxy/sparql",
+        "entity_base": "https://climatekg.tibwiki.io/entity/",
+        "prop_base":   "https://climatekg.tibwiki.io/prop/direct/",
+        "wiki_base":   "https://climatekg.tibwiki.io",
+        "password_env": "NEWPROD_MW_ADMIN_PASS",
+        "username":    "admin",
+    },
     "test": {
         "api_url":     "https://test-climatekg.semanticclimate.org/w/api.php",
         "sparql_url":  "https://test-climatekg.semanticclimate.org/query/proxy/sparql",

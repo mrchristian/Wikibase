@@ -26,6 +26,13 @@ The format is based on Keep a Changelog, and this project follows semantic-style
 - Lesson: keep `wdqs-updater` stopped until the WDQS reload finishes; the updater only retries a failed entity on a new edit.
 - Docs (`docs/multi-env-workflow.md`, `docs/hetzner-deploy-guide.md`) now describe TIB GitLab as the source of truth, GitHub as a backup mirror.
 
+### Deployed (new-PROD, 2026-11-11)
+- new-PROD (`climatekg.tibwiki.io`, `climatekg21.service.tib.eu`) upgraded to MW 1.46.2 with OpenSearch/CirrusSearch, brought to parity with new-DEV/new-TEST. Verified: WDQS 141,714 triples / 88 chapters, stale `mywiki` sitelink (Q128) removed first, CirrusSearch content 4,101 + general 2,188 = 6,289 pages, P5 on 88 chapters on `tibwiki.io`, public SPARQL POST update returns 403, all containers healthy, `wdqs-updater` running.
+- Added `--env newprod` to `scripts/update-chapter-wiki-urls.py` (password from `NEWPROD_MW_ADMIN_PASS` in `.env`, or prompted). Added `temp-mywiki-sites.newprod.xml`.
+- PROD keeps Basic Auth in nginx; do not re-run `deploy.sh` with the repo prod wrapper (it would drop it).
+- Lesson: the temp `mywiki` site row can vanish if `wikibase-sitelinks-init` runs first; re-import it before removing the sitelink.
+- Lesson: `wbgetentities`/edit calls can drop connections (`RemoteDisconnected`) while services restart; the P5 script is idempotent, so re-run it.
+
 ### Deployed (new-TEST, 2026-10-30)
 - new-TEST (`test-climatekg.tibwiki.io`, `climatekg11.test.service.tib.eu`) restored and upgraded to WBS 8 / MW 1.46.2, brought to parity with new-DEV. Verified: WDQS 3,956 items / 30 properties / 88 chapters, Q128 loaded without `mywiki`, CirrusSearch index built (content 4,101 + general 2,188 = 6,289 pages), P5 on 88 chapters on `tibwiki.io`, public SPARQL POST update returns 403, job backlog drained (except `enotifNotify`).
 - Lesson: new-TEST's admin password is the server's own `/opt/wikibase/.env` `MW_ADMIN_PASS` (the migration resets it), not the DEV one. Keep it in the workstation `.env` as `NEWTEST_MW_ADMIN_PASS`; `TEST_MW_ADMIN_PASS` is the legacy TEST server.

@@ -1,0 +1,11 @@
+<?xml version="1.0"?>
+<sites version="1.0">
+  <site type="mediawiki">
+    <globalid>mywiki</globalid>
+    <group>climatekg-wiki</group>
+    <localid type="interwiki">mywiki</localid>
+    <path type="link">https://climatekg.tibwiki.io/wiki/$1</path>
+    <path type="page_path">https://climatekg.tibwiki.io/wiki/$1</path>
+    <path type="file_path">https://climatekg.tibwiki.io/w/$1</path>
+  </site>
+</sites>

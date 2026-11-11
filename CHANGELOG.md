@@ -9,6 +9,7 @@ The format is based on Keep a Changelog, and this project follows semantic-style
 ### Added
 - Added `LICENCE` with GNU General Public License v3.0 text.
 - Added `CHANGELOG.md` to track project changes.
+- Added `LocalSettings.restrict-login.php` (mounted by `docker-compose.prod.yml` only): no self-registration, and login limited to `sysop`/`bureaucrat`/`interface-admin` via an AuthManager pre-authentication provider.
 - Added `scripts/deploy/switch-git-remote.sh` to point a server's `/opt/wikibase` clone at TIB GitLab (read-only deploy key or token); old remote kept as `github`.
 - Added `--env newdev` to `scripts/update-chapter-wiki-urls.py` (targets `dev-climatekg.tibwiki.io`; `--env dev` still targets the old DEV).
 - Added `--env newtest` to `scripts/update-chapter-wiki-urls.py` (targets `test-climatekg.tibwiki.io`; password from `NEWTEST_MW_ADMIN_PASS` in `.env`, or prompted). Also works with `remove-stale-sitelink.py`.

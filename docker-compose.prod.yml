@@ -32,6 +32,7 @@ services:
       - ./LocalSettings.namespaces.php:/var/www/html/LocalSettings.d/LocalSettings.namespaces.php:ro
       - ./LocalSettings.parserfunctions.php:/var/www/html/LocalSettings.d/LocalSettings.parserfunctions.php:ro
       - ./LocalSettings.general.php:/var/www/html/LocalSettings.d/LocalSettings.general.php:ro
+      - ./LocalSettings.restrict-login.php:/config/LocalSettings.d/LocalSettings.restrict-login.php:ro
       - ./climatekg-web-logos/climatekg-logo.png:/var/www/html/images/ckglogo1.png:ro
       - ./climatekg-web-logos/climatekg-logo.svg:/var/www/html/images/ckglogo1.svg:ro
 

@@ -1,0 +1,36 @@
+::: {.content-visible when-format="html"}
+
+# Imprint {.unnumbered #sec-imprint}
+
+Imprint for this website, also serving as provider identification according to § 5 Digitale Dienste Gesetz (DDG).
+
+### Provider
+
+Technische Informationsbibliothek (TIB)\
+Welfengarten 1 B, 30167 Hannover\
+Postfach 6080, 30060 Hannover
+
+### Authorised representative
+
+Prof. Dr. Sören Auer (Director of TIB)
+
+Technische Informationsbibliothek (TIB) is a foundation of public law of the state of Lower Saxony.
+
+### Responsible supervisory authority
+
+Ministry for Science and Culture of Lower Saxony
+
+### Contact
+
+Customer service phone: +49 511 762-8989\
+Central information desk phone: +49 511 762-2268\
+Fax: +49 511 762-4076\
+Email: information@tib.eu
+
+### VAT (sales tax) registration number
+
+DE 214931803
+
+:::
+
+

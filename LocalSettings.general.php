@@ -9,10 +9,8 @@ $wgLogos = [
 	'icon' => "$wgResourceBasePath/images/ckglogo1.svg",
 ];
 
-# Default to the installed mobile skin for this local instance.
-# The runtime image includes MinervaNeue, which is the MediaWiki mobile skin
-# used with MobileFrontend; forcing Vector here defeats the mobile view.
-$wgDefaultSkin = 'minerva';
+# Desktop uses Vector 2022; the mobile view (MobileFrontend) uses Minerva via $wgMFDefaultSkinClass below.
+$wgDefaultSkin = 'vector-2022';
 
 # OpenSearch / CirrusSearch backend wiring for the local Wikibase stack.
 # These extensions are present in the WBS image and need to be enabled explicitly.
@@ -87,6 +85,52 @@ $wgVectorLanguageInHeader = [
 	'logged_in' => true,
 	'logged_out' => false,
 ];
+
+# Footer links (standard SkinAddFooterLinks hook): Data protection, Imprint and Accessibility statement.
+# About, Disclaimers and Privacy policy use MediaWiki's built-in message slots (defaults).
+$wgHooks['SkinAddFooterLinks'][] = static function ( Skin $skin, string $key, array &$footerItems ) {
+	if ( $key !== 'places' ) {
+		return;
+	}
+
+	$links = [
+		'data-protection' => [ 'Project:Data protection', 'Data protection' ],
+		'imprint' => [ 'Imprint', 'Imprint' ],
+		'accessibility' => [ 'Accessibility statement', 'Accessibility statement' ],
+	];
+
+	foreach ( $links as $id => [ $pageName, $label ] ) {
+		$title = \MediaWiki\Title\Title::newFromText( $pageName );
+		if ( !$title ) {
+			continue;
+		}
+		$footerItems[$id] = \MediaWiki\Html\Html::element(
+			'a',
+			[ 'href' => $title->getLocalURL() ],
+			$label
+		);
+	}
+};
+
+# Minerva hides the About footer link (duplicate of the hamburger menu entry); show it first in the footer.
+# The SkinAddFooterLinks hook cannot reorder existing items, so order is set with CSS flex.
+$wgHooks['BeforePageDisplay'][] = static function ( OutputPage $out, Skin $skin ) {
+	if ( in_array( $skin->getSkinName(), [ 'minerva', 'vector-2022' ], true ) ) {
+		$out->addInlineStyle(
+			'#footer-places{display:flex;flex-wrap:wrap;}' .
+			'#footer-places-about{display:inline-block !important;order:-1;}'
+		);
+	}
+};
+
+# Minerva (mobile) hamburger menu: hide the About and Disclaimers entries (they remain in the footer).
+$wgHooks['BeforePageDisplay'][] = static function ( OutputPage $out, Skin $skin ) {
+	if ( $skin->getSkinName() === 'minerva' ) {
+		$out->addInlineStyle(
+			'.menu__item--about,.menu__item--disclaimers{display:none !important;}'
+		);
+	}
+};
 
 # Increase multi-language string length limit so full definitions fit in descriptions.
 # Default is 250; raising to 2500 accommodates the longest IPCC glossary entry (~2103 chars).

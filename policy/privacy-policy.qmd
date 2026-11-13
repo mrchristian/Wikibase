@@ -1,0 +1,122 @@
+::: {.content-visible when-format="html"}
+
+# Privacy Policy {.unnumbered #sec-privacy-policy}
+
+Datenschutz hat einen hohen Stellenwert für die Technische Informationsbibliothek (TIB). Eine Nutzung der Dienstleistungen der TIB ist grundsätzlich ohne jede Angabe personenbezogener Daten möglich. Sofern eine betroffene Person besondere Services über die Internetseite der TIB in Anspruch nehmen möchte, kann jedoch eine Verarbeitung personenbezogener Daten erforderlich werden. Ist die Verarbeitung personenbezogener Daten erforderlich und besteht für eine solche Verarbeitung keine gesetzliche Grundlage, holen wir eine Einwilligung der betroffenen Person ein.
+
+Die Verarbeitung personenbezogener Daten, beispielsweise des Namens, der Anschrift, E-Mail-Adresse oder Telefonnummer einer betroffenen Person erfolgt stets im Einklang mit der Datenschutz-Grundverordnung und den für die TIB geltenden landes- und institutionsspezifischen Datenschutzbestimmungen. Mittels dieser Datenschutzerklärung möchten wir die Öffentlichkeit über Art, Umfang und Zweck der von uns erhobenen, genutzten und verarbeiteten personenbezogenen Daten sowie die betroffenen Personen zustehenden Rechte informieren.
+
+Die in der Datenschutzerklärung der TIB verwendeten Begrifflichkeiten sind im Sinne der Europäischen Datenschutz-Grundverordnung (DSGVO) zu verstehen.
+
+### Name und Anschrift des für die Verarbeitung Verantwortlichen
+
+Verantwortlicher im Sinne des Datenschutzrechts ist die:
+
+Technische Informationsbibliothek (TIB)\
+Prof. Dr. Sören Auer (Direktor der TIB)\
+Welfengarten 1 B\
+30167 Hannover\
+Deutschland
+
+Tel.: +49 511 762-8989\
+E-Mail: information@tib.eu\
+Website: <https://www.tib.eu>
+
+### Name und Anschrift des Datenschutzbeauftragten
+
+Die Datenschutzbeauftragte des für die Verarbeitung Verantwortlichen ist:
+
+Elke Brehm\
+Tel.: +49 511 762-8138\
+E-Mail: datenschutz@tib.eu
+
+Postanschrift
+
+Technische Informationsbibliothek (TIB)\
+Welfengarten 1 B\
+30167 Hannover\
+Deutschland
+
+Besuchsadresse
+
+TIB Conti-Campus\
+Königsworther Platz 1B\
+30167 Hannover\
+Deutschland
+
+Jede betroffene Person kann sich jederzeit bei allen Fragen und Anregungen zum Datenschutz direkt an unsere Datenschutzbeauftragte wenden.
+
+#### Registrierung
+
+Über die Internetseiten der TIB können Benutzerinnen und Benutzer sich für Dienstleistungen registrieren. Bei Registrierung erhebt die TIB personenbezogene Daten, um die Dienstleistungen für die Benutzerinnen und Benutzer erbringen zu können. Ohne Bereitstellung der Daten können die Dienstleistungen nicht in Anspruch genommen werden.
+
+Welche Daten erhoben werden, ist abhängig von der Dienstleistung. Rechtsgrundlage für die Erhebung dieser Daten sind die Benutzungsordnung der TIB, die für die jeweilige Dienstleistung geltenden Nutzungsbedingungen bzw. die Einwilligung der Benutzerin oder des Benutzers. Mehr Informationen entnehmen Sie bitte den für die Dienstleistungen der TIB jeweils bereitgestellten Informationsblättern zum Datenschutz.
+
+Dienstleistungen der TIB mit Registrierung:
+
+1. Benutzung der TIB vor Ort (Bibliotheksausweis)
+2. TIB Dokumentlieferung
+3. TIB AV-Portal
+4. OER-Recommender
+5. Open Research Knowledge Graph
+6. TIB Open Publishing
+7. Renate (TIB Repositorium)
+8. OpenResearch
+9. ConfIDent
+
+Die TIB verarbeitet und speichert personenbezogene Daten der betroffenen Person nur für den Zeitraum, der zur Erreichung des Speicherungszwecks erforderlich bzw. für den die Einwilligung erteilt ist und im Einklang mit der Datenschutz-Grundverordnung und den für die TIB geltenden landes- und institutionsspezifischen Datenschutzbestimmungen. Danach werden die personenbezogenen Daten routinemäßig und entsprechend den gesetzlichen Vorschriften gesperrt oder gelöscht. Sofern die Benutzerin oder der Benutzer die Dienstleistungen der TIB nicht mehr nutzen möchte und die TIB gegenüber der Benutzerin oder dem Benutzer keine Ansprüche mehr hat und kein sonstiger Rechtsgrund besteht, löschen wir die personenbezogenen Daten auf Anfrage. Wurde die Dienstleistung länger nicht genutzt, werden die personenbezogenen Daten nach Ablauf eines für die jeweilige Dienstleistung gesondert festgelegten Zeitraums gelöscht.
+
+### Kontaktmöglichkeit über die Internetseiten
+
+Die Internetseiten der TIB enthalten Angaben und Formulare, die eine schnelle elektronische Kontaktaufnahme per Kontaktformular oder per E-Mail auch für nicht bei der TIB registrierte Kundinnen und Kunden unter Angabe von Namen und E-Mailadresse ermöglichen. Die Angabe von Name und E-Mailadresse ist zur späteren Kontaktaufnahme nach Klärung des Anliegens der betroffenen Person erforderlich. Die per E-Mail oder über ein Kontaktformular von der betroffenen Person an die TIB übermittelten personenbezogenen Daten werden automatisch intern und nur zum Zweck der Bearbeitung oder der Kontaktaufnahme zur betroffenen Person gespeichert.
+
+### Cookies
+
+Die Internetseiten der TIB verwenden Cookies. Cookies sind Textdateien, welche über einen Internetbrowser auf einem Computersystem abgelegt und gespeichert werden und dienen dazu, das Angebot der TIB nutzerfreundlicher, effektiver und sicherer zu machen.
+
+Die meisten der von uns verwendeten Cookies sind so genannte „Session-Cookies", die nach Ende des Besuchs automatisch gelöscht werden. Andere Cookies bleiben auf dem Endgerät der Nutzerin oder des Nutzers gespeichert, bis die Nutzerin oder der Nutzer diese löschen. Diese Cookies sind Standard Mediawiki-Cookies und werden verwendet, um den Login einer Person zu speichern. Sie werden entsprechend nur gesetzt, wenn sich eingeloggt wurde.
+
+Bereits gesetzte Cookies können jederzeit über einen Internetbrowser oder andere Softwareprogramme gelöscht werden. Dies ist in allen gängigen Internetbrowsern möglich. Deaktiviert die betroffene Person das Setzen von Cookies in dem genutzten Internetbrowser, sind unter Umständen nicht alle Funktionen der Internetseite der TIB vollumfänglich nutzbar.
+
+Die folgende Übersicht zeigt alle ggf. verwendeten Cookies:
+
+| Name | Category | Expiry | What does it do? |
+|------|----------|--------|------------------|
+| UseCDNCache | Necessary | Session | Holds configured value for caching mechanism. |
+| UseDC | Necessary | Session | Used for internal load balancing. |
+| VEE | Preferences | 1 month | Hold the current user's editor preference (if set, otherwise site default). |
+| `<wgCookiePrefix>`Token | Necessary | 6 months | Stores, if the user selected "Keep me logged in" in the log in page. |
+| `<wgCookiePrefix>`UserID | Necessary | 1/6 months | Holds the current logged in user's ID. It is stored for six months instead of one when the user selected "Keep me logged in" in the log in page. |
+| `<wgCookiePrefix>`UserName | Necessary | 1/6 months | Holds the current logged in user's username. It is stored for six months instead of one when the user selected "Keep me logged in" in the log in page. |
+| `<wgCookiePrefix>`_session | Necessary | Session | Holds current user's session hash. |
+| `<wgCookiePrefix>`cookiewarning_dismissed | Preferences | 1 month | Stores, if the user has dismissed the Cookie Banner. |
+| `<wgCookiePrefix>`hidetoc | Preferences | 1 month | Stores, if a table of content (TOC) has been collapsed and collapses all future TOCs until expiry. |
+
+### Erfassung von allgemeinen Daten und Informationen (Logfiles)
+
+Die Internetseite der TIB erfasst mit jedem Aufruf der Internetseite durch eine betroffene Person automatisch Informationen in so genannten Server-Log Files, die ihr Browser automatisch an die TIB übermittelt. Dies sind:
+
+- Browsertyp und Browserversion
+- verwendetes Betriebssystem
+- Referrer URL
+- Hostname des zugreifenden Rechners
+- IP-Adresse
+- Internet-Service-Provider des zugreifenden Systems
+- Uhrzeit der Serveranfrage
+
+Diese Daten sind in der Regel nicht einer bestimmten Person zuordenbar. Eine Zusammenführung dieser Daten mit anderen Datenquellen wird nicht vorgenommen.
+
+Die Logfiles werden nach 21 Tagen gelöscht.
+
+### Routinemäßige Löschung und Sperrung von personenbezogenen Daten
+
+Die TIB verarbeitet und speichert personenbezogene Daten der betroffenen Person für den Zeitraum, der zur Erreichung des Speicherungszwecks erforderlich ist und im Einklang mit der Datenschutz-Grundverordnung und den für die TIB geltenden landes- und institutionsspezifischen Datenschutzbestimmungen. Danach werden die personenbezogenen Daten routinemäßig und entsprechend den gesetzlichen Vorschriften gesperrt oder gelöscht.
+
+### Rechte der betroffenen Person
+
+Sie haben jederzeit das Recht, Auskunft über die in dieser Bibliothek gespeicherten Daten, deren Herkunft und Empfänger und den Zweck der Datenverarbeitung zu erhalten, sowie auf Berichtigung oder Löschung oder auf Einschränkung der Verarbeitung oder, soweit die Verarbeitung auf Ihrer Einwilligung basiert, ein Widerrufsrecht, ggfls. ein Widerspruchsrecht sowie das Recht auf Datenübertragbarkeit. Hierzu sowie zu weiteren Fragen zum Thema personenbezogene Daten können Sie sich jederzeit an uns wenden.
+
+:::
+
+
+

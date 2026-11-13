@@ -1,0 +1,46 @@
+::: {.content-visible when-format="html"}
+
+# Data Protection Info {.unnumbered #sec-data-protection}
+
+Die Technische Informationsbibliothek (TIB) und der Arbeitsbereich Information Systems & Databases an der RWTH Aachen (Lehrstuhl Informatik 5) arbeiten in dem Projekt ConfIDent gemeinsam an der Entwicklung einer Serviceplattform für wissenschaftliche Veranstaltungen. Pilotcommunities für das Projekt sind zunächst die Informatik sowie die Verkehrs- und Mobilitätsforschung. Ziel des von der Deutschen Forschungsgemeinschaft (DFG) unterstützten Projekts ist es, die beschreibenden Metadaten zu Konferenzen und anderen Formaten wissenschaftlicher Veranstaltungen dauerhaft zugänglich zu machen und durch automatisierte Prozesse sowie fachwissenschaftliche Datenkuratierung in möglichst hoher Qualität zu Verfügung zu stellen. Die Plattform richtet sich neben Forschenden, die Informationen über wissenschaftliche Veranstaltungen suchen und publizieren, auch an Universitäten, Informationsinfrastruktureinrichtungen, Fachgesellschaften, Verlage und Fördereinrichtungen und soll zu einem dauerhaften Service ausgebaut werden.
+
+### Datenschutzrechtlich verantwortlich ist die Technische Informationsbibliothek (TIB)
+
+Welfengarten 1B, 30167 Hannover\
+Telefon: 0511 762-8989\
+Fax: 0511 762-4076\
+E-Mail: information@tib.eu
+
+### Datenschutzbeauftragte
+
+Technische Informationsbibliothek (TIB)\
+TIB Conti-Campus, Königsworther Platz 1B, 30167 Hannover\
+Telefon: 0511-762 8138\
+E-Mail: datenschutz@tib.eu
+
+### Aufsichtsbehörde
+
+Aufsichtsbehörde ist die Landesbeauftragte für den Datenschutz Niedersachsen\
+Prinzenstraße 5, 30159 Hannover\
+Tel.: +49 511 120-4500\
+Fax.: +49 511 120-4500\
+E-Mail: poststelle@lfd.niedersachsen.de
+
+### Es werden folgende Daten verarbeitet
+
+Kontaktdaten (Name, Emailadresse)
+
+Rechtsgrundlagen sind § 2 und 14 des Gesetzes über die Stiftung Technische Informationsbibliothek[^1] und Art. 6 Abs. 1 a) der Europäischen Datenschutz-Grundverordnung[^2].
+
+Ihre Daten werden nicht an Einrichtungen außerhalb des Projektkonsortiums oder Dienstleister übermittelt.
+
+Ihre Rechte[^3]: Sie haben jederzeit das Recht, Auskunft über die in dieser Bibliothek gespeicherten Daten zu erhalten, sowie auf Berichtigung oder Löschung oder auf Einschränkung der Verarbeitung oder, soweit die Verarbeitung auf Ihrer Einwilligung basiert, ein Widerrufsrecht, ggfls. ein Widerspruchsrecht sowie das Recht auf Datenübertragbarkeit. Beschwerden können bei der oben genannten Aufsichtsbehörde vorgebracht werden. Der Widerruf hat keine Auswirkungen auf die Rechtmäßigkeit der bis zum Zeitpunkt des Widerrufs erfolgten Verarbeitung der Daten.
+
+[^1]: TIBStiftG ND, Nds. GVBl. 10/2015, S. 151
+
+[^2]: Verordnung (EU) 2016/679 des Europäischen Parlaments und des Rates vom 27. April 2016 zum Schutz natürlicher Personen bei der Verarbeitung personenbezogener Daten, zum freien Datenverkehr und zur Aufhebung der Richtlinie 95/46/EG (Datenschutz-Grundverordnung), <https://eur-lex.europa.eu/legal-content/DE/TXT/?uri=CELEX:32016R0679>
+
+[^3]: Hier verwendeten Begriffen liegen die in der Datenschutz-Grundverordnung verwendeten Definitionen zugrunde.
+
+:::
+

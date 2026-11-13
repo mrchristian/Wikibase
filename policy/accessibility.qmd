@@ -1,0 +1,53 @@
+::: {.content-visible when-format="html"}
+
+# Declaration on Accessibility {.unnumbered #sec-accessibility}
+
+Status of the declaration: 10.11.2026
+
+Information about the accessibility of these web pages in accordance with § 9b NBGG and about related contact options.
+
+This accessibility statement applies to <https://nfdi4culture.github.io/Baldessari/> and its subpages.
+
+These web pages are compatible with the requirements of the harmonized European standard EN 301 549 V2.1.2 (08-2018) and WCAG 2.1 (Web Content Accessibility Guidelines).
+
+### Non-accessible content
+
+1. Content that TIB, in its function as a cultural heritage collection, cannot convert to barrier-free, or can do so only through disproportionate effort.
+2. Content of the TIB that is considered archives, i.e., content that is neither required for active administrative procedures nor updated or revised after September 23, 2019.
+3. Information incorporated into the web presence.
+
+### The listed content is not accessible for the following reasons
+
+Re 1 & 2: This content is exempt from accessibility application per Section 9(2) of the NBGG.
+
+Re 3: The content cannot be displayed in any other way (Guideline 1.3 Adaptable); not all functions are operable via keyboard operation alone (2.1 Keyboard Accessible); operation of the website functions is hardly possible without a keyboard (2.5 Input Modalities); the language in which the content is presented is English and cannot be changed at the moment (3.1 Readable); documentation for input fields is not yet available (3.3 Input Assistance); it has not yet been verified to what extent the content can be perceived with assistance technology (4.1 Compatible).
+
+The web presence is being adapted and optimized to comply with EU Directive 2016/2102 on the implementation of accessible internet for public bodies. The identified shortcomings and deficiencies are currently in a continuous improvement process, which is being successively worked through.
+
+### Creation of this accessibility statement
+
+This statement was created on 23.03.2026. The assessment is based on self-assessment.
+
+### Feedback and contact details
+
+You can use the following contact to report deficiencies in accessibility compliance:
+
+Technical Information Library (TIB)\
+TIB representative for severely disabled people\
+P.O. Box 60 80, 30060 Hanover\
+By telephone: 0511 762-17806\
+By e-mail: SBV@tib.eu
+
+### Conciliation procedure
+
+If you do not receive satisfactory answers from the above contact option, you can apply to the conciliation board, set up at the State Commissioner for People with Disabilities in Lower Saxony, to initiate conciliation proceedings in accordance with the Lower Saxony Disability Equality Act (NBGG).
+
+The conciliation board according to § 9 d NBGG has the task of settling disputes between people with disabilities and public bodies of the state of Lower Saxony, on the subject of accessibility in IT. The conciliation procedure is free of charge. No legal counsel needs to be involved.
+
+You can contact the conciliation office directly at:
+
+By phone: 0511/120-4010\
+By e-mail: schlichtungsstelle@ms.niedersachsen.de
+
+:::
+
